@@ -133,7 +133,7 @@ Physical defense in depth
 Network Defense in depth
 </p>
 <p align="center">
-<img width="70%" src="https://d3i71xaburhd42.cloudfront.net/20d7aa23c12aaeccc823c82c785b5048dadd3058/3-Figure4-1.png" />
+<img width="80%" src="https://www.researchgate.net/profile/James_Cusick/publication/322161382/figure/fig1/AS:578042084814848@1514827380600/Security-Defense-in-Depth-Model.png" />
 </p>
 
 ### **Redundacy**
