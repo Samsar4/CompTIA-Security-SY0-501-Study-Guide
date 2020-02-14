@@ -129,9 +129,7 @@ Physical defense in depth
 <p align="center">
 <img width="70%" src="https://www.ciatec.com/wp-content/uploads/2018/03/Defense-in-Depth.jpg" />
 </p>
-<p align="center">
-Network Defense in depth
-</p>
+
 <p align="center">
 <img width="80%" src="https://www.researchgate.net/profile/James_Cusick/publication/322161382/figure/fig1/AS:578042084814848@1514827380600/Security-Defense-in-Depth-Model.png" />
 </p>
