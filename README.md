@@ -1,5 +1,5 @@
-# CompTIA Security+ (SY0-501) - Notes
-Notes from the content of CompTIA Security+ (Exam SY0-501).
+# CompTIA Security+ (SY0-501) - Content Highlights
+Notes and highlights from the content of CompTIA Security+ (Exam SY0-501).
 
 1. Threats, Attacks and Vulnerabilities
 2. Technologies and Tools
