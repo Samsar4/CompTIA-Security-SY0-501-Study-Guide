@@ -6,6 +6,6 @@ Notes and highlights from the content of CompTIA Security+ (Exam SY0-501).
 3. Architecture and Design
 4. Identity and Access Management
 5. [Risk Management](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/1-Risk-Management.md)
-6. Cryptography and PKI
+6. [Cryptography and PKI](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/2-Cryptography-and-PKI.md)
 
 [All Chapters in one file](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/All-Chapters.md)
