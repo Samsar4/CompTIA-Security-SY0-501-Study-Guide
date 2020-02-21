@@ -655,6 +655,9 @@ The art of hide information inside the data (hide data within data), and can be 
 ## Certificates and Trust
 * Certificates include a public key and at least one digital signature.
 
+### Digital Signature
+* To create a digital signature for a document, you hash the document using your private key. Others can verify your digital signature with your public key.
+
 ### **Web of Trust**
 * Web of Trust uses a web of mutually trusting peers.
 * Requires a lots of maintenance
