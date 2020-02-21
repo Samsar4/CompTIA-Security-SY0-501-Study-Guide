@@ -46,7 +46,8 @@ Algorithm | Block or Streaming | Block Size | Rounds | Key Size | Notes
 **3DES** | Block | 64-bit | 16 | 168 bits (56 x 3) | Repeats DES process 3 times.
 **AES** | Block | 128-bit | 10, 12, or 14 | 128, 192 or 256 bits | Encryption standard for the US Gov.
 **RC4** | Streaming | N/A | 1 | 40-2048 bits | Used in WEP, SSL and TLS; largely deprecated in current technologies.
-Rounds: Repeating the XOR/left-shift iteration X times.
+
+*Rounds: Repeating the XOR/left-shift iteration X times.*
 
 ### **Block modes**
 * **ECB** - Eletronic Code Block *(deprecated because nowdays is a week method that always produces the same output results with same input)*
