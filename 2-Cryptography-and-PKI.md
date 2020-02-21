@@ -176,6 +176,7 @@ Is a more modern version of CRL that are used today, have a better performance.
 * Dictionary Attack
 * Rainbow Table (dictionary of hashes)
 * Collision Attack
+* Replay Attack
 
 ### **Salt**
 Salt is an arbitrary value, usually created by the application or OS storing passwords, added to the end of the password before it is hashed, making cracking harder.
