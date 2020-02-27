@@ -3,7 +3,7 @@
 1. Threats, Attacks and Vulnerabilities
 2. Technologies and Tools
 3. Architecture and Design
-4. [Identity and Access Management]()
+4. [Identity and Access Management](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/4-Identity-and-Access-Management.md)
 5. [Risk Management](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/5-Risk-Management.md)
 6. [Cryptography and PKI](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/6-Cryptography-and-PKI.md)
 
