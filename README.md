@@ -11,7 +11,7 @@
 
 ***
 
-*This table below lists the domain areas measured by CompTIA SY0-501 and the approximate extent to which they are represented in the exam
+*This table below lists the domain areas measured by CompTIA SY0-501 and the approximate extent to which they are represented in the exam*
 
 Domain | % of Examination
 --|--
