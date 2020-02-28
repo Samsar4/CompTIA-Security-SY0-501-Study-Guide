@@ -10,4 +10,4 @@
 * [**>> All Chapters in one file <<**](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/All-Chapters.md)
 
 ***
-[Full Certification Exam Objectives](https://www.comptia.jp/pdf/Security%2B%20SY0-501%20Exam%20Objectives.pdf)
+[Certification Exam Objectives](https://www.comptia.jp/pdf/Security%2B%20SY0-501%20Exam%20Objectives.pdf)
