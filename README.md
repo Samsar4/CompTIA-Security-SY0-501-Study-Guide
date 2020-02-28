@@ -10,14 +10,4 @@
 * [**>> All Chapters in one file <<**](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/All-Chapters.md)
 
 ***
-
-*This table below lists the domain areas measured by CompTIA SY0-501 and the approximate extent to which they are represented in the exam*
-
-Domain | % of Examination
---|--
-(1) Threats, Attacks and Vulnerabilities | 21%
-(2) Technologies and Tools | 22%
-(3) Architecture and Design | 15%
-(4) Identity and Access Management | 16%
-(5) Risk Management | 14%
-(6) Cryptography and PKI | 12%
+[Full Certification Exam Objectives](https://www.comptia.jp/pdf/Security%2B%20SY0-501%20Exam%20Objectives.pdf)
