@@ -1,12 +1,11 @@
 # CompTIA Security+ (SY0-501) - Content Highlights
 
 ### Index
-1. Threats, Attacks and Vulnerabilities
-2. [Technologies and Tools](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/2-Tools.md)
-3. Architecture and Design
-4. [Identity and Access Management](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/4-Identity-and-Access-Management.md)
-5. [Risk Management](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/5-Risk-Management.md)
-6. [Cryptography and PKI](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/6-Cryptography-and-PKI.md)
+* [Securing Systems](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/1-Securing-Individual-Systems.md)
+* [Technologies and Tools](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/2-Tools.md)
+* [Identity and Access Management](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/4-Identity-and-Access-Management.md)
+* [Risk Management](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/5-Risk-Management.md)
+* [Cryptography and PKI](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/6-Cryptography-and-PKI.md)
 
 ***
 📍 [**List of Common Ports for S+**](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/0-Ports.md)
