@@ -1,12 +1,3 @@
-## Index
-
-1. Threats, Attacks and Vulnerabilities
-1. Technologies and Tools
-1. Architecture and Design
-1. Identity and Access Management
-1. Risk Management
-1. Cryptography and PKI
-
 
 # Introduction
 Information security, sometimes shortened to infosec, is the practice of protecting information by mitigating information risks. It is part of information risk management. It typically involves preventing or at least reducing the probability of unauthorized/inappropriate access, use, disclosure, disruption, deletion/destruction, corruption, modification, inspection, recording or devaluation, although it may also involve reducing the adverse impacts of incidents.
