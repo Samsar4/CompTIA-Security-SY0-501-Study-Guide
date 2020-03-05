@@ -794,6 +794,7 @@ Enables network administrator to correlate different data sources and data point
 ***
 ***
 ***
+
 # 3. Architecture and Design
 
 ## Switches
@@ -807,7 +808,7 @@ A network switch is networking hardware that connects devices on a computer netw
 * Where VLANs are set up
 * **STP (Spanning Tree Protocol)** prevents bridge loop / loop floods
 
-🛑 Bridge Loop/Switching Loop - A switching loop or bridge loop occurs in computer networks when there is more than one Layer 2 path between two endpoints. The loop creates broadcast storms as broadcasts and multicasts are forwarded by switches out every port, the switch or switches will repeatedly rebroadcast the broadcast messages flooding the network.
+🛑 **Bridge Loop/Switching Loop** - A switching loop or bridge loop occurs in computer networks when there is more than one Layer 2 path between two endpoints. The loop creates broadcast storms as broadcasts and multicasts are forwarded by switches out every port, the switch or switches will repeatedly rebroadcast the broadcast messages flooding the network.
 
 ### VLANs
 A virtual LAN is any broadcast domain that is partitioned and isolated in a computer network at the data link layer. LAN is the abbreviation for local area network and in this context virtual refers to a physical object recreated and altered by additional logic.
@@ -817,7 +818,7 @@ A virtual LAN is any broadcast domain that is partitioned and isolated in a comp
 </p>
 
 * Provides layer 2 separation of networks
-* Flood guarding
+* **Flood guarding**
 	* **STP (Spanning Tree Protocol) - enable**
 
 ## Routers
@@ -890,7 +891,7 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 * **DMZ** - Demilitarized Zone: Perimeter network, isolating untrusted network from LAN area. DMZ is a firewall configuration used to secure hosts on a network segment, in most DMZs the hosts on the DMZ are connected behind a Firewall that is connected to a public network(internet).
 
 <p align="center">
-<img width="64%" src="https://1.bp.blogspot.com/_cbXvML3JELc/TCRH6WvlEvI/AAAAAAAAAGg/7xsnkGmBqo0/s1600/111.gif" />
+<img width="80%" src="https://1.bp.blogspot.com/_cbXvML3JELc/TCRH6WvlEvI/AAAAAAAAAGg/7xsnkGmBqo0/s1600/111.gif" />
 </p>
 
 * **Wireless Network** - Basically a LAN connected to an Wireless Access Point (WAP).
@@ -943,8 +944,8 @@ Developed initially as an extension to the authentication part of PPP. EAP is on
 * **802.1X** - Full blown authentication standard that allows us to make connections between some type of client system. It provides an authentication mechanism to devices wishing to attach to a LAN or WLAN. 
 
 * *Early EAP adaptations*:
-	* **LEAP** (Cisco) - LEAP is waek nowdays
-	* **PEAP** (Microsoft) - PEAP is waek nowdays 
+	* **LEAP** (Cisco) - LEAP is weak nowdays
+	* **PEAP** (Microsoft) - PEAP is weak nowdays 
 
 ## Network Firewalls - Concepts
 
@@ -954,7 +955,7 @@ Can watch traffic streams from end to end. They are aware of communications path
 * Are better at identifying unauthorized and forged communications.
 
 ### **Stateless** Firewall
-They watch network traffic and restrict / block packets based on source and destination address or static values (ACL rules).
+They watch network traffic and restrict / block packets based on source and destination address or static values **(ACL Rules)**.
 
 * Typically faster and perform better under havier traffic loads.
 
@@ -979,8 +980,7 @@ A box/piece of software running on a computer acts an intermediary between two d
 	* VOIP proxy
 
 ### Forward Proxy
-
-The proxy simply forward the requests of respective client.
+*The proxy simply forward the requests of respective client.*
  
 * [Client -> **Proxy** -> Firewall -> Internet -> Server]
 
@@ -993,7 +993,7 @@ The proxy simply forward the requests of respective client.
 
 
 ### Reverse Proxy Server
-Like a forward but complete reverse.
+*Like a forward but complete reverse.*
 
 * [Client <-  Internet <- Firewall <- **Proxy** <- Server]
 
@@ -1015,6 +1015,8 @@ Emulate a web server, vulnerable machine purposely to attack; Inviting target to
 
 * Log all information (port information and the origin IP address)
 
+* Usually located in the DMZ to get close to the source but still isolated to capture the traffic.
+
 ### Honeynet
 A honeynet is a vulnerable and **simulated computer network** using a decoy server. **By design, honeynets are not authorized for any authentic uses. If a honeynet is accessed, a fair assumption is that the person accessing it is a bad actor.**
 
@@ -1034,8 +1036,8 @@ The **IP Security (IPsec) protocol** provides a framework for configuring secure
 
 ### VPN Setup Steps
 
-* Protocol to set up tunnel
-* Protocol to handle authentication and encryption
+1. Protocol to set up tunnel
+2. Protocol to handle authentication and encryption
 
 ### Early VPNs Protocols
 
@@ -1071,7 +1073,7 @@ The **IP Security (IPsec) protocol** provides a framework for configuring secure
 	* **TCP port 1194**, but can be changed 
 
 ## IPSec - IP Security
-is a suite of protocols developed to ensure the integrity, confidentiality and authentication of data communications over an IP network.
+Is a suite of protocols developed to ensure the integrity, confidentiality and authentication of data communications over an IP network.
 
 🛑 IPSec works at the IP layer
 
@@ -1097,12 +1099,12 @@ When IPsec protects traffic, it has a couple of services and modes to choose fro
 
 **Tunnel mode** - encapsulating entire IP datagram within a new header, essentially tunneling the packet. (The gateway creates the tunnel)
 
-1. some TCP data will be sent over.
+1. *Some TCP data will be sent over:*
 <p align="center">
 <img width="69%" src="https://community.cisco.com/legacyfs/online/legacy/5/1/2/166215-Screen%20Shot%202013-11-12%20at%2011.52.30%20AM.png" />
 </p>
 
-2. And now about how those IP protocols fit in the two modes.
+2. *And now about how those IP protocols fit in the two modes.*
 <p align="center">
 <img width="69%" src="https://community.cisco.com/legacyfs/online/legacy/6/1/2/166216-Screen%20Shot%202013-11-12%20at%2011.52.17%20AM.png" />
 </p>
@@ -1123,7 +1125,7 @@ The last mode is what is typically used with crypto map based IPsec VPNs.
 	* i.e. IPsec over Telnet
 
 ## NIDS and NIPS
-Network Intrusion Detection Systems (NIDs) and Network Intrusion Prevention Systems (NIPS) look at attacks coming into the network at large instead of into a host. Attacks could be in the form of malformed network traffic or excessive amounts of traffic.
+**Network Intrusion Detection Systems (NIDs)** and **Network Intrusion Prevention Systems (NIPS)** look at attacks coming into the network at large instead of into a host. Attacks could be in the form of malformed network traffic or excessive amounts of traffic.
 
 ### Prevention vs Detection
 **NIDS** is a **passive** device and focuses on detection alone, making it a **detection control**. It detects network traffic issues and alerts and administrator to these issues, also logging the events in the process.
@@ -1133,16 +1135,14 @@ Network Intrusion Detection Systems (NIDs) and Network Intrusion Prevention Syst
 ### Detection
 NIDS/NIPS solutions act very much like firewalls in that they inspect packets. 
 
-There's four types of detection:
+**There's 4 types of detection methods:**
 
-* 4 Types of Detection Methods:
-	* **Behavioral/Anomaly** - Comparing traffic with a baseline of patterns considered normal for the network
-	* **Signature** - Preconfigured Signature-based
-	* **Rule** - Preconfigured rules in a ruleset - like firewall
-	* **Heuristic - (Anomaly and Signature)**
+* **Behavioral/Anomaly** - Comparing traffic with a baseline of patterns considered normal for the network
+* **Signature** - Preconfigured Signature-based
+* **Rule** - Preconfigured rules in a ruleset - like firewall
+* **Heuristic - (Anomaly and Signature)**
 
-
-#### In-band and Out-of-Band
+### Sensors: In-band & Out-of-Band
 
 #### NIPS
 * NIPS sensor must be installed **in-band** to your network traffic
