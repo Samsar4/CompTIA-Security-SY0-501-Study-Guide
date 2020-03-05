@@ -15,6 +15,11 @@ Port | Description
 389 | LDAP - Lightweight Directory Access Protocol
 443 | HTTPS - HTTP over TLS/SSL
 464 | Kerberos
+500 | ISAKMP - Internet Security Association and Key Management Protocol - IPSec 
 636 | LDAP over SSL
+860 | iSCSI - Internet Small Computer Systems Interface
+1194 | OpenVPN
 1645, 1646 | RADIUS
 1812, 1813 | RADIUS
+1701 | L2TP - Layer 2 Tunneling Protocol (IPSec - used in VPN)
+1723 | PPTP - Point-to-Point Tunneling Protocol - VPN
