@@ -40,7 +40,7 @@ Router is a networking device which helps in routing the data packets between ho
 🛑 A firewall is a piece of software that is commonly run on a gateway router which protects us from the evils of the Internet, so it can forward and filter based on port numbers, based on IP addresses, URL's, all kinds of different stuff. **So we would call this a network firewall because the gateway is running the firewall software** and protecting us from the evil of the Internet.
 
 ## Network Topologies - Basics
-THe actual organization of a network in terms of how is the data moving around and the best way to do it.
+The actual organization of a network in terms of how is the data moving around and the best way to do it.
 
 ### LAN - Local Area Network
 
@@ -60,7 +60,7 @@ THe actual organization of a network in terms of how is the data moving around a
 </p>
 
 
-### Metropolitan Area Network (MAN)
+### MAN - Metropolitan Area Network 
 
 <p align="center">
 <img width="64%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/f37cec4e00f726cb4be3661f20ccad77751e003a/man-topo.jpg" />
