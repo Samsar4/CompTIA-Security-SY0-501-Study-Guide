@@ -8,10 +8,10 @@
 * [Risk Management](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/5-Risk-Management.md)
 * [Cryptography and PKI](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/6-Cryptography-and-PKI.md)
 ***
-📓 [**All Chapters in one file**](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/All-Chapters.md)
+📓 [**All Chapters in a single file**](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/All-Chapters.md)
 
 ***
-📍 [**List of Common Ports for S+**](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/0-Ports.md)
+📍 [**List of Common Ports**](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/0-Ports.md)
 
 ***
-❓ [Certification Exam Objectives](https://www.comptia.jp/pdf/Security%2B%20SY0-501%20Exam%20Objectives.pdf)
+❓ [CompTIA Certification Objectives](https://www.comptia.jp/pdf/Security%2B%20SY0-501%20Exam%20Objectives.pdf)
