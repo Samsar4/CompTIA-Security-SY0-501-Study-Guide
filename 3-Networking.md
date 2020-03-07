@@ -1,4 +1,4 @@
-# Architecture and Design
+# Networking - Basics 
 
 ## Switches
 A network switch is networking hardware that connects devices on a computer network by using packet switching to receive and forward data to the destination device. A network switch is a multiport network bridge that uses **MAC addresses** to forward data at the **data link layer of the OSI model.**
@@ -387,3 +387,59 @@ SIEM tools aggregate and correlate data, allowing you to organize it into valuab
 * **Splunk**
 * **ArcSight**
 * **ELK - Elastic Search, Log Stash and Kibana (openSource)**
+
+# Networking - Part 2 
+
+### 802.11
+
+*IEEE 802.11 is part of the IEEE 802 set of LAN protocols, and specifies the set of media access control (MAC) and physical layer (PHY) protocols for implementing wireless local area network (WLAN) Wi-Fi computer communication in various frequencies, including but not limited to 2.4 GHz, 5 GHz, and 60 GHz frequency bands.*
+
+![80211](https://steemitimages.com/p/X37EMQ9WSwsMfHTdm8pfEYwuZbTCWFHqXbdDf3mYpu7MPCSF4g1H91WdvbEPreHqYfn7wJWqACH9w9uZtcuSAd6cDn1sAibTMxevS?format=match&mode=fit)
+
+## **Wireless Access Point (WAP) - Concepts**
+
+* Wireless Access Point is a Bridge between **802.11** and **Ethernet**.
+* Every WAP have MAC address
+* **SSID (Service Set identifier)** associated to the MAC address on a WAP is known as **BSSID - (Basic Service Set Identifier)**
+* When a large network is connected multiple WAP's through a **Common Ethernet Broadcast Domain** - turns out **ESSID - (Extended Service Set Identifier)**
+
+### **WEP** - Wireless Equivalency Privacy
+
+* 64/128 bit RC4 ICV 
+
+**RC4** - Rivest Cipher 4 Stream Cipher Algorithm<br>
+**ICV** - Integrity Check Value
+
+🛑 *Very old and insecure.*
+
+### **WPA** - Wi-Fi Protected Access
+
+* Enterprise
+	* TKIP + RADIUS
+	* 64/128 bit RC4 MIC
+
+* Personal	
+	* TKIP + PSK
+	* 64/128 bit RC4 MIC
+
+**TKIP** - Temporal Key Integrity Protocol<br>
+**PSK** - Pre-Shared key<br>
+**MIC** - Message Integrity Check<br>
+
+### **WPA2** - Wi-Fi Protected Access v2
+
+* 802.11i IEEE standard
+
+* Enterprise
+	* CCMP + RADIUS
+	* 128 bit AES MIC 
+
+* Personal
+	* CCMP + PSK
+	* 128 bit AES MIC
+
+**CCMP** - Cipher Block Chaining Message Code Protocol<br>
+**AES** - Advanced Encryption System
+
+## Vulnerabilities - WAP
+-

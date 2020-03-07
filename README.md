@@ -3,7 +3,7 @@
 ### **Index**
 * [Securing Individual Systems](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/1-Securing-Individual-Systems.md)
 * [Technologies and Tools](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/2-Tools.md)
-* [Architecture and Design](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/3-Architecture-and-Design.md)
+* [Networking](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/3-Networking.md)
 * [Identity and Access Management](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/4-Identity-and-Access-Management.md)
 * [Risk Management](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/5-Risk-Management.md)
 * [Cryptography and PKI](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/6-Cryptography-and-PKI.md)
