@@ -441,5 +441,74 @@ SIEM tools aggregate and correlate data, allowing you to organize it into valuab
 **CCMP** - Cipher Block Chaining Message Code Protocol<br>
 **AES** - Advanced Encryption System
 
-## Vulnerabilities - WAP
--
+## Vulnerabilities with Wireless Access Points
+
+### **Rogue Access Point**
+**Unauthorized** access point plugged into a wired one. *(Can be accidental)*
+
+### **Evil Twin Attack**
+Is a Rogue AP tha is broadcasting **the same (or very similar) SSID**. 
+
+### **802.11 Jammer**
+**Jamming is a form of intentional interference on wireless networks, designed as a DoS attack**. This type of attack by overpowering the signals of a legitimate wireless AP, typically using a rogue AP with its transmit power set to very high levels.
+
+### **Deauthentication Attack**
+Deauthenticates clients from the network to grab the authentication information performing a man-in-the-middle attack.
+
+## Cracking WEP, WPA, WPA2 and WPS
+
+### WEP
+* **IV Attack** - Initialization Vector is vulnerable to cracking.
+	* Aircrack can grab WEP keys and crack them.
+* WEP is the oldest security standard 802.11
+
+### WPA/WPA2
+* WPA/WPA2 uses 4-way handshake
+* WPA is vulnerable to a dictionary attack
+* Can be cracked at the initial connection between the WPA/WPA2 client and the access point during the 4-way handshake
+* Aircrack can grab WPA handshakes on authentication time and crack the PSK's (if they are common/weak).
+
+### WPS
+*Wi-Fi Protected Setup (WPS) - is a push button configuration, which enables the router WPS enable to another WPS device (wireless printers are the most common).*
+
+* 8 digit key is actually only 7 digits, 2^7
+* Key exchange is the first processed in 4-bit and 3-bit
+* Can be cracked using Reaver
+* *The new generation of WPS enabled device can detect an attack and shut off.*
+* **WPS Attack Prevention**:
+	* Get rid of older routers
+	* Firmware updates
+	* Upgrade to newer wireless routers
+
+## Hardening 802.11 Networks
+* Survey installation issues
+* Maintaining existing wireless networks
+* Monitoring 
+* Define how to defend wireless clients
+
+### Site Survey & Installation
+* **Survey Tools**
+	* Find SSIDs
+	* Find MAC addresses
+	* Band, channels, and signals
+	* Document everything around 802.11 device
+
+* **Maintanance Wireless Networks**
+	* Good Documentation
+		* SSIDs
+		* MAC addresses associated to
+			* WAPS
+			* AP locations
+			* Heatmaps
+	* **Scanning**
+
+* **WIDS** - Wireless Intrusion Detection System - *listen to what is going on inside the wireless network and help detect potential threats, or any abnormality.*
+	* Monitors wireless radios
+	* Watches for rogue access points
+	* Knows MAC address of authorized equipment
+	* Watches working protocols
+
+* Good Practice:
+	* AP isolation enabled 
+	* 802.1X is more robust
+
