@@ -512,3 +512,50 @@ Deauthenticates clients from the network to grab the authentication information 
 	* AP isolation enabled 
 	* 802.1X is more robust
 
+## Fat vs. Thin Access Points
+
+### Thick Client
+* Good for small environments 
+* Management console to configure security controls
+* ACLs
+* White/black listing
+* Encryption
+* Manage individually
+* Also called controller-based AP
+
+
+### Thin Client
+* Good for big environments. *(i.e A building with multiple floors and hundreds of users might rely on one good switch (with a redundant backup) to control dozens of thin access points)*
+* Act as a repeater taking the wireless signal and pushing it ot a managed access control (AC) switch that handles encryption and other security. Also called **Standalone AP**
+
+## Antenna Types
+Higher dB = better
+
+* Omnidirecitonal
+	Signals goes on every direction. 
+* Dipole
+* Directional
+	* Long individual beam  
+* Patch Graphic
+	* Half Omni (i.e stick to the wall the get one side signals)
+
+### Antenna Placement Examples
+*Antennas should be centrally located throughout different areas of the facility so that hey can adequately span all areas of coverage within a facility, without being too close to exterior walls or the roof whenever possible.*
+
+* Stadium like = **Omnidirectional Antenna**
+* Outdoors = **Dipole Antenna**
+* Shooting long distances *(one building to another)* = **Directional Antenna**
+
+## Band Selection - 2.4 vs 5 GHz
+The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz wireless networks, therefore, cover a larger range than 5 GHz networks. In particular, signals of 5 GHz frequencies do not penetrate solid objects as well as 2.4 GHz signals, and this limits the reach of 5 GHz frequencies inside homes.**
+
+### **2.4 GHz**
+* Longer range
+* Penetrate walls easily
+
+### **5 GHz**
+* Faster choice
+* Automated channels
+* Wider Channels = better
+
+
