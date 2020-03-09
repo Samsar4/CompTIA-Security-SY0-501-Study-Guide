@@ -111,7 +111,7 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 * Remote Access
 * VPN Access
 
-### PPP - Point-to-Point Protocol
+### **PPP** - Point-to-Point Protocol
 In computer networking, Point-to-Point Protocol (PPP) is a data link layer (layer 2) communications protocol between two routers directly without any host or any other networking in between. It can provide connection authentication, transmission encryption, and compression. 
 
 * Transport layer protocol
@@ -182,7 +182,7 @@ A box/piece of software running on a computer acts an intermediary between two d
 	* FTP proxy
 	* VOIP proxy
 
-### Forward Proxy
+### **Forward Proxy - Client**
 *The proxy simply forward the requests of respective client.*
  
 * [Client -> **Proxy** -> Firewall -> Internet -> Server]
@@ -195,7 +195,7 @@ A box/piece of software running on a computer acts an intermediary between two d
 	* Acts similar to firewall (block based on URL, content filtering and so on).
 
 
-### Reverse Proxy Server
+### **Reverse Proxy - Server**
 *Like a forward but complete reverse.*
 
 * [Client <-  Internet <- Firewall <- **Proxy** <- Server]
@@ -361,7 +361,7 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 <img width="73%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a2fc0101b75e32a25150d516dcef9e8a9ef5ad86/NIDS.png" />
 </p>
 	
-### Devices
+### **Devices**
 #### Network Tap
 Is a device that you can insert anywhere along a run to grab packets.
 
@@ -390,7 +390,7 @@ SIEM tools aggregate and correlate data, allowing you to organize it into valuab
 
 # Networking - Part 2 
 
-### 802.11
+### **802.11**
 
 *IEEE 802.11 is part of the IEEE 802 set of LAN protocols, and specifies the set of media access control (MAC) and physical layer (PHY) protocols for implementing wireless local area network (WLAN) Wi-Fi computer communication in various frequencies, including but not limited to 2.4 GHz, 5 GHz, and 60 GHz frequency bands.*
 
@@ -457,18 +457,18 @@ Deauthenticates clients from the network to grab the authentication information 
 
 ## Cracking WEP, WPA, WPA2 and WPS
 
-### WEP
+### **WEP**
 * **IV Attack** - Initialization Vector is vulnerable to cracking.
 	* Aircrack can grab WEP keys and crack them.
 * WEP is the oldest security standard 802.11
 
-### WPA/WPA2
+### **WPA/WPA2**
 * WPA/WPA2 uses 4-way handshake
 * WPA is vulnerable to a dictionary attack
 * Can be cracked at the initial connection between the WPA/WPA2 client and the access point during the 4-way handshake
 * Aircrack can grab WPA handshakes on authentication time and crack the PSK's (if they are common/weak).
 
-### WPS
+### **WPS**
 *Wi-Fi Protected Setup (WPS) - is a push button configuration, which enables the router WPS enable to another WPS device (wireless printers are the most common).*
 
 * 8 digit key is actually only 7 digits, 2^7
@@ -508,7 +508,7 @@ Deauthenticates clients from the network to grab the authentication information 
 	* Knows MAC address of authorized equipment
 	* Watches working protocols
 
-* Good Practice:
+* *Good Practice:*
 	* AP isolation enabled 
 	* 802.1X is more robust
 
