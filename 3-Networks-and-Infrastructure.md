@@ -641,10 +641,158 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 	* Pretty much ICS with more funcionality
 
 ### Securing Static Hosts
+
 * Change default passwords
 * Turn off unnecessary services
 * Monitoring security and firmware updates
 * **Defense in depth**
 	* Network Segmentation - VLANs with Firewalls; VPN to connect a pipeline securely.
+
+## Mobile Connectivity
+
+* **SATCOM** - Sattelite communication phone
+* **Bluetooth**
+* **NFC** - Near Field Communication: Almost/Physical contact with another device *(there's no security envolved when activated)* - Easy connection
+* **ANT/ANT+** - Very simple form of wireless communication; slow and protected; (i.e Odometers, Heart Rate Monitors, Bikes)
+* **Infrared** - Most Androids, communication Transmitter.
+* **USB**, USB OTG (On-the-Go) 
+* **Wi-Fi** and **Tethering**
+	* ADHOC, Wi-Fi Direct (Easy connection)
+	* Tethering - Wired and Wireless Tethering: acts like a router
+
+## Deploying Mobile Devices
+
+### **COBO** - Corporate Owned, Business Only
+* Company owned
+* Company devices what to do with that device
+* What applications are on that device
+* What encryption is used?
+* What wireless is connected?
+
+### **COPE** - Corporate Owned, Personally Enabled 
+* Everyone has the same device
+* Great control because everyone has same device on environment
+* People will still want to use their own devices
+* Learning curve
+
+### **CYOD** - Choose Your Own Device
+* Users get to choose from a list af approved devices
+* Less of learning curve
+
+### **BYOD** - Bring Your Own Device
+* User get to choose to bring their own devices, based on their experiences
+* Learning curve is decreased
+* Very heavy device management
+* Mobile application management
+
+## Mobile Enforcement
+
+### Sideloading
+Installation of third-party applications that is different from original Application Store (Google Play, Apple Store)
+
+### Carrier Unlocking
+
+### Rooting/Jailbreaking
+* Root Access
+	* Install custom firmware
+	
+* Root Access Issues
+	* Auto updates disabled
+	* Trouble accessing the store
+	* Exposure to malware
+
+### Things to Avoid on Mobile
+*To achieve this topics you will need a good policy*
+
+* Firmware OTA updates (over-the-air) - turn off
+* Camera use - can be use to take pictures of confidential information etc.   
+* SMS/MMS - high cost
+* External Media 
+* Recording Mic/GPS tagging
+* Payment Methods - when your bank account is connected to the phone
+
+## Mobile Device Management - MDM
+
+* **Content Management**
+	* Applications Management
+	* Databases
+	* Documents
+
+* **Geolocation**
+	* Knows the location of that device
+
+* **Geofencing**
+	* Geolocation with geographic trigger
+
+* **Push notification services**
+	* Applications will push notifications if you want 
+
+* **Passwords and PINs**
+	* Require use of passwords and PINs
+	* Can recover passwords
+
+* **Biometrics**
+	* Fingerprints
+	* Facial Recognition
+	* Vocal Recongnition
+	* Can lock and unlock devices
+	* Use to configure applications
+
+* **Screen Locks**
+	* Make sure your screen is locked
+
+* **Remote Wipe**
+	* Great when the device is lost
+
+## Mobile Application Management - MAM
+* Versioning
+* Updates
+* Patches
+
+### Context-aware authentication
+* Where are they right know?
+* What OS are they using?
+* What time/day are they trying to authenticate?
+
+### Storage segmentation
+* Dedicating a storage space for our applications
+
+### Full Device Encryption
+* Encrypt the entire storage of the device
+
+🛑 - *Some companies provides **MDM solutions** (i.e Google - Android: What applications people can install, security policies and so on)* 
+
+## Physical Controls
+
+### **Deterrent** Physical Controls
+* Outside light, Parking Lot Lighting
+* Signage (i.e Restricted Area)
+* Security Guards
+
+### **Preventive** Physical Controls
+* **External**
+	* Fences, Gates, Barricades, K ratings(designed to stop vehicles)
+	* Mantrap (some type of entry system, consisting of 2 doors)
+	* Cabling systems - (Using AirGap ; VPNs or VLANs)
+* **Internal**
+	* Safe for Important documents
+	* Locked cabinets
+	* Faraday cages - to protect sensitive eletronic equipment
+	* Locks
+		* Key management system (where the keys are stored? who is in possession of those keys?...)
+
+* Individual Workstation
+	* Cable Locks
+	* Screen filters
+
+### **Detective** Physical Controls
+* Alarms
+* Cameras
+* Motion detectors
+* Infrared detectors
+* Log Files - can be important in terms of tracking
+
+### **Compensating & Corrective** Physical Control
+Temporary fixes when these controls are weakened.<br> *i.e - If the outside fence in some way got a big hole, you need to place a security guard on that location until the fences got fixed.*
 
 
