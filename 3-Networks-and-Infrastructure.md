@@ -1,4 +1,4 @@
-# Networking - Basics 
+# Networks and Infrastructure - Basics 
 
 ## Switches
 A network switch is networking hardware that connects devices on a computer network by using packet switching to receive and forward data to the destination device. A network switch is a multiport network bridge that uses **MAC addresses** to forward data at the **data link layer of the OSI model.**
@@ -388,7 +388,7 @@ SIEM tools aggregate and correlate data, allowing you to organize it into valuab
 * **ArcSight**
 * **ELK - Elastic Search, Log Stash and Kibana (openSource)**
 
-# Networking - Part 2 
+# Network - Part 2, Beyond the Basics 
 
 ### **802.11**
 
