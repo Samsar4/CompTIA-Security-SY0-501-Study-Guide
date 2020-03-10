@@ -1,4 +1,5 @@
-# CompTIA Security+ (SY0-501) - Content Highlights
+# Comprehensive Content Highlights for CompTIA Security+ (SY0-501) 
+This repo is a comprehensive summary with all topics from Security+ designed to help who wanna takes the exam.
 
 ### **Index**
 * [Securing Individual Systems](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/1-Securing-Individual-Systems.md)

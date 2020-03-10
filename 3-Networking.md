@@ -523,7 +523,6 @@ Deauthenticates clients from the network to grab the authentication information 
 * Manage individually
 * Also called controller-based AP
 
-
 ### Thin Client
 * Good for big environments. *(i.e A building with multiple floors and hundreds of users might rely on one good switch (with a redundant backup) to control dozens of thin access points)*
 * Act as a repeater taking the wireless signal and pushing it ot a managed access control (AC) switch that handles encryption and other security. Also called **Standalone AP**
@@ -557,5 +556,95 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 * Faster choice
 * Automated channels
 * Wider Channels = better
+
+## Virtualization - Concepts
+* Virtual version of host hardware
+* Multiple virtual servers on one box/physical device
+* Hardware consolidation and reduced energy consumption
+* System Recovery
+
+### Types
+* **Type 2** - Runs on top of host OS
+* **Type 1** - Runs directly on top of hardware, independent of host OS. *(i.e bootable Linux thumbdrive)*
+* **Cloud-based Virtualization**
+	* IaaS (i.e. AWS, MS Azure)
+
+### Virtualization Benefits
+* Security Feature
+* Patch management
+* Centralized hardware maintenance
+* Resilient and high availability
+* Great for testing everything and sandboxing environment
+* Snapshots and backups 
+* Network Separation
+
+### Virtual Threats 
+* VM sprawl - the out-of-control creation of VMs outside of security controls.
+* VM escape - when a user inside a VM finds a way to break out the VM and get into the underlying hypervisor/host OS.
+
+### Virtualization Hardening
+* Remove remnant data
+* Make good policies 
+* Define user privileges
+* Patch everything!
+* CASB - Cloud Access Security Brokers: Intermediary between your infrastructure(in-house stuff) and the cloud; Make sure policies are controlled; watches for malware; 
+
+## Containers
+* Containers are self-contained applications that can communicate with network resources that have been explicity allowed
+* Runs isolated instances of programs and services
+* Can depend on each other, and can be configured to communicate with each other on a single host
+* Runs a single program and all its dependencies, when the programs exists
+
+## IaaS - Infrastructure-as-a-Service
+* Basically virtual machines hosted by a cloud provider's infrastructure; Users simply connect to them via RDP (remote desktop protocol) or another secure remote connection protocol and use the as they would any other computer.
+	* *i.e: AWS, Microsoft Azure, Digital Ocean, Google Cloud.*
+
+## PaaS - Platform-as-a-Service
+* Offers a computing platform, such as Web application server or database server with easy setup focusing on quick deployment; Enables you to access a software development platform without the need to host it yourself.
+	* *i.e: Heroku*
+
+## SaaS - Software-as-a-Service
+* SaaS is a subscription based license; Access applications via subscription; 
+	* *i.e: Microsoft Office 365, Dropbox storage, Google Docs*
+
+## Cloud Deployment Models
+
+* Private Cloud 
+	* A group of virtual machines that only the organization can access.
+
+* Public Cloud
+	* Amazon S3, Microsoft Azure - Open for business
+
+* Community Cloud
+	* Is make up of infrastructure from several different entitites wich may be cloud providers, business partners, and so on. (members only type of thing)
+
+* Hybrid Cloud
+	* Any combination of the cloud models described above
+
+* Virtual Desktop Environment (VDE)
+	* Remote Access to a Remote System that **is not virtualised**
+
+* Virtual Desktop Integration (VDI)
+	* The actual virtualized environment in the cloud
+
+## Static Hosts - Concepts
+*Intelligent device designed to do a specific task or process*
+* WAP
+* Switch
+* Router
+* Printer
+
+* **ICS** - Industrial Control Systems	
+	* HVAC - Heating Ventilation, and Air Conditioning
+
+* **SCADA** - Supervisory Control and Data Acquisition
+	* Pretty much ICS with more funcionality
+
+### Securing Static Hosts
+* Change default passwords
+* Turn off unnecessary services
+* Monitoring security and firmware updates
+* **Defense in depth**
+	* Network Segmentation - VLANs with Firewalls; VPN to connect a pipeline securely.
 
 
