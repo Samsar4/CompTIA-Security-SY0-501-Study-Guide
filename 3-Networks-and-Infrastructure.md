@@ -428,7 +428,7 @@ SIEM tools aggregate and correlate data, allowing you to organize it into valuab
 
 ### **WPA2** - Wi-Fi Protected Access v2
 
-* 802.11i IEEE standard
+* **802.11i** IEEE standard
 
 * Enterprise
 	* CCMP + RADIUS
@@ -795,4 +795,32 @@ Installation of third-party applications that is different from original Applica
 ### **Compensating & Corrective** Physical Control
 Temporary fixes when these controls are weakened.<br> *i.e - If the outside fence in some way got a big hole, you need to place a security guard on that location until the fences got fixed.*
 
+## HVAC - Heating, Ventilation, and Air Conditioning
+* Office Environment - room temperature, humidity
+* Server Rooms - Super sophisticated HVAC's systems; Make sure keep cool and dry
 
+* **Infrared Camera** - we can determine heats more easily
+
+![infrared](https://www.castlerockinspections.com/DataCentIR_1.jpg)
+
+* **Zone-based HVAC**
+
+* **Hot & Cold aisles** - Used in server rooms, HVACuse either hot and cold aisles a contained system to vent hot air out and away from ther server racks; Layout of data centers inteligently and efficiently. Aisles of equipment racks are set up such that there are alternating hot and cold aisles. 
+
+🛑 - MAC filtering is a good idea on system controllers of HVAC
+
+* **Remote Monitoring** - VPN access, 802.1X
+
+## Fire Suppression
+### Types of Fires and Appropriate Fire Extinguishers
+
+Class | Type | Contains 
+--|--|--
+A | Ordinary(Wood, Paper) | Foam, Water
+B | Liquids(Gases, oil) | CO2, Foam, Powder
+C | Electrical (eletronic equipment) | CO2
+D | Combustible metals (sodium, magnesium) | Powder
+
+🛑 FM200 is a special extinguisher liquid that is great because it can stops fires, but can still save the electrical equipment; "Gold Standard" for fire suppression on server rooms.
+
+🛑 Class C is best extinguisher for suppress fire on Server Room, but it may ruin some electronics due to the corrosive powder inside.
