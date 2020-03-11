@@ -840,4 +840,16 @@ Unencrypted HTTP running TLS encryption
 * TLS encryption is a protocol that you can plug it into different types of applications
 * Runs on Port 443
 
+## Network Models
+
+<p align="center">
+<img width="73%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/9c85f770fd5223658b960848f0fe56378fddbfe8/Osi-model.png" />
+</p>
+
+<p align="center">
+<b>TCP/IP MODEL vs OSI MODEL</b>
+</p>
+<p align="center">
+<img width="80%" src="https://miro.medium.com/max/631/1*S0ZaTC0BuYuEaPcgPi_5bg.jpeg" />
+</p>
 
