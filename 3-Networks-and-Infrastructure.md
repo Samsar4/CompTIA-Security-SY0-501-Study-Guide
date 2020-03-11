@@ -824,3 +824,20 @@ D | Combustible metals (sodium, magnesium) | Powder
 🛑 FM200 is a special extinguisher liquid that is great because it can stops fires, but can still save the electrical equipment; "Gold Standard" for fire suppression on server rooms.
 
 🛑 Class C is best extinguisher for suppress fire on Server Room, but it may ruin some electronics due to the corrosive powder inside.
+
+# Protocols Security
+
+### SSH protocol
+* Key exchange algorithms 
+* Designed to run in a tunneling mode (encrypted); And then can provide their own encryption (AES, DES...)
+* Runs on Port 22
+
+🛑 Almost any encrypted application or protocol number do some kind of key exchange.
+
+### HTTP over TLS = HTTPS
+Unencrypted HTTP running TLS encryption
+
+* TLS encryption is a protocol that you can plug it into different types of applications
+* Runs on Port 443
+
+
