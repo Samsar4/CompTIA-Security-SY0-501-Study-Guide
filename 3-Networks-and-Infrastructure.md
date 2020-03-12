@@ -971,3 +971,104 @@ Secure Socket Layer (**SSL**) and Transport Layer Security (**TLS**), they are p
 * Will send an alert to emergency response services which assist in traffic flow to the site under attack
 * Act like a proxy for websites
 
+
+## Secure Code Development
+
+### Waterfall Model
+<p align="center">
+<img width="71%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Waterfall_model.svg/1200px-Waterfall_model.svg.png" />
+</p>
+
+
+### Agile 
+* Created to be better than Waterfall Model
+* Sprints (small, rapid, measurable deliverables)
+* Scrum
+
+<p align="center">
+<img width="81%" src="https://testingtypes.files.wordpress.com/2013/06/agile-model.jpg" />
+</p>
+
+### DevOps
+Benefits of DevOps:
+* Speed
+* Rapid Delivery
+* Reliablity
+* Scale
+* Improved Collaboration
+* Security
+
+<p align="center">
+<img width="81%" src="https://qph.fs.quoracdn.net/main-qimg-5f4002986f2e8214ff76cb732db7420e" />
+</p>
+
+### Securing DevOps
+* **Run Security Automation Tools** to speed up security testing and eliminate human errors. Security testing like fuzzing.
+* **Add strict Change Management and Version Controls** to ensure faults aren't introduced into the application.
+* **Introduce Security Concerns and Requirements** at the planning stage to ensure strong security integration.
+* **Integrity measurement** shows honesty, morality, and quality of the application.
+* **Baselining** defines security objectives that the application must meet.
+* **Immutable systems** are systems that once deployed are never upgraded, changed, or patched. They are simply replaced. This is easy to do in a **VM environment**.
+*  **Infrastructure as Code (IaC)** means to use preset definition files as opposed to manual configurations to set up servers. IaC prevents accidental vulnerabilities due to flawed server configurations.
+
+## Secure Code Techniques
+### **Compiled vs. Runtime code** 
+Compile-time is the instance where the code you entered is converted to executable. Run-time is the instance where the executable is run.
+
+### **Error Handling**
+**Proper Error Handling**: isn't going to stop all errors, but it will prevent errors from apperaring on the user interface for easy viewing for attackes / bad actors.
+
+<p align="center">
+<img width="81%" src="https://www.getastra.com/blog/wp-content/uploads/2017/06/Server-Error-Message.png" />
+</p>
+
+### **Input Validation**
+**Proper Input Validation**: helps prevent these types of attacks: **command insertion, cross-site scripting, buffer overflows, and SQL injection**.
+
+### **Normalization**
+Is a database term meaning to store and organize data so that it exists in one form only. For example, a user database has the three tables shown. (name table, zip code table etc).
+
+### **Stored Procedures**
+Stored Procedures harden web apps; Is a piece of code, custom written by devs of the app and stored in the Database. **This code only respond to a specific query format defined by the eveloper, this can prevent SQL injection or common bad queries used by attackers.**
+
+### **Encryption / Code signing**
+Code signing means to sign an individual executable/interpred code digitally so that users have confidence the code they run is the actual code from the developer.
+
+### **Obfuscation**
+To make harder an attacker reverse-engineer the code (i.e Minifying Javascript)
+
+### **Code reuse / Dead Code**
+Get rid of dead code inside the web app. (i.e Commented unecessary code)
+
+### **Server-side vs. Client-side**
+In general, a server-side platform is more secure than a client-side platform, but client-side is generally faster and may receive big chunks of code to the client, to prevent that you can use encryption. 
+
+### **Memory Management**
+Watch out the memory leaks to avoid buffer overflow attack and code reuse.
+
+### **Thir-party libraries**
+Weaknesses of third-party libraries can result on bad actor exploring this. To avoid this type of risk, maintain patch updates, stay on top of any announcements, check the dependencies of the third-party libraries using OWASP dependency checker.
+
+### **Data Exposure**
+If you have data that is a part of your app some of that data has risk of exposure. And our job as developers is to reduce if not eliminate any risk of that data exposure especially if it's personally identifiable information or personal health information. We almost always today go through aggressive encryptions any time.
+
+## Code Quality & Testing
+
+* **Static Code Analysis**
+	* Look for standard types of errors
+	* They don't run the code 
+
+* **Dynamic Code Analysis**
+	* Actually runs the code
+	* Looks for logic errors
+	* Look for Security holes
+	* Memory Leak
+	* Database querying
+
+* **Staging**
+	* **Stress Test** - aggressive test of issues such as multiple user simultaneous inputs, multiple server data syncing ...
+	* **Sandboxing** - test the systems, almost always virtual machines (VMs), that enable developers to run the application aggressively.
+
+* **Model Verification** - **Model** defines how developers expect some feature of the final code to perform. **Model Verification** match the application to the aspect of the model.(i.e -This button drive the user to the home or not?)
+
+* **Production** - When the testing are done and it's time to pull the application online and running. (expose to the public / internet). The process of moving an application from the development environment to the production environment is called **provisioning**. The process of remove an application from the production is called **desprovisioning**.

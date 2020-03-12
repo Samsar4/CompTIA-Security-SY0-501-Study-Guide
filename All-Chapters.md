@@ -796,7 +796,7 @@ Enables network administrator to correlate different data sources and data point
 ***
 ***
 
-# 3. Networking - Basics
+# Networks and Infrastructure - Basics 
 
 ## Switches
 A network switch is networking hardware that connects devices on a computer network by using packet switching to receive and forward data to the destination device. A network switch is a multiport network bridge that uses **MAC addresses** to forward data at the **data link layer of the OSI model.**
@@ -909,7 +909,7 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 * Remote Access
 * VPN Access
 
-### PPP - Point-to-Point Protocol
+### **PPP** - Point-to-Point Protocol
 In computer networking, Point-to-Point Protocol (PPP) is a data link layer (layer 2) communications protocol between two routers directly without any host or any other networking in between. It can provide connection authentication, transmission encryption, and compression. 
 
 * Transport layer protocol
@@ -980,7 +980,7 @@ A box/piece of software running on a computer acts an intermediary between two d
 	* FTP proxy
 	* VOIP proxy
 
-### Forward Proxy
+### **Forward Proxy - Client**
 *The proxy simply forward the requests of respective client.*
  
 * [Client -> **Proxy** -> Firewall -> Internet -> Server]
@@ -993,7 +993,7 @@ A box/piece of software running on a computer acts an intermediary between two d
 	* Acts similar to firewall (block based on URL, content filtering and so on).
 
 
-### Reverse Proxy Server
+### **Reverse Proxy - Server**
 *Like a forward but complete reverse.*
 
 * [Client <-  Internet <- Firewall <- **Proxy** <- Server]
@@ -1159,7 +1159,7 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 <img width="73%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a2fc0101b75e32a25150d516dcef9e8a9ef5ad86/NIDS.png" />
 </p>
 	
-### Devices
+### **Devices**
 #### Network Tap
 Is a device that you can insert anywhere along a run to grab packets.
 
@@ -1185,6 +1185,691 @@ SIEM tools aggregate and correlate data, allowing you to organize it into valuab
 * **Splunk**
 * **ArcSight**
 * **ELK - Elastic Search, Log Stash and Kibana (openSource)**
+
+# Network - Part 2, Beyond the Basics 
+
+### **802.11**
+
+*IEEE 802.11 is part of the IEEE 802 set of LAN protocols, and specifies the set of media access control (MAC) and physical layer (PHY) protocols for implementing wireless local area network (WLAN) Wi-Fi computer communication in various frequencies, including but not limited to 2.4 GHz, 5 GHz, and 60 GHz frequency bands.*
+
+![80211](https://steemitimages.com/p/X37EMQ9WSwsMfHTdm8pfEYwuZbTCWFHqXbdDf3mYpu7MPCSF4g1H91WdvbEPreHqYfn7wJWqACH9w9uZtcuSAd6cDn1sAibTMxevS?format=match&mode=fit)
+
+## **Wireless Access Point (WAP) - Concepts**
+
+* Wireless Access Point is a Bridge between **802.11** and **Ethernet**.
+* Every WAP have MAC address
+* **SSID (Service Set identifier)** associated to the MAC address on a WAP is known as **BSSID - (Basic Service Set Identifier)**
+* When a large network is connected multiple WAP's through a **Common Ethernet Broadcast Domain** - turns out **ESSID - (Extended Service Set Identifier)**
+
+### **WEP** - Wireless Equivalency Privacy
+
+* 64/128 bit RC4 ICV 
+
+**RC4** - Rivest Cipher 4 Stream Cipher Algorithm<br>
+**ICV** - Integrity Check Value
+
+🛑 *Very old and insecure.*
+
+### **WPA** - Wi-Fi Protected Access
+
+* Enterprise
+	* TKIP + RADIUS
+	* 64/128 bit RC4 MIC
+
+* Personal	
+	* TKIP + PSK
+	* 64/128 bit RC4 MIC
+
+**TKIP** - Temporal Key Integrity Protocol<br>
+**PSK** - Pre-Shared key<br>
+**MIC** - Message Integrity Check<br>
+
+### **WPA2** - Wi-Fi Protected Access v2
+
+* **802.11i** IEEE standard
+
+* Enterprise
+	* CCMP + RADIUS
+	* 128 bit AES MIC 
+
+* Personal
+	* CCMP + PSK
+	* 128 bit AES MIC
+
+**CCMP** - Cipher Block Chaining Message Code Protocol<br>
+**AES** - Advanced Encryption System
+
+## Vulnerabilities with Wireless Access Points
+
+### **Rogue Access Point**
+**Unauthorized** access point plugged into a wired one. *(Can be accidental)*
+
+### **Evil Twin Attack**
+Is a Rogue AP tha is broadcasting **the same (or very similar) SSID**. 
+
+### **802.11 Jammer**
+**Jamming is a form of intentional interference on wireless networks, designed as a DoS attack**. This type of attack by overpowering the signals of a legitimate wireless AP, typically using a rogue AP with its transmit power set to very high levels.
+
+### **Deauthentication Attack**
+Deauthenticates clients from the network to grab the authentication information performing a man-in-the-middle attack.
+
+## Cracking WEP, WPA, WPA2 and WPS
+
+### **WEP**
+* **IV Attack** - Initialization Vector is vulnerable to cracking.
+	* Aircrack can grab WEP keys and crack them.
+* WEP is the oldest security standard 802.11
+
+### **WPA/WPA2**
+* WPA/WPA2 uses 4-way handshake
+* WPA is vulnerable to a dictionary attack
+* Can be cracked at the initial connection between the WPA/WPA2 client and the access point during the 4-way handshake
+* Aircrack can grab WPA handshakes on authentication time and crack the PSK's (if they are common/weak).
+
+### **WPS**
+*Wi-Fi Protected Setup (WPS) - is a push button configuration, which enables the router WPS enable to another WPS device (wireless printers are the most common).*
+
+* 8 digit key is actually only 7 digits, 2^7
+* Key exchange is the first processed in 4-bit and 3-bit
+* Can be cracked using Reaver
+* *The new generation of WPS enabled device can detect an attack and shut off.*
+* **WPS Attack Prevention**:
+	* Get rid of older routers
+	* Firmware updates
+	* Upgrade to newer wireless routers
+
+## Hardening 802.11 Networks
+* Survey installation issues
+* Maintaining existing wireless networks
+* Monitoring 
+* Define how to defend wireless clients
+
+### Site Survey & Installation
+* **Survey Tools**
+	* Find SSIDs
+	* Find MAC addresses
+	* Band, channels, and signals
+	* Document everything around 802.11 device
+
+* **Maintanance Wireless Networks**
+	* Good Documentation
+		* SSIDs
+		* MAC addresses associated to
+			* WAPS
+			* AP locations
+			* Heatmaps
+	* **Scanning**
+
+* **WIDS** - Wireless Intrusion Detection System - *listen to what is going on inside the wireless network and help detect potential threats, or any abnormality.*
+	* Monitors wireless radios
+	* Watches for rogue access points
+	* Knows MAC address of authorized equipment
+	* Watches working protocols
+
+* *Good Practice:*
+	* AP isolation enabled 
+	* 802.1X is more robust
+
+## Fat vs. Thin Access Points
+
+### Thick Client
+* Good for small environments 
+* Management console to configure security controls
+* ACLs
+* White/black listing
+* Encryption
+* Manage individually
+* Also called controller-based AP
+
+### Thin Client
+* Good for big environments. *(i.e A building with multiple floors and hundreds of users might rely on one good switch (with a redundant backup) to control dozens of thin access points)*
+* Act as a repeater taking the wireless signal and pushing it ot a managed access control (AC) switch that handles encryption and other security. Also called **Standalone AP**
+
+## Antenna Types
+Higher dB = better
+
+* Omnidirecitonal
+	Signals goes on every direction. 
+* Dipole
+* Directional
+	* Long individual beam  
+* Patch Graphic
+	* Half Omni (i.e stick to the wall the get one side signals)
+
+### Antenna Placement Examples
+*Antennas should be centrally located throughout different areas of the facility so that hey can adequately span all areas of coverage within a facility, without being too close to exterior walls or the roof whenever possible.*
+
+* Stadium like = **Omnidirectional Antenna**
+* Outdoors = **Dipole Antenna**
+* Shooting long distances *(one building to another)* = **Directional Antenna**
+
+## Band Selection - 2.4 vs 5 GHz
+The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz wireless networks, therefore, cover a larger range than 5 GHz networks. In particular, signals of 5 GHz frequencies do not penetrate solid objects as well as 2.4 GHz signals, and this limits the reach of 5 GHz frequencies inside homes.**
+
+### **2.4 GHz**
+* Longer range
+* Penetrate walls easily
+
+### **5 GHz**
+* Faster choice
+* Automated channels
+* Wider Channels = better
+
+## Virtualization - Concepts
+* Virtual version of host hardware
+* Multiple virtual servers on one box/physical device
+* Hardware consolidation and reduced energy consumption
+* System Recovery
+
+### Types
+* **Type 2** - Runs on top of host OS
+* **Type 1** - Runs directly on top of hardware, independent of host OS. *(i.e bootable Linux thumbdrive)*
+* **Cloud-based Virtualization**
+	* IaaS (i.e. AWS, MS Azure)
+
+### Virtualization Benefits
+* Security Feature
+* Patch management
+* Centralized hardware maintenance
+* Resilient and high availability
+* Great for testing everything and sandboxing environment
+* Snapshots and backups 
+* Network Separation
+
+### Virtual Threats 
+* VM sprawl - the out-of-control creation of VMs outside of security controls.
+* VM escape - when a user inside a VM finds a way to break out the VM and get into the underlying hypervisor/host OS.
+
+### Virtualization Hardening
+* Remove remnant data
+* Make good policies 
+* Define user privileges
+* Patch everything!
+* CASB - Cloud Access Security Brokers: Intermediary between your infrastructure(in-house stuff) and the cloud; Make sure policies are controlled; watches for malware; 
+
+## Containers
+* Containers are self-contained applications that can communicate with network resources that have been explicity allowed
+* Runs isolated instances of programs and services
+* Can depend on each other, and can be configured to communicate with each other on a single host
+* Runs a single program and all its dependencies, when the programs exists
+
+## IaaS - Infrastructure-as-a-Service
+* Basically virtual machines hosted by a cloud provider's infrastructure; Users simply connect to them via RDP (remote desktop protocol) or another secure remote connection protocol and use the as they would any other computer.
+	* *i.e: AWS, Microsoft Azure, Digital Ocean, Google Cloud.*
+
+## PaaS - Platform-as-a-Service
+* Offers a computing platform, such as Web application server or database server with easy setup focusing on quick deployment; Enables you to access a software development platform without the need to host it yourself.
+	* *i.e: Heroku*
+
+## SaaS - Software-as-a-Service
+* SaaS is a subscription based license; Access applications via subscription; 
+	* *i.e: Microsoft Office 365, Dropbox storage, Google Docs*
+
+## Cloud Deployment Models
+
+* Private Cloud 
+	* A group of virtual machines that only the organization can access.
+
+* Public Cloud
+	* Amazon S3, Microsoft Azure - Open for business
+
+* Community Cloud
+	* Is make up of infrastructure from several different entitites wich may be cloud providers, business partners, and so on. (members only type of thing)
+
+* Hybrid Cloud
+	* Any combination of the cloud models described above
+
+* Virtual Desktop Environment (VDE)
+	* Remote Access to a Remote System that **is not virtualised**
+
+* Virtual Desktop Integration (VDI)
+	* The actual virtualized environment in the cloud
+
+## Static Hosts - Concepts
+*Intelligent device designed to do a specific task or process*
+* WAP
+* Switch
+* Router
+* Printer
+
+* **ICS** - Industrial Control Systems	
+	* HVAC - Heating Ventilation, and Air Conditioning
+
+* **SCADA** - Supervisory Control and Data Acquisition
+	* Pretty much ICS with more funcionality
+
+### Securing Static Hosts
+
+* Change default passwords
+* Turn off unnecessary services
+* Monitoring security and firmware updates
+* **Defense in depth**
+	* Network Segmentation - VLANs with Firewalls; VPN to connect a pipeline securely.
+
+## Mobile Connectivity
+
+* **SATCOM** - Sattelite communication phone
+* **Bluetooth**
+* **NFC** - Near Field Communication: Almost/Physical contact with another device *(there's no security envolved when activated)* - Easy connection
+* **ANT/ANT+** - Very simple form of wireless communication; slow and protected; (i.e Odometers, Heart Rate Monitors, Bikes)
+* **Infrared** - Most Androids, communication Transmitter.
+* **USB**, USB OTG (On-the-Go) 
+* **Wi-Fi** and **Tethering**
+	* ADHOC, Wi-Fi Direct (Easy connection)
+	* Tethering - Wired and Wireless Tethering: acts like a router
+
+## Deploying Mobile Devices
+
+### **COBO** - Corporate Owned, Business Only
+* Company owned
+* Company devices what to do with that device
+* What applications are on that device
+* What encryption is used?
+* What wireless is connected?
+
+### **COPE** - Corporate Owned, Personally Enabled 
+* Everyone has the same device
+* Great control because everyone has same device on environment
+* People will still want to use their own devices
+* Learning curve
+
+### **CYOD** - Choose Your Own Device
+* Users get to choose from a list af approved devices
+* Less of learning curve
+
+### **BYOD** - Bring Your Own Device
+* User get to choose to bring their own devices, based on their experiences
+* Learning curve is decreased
+* Very heavy device management
+* Mobile application management
+
+## Mobile Enforcement
+
+### Sideloading
+Installation of third-party applications that is different from original Application Store (Google Play, Apple Store)
+
+### Carrier Unlocking
+
+### Rooting/Jailbreaking
+* Root Access
+	* Install custom firmware
+	
+* Root Access Issues
+	* Auto updates disabled
+	* Trouble accessing the store
+	* Exposure to malware
+
+### Things to Avoid on Mobile
+*To achieve this topics you will need a good policy*
+
+* Firmware OTA updates (over-the-air) - turn off
+* Camera use - can be use to take pictures of confidential information etc.   
+* SMS/MMS - high cost
+* External Media 
+* Recording Mic/GPS tagging
+* Payment Methods - when your bank account is connected to the phone
+
+## Mobile Device Management - MDM
+
+* **Content Management**
+	* Applications Management
+	* Databases
+	* Documents
+
+* **Geolocation**
+	* Knows the location of that device
+
+* **Geofencing**
+	* Geolocation with geographic trigger
+
+* **Push notification services**
+	* Applications will push notifications if you want 
+
+* **Passwords and PINs**
+	* Require use of passwords and PINs
+	* Can recover passwords
+
+* **Biometrics**
+	* Fingerprints
+	* Facial Recognition
+	* Vocal Recongnition
+	* Can lock and unlock devices
+	* Use to configure applications
+
+* **Screen Locks**
+	* Make sure your screen is locked
+
+* **Remote Wipe**
+	* Great when the device is lost
+
+## Mobile Application Management - MAM
+* Versioning
+* Updates
+* Patches
+
+### Context-aware authentication
+* Where are they right know?
+* What OS are they using?
+* What time/day are they trying to authenticate?
+
+### Storage segmentation
+* Dedicating a storage space for our applications
+
+### Full Device Encryption
+* Encrypt the entire storage of the device
+
+🛑 - *Some companies provides **MDM solutions** (i.e Google - Android: What applications people can install, security policies and so on)* 
+
+## Physical Controls
+
+### **Deterrent** Physical Controls
+* Outside light, Parking Lot Lighting
+* Signage (i.e Restricted Area)
+* Security Guards
+
+### **Preventive** Physical Controls
+* **External**
+	* Fences, Gates, Barricades, K ratings(designed to stop vehicles)
+	* Mantrap (some type of entry system, consisting of 2 doors)
+	* Cabling systems - (Using AirGap ; VPNs or VLANs)
+* **Internal**
+	* Safe for Important documents
+	* Locked cabinets
+	* Faraday cages - to protect sensitive eletronic equipment
+	* Locks
+		* Key management system (where the keys are stored? who is in possession of those keys?...)
+
+* Individual Workstation
+	* Cable Locks
+	* Screen filters
+
+### **Detective** Physical Controls
+* Alarms
+* Cameras
+* Motion detectors
+* Infrared detectors
+* Log Files - can be important in terms of tracking
+
+### **Compensating & Corrective** Physical Control
+Temporary fixes when these controls are weakened.<br> *i.e - If the outside fence in some way got a big hole, you need to place a security guard on that location until the fences got fixed.*
+
+## HVAC - Heating, Ventilation, and Air Conditioning
+* Office Environment - room temperature, humidity
+* Server Rooms - Super sophisticated HVAC's systems; Make sure keep cool and dry
+
+* **Infrared Camera** - we can determine heats more easily
+<p align="center">
+<img width="80%" src="https://www.castlerockinspections.com/DataCentIR_1.jpg" />
+</p>
+
+
+* **Zone-based HVAC**
+
+<p align="center">
+<img width="80%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/661979a429189cf1c6538c0dff8758a7474fb360/zonebased-hvac.png" />
+</p>
+
+* **Hot & Cold aisles** - Used in server rooms, HVAC use either hot and cold aisles a contained system to vent hot air out and away from ther server racks; Layout of data centers inteligently and efficiently. Aisles of equipment racks are set up such that there are alternating hot and cold aisles. 
+
+<p align="center">
+<img width="80%" src="https://www.colocationamerica.com/images/hot-vs-cold-aisle-containment.jpg" />
+</p>
+
+🛑 - MAC filtering is a good idea on system controllers of HVAC
+
+* **Remote Monitoring** - VPN access, 802.1X
+
+## Fire Suppression
+### Types of Fires and Appropriate Fire Extinguishers
+
+Class | Type | Contains 
+--|--|--
+A | Ordinary(Wood, Paper) | Foam, Water
+B | Liquids(Gases, oil) | CO2, Foam, Powder
+C | Electrical (eletronic equipment) | CO2
+D | Combustible metals (sodium, magnesium) | Powder
+
+🛑 FM200 is a special extinguisher liquid that is great because it can stops fires, but can still save the electrical equipment; "Gold Standard" for fire suppression on server rooms.
+
+🛑 Class C is best extinguisher for suppress fire on Server Room, but it may ruin some electronics due to the corrosive powder inside.
+
+# Protocols Security
+
+### SSH protocol
+* Key exchange algorithms 
+* Designed to run in a tunneling mode (encrypted); And then can provide their own encryption (AES, DES...)
+* Runs on Port 22
+
+🛑 Almost any encrypted application or protocol number do some kind of key exchange.
+
+### HTTP over TLS = HTTPS
+Unencrypted HTTP running TLS encryption
+
+* TLS encryption is a protocol that you can plug it into different types of applications
+* Runs on Port 443
+
+## Network Models
+
+<p align="center">
+<img width="73%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/9c85f770fd5223658b960848f0fe56378fddbfe8/Osi-model.png" />
+</p>
+
+<p align="center">
+<b>TCP/IP MODEL vs OSI MODEL</b>
+</p>
+<p align="center">
+<img width="80%" src="https://miro.medium.com/max/631/1*S0ZaTC0BuYuEaPcgPi_5bg.jpeg" />
+</p>
+
+## IP Addressing
+
+### Private **IPv4** address range 
+*32-bit address with 4 octets*
+
+**10.0.0.0 - 10.255.255.255**<br>
+**172.16.0.0 - 173.31.255.255**<br>
+**192.168.0.0 - 192.168.255.255**
+
+### **IPv6** Address
+*128-bit address*
+
+Link local: **FE80** - generated automatically by individual hosts
+
+Internet addresss: 2000:0BD8:A388:0000:0000:A2E8:3844:1337
+ 
+🛑 Very common within the IPv6 wolrd to have more than one IP address
+
+### **Transport Protocols**
+**TCP** - connection oriented; lots of packets being set; three-way handshake is the cornerstone of TCP
+
+**UDP** - connectionless, sends lots of packets. Have no acknowledgement.
+
+**ICMP** - supporting protocol handling ARP and Ping.
+
+## **File Transfer Protocols**
+Port | Description
+--|--
+20 | FTP Data / FTPS
+21 | FTP Control / FTPS
+22 | SSH - Secure Shell Remote Login Protocol / SCP - Secure Copy / SFTP(Secure FTP)
+25 | SMTP - Simple Mail Transfer Protocol (sends email)
+53 | DNS
+67, 68 | DHCP uses UDP
+69 | TFTP - Trivial File Transfer Protocol runs on UDP
+110 | POP (receives email)
+137, 138, 139 | NETBios Protocol
+143 | IMAP (receives email)
+161, 162 | SNMP - Simple Network Management Protocol
+389 | LDAP - Light Weight Directory Access Protocol
+445 | SMB
+465, 587 | SMTP over SSL/TLS encrypted
+993 | IMAP over TLS/TLS
+995 | POP over TLS/SSL
+3389 | RDP - Remote Desktop protocol (TCP)
+
+## SSL and TLS
+Secure Socket Layer (**SSL**) and Transport Layer Security (**TLS**), they are protocols that are designed to make secure connections between two points. 
+
+🛑 SSL and TLS originally designed for Secure Websites (**HTTPS**)<br>
+🛑 TLS is more robust and new solution for secure connection than SSL<br>
+🛑 SSL/TLS is not only for HTTPS, you can see in e-mails, VPNs, all over the internet.
+
+* **Making a Secure Connection**
+	* *Client Hello - Body/Example (from Wireshark):*
+		* **Symmetric Encryption** (i.e AES 128 GCM)
+		* **Key Exchange** (i.e ECDHE)
+		* **Authentication** (i.e RSA certs)
+		* **HMAC** (hash-based message authentication code) (i.e SHA 256)
+
+
+## DNS - Domain Name System
+
+🛑 DNS is a nonsecure protocol
+
+### DNSSEC 
+**DNSSEC is not encryption, is an authentication tool to avoid spoof and replay attack.**
+
+* Uses PKE (publick key encryption)
+* Adds Integrity and Authentication
+* Avoid Replay Attacks and Spoofing
+
+## E-mail (SMTP, POP, IMAP)
+🛑 SMTP, POP and IMAP is not secure.
+
+### SMTP over TLS/SSL
+* Encrypt the connection to the server
+* Uses port **465** or **587**
+
+### IMAP over TLS/SSL
+* Creates a TLS encrypted tunnel
+* Uses port **993**
+
+### POP over TLS/SSL
+* Creates a TLS encrypted tunnel
+* Uses port **995**
+
+## Protecting Servers
+### SSL Accelerator
+* Dedicated card placed behind the gateweay router between the internet, to handle all SSL/TLS encryption & decryption going across the network.
+* Can be done on a dedicated machine
+
+<p align="center">
+<img width="69%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Sun-crypto-accelerator-1000.jpg/1920px-Sun-crypto-accelerator-1000.jpg" />
+</p>
+
+### Load Balancer
+*  Load balancer is actually a proxy because he takes all the incoming requests for the Web site and then distributes it around to the servers
+* Enhance security and efficiency
+<p align="center">
+<img width="71%" src="https://1.bp.blogspot.com/-HlGvzm614dI/VchpAXr0dTI/AAAAAAAAKAI/O9IDZa4_it4/s1600/load-balancing.png" />
+</p>
+
+### DDoS Mitigator
+* A box that can detect when denial of service attacks are coming through.
+* Will send an alert to emergency response services which assist in traffic flow to the site under attack
+* Act like a proxy for websites
+
+
+## Secure Code Development
+
+### Waterfall Model
+<p align="center">
+<img width="71%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Waterfall_model.svg/1200px-Waterfall_model.svg.png" />
+</p>
+
+
+### Agile 
+* Created to be better than Waterfall Model
+* Sprints (small, rapid, measurable deliverables)
+* Scrum
+
+<p align="center">
+<img width="81%" src="https://testingtypes.files.wordpress.com/2013/06/agile-model.jpg" />
+</p>
+
+### DevOps
+Benefits of DevOps:
+* Speed
+* Rapid Delivery
+* Reliablity
+* Scale
+* Improved Collaboration
+* Security
+
+<p align="center">
+<img width="81%" src="https://qph.fs.quoracdn.net/main-qimg-5f4002986f2e8214ff76cb732db7420e" />
+</p>
+
+### Securing DevOps
+* **Run Security Automation Tools** to speed up security testing and eliminate human errors. Security testing like fuzzing.
+* **Add strict Change Management and Version Controls** to ensure faults aren't introduced into the application.
+* **Introduce Security Concerns and Requirements** at the planning stage to ensure strong security integration.
+* **Integrity measurement** shows honesty, morality, and quality of the application.
+* **Baselining** defines security objectives that the application must meet.
+* **Immutable systems** are systems that once deployed are never upgraded, changed, or patched. They are simply replaced. This is easy to do in a **VM environment**.
+*  **Infrastructure as Code (IaC)** means to use preset definition files as opposed to manual configurations to set up servers. IaC prevents accidental vulnerabilities due to flawed server configurations.
+
+## Secure Code Techniques
+### **Compiled vs. Runtime code** 
+Compile-time is the instance where the code you entered is converted to executable. Run-time is the instance where the executable is run.
+
+### **Error Handling**
+**Proper Error Handling**: isn't going to stop all errors, but it will prevent errors from apperaring on the user interface for easy viewing for attackes / bad actors.
+
+<p align="center">
+<img width="81%" src="https://www.getastra.com/blog/wp-content/uploads/2017/06/Server-Error-Message.png" />
+</p>
+
+### **Input Validation**
+**Proper Input Validation**: helps prevent these types of attacks: **command insertion, cross-site scripting, buffer overflows, and SQL injection**.
+
+### **Normalization**
+Is a database term meaning to store and organize data so that it exists in one form only. For example, a user database has the three tables shown. (name table, zip code table etc).
+
+### **Stored Procedures**
+Stored Procedures harden web apps; Is a piece of code, custom written by devs of the app and stored in the Database. **This code only respond to a specific query format defined by the eveloper, this can prevent SQL injection or common bad queries used by attackers.**
+
+### **Encryption / Code signing**
+Code signing means to sign an individual executable/interpred code digitally so that users have confidence the code they run is the actual code from the developer.
+
+### **Obfuscation**
+To make harder an attacker reverse-engineer the code (i.e Minifying Javascript)
+
+### **Code reuse / Dead Code**
+Get rid of dead code inside the web app. (i.e Commented unecessary code)
+
+### **Server-side vs. Client-side**
+In general, a server-side platform is more secure than a client-side platform, but client-side is generally faster and may receive big chunks of code to the client, to prevent that you can use encryption. 
+
+### **Memory Management**
+Watch out the memory leaks to avoid buffer overflow attack and code reuse.
+
+### **Thir-party libraries**
+Weaknesses of third-party libraries can result on bad actor exploring this. To avoid this type of risk, maintain patch updates, stay on top of any announcements, check the dependencies of the third-party libraries using OWASP dependency checker.
+
+### **Data Exposure**
+If you have data that is a part of your app some of that data has risk of exposure. And our job as developers is to reduce if not eliminate any risk of that data exposure especially if it's personally identifiable information or personal health information. We almost always today go through aggressive encryptions any time.
+
+## Code Quality & Testing
+
+* **Static Code Analysis**
+	* Look for standard types of errors
+	* They don't run the code 
+
+* **Dynamic Code Analysis**
+	* Actually runs the code
+	* Looks for logic errors
+	* Look for Security holes
+	* Memory Leak
+	* Database querying
+
+* **Staging**
+	* **Stress Test** - aggressive test of issues such as multiple user simultaneous inputs, multiple server data syncing ...
+	* **Sandboxing** - test the systems, almost always virtual machines (VMs), that enable developers to run the application aggressively.
+
+* **Model Verification** - **Model** defines how developers expect some feature of the final code to perform. **Model Verification** match the application to the aspect of the model.(i.e -This button drive the user to the home or not?)
+
+* **Production** - When the testing are done and it's time to pull the application online and running. (expose to the public / internet). The process of moving an application from the development environment to the production environment is called **provisioning**. The process of remove an application from the production is called **desprovisioning**.
 
 ***
 ***
