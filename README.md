@@ -1,5 +1,5 @@
 # Comprehensive Content Highlights for CompTIA Security+ (SY0-501) 
-This repo is a comprehensive summary with all topics from Security+ designed to help who wanna takes the exam.
+This repo is a comprehensive summary with all topics from Security+ designed to help who wants to take the exam.
 ***
 📓 [**All Chapters in a single file**](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/All-Chapters.md)
 ***
