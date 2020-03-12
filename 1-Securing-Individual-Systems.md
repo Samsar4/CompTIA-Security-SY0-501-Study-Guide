@@ -55,7 +55,7 @@ Uses multiple systems to attack a single host - Generally controlled by **BotNet
 * Wired MITM
 	* Spoof MAC address, IP address, ARP, DNS...
 
-* Typosquatting
+* Typosquatting - *(i.e facebook.corn / wikipdia.org)*
 
 * Domain Hijacking
 

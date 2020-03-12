@@ -1046,7 +1046,7 @@ In general, a server-side platform is more secure than a client-side platform, b
 ### **Memory Management**
 Watch out the memory leaks to avoid buffer overflow attack and code reuse.
 
-### **Thir-party libraries**
+### **Third-party libraries**
 Weaknesses of third-party libraries can result on bad actor exploring this. To avoid this type of risk, maintain patch updates, stay on top of any announcements, check the dependencies of the third-party libraries using OWASP dependency checker.
 
 ### **Data Exposure**
