@@ -800,12 +800,22 @@ Temporary fixes when these controls are weakened.<br> *i.e - If the outside fenc
 * Server Rooms - Super sophisticated HVAC's systems; Make sure keep cool and dry
 
 * **Infrared Camera** - we can determine heats more easily
+<p align="center">
+<img width="80%" src="https://www.castlerockinspections.com/DataCentIR_1.jpg" />
+</p>
 
-![infrared](https://www.castlerockinspections.com/DataCentIR_1.jpg)
 
 * **Zone-based HVAC**
 
-* **Hot & Cold aisles** - Used in server rooms, HVACuse either hot and cold aisles a contained system to vent hot air out and away from ther server racks; Layout of data centers inteligently and efficiently. Aisles of equipment racks are set up such that there are alternating hot and cold aisles. 
+<p align="center">
+<img width="80%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/661979a429189cf1c6538c0dff8758a7474fb360/zonebased-hvac.png" />
+</p>
+
+* **Hot & Cold aisles** - Used in server rooms, HVAC use either hot and cold aisles a contained system to vent hot air out and away from ther server racks; Layout of data centers inteligently and efficiently. Aisles of equipment racks are set up such that there are alternating hot and cold aisles. 
+
+<p align="center">
+<img width="80%" src="https://www.colocationamerica.com/images/hot-vs-cold-aisle-containment.jpg" />
+</p>
 
 🛑 - MAC filtering is a good idea on system controllers of HVAC
 
