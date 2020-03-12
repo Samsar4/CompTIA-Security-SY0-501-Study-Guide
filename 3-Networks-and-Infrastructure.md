@@ -894,6 +894,9 @@ Port | Description
 161, 162 | SNMP - Simple Network Management Protocol
 389 | LDAP - Light Weight Directory Access Protocol
 445 | SMB
+465, 587 | SMTP over SSL/TLS encrypted
+993 | IMAP over TLS/TLS
+995 | POP over TLS/SSL
 3389 | RDP - Remote Desktop protocol (TCP)
 
 ## SSL and TLS
@@ -911,5 +914,50 @@ Secure Socket Layer (**SSL**) and Transport Layer Security (**TLS**), they are p
 		* **HMAC** (hash-based message authentication code) (i.e SHA 256)
 
 
+## DNS - Domain Name System
 
+🛑 DNS is a nonsecure protocol
+
+### DNSSEC 
+**DNSSEC is not encryption, is an authentication tool to avoid spoof and replay attack.**
+
+* Uses PKE (publick key encryption)
+* Adds Integrity and Authentication
+* Avoid Replay Attacks and Spoofing
+
+## E-mail (SMTP, POP, IMAP)
+🛑 SMTP, POP and IMAP is not secure.
+
+### SMTP over TLS/SSL
+* Encrypt the connection to the server
+* Uses port **465** or **587**
+
+### IMAP over TLS/SSL
+* Creates a TLS encrypted tunnel
+* Uses port **993**
+
+### POP over TLS/SSL
+* Creates a TLS encrypted tunnel
+* Uses port **995**
+
+## Protecting Servers
+### SSL Accelerator
+* Dedicated card placed behind the gateweay router between the internet, to handle all SSL/TLS encryption & decryption going across the network.
+* Can be done on a dedicated machine
+
+<p align="center">
+<img width="69%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Sun-crypto-accelerator-1000.jpg/1920px-Sun-crypto-accelerator-1000.jpg" />
+</p>
+
+### Load Balancer
+*  Load balancer is actually a proxy because he takes all the incoming requests for the Web site and then distributes it around to the servers
+* Enhance security and efficiency
+<p align="center">
+<img width="71%" src="https://1.bp.blogspot.com/-HlGvzm614dI/VchpAXr0dTI/AAAAAAAAKAI/O9IDZa4_it4/s1600/load-balancing.png" />
+</p>
+
+### DDoS Mitigator
+* A box that can detect when denial of service attacks are coming through.
+* Will send an alert to emergency response services which assist in traffic flow to the site under attack
+* Act like a proxy for websites
 

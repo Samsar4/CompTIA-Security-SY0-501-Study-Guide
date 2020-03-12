@@ -29,8 +29,8 @@ Port | Description
 514, 6514 | SysLog Servers & SysLog TCP over TLS
 636 | LDAP over SSL
 860 | iSCSI - Internet Small Computer Systems Interface
-993 | IMAP 4S  - IMAP over TLS/SSL (Email)
-995 | POP3 over SSL
+993 | IMAP over TLS/SSL (Email)
+995 | POP over SSL
 989, 990 | FTP - FTP Data and Control over TLS/SSL
 1194 | OpenVPN
 1645, 1646 | RADIUS
