@@ -853,3 +853,63 @@ Unencrypted HTTP running TLS encryption
 <img width="80%" src="https://miro.medium.com/max/631/1*S0ZaTC0BuYuEaPcgPi_5bg.jpeg" />
 </p>
 
+## IP Addressing
+
+### Private **IPv4** address range 
+*32-bit address with 4 octets*
+
+**10.0.0.0 - 10.255.255.255**<br>
+**172.16.0.0 - 173.31.255.255**<br>
+**192.168.0.0 - 192.168.255.255**
+
+### **IPv6** Address
+*128-bit address*
+
+Link local: **FE80** - generated automatically by individual hosts
+
+Internet addresss: 2000:0BD8:A388:0000:0000:A2E8:3844:1337
+ 
+🛑 Very common within the IPv6 wolrd to have more than one IP address
+
+### **Transport Protocols**
+**TCP** - connection oriented; lots of packets being set; three-way handshake is the cornerstone of TCP
+
+**UDP** - connectionless, sends lots of packets. Have no acknowledgement.
+
+**ICMP** - supporting protocol handling ARP and Ping.
+
+## **File Transfer Protocols**
+Port | Description
+--|--
+20 | FTP Data / FTPS
+21 | FTP Control / FTPS
+22 | SSH - Secure Shell Remote Login Protocol / SCP - Secure Copy / SFTP(Secure FTP)
+25 | SMTP - Simple Mail Transfer Protocol (sends email)
+53 | DNS
+67, 68 | DHCP uses UDP
+69 | TFTP - Trivial File Transfer Protocol runs on UDP
+110 | POP (receives email)
+137, 138, 139 | NETBios Protocol
+143 | IMAP (receives email)
+161, 162 | SNMP - Simple Network Management Protocol
+389 | LDAP - Light Weight Directory Access Protocol
+445 | SMB
+3389 | RDP - Remote Desktop protocol (TCP)
+
+## SSL and TLS
+Secure Socket Layer (**SSL**) and Transport Layer Security (**TLS**), they are protocols that are designed to make secure connections between two points. 
+
+🛑 SSL and TLS originally designed for Secure Websites (**HTTPS**)<br>
+🛑 TLS is more robust and new solution for secure connection than SSL<br>
+🛑 SSL/TLS is not only for HTTPS, you can see in e-mails, VPNs, all over the internet.
+
+* **Making a Secure Connection**
+	* *Client Hello - Body/Example (from Wireshark):*
+		* **Symmetric Encryption** (i.e AES 128 GCM)
+		* **Key Exchange** (i.e ECDHE)
+		* **Authentication** (i.e RSA certs)
+		* **HMAC** (hash-based message authentication code) (i.e SHA 256)
+
+
+
+

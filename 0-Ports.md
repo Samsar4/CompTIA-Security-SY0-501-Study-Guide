@@ -17,10 +17,12 @@ Port | Description
 110 | POP3 - Post Office Protocol (Email)
 119 | NNTP - Network News Transfer Protocol
 123 | NTP - Network Time Protocol
+137, 138, 139 | NETBios Protocol
 143 | IMAP 4 - Internet Message Access Protocol (Email)
 161, 162 | SNMP - Simple Network Management Protocol
 389 | LDAP - Lightweight Directory Access Protocol
 443 | HTTPS - HTTP over TLS/SSL
+445 | SMB
 464 | Kerberos
 465 | SMTP/SMTPS over SSL
 500 | ISAKMP - Internet Security Association and Key Management Protocol - IPSec 
