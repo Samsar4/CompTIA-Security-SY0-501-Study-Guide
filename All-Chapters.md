@@ -796,7 +796,7 @@ Enables network administrator to correlate different data sources and data point
 ***
 ***
 
-# Networks and Infrastructure - Basics 
+# 3) Networks and Infrastructure - Basics 
 
 ## Switches
 A network switch is networking hardware that connects devices on a computer network by using packet switching to receive and forward data to the destination device. A network switch is a multiport network bridge that uses **MAC addresses** to forward data at the **data link layer of the OSI model.**
@@ -2889,7 +2889,7 @@ $2b$10$vES9mCPsE10//vOc1u01XeUVmJrZyHGMPaRfo39OIUoJ2g7iPtDnu
 ***
 ***
 ***
-# Testing the Infrastructure
+# 7) Testing the Infrastructure
 
 ## Vulnerability Scanning Tools
 * traceroute/tracert
@@ -3015,7 +3015,7 @@ A penetration test will actually try to grab the data itself. A vulnerability as
 ***
 ***
 ***
-# Incident Response & Forensics
+# 8) Incident Response & Forensics
 
 ## Incident Response Process
 **Preparation**
