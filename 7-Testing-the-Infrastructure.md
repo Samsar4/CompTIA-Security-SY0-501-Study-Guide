@@ -6,7 +6,7 @@
 * Nmap
 * MBSA - Microsoft Baseline Security Analyzer (determine the security state of a system by assessing missing security updates and less-secure security settings; report good information for vulnerability assessment)
 
-## Vulnerability Scanning Assessment
+## Vulnerability Scanning Assessmentk
 *The purpose of Vulnerability Scanning is to identify vulnerabilities cause by lack of security controls, common misconfigurations, and so on.*
 
 ### Credential vs Non-credential Vulnerability Assessments
@@ -37,14 +37,14 @@ Almost all vulnerability assessments are **non-intrusive**. Scanning systems, ga
 	* To call for imediate action
 
 ## Social Engineering Attacks
-* **Phishing** 
-* **Spear Phishing** - Directed towards a specific person or company
-* **Vishing** - Uses Voice calls/telephone system to get private information 
-* **Hoax** - Warns someone that something bad is happening when its not
-* **Watering Hole Attack** - An attempt to infect websites that a group of end users would normally go to gain access to their information or network
-* **Whaling** - Spear phishing tha targets senior management and executives
-* **Tailgating** - *(i.e leave computer unlocked, door etc)*
-* **Shoulder Surfing** 👀 
+* **Phishing**<br>
+* **Spear Phishing** - Directed towards a specific person or company<br>
+* **Vishing** - Uses Voice calls/telephone system to get private information<br>
+* **Hoax** - Warns someone that something bad is happening when its not<br>
+* **Watering Hole Attack** - An attempt to infect websites that a group of end users would normally go to gain access to their information or network<br>
+* **Whaling** - Spear phishing tha targets senior management and executives<br>
+* **Tailgating** - *(i.e leave computer unlocked, door etc)*<br>
+* **Shoulder Surfing** 👀 <br>
 * **Dumpster Diving** 
 
 ## Web Application Attacks
@@ -55,9 +55,9 @@ Almost all vulnerability assessments are **non-intrusive**. Scanning systems, ga
     |      |             |                    |                                  |     |
   HOST    IDENT     DATE & TIME            REQUEST                             STATUS BYTES
 ```
-**IDENT** - If the IdentityCheck directive is enabled and the client machine runs ident, then this is the identity information reported by the client.
-**GET** - Request HTTP method command
-**STATUS** - status, 200 = Everything is ok
+**IDENT** - If the IdentityCheck directive is enabled and the client machine runs ident, then this is the identity information reported by the client.<br>
+**GET** - Request HTTP method command<br>
+**STATUS** - status, 200 = Everything is ok<br>
 **BYTES** - the number of bytes in the object returned to the client, excluding all HTTP headers.
 
 ### Common Web Application Attacks
@@ -79,8 +79,22 @@ Almost all vulnerability assessments are **non-intrusive**. Scanning systems, ga
 * **Buffer Overflow** - overflows the input directly to the memory 
 * **Integer Overflow** - overflow an input variable (i.e typing a large number on calculate forcing an error)
 
+### Applications Vulnerabilities
+* **Race Condition**
+* **Improper Input Handling**
+* **Improper Error Handling**
+* **Memory/buffer vulnerability**
+	* Memory Leak
+	* Integer Overflow
+	* Buffer Overflow
+* **Pointer deference**
+* **Resource exhaustion**
+* **Weak cipher suites and implementations**
+* **DLL injection**
+
 ## Pentesting / Penetration Testing
 A penetration test will actually try to grab the data itself. A vulnerability assessment at no time will ever actually try to grab the data. 
+
 ### Pentesting Process
 1. Reconnaissance
 2. Scanning
@@ -106,13 +120,3 @@ A penetration test will actually try to grab the data itself. A vulnerability as
 	* Pivotting
 	* Persistance
 	* Privilege Escalation
-
-### Applications Vulnerabilities
-* **Race Condition**
-* **Improper Input Handling**
-* **Improper Error Handling**
-* **Memory/buffer vulnerability**
-* **Pointer deference**
-* **Resource exhaustion**
-* **Weak cipher suites and implementations**
-* **DLL injection**
