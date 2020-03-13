@@ -11,6 +11,7 @@ This repo is a comprehensive summary with all topics from Security+ designed to 
 * [Risk Management](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/5-Risk-Management.md)
 * [Cryptography and PKI](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/6-Cryptography-and-PKI.md)
 * [Testing the Infrastructure](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/7-Testing-the-Infrastructure.md)
+* [Incident Response & Forensics](https://github.com/Samsar4/SecurityPlus-Content-Summary/blob/master/8-Incident-Response-and-Forensics.md)
 * [List of Common Ports](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/0-Ports.md)
 
 ***
