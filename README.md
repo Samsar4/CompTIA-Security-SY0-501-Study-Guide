@@ -1,7 +1,6 @@
 # Comprehensive Content Summary for CompTIA Security+ (SY0-501) 
 This repo is a comprehensive summary with all topics from Security+ designed to help who wants to take the exam.
-***
-📓 [**All Chapters in a single file**](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/All-Chapters.md)
+
 ***
 ### **Index**
 * [Securing Individual Systems](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/1-Securing-Individual-Systems.md)
@@ -13,6 +12,10 @@ This repo is a comprehensive summary with all topics from Security+ designed to 
 * [Testing the Infrastructure](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/7-Testing-the-Infrastructure.md)
 * [Incident Response & Forensics](https://github.com/Samsar4/SecurityPlus-Content-Summary/blob/master/8-Incident-Response-and-Forensics.md)
 * [List of Common Ports](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/0-Ports.md)
-
+***
+### All Chapters in a single file:
+* [Markdown](https://github.com/Samsar4/SecurityPlus-ExamNotes/blob/master/All-Chapters.md) 
+* [PDF](https://github.com/Samsar4/SecurityPlus-Content-Summary/blob/master/PDF/SecurityPlus-ContentSummary.pdf)
+* [HTML](https://github.com/Samsar4/SecurityPlus-Content-Summary/blob/master/HTML/SecurityPlus-ContentSummary.html)
 ***
 ❓ [CompTIA Certification Objectives](https://www.comptia.jp/pdf/Security%2B%20SY0-501%20Exam%20Objectives.pdf)
