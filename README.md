@@ -1,4 +1,4 @@
-# Comprehensive Content Summary for CompTIA Security+ (SY0-501) 
+# Certification Prep - CompTIA Security+ (SY0-501) 
 This repo is a comprehensive summary with all topics from Security+ designed to help who wants to take the exam.
 
 ***
