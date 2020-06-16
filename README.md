@@ -30,8 +30,6 @@ Basically keep tracking of everthing, like, who's been logging in when are they 
 Anyone can validate the authenticity of a message as well as the source of the message.
 
 ***
-***
-***
 
 # 1. Securing Individual Systems 
 
@@ -50,11 +48,12 @@ Prevents others from accessing a system / comprimising the availability.
   * SlowLoris Attack - *(tries to keep many connections to the target web server open and hold them open as long as possible)*
 
 * **Amplification Attack**
-Generate a high volume of packets to flood the target website without alerting the intermediary, by returning a large reply to a small request. The basic defense against these attacks is blocking spoofed-source packets.
+	* Generate a high volume of packets to flood the target website without alerting the intermediary, by returning a large reply to a small request. The basic defense against these attacks is blocking spoofed-source packets.
 
-* **Smurf Attack** - flooded with spoofed ping messages.
+* **Smurf Attack**
+	* Flooded with spoofed ping messages.
 
-## Distributed-Denial-of-Service (DDoS)
+### Distributed-Denial-of-Service (DDoS)
 Uses multiple systems to attack a single host - Generally controlled by **BotNets**, which is a type of malware that uses remotely controlled malicious software to control a large range of computers.
 
 ## Host Threats
@@ -82,23 +81,23 @@ Uses multiple systems to attack a single host - Generally controlled by **BotNet
 
 * Third-party intercepting between a two-party conversation
 * Uses the information to the third party's advantage
-
-* Wireless MITM 
+<br>
+* **Wireless MITM**
 	* 802.11
 	* Bluetooth
 
-* Wired MITM
+* **Wired MITM**
 	* Spoof MAC address, IP address, ARP, DNS...
 
-* Typosquatting - *(i.e facebook.corn / wikipdia.org)*
+* **Typosquatting** - *(i.e facebook.corn / wikipdia.org)*
 
-* Domain Hijacking
+* **Domain Hijacking**
 
-* Replay atack - when an attacker detects a data transmission and fraudulently has it delayed or repeated 
+* **Replay atack** - when an attacker detects a data transmission and fraudulently has it delayed or repeated 
 
-* Downgrade attack - is a cryptographic attack that makes it change the encrypted connection to the older one (i.e. cleartext).
+* **Downgrade attack** - is a cryptographic attack that makes it change the encrypted connection to the older one (i.e. cleartext).
 
-* Session Hijacking - Inject information on middle of connection 
+* **Session Hijacking** - Inject information on middle of connection 
 
 ## System Resiliency
 Generally they handle risks better, adding technologies and processes to enable the system recovery easily.
@@ -359,7 +358,6 @@ Is any type of hardware that's designed to do security work. For ATMs, Web Serve
 Many peripherals can connect to an 802.11 network as a host. Printers and multifunction devices (MFDs) are very commonly connected with 802.11.
 
 ## Malwares
-*Viruses do things to files and propagates, Malware collect keystrokes and information*
 
 #### Virus
 
@@ -385,12 +383,14 @@ Many peripherals can connect to an 802.11 network as a host. Printers and multif
 * Standalone programs that must be installed **disguised** in programs
 * Deliver payload without users knowledge
 * Backdoor access
+* **How to secure**: Don't run unknown software
 
 #### RAT - Remote Access Trojan
 
 * Mimic the behavior of legitimate remote control
 * Can hide in common 'inofensive' programs like games
 * Backdoor access
+* **How to secure**: Don't run unknown software
 
 #### Ransomware - Crypto-Malware
 
@@ -407,7 +407,9 @@ Many peripherals can connect to an 802.11 network as a host. Printers and multif
 #### Rootkit
 
 * Piece of software that escalates privileges to execute other things on computer
-* Hard to detect
+* Modifies core system files - part of the kernel
+* Hard to detect (_i.e cannot see in Task manager_)
+* **How to secure**: use secure boot with UEFI (security in BIOS) and to remove you will need a specific rootkit remover.
 
 #### Backdoor
 
@@ -426,8 +428,8 @@ Many peripherals can connect to an 802.11 network as a host. Printers and multif
 #### Keylogger
 
 * Record keystrokes
-* Inject scripts
-
+* Inject scripts 
+* **How to secure**: Use anti-virus/malware, keep signatures updated, Firewall rules and keylogging scanner.
 
 ## Analyzing Output
 
@@ -2912,30 +2914,32 @@ Almost all vulnerability assessments are **non-intrusive**. Scanning systems, ga
 * OpenVAS (Opensource) 
 
 ## Principles of Social Engineering
-* **Authority**
+1. **Authority**
 	* Impersonate or imply a position of authority
-* **Intimidation**
+2. **Intimidation**
 	* Frighten by threat
-* **Consensus**
+3. **Consensus / Social proof**
 	* To convince of a general group agreement
-* **Scarcity**
-	* To describe a lack of something
-* **Familiarity**
+4. **Scarcity**
+	* The situation will not be this way for long
+5. **Urgency**
+	* Works alongside scarcity / act quickly, don't think
+6. **Familiarity**
 	* To imply a closer relationship
-* **Trust**
+7. **Trust**
 	* To assure reliance on their honesty and integrity
-* **Urgency**
-	* To call for imediate action
+
 
 ## Social Engineering Attacks
 * **Phishing**<br>
 * **Spear Phishing** - Directed towards a specific person or company<br>
 * **Vishing** - Uses Voice calls/telephone system to get private information<br>
-* **Hoax** - Warns someone that something bad is happening when its not<br>
-* **Watering Hole Attack** - An attempt to infect websites that a group of end users would normally go to gain access to their information or network<br>
-* **Whaling** - Spear phishing tha targets senior management and executives<br>
+* **Hoax** - Warns someone that something bad is happening when its not *(i.e Virus Alert)*<br>
+* **Watering Hole Attack** - An attempt to infect websites that a group of end users would normally go to gain access to their information or network. *(i.e Local Coffee Shop Network)*<br>
+* **Whaling** - Spear phishing tha targets senior managemen t and executives<br>
 * **Tailgating** - *(i.e leave computer unlocked, door etc)*<br>
 * **Shoulder Surfing** 👀 <br>
+* **Impersonation** - Pretend to be someone you aren't
 * **Dumpster Diving** 
 
 ## Web Application Attacks
