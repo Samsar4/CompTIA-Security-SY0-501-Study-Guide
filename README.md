@@ -1,3 +1,31 @@
+# CompTIA Security+ - Study Notes
+
+#### 📢 About this 'Study Notes' repository
+The main objective of this repo is to cover all topics presented on CompTIA Security+ SY0-501 exam, to gather as many information as possible from many sources on internet, to help you pass the exam without paying any expensive training courses. 
+
+#### About the exam
+CompTIA Security+ is the first security certification IT professionals should earn. It establishes the core knowledge required of any cybersecurity role and provides a springboard to intermediate-level cybersecurity jobs. Security+ incorporates best practices in hands-on trouble-shooting to ensure security professionals have practical security problem-solving skills. Cybersecurity professionals with Security+ know how to address security incidents – not just identify them.
+
+Security+ is compliant with ISO 17024 standards and approved by the US DoD to meet directive 8140/8570.01-M requirements. Regulators and government rely on ANSI accreditation, because it provides confidence and trust in the outputs of an accredited program. Over 2.3 million CompTIA ISO/ANSI-accredited exams have been delivered since January 1, 2011. [[+]](https://www.comptia.org/certifications/security)
+
+
+#### Exam Domains
+Domain | % of the Exam Content 
+-|-
+Threats, Attacks and Vulnerabilities | 21%
+Technologies and Tools | 22%
+Architecture and Design | 15%
+Identity and Access Management | 16%
+Risk Management | 14%
+Cryptography and PKI | 12%
+
+#### Helpful resources:
+1. [Practice Questions](https://www.examcompass.com/comptia/security-plus-certification/free-security-plus-practice-tests) - I recommend to test your knowledge after study all topics related.
+
+2. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos from Professor Messer - Security+.
+
+*** 
+
 # Brief Introduction
 Information security, sometimes shortened to infosec, is the practice of protecting information by mitigating information risks. It is part of information risk management. It typically involves preventing or at least reducing the probability of unauthorized/inappropriate access, use, disclosure, disruption, deletion/destruction, corruption, modification, inspection, recording or devaluation, although it may also involve reducing the adverse impacts of incidents.
 
@@ -3273,3 +3301,5 @@ Port | Description
 1723 | PPTP - Point-to-Point Tunneling Protocol - VPN
 3389 | RDP - Remote Desktop Protocol 
 5060, 5061 | SIP - Session Initiation Protocol
+
+***
