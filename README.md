@@ -1,4 +1,4 @@
-# CompTIA Security+ - Study Notes
+# CompTIA Security+ (Study Notes)
 
 #### 📢 About this 'Study Notes' repository
 The main objective of this repo is to cover all topics presented on CompTIA Security+ SY0-501 exam, to gather as many information as possible from many sources on internet, to help you pass the exam without paying any expensive training courses. 
@@ -2983,23 +2983,34 @@ Almost all vulnerability assessments are **non-intrusive**. Scanning systems, ga
 **STATUS** - status, 200 = Everything is ok<br>
 **BYTES** - the number of bytes in the object returned to the client, excluding all HTTP headers.
 
-### Common Web Application Attacks
-* **Cross-site scripting (XSS)** - Client-side script injected into trusted web site
+### Common Web Apps and Application Attacks
+
+* **Cross-site scripting (XSS)** - Client-side script 
+injected into trusted web site
+	* **Reflected XSS** - non-persistent, allow scripts to run in user input
+	* **Stored XSS** - script is stored in back-end database
+
 * **XML injections** - Used to manipulate or compromise the logic of an XML application or service (i.e change the price of a product on ecommerce)
 
-### Attacking Applications
+* **Cross-site Request Forgery (XSRF, CSRF)** - forces an end user to execute unwanted actions on a web application in which they’re currently authenticated. With a little help of social engineering (such as sending a link via email or chat), an attacker may trick the users of a web application into executing actions of the attacker’s choosing.
+
 * **Code Injection**
+
 * **Comand Injection**
+
 * **SQL injection (queries)**
 	* inner join 
 	* select from 
 	* insert into 
+
 * **LDAP injection (queries info)** 
 	* based on X.500 protocol
 		* DC = Domain Component
 		* OU = Organizational Unit
 		* CN = Common Name
+
 * **Buffer Overflow** - overflows the input directly to the memory 
+
 * **Integer Overflow** - overflow an input variable (i.e typing a large number on calculate forcing an error)
 
 ### Applications Vulnerabilities
@@ -3045,8 +3056,7 @@ A penetration test will actually try to grab the data itself. A vulnerability as
 	* Privilege Escalation
 
 ***
-***
-***
+ 
 # 8) Incident Response & Forensics
 
 ## Incident Response Process
