@@ -1,17 +1,26 @@
-# CompTIA Security+ (Study Notes)
 
-#### 📢 About this 'Study Notes' repository
-The main objective of this repo is to cover all topics presented on CompTIA Security+ SY0-501 exam, to gather as many information as possible from many sources on internet, to help you pass the exam without paying any expensive training courses. 
+<p align="center">
+<img width="100%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/232dd1aac3219bb680af5b3e2e86d85f6aa163fb/banner-splus.jpg" />
+</p>
 
-#### About the exam
-CompTIA Security+ is the first security certification IT professionals should earn. It establishes the core knowledge required of any cybersecurity role and provides a springboard to intermediate-level cybersecurity jobs. Security+ incorporates best practices in hands-on trouble-shooting to ensure security professionals have practical security problem-solving skills. Cybersecurity professionals with Security+ know how to address security incidents – not just identify them.
+### 📢 About this 'Study Notes' repository 📢
 
-Security+ is compliant with ISO 17024 standards and approved by the US DoD to meet directive 8140/8570.01-M requirements. Regulators and government rely on ANSI accreditation, because it provides confidence and trust in the outputs of an accredited program. Over 2.3 million CompTIA ISO/ANSI-accredited exams have been delivered since January 1, 2011. [[+]](https://www.comptia.org/certifications/security)
+**The main objectives of this repo**
+* Cover all topics presented on CompTIA Security+ SY0-501 exam.
+* Gather as many information as possible from many sources on internet.
+* Help you pass the exam without paying any expensive training courses.
+* Contribute with open source community and cyber security community & students.
+
+#### ℹ️ About the exam
+*CompTIA Security+ is the first security certification IT professionals should earn. It establishes the core knowledge required of any cybersecurity role and provides a springboard to intermediate-level cybersecurity jobs. Security+ incorporates best practices in hands-on trouble-shooting to ensure security professionals have practical security problem-solving skills. Cybersecurity professionals with Security+ know how to address security incidents – not just identify them.*
+
+*Security+ is compliant with ISO 17024 standards and approved by the US DoD to meet directive 8140/8570.01-M requirements. Regulators and government rely on ANSI accreditation, because it provides confidence and trust in the outputs of an accredited program. Over 2.3 million CompTIA ISO/ANSI-accredited exams have been delivered since January 1, 2011.* [[+]](https://www.comptia.org/certifications/security)
 
 
 #### Exam Domains
+
 Domain | % of the Exam Content 
--|-
+-|:-:
 Threats, Attacks and Vulnerabilities | 21%
 Technologies and Tools | 22%
 Architecture and Design | 15%
@@ -20,9 +29,9 @@ Risk Management | 14%
 Cryptography and PKI | 12%
 
 #### Helpful resources:
-1. [Practice Questions](https://www.examcompass.com/comptia/security-plus-certification/free-security-plus-practice-tests) - I recommend to test your knowledge after study all topics related.
+1. [Practice Questions](https://www.examcompass.com/comptia/security-plus-certification/free-security-plus-practice-tests) - I recommend to test your knowledge after study all topics presented on the exam.
 
-2. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos from Professor Messer - Security+.
+2. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos(13 hours of content) from Professor Messer - Security+.
 
 *** 
 
@@ -117,11 +126,11 @@ Uses multiple systems to attack a single host - Generally controlled by **BotNet
 * **Wired MITM**
 	* Spoof MAC address, IP address, ARP, DNS...
 
-* **Typosquatting** - *(i.e facebook.corn / wikipdia.org)*
+* **Typosquatting** - Type of URL hijacking *(i.e facebook.corn / wikipdia.org)*
 
 * **Domain Hijacking**
 
-* **Replay atack** - when an attacker detects a data transmission and fraudulently has it delayed or repeated 
+* **Replay atack** - when an attacker detects a data transmission and fraudulently has it delayed or repeated. (i.e The attacker can capture a request sent from victim and replay it to the server).
 
 * **Downgrade attack** - is a cryptographic attack that makes it change the encrypted connection to the older one (i.e. cleartext).
 
@@ -550,8 +559,6 @@ Ruin the media in such a way tha it is no longer functional.
 * Pulverizing
 
 ***
-***
-***
 
 # 2. Tools 
 
@@ -560,7 +567,7 @@ Ruin the media in such a way tha it is no longer functional.
 ### ping
 can be handful for DNS checks (up / or down) | is a DNS tool to resolves web addresses to an IP address.
 
-```sh
+```console
 ping www.google.com 
 
 PING www.google.com (172.217.168.164): 56 data bytes
@@ -588,7 +595,7 @@ get info on host system TCP / UDP connections and status of all open and listeni
 * Who you talking to? 
 * Who trying talking to you? 
 
-```sh
+```console
 netstat -a (server)
 netstat -n (host)
 ```
@@ -630,7 +637,7 @@ Show all the ip configuration, mac address, ipv6 etc.
 ### nslookup
 query Internet name servers interactively; check if the DNS server is working
 
-```sh
+```console
 nslookup www.certifiedhacker.com
 
 output:
@@ -654,7 +661,7 @@ Address: 162.241.216.11
 ### dig 
 DNS lookup tool - Functions like nslookup, but allows for further functionality.
 
-```sh
+```console
 dig www.certifiedhacker.com
 
 output:
@@ -691,7 +698,7 @@ The Best way to query a system to check if they have open ports, services, syste
 
 *Zenmap is a GUI version of Nmap.*
 
-```sh
+```console
 nmap -v -A -T5 scanme.nmap.org 
 
 ...
@@ -822,8 +829,7 @@ Auditing also consists of other activities, such as:
 
 ### Trend Analysis
 Enables network administrator to correlate different data sources and data points from various places in the network, such as log files, IDS logs, wireless and wired sniffing as well as other event sources, and seek to identify on-going trends in both performance and security. The goal is find patterns that can indicate a emerging issue.
-***
-***
+
 ***
 
 # 3) Networks and Infrastructure - Basics 
@@ -1718,7 +1724,7 @@ Internet addresss: 2000:0BD8:A388:0000:0000:A2E8:3844:1337
 
 ## **File Transfer Protocols**
 Port | Description
---|--
+:--:|:--
 20 | FTP Data / FTPS
 21 | FTP Control / FTPS
 22 | SSH - Secure Shell Remote Login Protocol / SCP - Secure Copy / SFTP(Secure FTP)
@@ -1902,8 +1908,7 @@ If you have data that is a part of your app some of that data has risk of exposu
 * **Production** - When the testing are done and it's time to pull the application online and running. (expose to the public / internet). The process of moving an application from the development environment to the production environment is called **provisioning**. The process of remove an application from the production is called **desprovisioning**.
 
 ***
-***
-***
+
 # 4) Identity and Access Management
 
 ## Identification and AAA
@@ -1990,12 +1995,12 @@ Linux has three permissions and they can be set for the owner, group or other.
 
 
 Owner | Group | Other
---|--|--
+:--:|:--:|:--:
 rwx | rwx | rwx
 
 * Viewing the permissions on Linux command-line:
 
-```sh
+```console
 ls -l
 -rwxrwxr-x 1 user user 31337 Feb 11 13:13 File
 ```
@@ -2003,7 +2008,7 @@ ls -l
 ### Using `chmod` - to change file modes or Access Control Lists 
 * Clear out the permissions of the **File** to have no read, write and execute permissions on **Other**:<br> *(The flag equals to nothing[o=] deny the permissions)*
 
-```sh
+```console
 ls -l
 -rwxrwxr-x 1 user user 31337 Feb 11 13:13 File
 
@@ -2015,7 +2020,7 @@ ls -l
 
 * Giving **read** and **write** permissions to **Group**:
 
-```sh
+```console
 ls -l
 -rwx---r-- 1 user user 31337 Feb 11 13:13 File
 
@@ -2027,7 +2032,7 @@ ls -l
 
 * Giving **all permissions** to everybody(Owner,Group and Other):
 
-```sh
+```console
 ls -l
 -rwx---r-- 1 user user 31337 Feb 11 13:13 File
 
@@ -2041,7 +2046,7 @@ ls -l
 The chmod command will take the octal value and combine them to associate the permissions on three different positions for the Owner, Group and Other/Everyone. This boils down to a simple binary rule: 0 = off | 1 = on.
 
 Octal | Binary | Permissions
---|--|--
+:--:|:--:|:--:
 0 | 000 | ---
 1 | 001 | --x
 2 | 010 | -w-
@@ -2054,7 +2059,7 @@ Octal | Binary | Permissions
 *If you want to give all permissions to a group for example, the number will be 7 (4 + 2 + 1).*
 
 Read | Write | Execute
---|--|--
+:--:|:--:|:--:
 r-- | -w- | --x
 4 | 2 | 1
 
@@ -2062,7 +2067,7 @@ r-- | -w- | --x
 
 * Giving **read, write and execute** permission to everybody:
 
-```sh
+```console
 ls -l
 -rwx---r-- 1 user user 31337 Feb 11 13:13 File
 
@@ -2074,7 +2079,7 @@ ls -l
 
 * Giving all permissions to the **owner**, read and write to **group** and no permissions to **other/everyone**:
 
-```sh
+```console
 ls -l
 -r-x---r-- 1 user user 31337 Feb 11 13:13 File
 
@@ -2086,7 +2091,7 @@ ls -l
 
 ### Linux - File Ownership using `chown` -- change file owner and group
 
-```sh
+```console
 ls -l
 -rwxrwxrwx 1 user001 user001 31337 Feb 11 13:13 File
 
@@ -2101,7 +2106,7 @@ ls -l
 
 ### Linux - Changing the Password using `passwd`
 
-```sh
+```console
 sudo passwd
 ```
 
@@ -2215,8 +2220,6 @@ Query Directories: Structured language that allows one computer to go into someb
 * **SAML**: SSO for **Web Application** / used to manage multiple apps using a single account
 
 ***
-***
-***
 
 # 5) Risk Management
 Risk management is the identification, evaluation, and prioritization of risks followed by coordinated and economical application of resources to minimize, monitor, and control the probability or impact of unfortunate events or to maximize the realization of opportunities.
@@ -2239,7 +2242,7 @@ Is a part of an IT infrastructure that has a value. You can measure value either
 Example of assets: 
 
 Asset | Info.
---- | ---
+:-: | :-
 Servers | The computers that offer shared resources
 Workstations | The computers users need to do their job
 Data | The stored, proprietary information an organization needs to operate
@@ -2459,7 +2462,7 @@ When valuing an asset, consider not only the replacement cost, but also the reve
 *Example:*
 
 Asset | Cost | Repair | Revenue | = Total
---|--|--|--|--
+:--:|:--:|:--:|:--:|:--:
 **Router** | €600 | €500 x day | €2000 x day | €3100
 
 ## Exposure Factor (EF)
@@ -2468,7 +2471,7 @@ The percentage of an asset that could be lost during a negative event. Realistic
 *Example:*
 
 Incident | Exposure Value
---|--
+:--:|:--:
 Flood | 1 (100%)
 
 ## Single Loss Expectancy (SLE)
@@ -2481,7 +2484,7 @@ Single Loss Expectancy = Asset Value x Exposure Factor<br>
 *Example (using data below):*
 
 AV | x  EF | = SLE
---|--|--
+:--:|:--:|:--:
 €3100 | 1 | €3100 
 
 SLE = €3100 (AV) x 1 (EF) = €3100 
@@ -2687,8 +2690,6 @@ Agreement used in public sector.
     * Cost
 * Termination/reauthorization
 
-***
-***
 ***
 
 # 6) Cryptography and PKI
@@ -2916,9 +2917,7 @@ $2b$10$vES9mCPsE10//vOc1u01XeUVmJrZyHGMPaRfo39OIUoJ2g7iPtDnu
 ```
 
 ***
-***
-***
-***
+
 # 7) Testing the Infrastructure
 
 ## Vulnerability Scanning Tools
@@ -2990,13 +2989,17 @@ injected into trusted web site
 	* **Reflected XSS** - non-persistent, allow scripts to run in user input
 	* **Stored XSS** - script is stored in back-end database
 
-* **XML injections** - Used to manipulate or compromise the logic of an XML application or service (i.e change the price of a product on ecommerce)
+* **XML injections** - Used to manipulate or compromise the logic of an XML application or service *(i.e change the price of a product on ecommerce)*
 
 * **Cross-site Request Forgery (XSRF, CSRF)** - forces an end user to execute unwanted actions on a web application in which they’re currently authenticated. With a little help of social engineering (such as sending a link via email or chat), an attacker may trick the users of a web application into executing actions of the attacker’s choosing.
 
-* **Code Injection**
+* **Click-jacking** - Also known as a “UI redress attack”, is when an attacker uses multiple transparent or opaque layers to trick a user into clicking on a button or link on another page when they were intending to click on the top level page.
 
-* **Comand Injection**
+* **Session Hijacking** - Inject information on middle of connection *(i.e Grabbing the request and copying the Session ID from the Cookie).*
+
+* **Code Injection** - is the general term for attack types which consist of injecting code that is then interpreted/executed by the application. This type of attack exploits poor handling of untrusted data. These types of attacks are usually made possible due to a lack of proper input/output data validation.
+
+* **Comand Injection** - ommand injection is an attack in which the goal is execution of arbitrary commands on the host operating system via a vulnerable application. 
 
 * **SQL injection (queries)**
 	* inner join 
@@ -3056,7 +3059,7 @@ A penetration test will actually try to grab the data itself. A vulnerability as
 	* Privilege Escalation
 
 ***
- 
+
 # 8) Incident Response & Forensics
 
 ## Incident Response Process
@@ -3267,13 +3270,11 @@ Remote backup is good for disasters in general.
 Cloud backups work beautifully, however, they have one big downside and that is they take up a tremendous amount of time to get the initial backups going.
 
 ***
-***
-***
 
 ## List of Common Ports
 
 Port | Description
---|--
+:-:|:-
 20 | File Transfer Protocol - FTP Data
 21 | File Transfer Protocol - FTP Control
 22 | SSH - Secure Shell Remote Login Protocol / SCP / SFTP 
