@@ -3,7 +3,7 @@
 <img width="100%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/232dd1aac3219bb680af5b3e2e86d85f6aa163fb/banner-splus.jpg" />
 </p>
 
-### 📢 About this 'Study Notes' repository 📢
+### 📢 About
 
 **The main objectives of this repo**
 * Cover all topics presented on CompTIA Security+ SY0-501 exam.
@@ -112,13 +112,16 @@ Uses multiple systems to attack a single host - Generally controlled by **BotNet
 
 ## Man-in-the-Middle Attack
 
+<li align="center">Third-party intercepting between a two-party conversation</li>
+<li align="center">Uses the information to the third party's advantage</li>
+
+<br>
 <p align="center">
 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/MITM_Diagramm.png" />
 </p>
 
-* Third-party intercepting between a two-party conversation
-* Uses the information to the third party's advantage
-<br>
+
+
 * **Wireless MITM**
 	* 802.11
 	* Bluetooth
@@ -130,9 +133,9 @@ Uses multiple systems to attack a single host - Generally controlled by **BotNet
 
 * **Domain Hijacking**
 
-* **Replay atack** - when an attacker detects a data transmission and fraudulently has it delayed or repeated. (i.e The attacker can capture a request sent from victim and replay it to the server).
+* **Replay atack** - when an attacker detects a data transmission and fraudulently has it delayed or repeated. *(i.e The attacker can capture a request sent from victim and replay it to the server).*
 
-* **Downgrade attack** - is a cryptographic attack that makes it change the encrypted connection to the older one (i.e. cleartext).
+* **Downgrade attack** - is a cryptographic attack that makes it change the encrypted connection to the older one *(i.e. cleartext).*
 
 * **Session Hijacking** - Inject information on middle of connection 
 
@@ -348,36 +351,59 @@ Is any type of hardware that's designed to do security work. For ATMs, Web Serve
 
 ## Secure OS Types
 
-* **Server OS** [RedHat Server, Windows Server etc]
- * Built-in functionality 
- * Connections
+* **Server OS** *[RedHat Server, Windows Server etc]*
+	* Built-in functionality 
+	* Connections
  
-* **Workstation** [Linux Ubuntu, Windows 10 etc]
+* **Workstation** *[Linux Ubuntu, Windows 10 etc]*
 	* Desktop version
 	* Workhorse
 
-* **Embedded Systems** [Routers, CCTVs etc]
+* **Embedded Systems** *[Routers, CCTVs etc]*
 	* Appliance
 	* Their own OS
 
-* **Kiosk** [i.e. Big Touch Screens on Museums, Mall etc]
+* **Kiosk** *[i.e. Big Touch Screens on Museums, Mall etc]*
 	* Limited function 
 
 * **Mobile OS**
 	* Apple iOS
-  * Android OS
+	* Android OS
 
 🛑 *Picking an OS based on least functionality is a good security practice.*
 
 
-## Secure Peripherals
-- Keyboards, USB flash drivers, printers, monitors and so on.
+## Secure Peripherals ⌨️📱🖨
+*Keyboards, USB flash drivers, printers, monitors and so on.*
 
 * Patch!
 * Disable unecessary ports
 * Avoid backdoors
 
-### Bluetooth Security
+### RFID (Radio Frequency Identification) 
+*Access badges, inventory/assembly line tracking, pet/animal identification, anything that needs to be tracked.*
+
+##### Security Concerns / Attacks
+* Data Capture 
+	* View communication
+	* Replay Attack
+
+* Spoof the reader
+	* write your own data to the tag
+
+* Denial of Service
+	* Signal jamming
+
+### NFC - Near Field Communication
+*Payment systems (Google Wallet, MasterCard partnership etc); Bootstrap for other wireless (helps with Bluetooth pairing); Uses an access token, identity 'card' (short range with encryption support)*
+
+##### Security Concerns
+* Remote capture
+* Frequency Jamming (DoS)
+* Relay/Replay Attack (MITM)
+* Loss of RFC device control *(i.e stolen phone)*
+
+### 🔷 Bluetooth Security
 
 **Bluejacking** - When bad actors connects with any Device that have Bluetooth enable by default.
 
@@ -385,11 +411,11 @@ Is any type of hardware that's designed to do security work. For ATMs, Web Serve
 
 *Types of bluetooth*:
 
-* Class1 is 328' foot 
-* Class2 is 33' foot
-* Class3 is 3' foot
+* **Class1** is 328' foot *(100 meters)*
+* **Class2** is 33' foot *(10 meters)*
+* **Class3** is 3' foot *(1 meter)*
 
-🛑 *Most Mobile phones and Bluetooth headsets are class2 - range upto 33'*
+🛑 **Most Mobile phones and Bluetooth headsets are Class2 (10 meters).**
 
 ### 802.11
 Many peripherals can connect to an 802.11 network as a host. Printers and multifunction devices (MFDs) are very commonly connected with 802.11.
@@ -1286,8 +1312,13 @@ Is a Rogue AP tha is broadcasting **the same (or very similar) SSID**.
 ### **802.11 Jammer**
 **Jamming is a form of intentional interference on wireless networks, designed as a DoS attack**. This type of attack by overpowering the signals of a legitimate wireless AP, typically using a rogue AP with its transmit power set to very high levels.
 
-### **Deauthentication Attack**
-Deauthenticates clients from the network to grab the authentication information performing a man-in-the-middle attack.
+### **Deauthentication/Disassociation Attack**
+Deauth Attack Is a type of denial-of-service attack that targets communication between a **user** and a **Wi-Fi wireless access point**. 
+
+**Technical details:** The IEEE 802.11 (Wi-Fi) protocol contains the provision for a deauthentication frame. Sending the frame from the access point to a station is called a "sanctioned technique to inform a rogue station that they have been disconnected from the network".
+
+An attacker can send a deauthentication frame at any time to a wireless access point, with a spoofed address for the victim. The protocol does not require any encryption for this frame, even when the session was established with Wired Equivalent Privacy (WEP) for data privacy, and the attacker only needs to know the victim's MAC address, which is available in the clear through wireless network sniffing.
+
 
 ## Cracking WEP, WPA, WPA2 and WPS
 
@@ -2262,12 +2293,50 @@ Probability means the likelihood - over a defined period of time - of someone or
 A threat actor can be a malicious person, such as a hacker accessing corporate secrets.
 
 **The exam cover six types of threat actor:**
-* Hacktivists
-* Script Kiddies
-* Insiders
-* Competitors
-* Organized Crime
-* Nation State/APT
+
+1. **Script Kiddies**
+	* Can be external or internal
+	* Not Very sophisticated
+	* Runs pre-made scripts without any knowledge of what's really happening
+
+2. **Hacktivists**
+	* Hacker + Activist
+	* A hacker with a purpose - social change or a political agenda
+	* Can be sophisticated
+	* DoS, Web Site Defacing, Information Disclosure, Leaking private documents. 
+
+3. **Organized Crime**
+	* Professional Criminals
+	* Motivated by Money
+	* Very sophisticated
+	* Crime that's organized
+		* *One person Hacks*
+		* *One person Manages the exploits*
+		* *One person Sells the data*
+		* *Another Handles customer support*
+	* Lots of capital to fund hacking efforts operational
+
+4. **Nation States / APT**
+	* Governments - National Security, Job Security; Always an external entity
+	* Highest sophistication
+		* Military control, utilities, financial control
+	* Constant attacks, massive resources
+		* Advanced Persistent Threat
+
+5. **Insiders**
+	* Has institutional knowledge
+		* Attacks can be directed at vulnerable systems allowing the bad guy what, when and how to hit
+	* Can be sophisticated
+	* Extensive resources
+
+6. **Competitors**
+	* Many different motivaions - Espionage, harm reputation
+	* High level of sophistication
+	* Many different intents
+		* Shut down your competitor during an event
+		* Steal customer lists
+		* Corrupt manufacturing databases
+		* Take financial information
 
 # Risk Assessment
 ### 1) Vulnerability Assessment
@@ -2868,25 +2937,47 @@ Is a more modern version of CRL that are used today, have a better performance.
 * **PKCS-12**: stores the certificates and the private keys as packages.
 * **X.509** 
 
-## Cryptographic Attacks
-* Brute Force 
-* Dictionary Attack
-* Rainbow Table (dictionary of hashes)
-* Collision Attack
-* Replay Attack
+## Cryptographic Attacks 🔐
+* **Known PlainText Attack (KPA)**
+	* The attacker knows at least one sample of both the plaintext and the ciphertext.
+* **Brute Force**
+	* Online - keep trying the login process (very slow), most accounts will lockout after a number of failed attempts.
+	* Offline - force the hash, calculate a password hash, compare it to a stored hash; require a large computational resource requirement.
+* **Dictionary Attack**
+	* Is a form of brute force attack technique for defeating a cipher or authentication mechanism by trying to determine its decryption key or passphrase by trying thousands or millions of likely possibilities, such as words in a dictionary or previously used passwords, often from lists obtained from past security breaches. 
+* **Rainbow Table (dictionary of hashes)**
+* **Collision Attack**
+	* Is the same hash value for two different plaintexts. The attacker will generate multiple versions of plaintext to match the hashes. *(i.e In a classroom of 30 students, what is the chance of two students sharing a birthday? - about 70%)*
+* **Replay Attack** - A hash with no salt, no session ID tracking, no encryption, can easily grabbed and replayed by an attacker.
+* **Downgrade attack** - is a cryptographic attack that makes it change the encrypted connection to the older one *(i.e. cleartext; HTTPS to HTTP).*
 
 ### **Salt**
 Salt is an arbitrary value, usually created by the application or OS storing passwords, added to the end of the password before it is hashed, making cracking harder.
 
-*Example*:
-```
-> Password: 123456
-> Salt (arbitrary): aksfle3t
+**Password Example**
+```console
+Password: 123456
 
-> Concatenated with Salt: 123456aksfle3t
+> Salt (arbitrary):
+	aksfle3t
+
+> Concatenated with Salt:
+	123456aksfle3t
 
 > Salted password (SHA-256): 02FCD2C88B089D2E1816070FFF8B80E13242264DA14233A57821CDAF4DDA45DF
 ```
+
+**HTTP Header - Cookie Example**
+```console
+### [Fixed Value without Salt] ###
+HTTP/1.x 200 OK
+Cookie: Ud9E40FgE1337
+
+### [Salted Value - Changes on every request made by user] ###
+HTTP/1.x 200 OK
+Cookie: ef4fh61F39E4033Gf496fgg040vxDDer40213d==
+```
+* *The salted cookie prevents cookie theft and other types of attack.*
 
 ### **Keystretching**
 Combine a very long salt and a huge number of hashing iterations to make cracking even more harder.
@@ -2918,29 +3009,57 @@ $2b$10$vES9mCPsE10//vOc1u01XeUVmJrZyHGMPaRfo39OIUoJ2g7iPtDnu
 
 ***
 
-# 7) Testing the Infrastructure
+# 7. Testing the Infrastructure
+<p align="center">
+<img width="70%" src="https://t3.ftcdn.net/jpg/01/68/76/94/240_F_168769418_GHALsqlIr8jlG6iIhIfuSPOr2hnWk53r.jpg"/>
+</p>
 
-## Vulnerability Scanning Tools
-* traceroute/tracert
+## Vulnerability Scanning Tools 👁‍🗨
+* traceroute/tracert command
 * Advanced IP scanner 
 * Nmap
 * MBSA - Microsoft Baseline Security Analyzer (determine the security state of a system by assessing missing security updates and less-secure security settings; report good information for vulnerability assessment)
 
-## Vulnerability Scanning Assessmentk
-*The purpose of Vulnerability Scanning is to identify vulnerabilities cause by lack of security controls, common misconfigurations, and so on.*
+### Scan Types:
+1. **Non-intrusive**: Gather information, don't try to exploit a vulnerability.
+2. **Intrusive**: You'll try out the vulnerability to see if it works.
+3. **Non-credentialed scans**: the scanner can't login to the remote device.
+4. **Credentialed scan**: You're a normal user, emulates an insider attack.
 
-### Credential vs Non-credential Vulnerability Assessments
-A **Credential Vulnerability Asssessment** basically means you've got usernames and passwords as a part of your assessment. **Non-credential** you don't touch on usernames and passwords on assessments.
 
-### Intrusive vs. Non-intrusive
+### `Intrusive` vs. `Non-intrusive`
 Almost all vulnerability assessments are **non-intrusive**. Scanning systems, gather information and identifying vulnerabilities are different than corrupt the entire database.
 
-## Vulnerability Assessment Tools
-* Nessus by Tenable
-* Nexpose by Rapid7
-* OpenVAS (Opensource) 
+### `Credential` vs. `Non-credential` 
+A **Credential Vulnerability Asssessment** basically means you've got usernames and passwords as a part of your assessment. **Non-credential** you don't touch on usernames and passwords on assessments.
 
-## Principles of Social Engineering
+### Vulnerability Scanning Assessment
+The purpose of Vulnerability Scanning is to identify vulnerabilities cause by lack of security controls, common misconfigurations, and so on.
+
+**Vulnerability Scan Results**:
+* **Lack of security controls**
+	- No firewall
+	- No anti-virus
+	- No anti-spyware
+* **Misconfigurations**
+	- Open shares
+	- Guest access
+	- DNS/SPF records
+* **Real vulnerabilities**
+	- Especially newer ones
+	- Occasionally the old ones
+
+🛑 - *Sometimes Vulnerability Scanners show **False Positives**(a vulnerability is identified that doesn't really exist) or **False Negatives**(a vulnerability exists, but the scanner didn't detect it). To dealing with this, updated to the latest signatures and patch it.*
+
+## Vulnerability Assessment Tools
+* [Nessus](https://www.tenable.com/products/nessus) by Tenable
+* [Nexpose](https://www.rapid7.com/products/nexpose/) by Rapid7
+* [OpenVAS](https://www.openvas.org/) (Open Source) 
+
+
+
+
+## Principles of Social Engineering 🗣👤
 1. **Authority**
 	* Impersonate or imply a position of authority
 2. **Intimidation**
@@ -3016,53 +3135,114 @@ injected into trusted web site
 
 * **Integer Overflow** - overflow an input variable (i.e typing a large number on calculate forcing an error)
 
-### Applications Vulnerabilities
-* **Race Condition**
-* **Improper Input Handling**
-* **Improper Error Handling**
-* **Memory/buffer vulnerability**
-	* Memory Leak
-	* Integer Overflow
-	* Buffer Overflow
-* **Pointer deference**
-* **Resource exhaustion**
-* **Weak cipher suites and implementations**
-* **DLL injection**
 
-## Pentesting / Penetration Testing
-A penetration test will actually try to grab the data itself. A vulnerability assessment at no time will ever actually try to grab the data. 
+### Applications Vulnerabilities
+* **Race Condition** - A race condition is a flaw that produces an unexpected result when timing of actions impact other actions. An example may be seen on a multithreaded application where actions are being performed on the same data. Race conditions, by their very nature, are difficult to test for.
+
+* **Improper Input Handling** - Improper Input Handling is the term used to describe functions such as validation, sanitization, filtering, or encoding and/or decoding of input data. Improper Input Handling is a leading cause of critical vulnerabilities that exist in today’s systems and applications. (SQL injections, buffer overflows, DoS, etc).
+
+* **Improper Error Handling** - Errors are supposed to show least information about the system, to avoid additional information like Network Information, Memory Dump, Stack Traces, database dumps, etc.
+
+* **Memory/buffer vulnerability**
+	* **Memory Leak**
+		- Unused memory is not properly released
+		- Begins to slowly grow in size
+		- Eventually uses all available memory
+		- System crashes
+	* **Integer Overflow**
+		- Large number into a smaller sized space
+		- Where does the extra number go?
+		- You shouldn't be able to manipulate memory this way
+	* **Buffer Overflow**
+		- Overwriting a buffer of memory
+		- Spills over into other memory areas
+
+* **Null-Pointer deference** - Null pointer errors are usually the result of one or more programmer assumptions being violated. Most null pointer issues result in general software reliability problems, but if an attacker can intentionally trigger a null pointer dereference, the attacker might be able to use the resulting exception to bypass security logic or to cause the application to reveal debugging information that will be valuable in planning subsequent attacks.
+
+* **Resource exhaustion**
+
+* **Weak cipher suites and implementations**
+	* *The suite*:
+		- Encryption Protocol (AES, 3DES, etc)
+		- Length of the encryption key (128 bits, 256 bits etc)
+		- Hash used for integrity check (SHA, MD5 etc)
+
+* **Misconfiguration / Weak configuration**
+
+* **Default configuration** - *(i.e user:admin / pass:password)*
+
+* **DLL injection**
+	- Bad guys didn't write the application, but they could write an external library and manipulate the OS or application to run the library
+
+* **System sprawl / undocumented assets**
+	- Hundred of projects, test platforms, active OS, production VMs
+	- Keeping track is a challenge
+	- Easy to miss a forgotten computer
+		- Under a desk
+		- Part of a retired application
+	- Not part of regular security patches
+
+* **Zero-days**
+	- New threats - *(The WannaCry (2017) ransomware attack was a May 2017 worldwide cyberattack by the WannaCry ransomware cryptoworm, which targeted computers running the Microsoft Windows operating system by encrypting data and demanding ransom payments in the Bitcoin cryptocurrency. The attack was estimated to have affected more than 200,000 computers across 150 countries, with total damages ranging from hundreds of millions to billions of dollars).*
+	* WannaCry ransomware hit on May 12, 2017 and the patch had been available since March 14.
+
+* **Improper certificate and keymanagement** 
+	- Manage your keys and certificates
+	- What will be the organizations certificate authority?
+	- How will intermediate CAs be created and managed?
+	- Who will validate and sign the organization's certificate?
+	- and many more questions about the process
+### Physical Vulnerabilities
+
+* Untrained users
+* Improperly configured accounts
+	* Accounts without a need / abandoned and unnecessary accounts
+	* Accounts with administrative access
+	* Technical issue and process issue
+* Vulnerable business processes
+
+
+## Penetration Testing / Pentesting 
+Is the practice of testing a computer system, network or web application to find security vulnerabilities that an attacker could exploit. Penetration testing can be automated with software applications or performed manually.
+
+* **Penetration test** will actually try to grab the data itself.
+* **Vulnerability assessment** at no time will ever actually try to grab the data. 
 
 ### Pentesting Process
-1. Reconnaissance
-2. Scanning
-3. Gaining Access
-4. Maintaining Access
-5. Expanding to other systems
-6. Avoid Detection
+1. **Reconnaissance**
+2. **Scanning**
+3. **Gaining Access**
+4. **Maintaining Access**
+5. **Expanding to other systems**
+6. **Avoid Detection**
 
 ### Principles
-* Authorization
+* **Authorization**
 	* Define the targets
 	* Attack model
 		* White box - have extensive knowledge about the target
 		* Black box - attacker know nothing about the target
 		* Gray box - somewhere between the two
-* Discover Vulnerabilities
+* **Discover Vulnerabilities**
 	* Reconnaissance
 		* Passive Discovery 
 		* Semi-passive discovery
 		* Active discovery
 	* Try to get Information
-* Exploit vulnerabilities
+* **Exploit vulnerabilities**
 	* Pivotting
 	* Persistance
 	* Privilege Escalation
 
 ***
 
-# 8) Incident Response & Forensics
+# 8. Incident Response & Forensics
 
 ## Incident Response Process
+<p align="center">
+<img width="70%" src="https://storage.googleapis.com/blogs-images/ciscoblogs/1/5a1c879d26385-550x232.png"/>
+</p>
+
 **Preparation**
 - The big plan
 - Who's doing what
