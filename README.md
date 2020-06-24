@@ -782,7 +782,7 @@ Wireshark is the world’s foremost and widely-used network protocol analyzer. I
 
 🛑 Broadcast Storm - when a NIC (or port on a switch) sends large amounts of broadcast traffic, thereby crippling network resources.
 
-### tcpdump
+### `tcpdump`
 Another popular protocol analyzer option for UNIX/Linux.
 
 ## SNMP - Simple Network Management Protocol
@@ -792,7 +792,7 @@ Simple Network Management Protocol (SNMP) is an Internet Standard protocol for c
 * SNMP v2 - added basic encryption
 * SNMP v3 - added TLS encryption  
 
-**SNMP uses Port 161**
+🛑 **SNMP uses Port 161**
 
 ## Logging
 There are two types of events: **Network** and **Non-network** events.
@@ -877,6 +877,7 @@ Enables network administrator to correlate different data sources and data point
 <p align="center">
 <img width="100%" height="350px" src="https://www.netnit.com/wp-content/uploads/2019/05/bigstock-Network-switch-and-ethernet-ca-285322981-845x321.jpg" />
 </p>
+
 ## Switches
 A network switch is networking hardware that connects devices on a computer network by using packet switching to receive and forward data to the destination device. A network switch is a multiport network bridge that uses **MAC addresses** to forward data at the **data link layer of the OSI model.**
 
@@ -1053,7 +1054,7 @@ Developed initially as an extension to the authentication part of PPP. EAP is on
 - Can encrypt traffic into/out of the network
 - Can proxy traffic
 - Most firewalls can be **layer 3 devices (routers)**
-### **Stateless** Firewall
+## **Stateless** Firewall
 * Typically faster and perform better under havier traffic loads.
 
 They watch network traffic and restrict / block packets based on source and destination address or static values **(ACL Rules)** as shown below.
@@ -1065,7 +1066,7 @@ They watch network traffic and restrict / block packets based on source and dest
 <img src="https://www.lanner-america.com/wp-content/uploads/stateless-firewall-packet-filtering-overview-1024x523.png"/>
 </p>
 
-### **Stateful** Firewall
+## **Stateful** Firewall
 * Are better at identifying unauthorized and forged communications.
 
 Can watch traffic streams from end to end. They are aware of communications paths; Can implement varios IPSec functions (tunnels and encryption); Can tell what stage a TCP connection is in (open, open sent, synchronized SYN ACK or established).
@@ -1135,6 +1136,11 @@ Emulate a web server, vulnerable machine purposely to attack; Inviting target to
 * Log all information (port information and the origin IP address)
 
 * Usually located in the DMZ to get close to the source but still isolated to capture the traffic.
+
+<p align="center">
+<img width="50%" src="https://lh3.googleusercontent.com/proxy/x0lmkK6dcM9m3XdCXvJ3-KoKAdeOIqd8yoHgU0-xLTsNsAqGqmbEAz-0nbini42j07lxp7tPlV4Sti99YUatZfT1JkEcQer73EmP"/>
+</p>
+
 
 ### Honeynet
 A honeynet is a vulnerable and **simulated computer network** using a decoy server. **By design, honeynets are not authorized for any authentic uses. If a honeynet is accessed, a fair assumption is that the person accessing it is a bad actor.**
@@ -1249,6 +1255,11 @@ The last mode is what is typically used with crypto map based IPsec VPNs.
 	- They watch network traffic to detect exploits against OS, applications, etc.
 	
 *Look at attacks coming into the network at large instead of into a host. Attacks could be in the form of malformed network traffic or excessive amounts of traffic.*
+
+<p align="center">
+<img width="80%" src="https://3th2q02cq5up44zpe81rwase-wpengine.netdna-ssl.com/wp-content/uploads/2019/11/Intrusion-Detection-IDS-VS-Intrusion-Prevention-IPS-What%E2%80%99s-The-Difference.png" />
+</p>
+
 
 ### Prevention vs. Detection
 
@@ -1421,6 +1432,12 @@ An attacker can send a deauthentication frame at any time to a wireless access p
 	* Upgrade to newer wireless routers
 
 ## Hardening 802.11 Networks
+
+<p align="center">
+<img width="50%" src="https://www.networkcomputing.com/sites/default/files/styles/flexslider_full/public/1-Worst-WiFi-security-mistakes-intro_0.png?itok=HHMt1WvU" />
+</p>
+
+
 * Survey installation issues
 * Maintaining existing wireless networks
 * Monitoring 
@@ -1468,14 +1485,20 @@ An attacker can send a deauthentication frame at any time to a wireless access p
 * Act as a repeater taking the wireless signal and pushing it ot a managed access control (AC) switch that handles encryption and other security. Also called **Standalone AP**
 
 ## Antenna Types
-Higher dB = better
+The most commonly used wireless antenna on both WAPs and wireless devices is an omnidirectional (or omni) antenna. Omnidirectional antennas transmit and receive signals in all directions at the same time. This allows wireless devices to connect to a WAP from any direction.
 
-* Omnidirecitonal
-	Signals goes on every direction. 
-* Dipole
-* Directional
+Another type of antenna is a directional antenna. A directional antenna transmits in a single direction and receives signals back from the same direction. Because the power of the antenna is focused in a single direction, the directional antenna has greater gain than an omni antenna, and it can transmit and receive signals over greater distances.
+
+<p align="center">
+<img width="65%" src="https://mk0gcgablogq2ifx558u.kinstacdn.com/wp-content/uploads/2016/06/Wireless-Antenna.jpg" />
+</p>
+
+* **Omnidirectional**
+	* Signals goes on every direction. 
+* **Dipole**
+* **Directional**
 	* Long individual beam  
-* Patch Graphic
+* **Patch Graphic**
 	* Half Omni (i.e stick to the wall the get one side signals)
 
 ### Antenna Placement Examples
@@ -1487,6 +1510,11 @@ Higher dB = better
 
 ## Band Selection - 2.4 vs 5 GHz
 The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz wireless networks, therefore, cover a larger range than 5 GHz networks. In particular, signals of 5 GHz frequencies do not penetrate solid objects as well as 2.4 GHz signals, and this limits the reach of 5 GHz frequencies inside homes.**
+
+<p align="center">
+<img src="https://uploads-eu-west-1.insided.com/nos-pt/attachment/9f17bbc7-8feb-4ba7-9a2d-f31a7315095a.png" />
+</p>
+
 
 ### **2.4 GHz**
 * Longer range
@@ -1589,6 +1617,11 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 	* Network Segmentation - VLANs with Firewalls; VPN to connect a pipeline securely.
 
 ## Mobile Connectivity
+
+<p align="center">
+<img width="60%" src="https://fetchftw.com/cdn/uploads/2020/01/mobile-repair-1000x666.jpg
+" />
+</p>
 
 * **SATCOM** - Sattelite communication phone
 * **Bluetooth**
@@ -1703,6 +1736,11 @@ Installation of third-party applications that is different from original Applica
 🛑 - *Some companies provides **MDM solutions** (i.e Google - Android: What applications people can install, security policies and so on)* 
 
 ## Physical Controls
+<p align="center">
+<img width="65%" src="https://www.galloglas.org/wp-content/uploads/2019/09/security-risks2_orig.jpg
+" />
+</p>
+
 
 ### **Deterrent** Physical Controls
 * Outside light, Parking Lot Lighting
@@ -1806,18 +1844,19 @@ Unencrypted HTTP running TLS encryption
 ## IP Addressing
 
 ### Private **IPv4** address range 
-*32-bit address with 4 octets*
+* *32-bit address with 4 octets*
 
-**10.0.0.0 - 10.255.255.255**<br>
-**172.16.0.0 - 173.31.255.255**<br>
-**192.168.0.0 - 192.168.255.255**
+<p align="center">
+<img width="80%" src="https://www.certiology.com/wp-content/uploads/2015/05/Private-Ip-Addresses.jpg
+" />
+</p>
 
 ### **IPv6** Address
-*128-bit address*
+* *128-bit address*
 
-Link local: **FE80** - generated automatically by individual hosts
+* Link local: **FE80** - generated automatically by individual hosts
 
-Internet addresss: 2000:0BD8:A388:0000:0000:A2E8:3844:1337
+* Internet addresss: 2000:0BD8:A388:0000:0000:A2E8:3844:1337
  
 🛑 Very common within the IPv6 wolrd to have more than one IP address
 
