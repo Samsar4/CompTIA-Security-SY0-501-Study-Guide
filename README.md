@@ -1737,8 +1737,7 @@ Installation of third-party applications that is different from original Applica
 
 ## Physical Controls
 <p align="center">
-<img width="65%" src="https://www.galloglas.org/wp-content/uploads/2019/09/security-risks2_orig.jpg
-" />
+<img width="65%" src="https://www.galloglas.org/wp-content/uploads/2019/09/security-risks2_orig.jpg" />
 </p>
 
 
