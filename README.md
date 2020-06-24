@@ -31,7 +31,7 @@ Cryptography and PKI | 12%
 #### Helpful resources:
 1. [Practice Questions](https://www.examcompass.com/comptia/security-plus-certification/free-security-plus-practice-tests) - I recommend to test your knowledge after study all topics presented on the exam.
 
-2. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos(13 hours of content) from Professor Messer - Security+.
+2. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos (13 hours of content) from Professor Messer - Security+.
 
 *** 
 
@@ -69,9 +69,12 @@ Anyone can validate the authenticity of a message as well as the source of the m
 ***
 
 # 1. Securing Individual Systems 
+<p align="center">
+<img width="100%" height="350px" src="https://praesidiumintl.com/wp-content/uploads/2019/08/Maritime-Cybersecurity-Solutions.jpg" />
+</p>
 
-## Denial-of-Service (DoS)
-Prevents others from accessing a system / comprimising the availability.
+## Understanding Attacks
+
 ### Attack Types
 
 * **Volumetric Attack**
@@ -90,8 +93,11 @@ Prevents others from accessing a system / comprimising the availability.
 * **Smurf Attack**
 	* Flooded with spoofed ping messages.
 
+## Denial-of-Service (DoS)
+* Prevents others from accessing a system / comprimising the availability.
+
 ### Distributed-Denial-of-Service (DDoS)
-Uses multiple systems to attack a single host - Generally controlled by **BotNets**, which is a type of malware that uses remotely controlled malicious software to control a large range of computers.
+* Uses multiple systems to attack a single host - Generally controlled by **BotNets**, which is a type of malware that uses remotely controlled malicious software to control a large range of computers.
 
 ## Host Threats
 * **Spam**
@@ -422,6 +428,8 @@ Many peripherals can connect to an 802.11 network as a host. Printers and multif
 
 ## Malwares
 
+<img width="60%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTmp_lnFr722pbeRWH3tU7sb9Jrg5-U-SivDA&usqp=CAU" />
+
 #### Virus
 
 * Piece of malicious software
@@ -587,11 +595,14 @@ Ruin the media in such a way tha it is no longer functional.
 ***
 
 # 2. Tools 
+<p align="center">
+<img width="100%" height="350px" src="https://cdn.nextgov.com/media/img/upload/2020/02/14/NGcybersecurity20200214/860x394.jpg" />
+</p>
 
 ## OS Utilities - Command Line (Linux & Windows)
 
-### ping
-can be handful for DNS checks (up / or down) | is a DNS tool to resolves web addresses to an IP address.
+### `ping`
+Can be handful for DNS checks (up / or down) | is a DNS tool to resolves web addresses to an IP address.
 
 ```console
 ping www.google.com 
@@ -608,14 +619,14 @@ round-trip min/avg/max/stddev = 25.236/25.608/25.981/0.373 ms
 **Most useful switches for Ping command - Windows:**
 
 Switch | Description
---|--
+:-:|:-
 **-a** | Resolve address to hostnames
 **-f** | Set don't fragment flag in packet (IPv4 only)
 **-4** | Force using IPv4
 **-6** | Force using IPv4
 
 
-### netstat
+### `netstat`
 get info on host system TCP / UDP connections and status of all open and listening ports and routing table.
 
 * Who you talking to? 
@@ -626,18 +637,18 @@ netstat -a (server)
 netstat -n (host)
 ```
 
-### tracert | traceroute
+### `tracert` | `traceroute`
 traceroute - how packets get from host to another endpoint. Traceroute is helpful to see what routers are being hit, both internal and external.
 
 * tracert - Windows
 * traceroute - Linux
 
-### arp 
+### `arp` 
 address resolution protocol - caches of ip-to-ethernet
 
 
-### ipconfig (Windows)
-show all IP configuration on Windows-only systems.
+### `ipconfig` 
+show all IP configuration on **Windows-only** systems.
 
 **Useful switches:**
 
@@ -649,18 +660,18 @@ Switch | Description
 **/flushdns** | Clears the host's DNS cache
 **/displaydns** | Displays the host's DNS cache
 
-### ifconfig
+### `ifconfig`
 equivalent to ipconfig for UNIX/Linux OS.
 
-### iwconfig 
+### `iwconfig`
 similar to ifconfig, but is dedicated to the wireless network interface.
 
-### ip addr
+### `ip addr`
 show / manipulate routing, network devices, interfaces and tunnels.
 
 Show all the ip configuration, mac address, ipv6 etc.
 
-### nslookup
+### `nslookup`
 query Internet name servers interactively; check if the DNS server is working
 
 ```console
@@ -684,7 +695,7 @@ Address: 162.241.216.11
 
 ```
 
-### dig 
+### `dig` 
 DNS lookup tool - Functions like nslookup, but allows for further functionality.
 
 ```console
@@ -713,7 +724,7 @@ certifiedhacker.com.    14400   IN      A       162.241.216.11
 
 ```
 
-### netcat
+### `netcat`
 TCP/IP swiss army knife; you can make any type of connection and see the results from a command line. With nc you can connect to anything on any port number or you can make your system listen on a port number. Can be an agressive tool for recon.
 
 ## Network Scanners
@@ -784,7 +795,7 @@ Simple Network Management Protocol (SNMP) is an Internet Standard protocol for c
 **SNMP uses Port 161**
 
 ## Logging
-There are two types of events (Network and Non-network events).
+There are two types of events: **Network** and **Non-network** events.
 
 ### Non-Network Logs
 * Operation System Events
@@ -803,6 +814,10 @@ There are two types of events (Network and Non-network events).
 	* Logons successes and failures
 
 **Generic Log Structure:**
+<p align="center">
+<img src="https://www.researchgate.net/profile/Bm_Alom/publication/321032385/figure/tbl1/AS:614256525455387@1523461576460/Database-structure-of-the-generic-log-file.png" />
+</p>
+
 * Date and Time
 * Process/Source/ID
 * Account associated/System
@@ -858,8 +873,10 @@ Enables network administrator to correlate different data sources and data point
 
 ***
 
-# 3) Networks and Infrastructure - Basics 
-
+# 3. Networks and Infrastructure - Basics 
+<p align="center">
+<img width="100%" height="350px" src="https://www.netnit.com/wp-content/uploads/2019/05/bigstock-Network-switch-and-ethernet-ca-285322981-845x321.jpg" />
+</p>
 ## Switches
 A network switch is networking hardware that connects devices on a computer network by using packet switching to receive and forward data to the destination device. A network switch is a multiport network bridge that uses **MAC addresses** to forward data at the **data link layer of the OSI model.**
 
@@ -868,8 +885,11 @@ A network switch is networking hardware that connects devices on a computer netw
 </p>
 
 * Filter & forward data based on **MAC address**
+* OSI Layer 2 [Data Link]
 * Where VLANs are set up
 * **STP (Spanning Tree Protocol)** prevents bridge loop / loop floods
+
+🛑 *Operates in the Data Link layer*
 
 🛑 **Bridge Loop/Switching Loop** - A switching loop or bridge loop occurs in computer networks when there is more than one Layer 2 path between two endpoints. The loop creates broadcast storms as broadcasts and multicasts are forwarded by switches out every port, the switch or switches will repeatedly rebroadcast the broadcast messages flooding the network.
 
@@ -892,6 +912,7 @@ Router is a networking device which helps in routing the data packets between ho
 </p>
 
 * Filter & forward based on **IP address** 
+* OSI Layer 3 [Network]
 * Allocates IP addresses to the devices connected to it using a DHCP server.
 * It performs NAT (Network Address Translation)
 
@@ -1011,16 +1032,50 @@ Developed initially as an extension to the authentication part of PPP. EAP is on
 	* **PEAP** (Microsoft) - PEAP is weak nowdays 
 
 ## Network Firewalls - Concepts
+* Control  the flow of network traffic
+* Standard issue - home, office, and in your operating system
+* Corporate control of outbount and inbound area (sensitive data)
+* Control of inappropriate content
+* Protection adware, spyware etc
+* Firewall Rules
+	- ACL - Access Control Lists
+		- Allow or disallow traffic based on tuples
+		- Grouping of categories (Source IP, Destination IP, port number, time of day, application, etc)
+	- Can be very general or very specific
+	- Implicit deny - prevents access unless specifically permitted.
+
+<p align="center">
+<img width="50%" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Firewall.png"/>
+</p>
+
+- Filters traffic by port number
+	- OSI layer 4 (TCP/UDP) - *some firewalls can filter through OSI layer 7*
+- Can encrypt traffic into/out of the network
+- Can proxy traffic
+- Most firewalls can be **layer 3 devices (routers)**
+### **Stateless** Firewall
+* Typically faster and perform better under havier traffic loads.
+
+They watch network traffic and restrict / block packets based on source and destination address or static values **(ACL Rules)** as shown below.
+<p align="center">
+<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/1bfda0cba4f69eef369df1f53f5299795287818b/acl-firewall.png"/>
+</p>
+<hr>
+<p align="center">
+<img src="https://www.lanner-america.com/wp-content/uploads/stateless-firewall-packet-filtering-overview-1024x523.png"/>
+</p>
 
 ### **Stateful** Firewall
-Can watch traffic streams from end to end. They are aware of communications paths; Can implement varios IPSec functions (tunnels and encryption); Can tell what stage a TCP connection is in (open, open sent, synchronized SYN ACK or established).
-
 * Are better at identifying unauthorized and forged communications.
 
-### **Stateless** Firewall
-They watch network traffic and restrict / block packets based on source and destination address or static values **(ACL Rules)**.
-
-* Typically faster and perform better under havier traffic loads.
+Can watch traffic streams from end to end. They are aware of communications paths; Can implement varios IPSec functions (tunnels and encryption); Can tell what stage a TCP connection is in (open, open sent, synchronized SYN ACK or established).
+<p align="center">
+<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/019ab48fe7336c42e1a1c0122485e3f715d84374/stateful-firewall.png"/>
+</p>
+<hr>
+<p align="center">
+<img src="https://www.lanner-america.com/wp-content/uploads/stateful-firewall-packet-filtering-overview-1024x539.png"/>
+</p>
 
 ### Packet-filtering
 
@@ -1032,7 +1087,8 @@ They watch network traffic and restrict / block packets based on source and dest
 
 ### Application-level Firewall
 
-* Filter traffic based on user group, group membership, application or services (works at layer 7 OSI - also called proxy firewall as well)
+* Filter traffic based on user group, group membership, application or services (works at **layer 7 OSI [Application Layer]** - also called proxy firewall as well).
+* Every packet must be analyzed and categorized before a security decision is determined.
 
 ## Proxy Servers
 A box/piece of software running on a computer acts an intermediary between two different devices having a session. 
@@ -1090,7 +1146,7 @@ The **IP Security (IPsec) protocol** provides a framework for configuring secure
 
 ### The two types of VPN - **Remote Access** and **Site-to-Site**
 <p align="center">
-<img width="73%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/61b8c0d475d2e4d5dbb31bd9c8b8c25497f9dbf8/vpn+topologies.png" />
+<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/61b8c0d475d2e4d5dbb31bd9c8b8c25497f9dbf8/vpn+topologies.png" />
 </p>
 
 * A **remote-access** VPN is created when VPN information is not statically set up, but instead allows for dynamically changing information and can be enabled and disabled. Consider a telecommuter who needs VPN access to corporate data over the Internet. The telecommuter does not necessarily have the VPN connection set up at all times. The telecommuter's PC is responsible for establishing the VPN, each host typically has Cisco VPN client software. 
@@ -1135,7 +1191,7 @@ The **IP Security (IPsec) protocol** provides a framework for configuring secure
 	* Encryption based on SSL/TLS protocol
 	* **TCP port 1194**, but can be changed 
 
-## IPSec - IP Security
+## IPSec - Internet Protocol Security
 Is a suite of protocols developed to ensure the integrity, confidentiality and authentication of data communications over an IP network.
 
 🛑 IPSec works at the IP layer
@@ -1155,7 +1211,7 @@ Is a suite of protocols developed to ensure the integrity, confidentiality and a
 <img width="69%" src="https://media.geeksforgeeks.org/wp-content/uploads/1212-2.png" />
 </p>
 
-### **Tunnel Mode and Transport Mode**
+### **IPSec Transport Mode and Tunnel Mode**
 When IPsec protects traffic, it has a couple of services and modes to choose from.
 
 **Transport mode** - preserving original IP header. Typically used in combination with GRE or other encapsulating protocols. (Host-to-Host)
@@ -1188,14 +1244,21 @@ The last mode is what is typically used with crypto map based IPsec VPNs.
 	* i.e. IPsec over Telnet
 
 ## NIDS and NIPS
-**Network Intrusion Detection Systems (NIDs)** and **Network Intrusion Prevention Systems (NIPS)** look at attacks coming into the network at large instead of into a host. Attacks could be in the form of malformed network traffic or excessive amounts of traffic.
+* **Network Intrusion Detection Systems (NIDS)**
+* **Network Intrusion Prevention Systems (NIPS)**
+	- They watch network traffic to detect exploits against OS, applications, etc.
+	
+*Look at attacks coming into the network at large instead of into a host. Attacks could be in the form of malformed network traffic or excessive amounts of traffic.*
 
-### Prevention vs Detection
-**NIDS** is a **passive** device and focuses on detection alone, making it a **detection control**. It detects network traffic issues and alerts and administrator to these issues, also logging the events in the process.
+### Prevention vs. Detection
 
-**NIPS** is /**inline**(Active) device and focuses not only on detecting network attacks, but preventing them. (block things from router)
+#### Detection
+**NIDS** is a **passive** device and focuses on detection alone, making it a **detection control**. It detects network traffic issues and **alerts and administrator** to these issues, also logging the events in the process.
 
-### Detection
+#### Prevention
+**NIPS** is /**inline**(Active) device and focuses not only on detecting network attacks, but **preventing them. (i.e block things from router)**
+
+### Identification technologies
 NIDS/NIPS solutions act very much like firewalls in that they inspect packets. 
 
 **There's 4 types of detection methods:**
@@ -1203,34 +1266,46 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 * **Behavioral/Anomaly** - Comparing traffic with a baseline of patterns considered normal for the network
 * **Signature** - Preconfigured Signature-based
 * **Rule** - Preconfigured rules in a ruleset - like firewall
-* **Heuristic - (Anomaly and Signature)**
+* **Heuristic** - Use AI to identify (Anomaly and Signature)
 
-### Sensors: In-band & Out-of-Band
+🛑 *Anomaly-based NIPS/NIDS detect new patterns and are much more efficient than signature-based, which can only work with known variants.*
 
-#### NIPS
-* NIPS sensor must be installed **in-band** to your network traffic
+🛑 *Remember all these technologies can report **False positives** or **False negatives**.*
+
+### Sensors
+
+#### NIPS - In-band sensor
+* NIPS sensor must be installed **in-band** to your network traffic. All packets must go through in-band sensor devices/
 
 <p align="center">
 <img width="73%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a2fc0101b75e32a25150d516dcef9e8a9ef5ad86/NIPS.png" />
 </p>
 
-#### NIDS
-* NIDS sensor, being **passive**, is normally installed **out-of-band**
+#### NIDS - Out-of-band sensor
+* NIDS sensor, being **passive**, is normally installed **out-of-band** of the communication. Just plugging it into a switch only allows the sensor to see traffic to and from the switch plus broadcast traffic. The common out-of-band devices is a **network tap** or a **port mirror.**
 
 <p align="center">
 <img width="73%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a2fc0101b75e32a25150d516dcef9e8a9ef5ad86/NIDS.png" />
 </p>
 	
-### **Devices**
 #### Network Tap
-Is a device that you can insert anywhere along a run to grab packets.
+* Is a device that you can insert anywhere along a run to grab packets.
+
+<p align="center">
+<img width="50%" src="https://www.garlandtechnology.com/hs-fs/hubfs/A-NewSite2017/Products/Product%20images/Bypass/P1GMCx_Quarter-Products625x400.png?width=400&name=P1GMCx_Quarter-Products625x400.png" />
+</p>
+
 
 #### Port Mirror
 Also called a Switch Port Analyzer, or SPAN in Cisco Devices, is a special port on a managed switch configured to listen for all data going in and out of the switch. Unlike a network tap, port mirroing is convenient and easily changed to reflect any changes in your NIDS/NIPS monitoring stragegy.
 
 
 ## SIEM - Security Information and Event Management
-SIEM tools aggregate and correlate data, allowing you to organize it into valuable information. You can get to the time sequence of an event in all the logs quickly, have alerts and the ability to notify you based on a configurable trigger.
+*SIEM tools aggregate and correlate data, allowing you to organize it into valuable information. You can get to the time sequence of an event in all the logs quickly, have alerts and the ability to notify you based on a configurable trigger.*
+
+<p align="center">
+<img width="69%" src="https://secureops.com/wp-content/uploads/2020/01/components-of-siem.jpg" />
+</p>
 
 * **Aggregation** - Collecting data from disparate sources and organizing the data into a single format. Any device within a SIEM system that collects data is called collector or an aggregator.
 
@@ -1244,9 +1319,9 @@ SIEM tools aggregate and correlate data, allowing you to organize it into valuab
 
 #### Tools
 
-* **Splunk**
-* **ArcSight**
-* **ELK - Elastic Search, Log Stash and Kibana (openSource)**
+* **[Splunk](https://www.splunk.com/)**
+* **[ArcSight](https://www.microfocus.com/en-us/products/siem-security-information-event-management/overview)**
+* **[ELK - Elastic Search, Log Stash and Kibana](https://www.elastic.co/what-is/elk-stack) (Open Source)**
 
 # Network - Part 2, Beyond the Basics 
 
@@ -1312,7 +1387,7 @@ Is a Rogue AP tha is broadcasting **the same (or very similar) SSID**.
 ### **802.11 Jammer**
 **Jamming is a form of intentional interference on wireless networks, designed as a DoS attack**. This type of attack by overpowering the signals of a legitimate wireless AP, typically using a rogue AP with its transmit power set to very high levels.
 
-### **Deauthentication/Disassociation Attack**
+### **Deauthentication / Disassociation Attack**
 Deauth Attack Is a type of denial-of-service attack that targets communication between a **user** and a **Wi-Fi wireless access point**. 
 
 **Technical details:** The IEEE 802.11 (Wi-Fi) protocol contains the provision for a deauthentication frame. Sending the frame from the access point to a station is called a "sanctioned technique to inform a rogue station that they have been disconnected from the network".
@@ -1940,7 +2015,11 @@ If you have data that is a part of your app some of that data has risk of exposu
 
 ***
 
-# 4) Identity and Access Management
+# 4. Identity and Access Management
+
+<p align="center">
+<img width="65%" src="https://miro.medium.com/max/698/1*ytjCMDPDQVgEJbRuYpAttw.jpeg" />
+</p>
 
 ## Identification and AAA
 Identification, authentication, authorization, and accounting work together to manage assets securely.
@@ -2252,8 +2331,12 @@ Query Directories: Structured language that allows one computer to go into someb
 
 ***
 
-# 5) Risk Management
+# 5. Risk Management
 Risk management is the identification, evaluation, and prioritization of risks followed by coordinated and economical application of resources to minimize, monitor, and control the probability or impact of unfortunate events or to maximize the realization of opportunities.
+<p align="center">
+<img width="60%" src="https://csrc.nist.gov/CSRC/media/Projects/Risk-Management/images-media/NIST-RMF.png" />
+</p>
+
 
 # Defining Risk
 
@@ -2761,7 +2844,12 @@ Agreement used in public sector.
 
 ***
 
-# 6) Cryptography and PKI
+# 6. Cryptography and PKI
+<p align="center">
+<img width="100%" height="350px" src="https://wp.technologyreview.com/wp-content/uploads/2019/07/quantumexplainer3.2-01-10.jpg" />
+</p>
+
+
 Cryptography is the practice of disguising information in a way that looks random
 
 ### **Obfuscation**
@@ -3077,16 +3165,16 @@ The purpose of Vulnerability Scanning is to identify vulnerabilities cause by la
 
 
 ## Social Engineering Attacks
-* **Phishing**<br>
+* **Phishing** - the fraudulent attempt to obtain sensitive information such as usernames, passwords and credit card details by disguising oneself as a trustworthy entity in an electronic communication<br>
 * **Spear Phishing** - Directed towards a specific person or company<br>
 * **Vishing** - Uses Voice calls/telephone system to get private information<br>
 * **Hoax** - Warns someone that something bad is happening when its not *(i.e Virus Alert)*<br>
 * **Watering Hole Attack** - An attempt to infect websites that a group of end users would normally go to gain access to their information or network. *(i.e Local Coffee Shop Network)*<br>
-* **Whaling** - Spear phishing tha targets senior managemen t and executives<br>
+* **Whaling** - Spear phishing tha targets senior management and executives<br>
 * **Tailgating** - *(i.e leave computer unlocked, door etc)*<br>
-* **Shoulder Surfing** 👀 <br>
+* **Shoulder Surfing** - technique used to obtain private information by looking over the victim's shoulder, either from keystrokes on a device or sensitive information being spoken and heard, also known as eavesdropping <br>
 * **Impersonation** - Pretend to be someone you aren't
-* **Dumpster Diving** 
+* **Dumpster Diving** - Used to retrieve information that could be used to carry out an attack on a computer network.
 
 ## Web Application Attacks
 * **Common Log Format (CLF)** - Standard type of logs that every single type of web server generates.
@@ -3238,21 +3326,21 @@ Is the practice of testing a computer system, network or web application to find
 
 # 8. Incident Response & Forensics
 
-## Incident Response Process
+<h3 align="center">Incident Response Process</h3>
 <p align="center">
-<img width="70%" src="https://storage.googleapis.com/blogs-images/ciscoblogs/1/5a1c879d26385-550x232.png"/>
+<img width="70%" src="https://48p4co31imez19sw3n1qudx0-wpengine.netdna-ssl.com/wp-content/uploads/incident_response_process.png"/>
 </p>
 
-**Preparation**
+**1. Preparation**
 - The big plan
 - Who's doing what
 - Organize types of incidents that might happen
 
-**Reporting**
+**1.1 Reporting**
 - What reports go to whom?
 - Escalation
 
-**Identification**
+**2. Identification**
 - Recognize what incident has ocurred
 - Report from users
 - Check the monitoring tools you use
@@ -3260,25 +3348,25 @@ Is the practice of testing a computer system, network or web application to find
 - Assess the impact
 - Define who's involved
 
-**Containment**
+**3. Containment**
 - Mitigate the damage
 - Stop the attack
 - Segregate the network
 - Shutdown the system
 - Turn off a service
 
-**Eradication**
+**4. Eradication**
 - Remove the malware
 - Close off vulnerabilities
 - Add new controls
 
-**Recovery**
+**5. Recovery**
 - Restore from backups
 - Pull from snapshots
 - Hire replacemente personnel
 - Monitor to ensure good operation
 
-**Documentation**
+**6. Documentation**
 - Document the incident
 - What failed?
 - What worked?
@@ -3451,7 +3539,7 @@ Cloud backups work beautifully, however, they have one big downside and that is 
 
 ***
 
-## List of Common Ports
+## List of Common Ports for Security+ exam
 
 Port | Description
 :-:|:-
@@ -3492,5 +3580,3 @@ Port | Description
 1723 | PPTP - Point-to-Point Tunneling Protocol - VPN
 3389 | RDP - Remote Desktop Protocol 
 5060, 5061 | SIP - Session Initiation Protocol
-
-***
