@@ -1619,8 +1619,7 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 ## Mobile Connectivity
 
 <p align="center">
-<img width="60%" src="https://fetchftw.com/cdn/uploads/2020/01/mobile-repair-1000x666.jpg
-" />
+<img width="60%" src="https://fetchftw.com/cdn/uploads/2020/01/mobile-repair-1000x666.jpg" />
 </p>
 
 * **SATCOM** - Sattelite communication phone
@@ -1846,8 +1845,7 @@ Unencrypted HTTP running TLS encryption
 * *32-bit address with 4 octets*
 
 <p align="center">
-<img width="80%" src="https://www.certiology.com/wp-content/uploads/2015/05/Private-Ip-Addresses.jpg
-" />
+<img width="80%" src="https://www.certiology.com/wp-content/uploads/2015/05/Private-Ip-Addresses.jpg" />
 </p>
 
 ### **IPv6** Address
