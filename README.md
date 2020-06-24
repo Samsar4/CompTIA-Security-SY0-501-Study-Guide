@@ -314,6 +314,11 @@ Refers to efficiently distributing incoming network traffic across a group of ba
 
 * Distributes work loads across multiple machines
 
+<p align="center">
+<img width="79%" src="https://i0.wp.com/gbhackers.com/wp-content/uploads/2018/12/Load-Balancer.jpg?fit=759%2C387&ssl=1" />
+</p>
+
+
 #### Virtualize the serves 
 
 * Scalability
@@ -331,6 +336,10 @@ Refers to efficiently distributing incoming network traffic across a group of ba
 * Desktop Systems with limited security
 
 ### TPM - Trusted Platform Module
+<p align="center">
+<img width="60%" src="https://cdn.shopify.com/s/files/1/2158/1497/products/tpm_2_x850.jpg?v=1571338167" />
+</p>
+
 Microchip built into a computer hardware that is used to store cryptographic information(public/private key). *(i.e **BitLocker** 1.2+)*; The OS relies on this **hardware of root trust** to check for low-level changes at boot up.
 
 *examples of disk encryption TPM and non-TPM:*
@@ -342,7 +351,11 @@ Microchip built into a computer hardware that is used to store cryptographic inf
 
 🛑 **BitLocker is a built-in Windows Utility Drive Encryption Tool; must have a recovery key to access the data.**
 
-#### Secure Boot - TPM
+### Secure Boot - TPM
+<p align="center">
+<img src="https://mk0resourcesinfm536w.kinstacdn.com/wp-content/uploads/111711_1705_UEFIandtheT10.png" />
+</p>
+
 During the boot process, the TPM and UEFI generate reports about the process and can send those reports to a remote system, like a central authentication server. This process is called **remote authentication** / remote attestation.
 
 ### Hardware / Firmware Security
@@ -387,7 +400,15 @@ Is any type of hardware that's designed to do security work. For ATMs, Web Serve
 * Avoid backdoors
 
 ### RFID (Radio Frequency Identification) 
-*Access badges, inventory/assembly line tracking, pet/animal identification, anything that needs to be tracked.*
+
+* Access badges
+* Inventory/assembly line tracking
+* Pet/animal identification
+* Anything that needs to be tracked.
+
+<p align="center">
+<img src="https://www.scielo.br/img/revistas/jatm/v10//2175-9146-jatm-10-e2418-gf01.jpg" />
+</p>
 
 ##### Security Concerns / Attacks
 * Data Capture 
@@ -403,13 +424,18 @@ Is any type of hardware that's designed to do security work. For ATMs, Web Serve
 ### NFC - Near Field Communication
 *Payment systems (Google Wallet, MasterCard partnership etc); Bootstrap for other wireless (helps with Bluetooth pairing); Uses an access token, identity 'card' (short range with encryption support)*
 
+<p align="center">
+<img src="https://www.libramation.com/Images/Products%20thumbs/Prod%20pics/nfc/nfcdiag.jpg" />
+</p>
+
+
 ##### Security Concerns
 * Remote capture
 * Frequency Jamming (DoS)
 * Relay/Replay Attack (MITM)
 * Loss of RFC device control *(i.e stolen phone)*
 
-### 🔷 Bluetooth Security
+### Bluetooth Security 🔷🔒
 
 **Bluejacking** - When bad actors connects with any Device that have Bluetooth enable by default.
 
@@ -428,7 +454,7 @@ Many peripherals can connect to an 802.11 network as a host. Printers and multif
 
 ## Malwares
 
-<img width="60%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTmp_lnFr722pbeRWH3tU7sb9Jrg5-U-SivDA&usqp=CAU" />
+<img src="https://csirt.cy/wp-content/uploads/2019/06/malware-banner.jpg" />
 
 #### Virus
 
@@ -758,10 +784,6 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ...
 
 ```
-
-## Angry IP Scanner (GUI) - for Windows
-Does a good job using simple protocols, mainly ping, to query a single IP address or an address range. 
-
 ## Protocol Analyzers
 **Protocol Analyzers collect and inventory the network traffic.**
 
@@ -775,15 +797,31 @@ Does a good job using simple protocols, mainly ping, to query a single IP addres
 * Find systems broadcasting bad data.
 * Find problems in authentication by watching each step of the process.
 
-### Wireshark
+## Angry IP Scanner (GUI) - for Windows
+Does a good job using simple protocols, mainly ping, to query a single IP address or an address range. 
+
+<p align="center">
+<img width="70%" src="https://img.creativemark.co.uk/uploads/images/808/17808/img3File.png" />
+</p>
+
+## Wireshark
 Wireshark is the world’s foremost and widely-used network protocol analyzer. It lets you see what’s happening on your network at a microscopic level.
 
-*With Wirehsark you can inspect and detect ARP poisonings, Rogue DHCP servers, Broadcast Storm etc.*
+<p align="center">
+<img width="70%" src="https://upload.wikimedia.org/wikipedia/commons/0/03/Wireshark_screenshot.png" />
+</p>
+
+* *With Wirehsark you can inspect and detect ARP poisonings, Rogue DHCP servers, Broadcast Storm etc.*
 
 🛑 Broadcast Storm - when a NIC (or port on a switch) sends large amounts of broadcast traffic, thereby crippling network resources.
 
 ### `tcpdump`
-Another popular protocol analyzer option for UNIX/Linux.
+tcpdump is a data-network packet analyzer computer program that runs under a command line interface. It allows the user to display TCP/IP and other packets being transmitted or received over a network to which the computer is attached. Distributed under the BSD license, tcpdump is free software
+
+<p align="center">
+<img width="70%" src="https://packetflows.com/wp-content/uploads/2017/05/tcpdump_i.png" />
+</p>
+
 
 ## SNMP - Simple Network Management Protocol
 Simple Network Management Protocol (SNMP) is an Internet Standard protocol for collecting and organizing information about managed devices on IP networks and for modifying that information to change device behavior. Devices that typically support SNMP include cable modems, routers, switches, servers, workstations, printers, and more.
@@ -795,6 +833,19 @@ Simple Network Management Protocol (SNMP) is an Internet Standard protocol for c
 🛑 **SNMP uses Port 161**
 
 ## Logging
+
+* **Common Log Format (CLF)** - Standard type of logs that every single type of web server generates.
+
+```
+127.0.0.1 - - [28/OCT/2012/13:12:44 - 0500] "GET /CertifiedHacker.png HTTP/1.0" 200 42213
+    |      |             |                    |                                  |     |
+  HOST    IDENT     DATE & TIME            REQUEST                             STATUS BYTES
+```
+**IDENT** - If the IdentityCheck directive is enabled and the client machine runs ident, then this is the identity information reported by the client.<br>
+**GET** - Request HTTP method command<br>
+**STATUS** - status, 200 = Everything is ok<br>
+**BYTES** - the number of bytes in the object returned to the client, excluding all HTTP headers.
+
 There are two types of events: **Network** and **Non-network** events.
 
 ### Non-Network Logs
@@ -3180,9 +3231,6 @@ The purpose of Vulnerability Scanning is to identify vulnerabilities cause by la
 * [Nexpose](https://www.rapid7.com/products/nexpose/) by Rapid7
 * [OpenVAS](https://www.openvas.org/) (Open Source) 
 
-
-
-
 ## Principles of Social Engineering 🗣👤
 1. **Authority**
 	* Impersonate or imply a position of authority
@@ -3199,8 +3247,12 @@ The purpose of Vulnerability Scanning is to identify vulnerabilities cause by la
 7. **Trust**
 	* To assure reliance on their honesty and integrity
 
-
 ## Social Engineering Attacks
+
+<p align="center">
+<img width="50%" src="https://mfgtec.org/wp-content/uploads/2019/07/Social-Engineering.png"/>
+</p>
+
 * **Phishing** - the fraudulent attempt to obtain sensitive information such as usernames, passwords and credit card details by disguising oneself as a trustworthy entity in an electronic communication<br>
 * **Spear Phishing** - Directed towards a specific person or company<br>
 * **Vishing** - Uses Voice calls/telephone system to get private information<br>
@@ -3212,20 +3264,13 @@ The purpose of Vulnerability Scanning is to identify vulnerabilities cause by la
 * **Impersonation** - Pretend to be someone you aren't
 * **Dumpster Diving** - Used to retrieve information that could be used to carry out an attack on a computer network.
 
-## Web Application Attacks
-* **Common Log Format (CLF)** - Standard type of logs that every single type of web server generates.
+## Common Web Application Attacks
 
-```
-127.0.0.1 - - [28/OCT/2012/13:12:44 - 0500] "GET /CertifiedHacker.png HTTP/1.0" 200 42213
-    |      |             |                    |                                  |     |
-  HOST    IDENT     DATE & TIME            REQUEST                             STATUS BYTES
-```
-**IDENT** - If the IdentityCheck directive is enabled and the client machine runs ident, then this is the identity information reported by the client.<br>
-**GET** - Request HTTP method command<br>
-**STATUS** - status, 200 = Everything is ok<br>
-**BYTES** - the number of bytes in the object returned to the client, excluding all HTTP headers.
 
-### Common Web Apps and Application Attacks
+<p align="center">
+<img width="80%" src="https://www.ptsecurity.com/upload/corporate/ww-en/images/analytics/article_300527/300527_6.jpg"/>
+</p>
+<p align="center">2018 - source: ptsecurity</p>
 
 * **Cross-site scripting (XSS)** - Client-side script 
 injected into trusted web site
@@ -3327,6 +3372,11 @@ injected into trusted web site
 
 
 ## Penetration Testing / Pentesting 
+
+<p align="center">
+<img width="85%" src="https://www.appknox.com/hubfs/Appknox%20-%20Penetration%20Testing%20Stages.jpg"/>
+</p>
+
 Is the practice of testing a computer system, network or web application to find security vulnerabilities that an attacker could exploit. Penetration testing can be automated with software applications or performed manually.
 
 * **Penetration test** will actually try to grab the data itself.
@@ -3408,7 +3458,9 @@ Is the practice of testing a computer system, network or web application to find
 - What worked?
 
 ## Incident Response Plan
-**CIRT-Cyber incident response team**
+**CIRT - Cyber Incident Response Team**
+*This group is responsible for responding to security breaches, viruses and other potentially catastrophic incidents in enterprises that face significant security risks. In addition to technical specialists capable of dealing with specific threats, it should include experts who can guide enterprise executives on appropriate communication in the wake of such incidents. The CIRT normally operates in conjunction with other enterprise groups, such as site security, public-relations and disaster recovery teams. (See cyber incident and CIRP.*
+
 - A group of people whose job is to response to all incident
 - Full or part time - or both
 - IT Security Team
@@ -3441,6 +3493,11 @@ Is the practice of testing a computer system, network or web application to find
 - Annual scenario drills 
 
 ## Digital Forensics
+
+<p align="center">
+<img width="75%" src="https://www.dw.com/image/16866326_303.jpg"/>
+</p>
+
 Digital forensics is the process of uncovering and interpreting electronic data. The goal of the process is to preserve any evidence in its most original form while performing a structured investigation by collecting, identifying and validating the digital information for the purpose of reconstructing past events.
 
 The context is most often for usage of data in a court of law, though digital forensics can be used in other instances.
@@ -3450,6 +3507,10 @@ The context is most often for usage of data in a court of law, though digital fo
 - Gathering Evidence - data is of high integrity
 
 #### **Chain of Custody Process**
+<p align="center">
+<img width="80%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/315dda37f0f07dc2f1c79a3a4ac44fe0f33c5396/forensics-chain-custody.png"/>
+</p>
+
 1. Define the Evidence
 2. Document collection method
 3. Data/time collected
@@ -3494,20 +3555,23 @@ The context is most often for usage of data in a court of law, though digital fo
 - What to do for keep the **Business Continuity** going?
 
 ### Disaster Recovery - Evacuation Plan
-- **Backup Sites**
-	- **Cold site**
-		- It takes weeks to bring online
-		- Basic office spaces (i.e building, chairs, AC...)
-		- No operational equipment
-		- Cheapest recovery site
-	- **Warm site**
-		- It takes days to bring online
-		- Operational equipment but little or no data
-	- **Hot site**
-		- It take hours to bring online
-		- Real-time synchronization
-		- Almost all data ready to go - often just a quick update
-		- Very expensive
+
+#### Backup Sites:
+
+![a](https://www.nakivo.com/blog/wp-content/uploads/2019/01/Comparison-of-DR-site-options.jpg)
+- **Cold site**
+	- It takes weeks to bring online
+	- Basic office spaces (i.e building, chairs, AC...)
+	- No operational equipment
+	- Cheapest recovery site
+- **Warm site**
+	- It takes days to bring online
+	- Operational equipment but little or no data
+- **Hot site**
+	- It take hours to bring online
+	- Real-time synchronization
+	- Almost all data ready to go - often just a quick update
+	- Very expensive
 
 - **Distance & Location** - different backup sites
 - **Internet requirements**
