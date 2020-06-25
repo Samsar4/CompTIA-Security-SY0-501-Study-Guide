@@ -1,4 +1,3 @@
-
 <p align="center">
 <img width="100%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/232dd1aac3219bb680af5b3e2e86d85f6aa163fb/banner-splus.jpg" />
 </p>
@@ -16,11 +15,10 @@
 
 *Security+ is compliant with ISO 17024 standards and approved by the US DoD to meet directive 8140/8570.01-M requirements. Regulators and government rely on ANSI accreditation, because it provides confidence and trust in the outputs of an accredited program. Over 2.3 million CompTIA ISO/ANSI-accredited exams have been delivered since January 1, 2011.* [[+]](https://www.comptia.org/certifications/security)
 
-
-#### Exam Domains
+#### ☑️ Exam Domains
 
 Domain | % of the Exam Content 
--|:-:
+:-|:-:
 Threats, Attacks and Vulnerabilities | 21%
 Technologies and Tools | 22%
 Architecture and Design | 15%
@@ -28,7 +26,7 @@ Identity and Access Management | 16%
 Risk Management | 14%
 Cryptography and PKI | 12%
 
-#### Helpful resources:
+#### 🆓 Helpful resources:
 1. [Practice Questions](https://www.examcompass.com/comptia/security-plus-certification/free-security-plus-practice-tests) - I recommend to test your knowledge after study all topics presented on the exam.
 
 2. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos (13 hours of content) from Professor Messer - Security+.
@@ -93,14 +91,17 @@ Anyone can validate the authenticity of a message as well as the source of the m
 * **Smurf Attack**
 	* Flooded with spoofed ping messages.
 
-## Denial-of-Service (DoS)
+### Denial-of-Service (DoS)
 * Prevents others from accessing a system / comprimising the availability.
 
 ### Distributed-Denial-of-Service (DDoS)
 * Uses multiple systems to attack a single host - Generally controlled by **BotNets**, which is a type of malware that uses remotely controlled malicious software to control a large range of computers.
+<p align="center">
+<img width="69%" src="https://www.cloudflare.com/img/learning/ddos/glossary/dos-attack/dos-vs-ddos-attack.png" />
+</p>
 
-## Host Threats
-* **Spam**
+## Common Host Threats
+* **Spam** - Spam is electronic junk mail or junk newsgroup postings. Some people define spam even more generally as any unsolicited email. Real spam is generally email advertising for some product sent to a mailing list or newsgroup.
 
 * **Phishing & Spear Phishing** - The difference between both is that Spear Phishing is for targeted individuals with some type of information about the victim embeded.
 
@@ -114,7 +115,7 @@ Anyone can validate the authenticity of a message as well as the source of the m
 
 * **Domain Hijacking** - the act of changing the registration of a domain name without the permission of its original registrant, or by abuse of privileges on domain hosting and registrar software systems.
 
-* **Privilege Escalation**   
+* **Privilege Escalation** - is the act of exploiting a bug, design flaw or configuration oversight in an operating system or software application to gain elevated access to resources that are normally protected from an application or user.
 
 ## Man-in-the-Middle Attack
 
@@ -125,8 +126,6 @@ Anyone can validate the authenticity of a message as well as the source of the m
 <p align="center">
 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/MITM_Diagramm.png" />
 </p>
-
-
 
 * **Wireless MITM**
 	* 802.11
@@ -145,16 +144,16 @@ Anyone can validate the authenticity of a message as well as the source of the m
 
 * **Session Hijacking** - Inject information on middle of connection 
 
-## System Resiliency
-Generally they handle risks better, adding technologies and processes to enable the system recovery easily.
+#### System Resiliency
+* Generally they handle risks better, adding technologies and processes to enable the system recovery easily.
 
-### Scalability
-Adding more resources to take care the demand (manually added)
+#### Scalability
+* Adding more resources to take care the demand (manually added)
 
-### Elasticity
-The resources grow on demand as they required (i.e. IaaS)
+#### Elasticity
+* The resources grow on demand as they required (i.e. IaaS)
 
-### Redundancy - Distributed Allocation
+#### Redundancy - Distributed Allocation
 *Is a form of distributive allocation.*
 
 * Mass storage
@@ -163,7 +162,7 @@ The resources grow on demand as they required (i.e. IaaS)
 
 *You can create more than one copy of non-OS critical data so that if one copy dies, another copy is ready to go to keep the systems up and running.*
 
-### Non-persistance
+#### Non-persistance
 *Is data that is collected but will not be saved on restart.*
 
 * Snapshots - take the current state of something (i.e binary level) and store. A snapshot reverts to known state.
@@ -217,7 +216,6 @@ Storage area networks and network-attached storage both provide networked storag
 * Shows up as normal shares on network
 * Good for small environments
 * **File-level**
-
 
 ### Storage Area Networks (SAN)
 * **SAN runs on block-level storage**
@@ -370,24 +368,22 @@ Is any type of hardware that's designed to do security work. For ATMs, Web Serve
 
 ## Secure OS Types
 
-* **Server OS** *[RedHat Server, Windows Server etc]*
+* **Server OS - RedHat Server, Windows Server etc**
 	* Built-in functionality 
 	* Connections
  
-* **Workstation** *[Linux Ubuntu, Windows 10 etc]*
+* **Workstation - Linux Ubuntu, Windows 10 etc**
 	* Desktop version
 	* Workhorse
 
-* **Embedded Systems** *[Routers, CCTVs etc]*
+* **Embedded Systems - Routers, CCTVs etc**
 	* Appliance
 	* Their own OS
 
-* **Kiosk** *[i.e. Big Touch Screens on Museums, Mall etc]*
+* **Kiosk - i.e. Big Touch Screens on Museums, Mall etc**
 	* Limited function 
 
-* **Mobile OS**
-	* Apple iOS
-	* Android OS
+* **Mobile OS - Apple iOS and Android OS**
 
 🛑 *Picking an OS based on least functionality is a good security practice.*
 
@@ -573,7 +569,9 @@ Everything about software management, application whitelisting, the main job - i
 * IPS is usually close to the edge the network
 * Action to prevent will occur at the IPS device
 
-🛑 **IDS: notifies | IPS: acts to stop | Firewall: filters**
+🛑 **IDS: Notifies**
+🛑 **IPS: Acts to stop**
+🛑 **Firewall: Filters**
 
 ## Automation Strategies
 *Automation is often used with various scans and updates based on configurable trigger.*
@@ -593,15 +591,15 @@ Everything about software management, application whitelisting, the main job - i
 ### Clearing/Clear
 Clear means to tell the device through user commands inherent to the massa storage device to sanitize the data. *(i.e. send commands to a hard drive to erase data)*
 
-🛑 Can be done with commands such as erase, format and delete (these methods are not final)
+🛑 **Can be done with commands such as erase, format and delete (these methods are not final)**
 
 ### Purge
 Purging will process the device to remove data from the drive, the device might will no longer be usable. Means to use anything other than an internal command to sanitize the data on the media. *(i.e. Degausser: machine with a strong magnetic field that destroys/purge the data from massa storage devices)*
 
-**purge also means that the device is basically not useful anymore**
+🛑 **Purge also means that the device is basically not useful anymore**
 
 ### Crypto Erase
-In case you lost the keys to encrypted device.
+* In case you lost the keys to encrypted device.
 
 ### Destroy / Data Destruction
 Ruin the media in such a way tha it is no longer functional.
@@ -846,7 +844,11 @@ Simple Network Management Protocol (SNMP) is an Internet Standard protocol for c
 **STATUS** - status, 200 = Everything is ok<br>
 **BYTES** - the number of bytes in the object returned to the client, excluding all HTTP headers.
 
-There are two types of events: **Network** and **Non-network** events.
+<p align="center">
+<img src="https://www.researchgate.net/profile/Sasa_Bosnjak/publication/265243206/figure/tbl1/AS:669034987151362@1536521779088/Examples-of-Common-Log-Format.png" />
+</p>
+
+### There are two types of events: **Network** and **Non-network** events.
 
 ### Non-Network Logs
 * Operation System Events
@@ -891,7 +893,7 @@ There are two types of events: **Network** and **Non-network** events.
 
 **Centralized log management** - means that the log files from different machines are automatically sent to a centralized logging facility or server, such as a syslog server, administrators review logs from a centralized loogging facility on the network. Enterprise correlate them into one unifed management interface, so the administrator can look for trends or events.
 
-### Centralized
+**Centralized** features:
 * Uses a Central repository
 	* Drag on system
 * Use SNMP Systems
@@ -917,7 +919,7 @@ Auditing also consists of other activities, such as:
 * Penetration Test
 * Compliance Audits
 
-🛑 *Auditing can reveal weak security configurations*
+🛑 **Auditing can reveal weak security configurations**
 
 ### Trend Analysis
 Enables network administrator to correlate different data sources and data points from various places in the network, such as log files, IDS logs, wireless and wired sniffing as well as other event sources, and seek to identify on-going trends in both performance and security. The goal is find patterns that can indicate a emerging issue.
@@ -941,7 +943,7 @@ A network switch is networking hardware that connects devices on a computer netw
 * Where VLANs are set up
 * **STP (Spanning Tree Protocol)** prevents bridge loop / loop floods
 
-🛑 *Operates in the Data Link layer*
+🛑 **Operates in the Data Link layer**
 
 🛑 **Bridge Loop/Switching Loop** - A switching loop or bridge loop occurs in computer networks when there is more than one Layer 2 path between two endpoints. The loop creates broadcast storms as broadcasts and multicasts are forwarded by switches out every port, the switch or switches will repeatedly rebroadcast the broadcast messages flooding the network.
 
@@ -1059,6 +1061,13 @@ In computer networking, Point-to-Point Protocol (PPP) is a data link layer (laye
 ### **EAP** - Extensible Authentication Protocol
 Developed initially as an extension to the authentication part of PPP. EAP is only an extension for the protocol that having a connection, and was created as a better authentication method to PPP.
 
+
+<p align="center">
+<img width="70%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/f9232015768452b7755659cb454c02711e15fad4/EAP.png" />
+</p>
+
+
+
 * **EAP - MD5**
 	* basically MSCHAP
 	* Takes those passwords and hashes them into MD5 hash
@@ -1145,16 +1154,28 @@ Can watch traffic streams from end to end. They are aware of communications path
 ## Proxy Servers
 A box/piece of software running on a computer acts an intermediary between two different devices having a session. 
 
+* Useful for caching information, access control, URL filtering, content scanning.
+
+<p align="center">
+<img width="60%" src="https://networkencyclopedia.com/wp-content/uploads/2019/08/proxy-server-1024x649.png"/>
+</p>
+
+Most proxies in use are application proxies; Many proxies are multipurpose proxies (HTTP, HTTPS, FTP, etc)
+
 * Application-specific
 	* Web proxy
 	* FTP proxy
 	* VOIP proxy
 
-### **Forward Proxy - Client**
-*The proxy simply forward the requests of respective client.*
+🛑 One of the simplest 'proxies' is NAT (Network Address Translation) - a Network-level proxy.
  
-* [Client -> **Proxy** -> Firewall -> Internet -> Server]
+### **Forward Proxy - Client**
+The proxy simply forward the requests of respective client and retrieve the response back to the client.
 
+<p align="center">
+<img width="60%" src="https://iq.opengenus.org/content/images/2018/06/forward_proxy.jpg"/>
+</p>
+ 
 * **Hides the client**
 
 * Provides:
@@ -1162,11 +1183,12 @@ A box/piece of software running on a computer acts an intermediary between two d
 	* Content filtering
 	* Acts similar to firewall (block based on URL, content filtering and so on).
 
-
 ### **Reverse Proxy - Server**
-*Like a forward but complete reverse.*
+Like a forward proxy but complete reverse.
 
-* [Client <-  Internet <- Firewall <- **Proxy** <- Server]
+<p align="center">
+<img width="60%" src="https://iq.opengenus.org/content/images/2018/06/reverse_proxy.jpg"/>
+</p>
 
 * **Hides the servers**
 	
@@ -1178,6 +1200,17 @@ A box/piece of software running on a computer acts an intermediary between two d
 	* Caching
 	* Encryption acceleration
 
+### **Open Proxy**
+* A third-party, uncrontrolled proxy
+	- Can be a significant security concern
+	- Often used to circumvent existing security controls
+
+* **A significant security concern** about open proxies, is that the owner of the proxy can add whatever they'd like into the network communication. They can send URL request and response with malicious code or redirection to another malicious website.
+
+<p align="center">
+<img width="80%" src="https://qph.fs.quoracdn.net/main-qimg-b3d705e7af54e2eefdbdd7bc6314d720.webp"/>
+</p>
+
 ## Honeypots
 
 Emulate a web server, vulnerable machine purposely to attack; Inviting target to keep away from targets. 
@@ -1186,15 +1219,18 @@ Emulate a web server, vulnerable machine purposely to attack; Inviting target to
 
 * Log all information (port information and the origin IP address)
 
-* Usually located in the DMZ to get close to the source but still isolated to capture the traffic.
+* **Usually located in the DMZ to get close to the source but still isolated to capture the traffic.**
 
 <p align="center">
-<img width="50%" src="https://lh3.googleusercontent.com/proxy/x0lmkK6dcM9m3XdCXvJ3-KoKAdeOIqd8yoHgU0-xLTsNsAqGqmbEAz-0nbini42j07lxp7tPlV4Sti99YUatZfT1JkEcQer73EmP"/>
+<img src="https://s.profissionaisti.com.br/wp-content/uploads/2013/12/Honeypot1.jpg"/>
 </p>
 
-
-### Honeynet
+## Honeynet
 A honeynet is a vulnerable and **simulated computer network** using a decoy server. **By design, honeynets are not authorized for any authentic uses. If a honeynet is accessed, a fair assumption is that the person accessing it is a bad actor.**
+
+<p align="center">
+<img src="https://4.bp.blogspot.com/-xWl3-KlRj2k/We9JzYQPnlI/AAAAAAAADoA/dj1UOT-O7l4dNLy1BSgjfW94JmqgxqYfgCLcBGAs/s1600/honeypots-honeynet-roo-honeywall-1.png"/>
+</p>
 
 ## VPN - Virtual Private Networks 
 Organizations use virtual private networks (VPNs) to create an end-to-end private network connection (tunnel) over third-party networks such as the Internet or extranets.
@@ -1253,7 +1289,7 @@ Is a suite of protocols developed to ensure the integrity, confidentiality and a
 
 🛑 IPSec works at the IP layer
 
-### **IPSec Components**
+## **IPSec Components**
 
 1. **Encapsulating Security Payload (ESP)** – It provides data integrity, encryption, authentication and anti replay. It also provides authentication for payload.
 
@@ -1301,16 +1337,18 @@ The last mode is what is typically used with crypto map based IPsec VPNs.
 	* i.e. IPsec over Telnet
 
 ## NIDS and NIPS
+Both technologies watch network traffic to detect exploits against OS, applications, etc. 
+
 * **Network Intrusion Detection Systems (NIDS)**
+	- Passive device that detect anomalies.
 * **Network Intrusion Prevention Systems (NIPS)**
-	- They watch network traffic to detect exploits against OS, applications, etc.
-	
-*Look at attacks coming into the network at large instead of into a host. Attacks could be in the form of malformed network traffic or excessive amounts of traffic.*
+	- Active device that detect and prevents when something on the network traffic is suspicious by blocking it.
 
 <p align="center">
 <img width="80%" src="https://3th2q02cq5up44zpe81rwase-wpengine.netdna-ssl.com/wp-content/uploads/2019/11/Intrusion-Detection-IDS-VS-Intrusion-Prevention-IPS-What%E2%80%99s-The-Difference.png" />
 </p>
 
+🛑 Attacks could be in the form of malformed network traffic or excessive amounts of traffic.
 
 ### Prevention vs. Detection
 
@@ -1332,18 +1370,20 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 
 🛑 *Anomaly-based NIPS/NIDS detect new patterns and are much more efficient than signature-based, which can only work with known variants.*
 
-🛑 *Remember all these technologies can report **False positives** or **False negatives**.*
+🛑 Remember all these technologies can report **False positives** or **False negatives**.
+
+🛑 In simple words: **IDS: Notifies, IPS: Acts to stop, Firewall: Filters**.
 
 ### Sensors
 
-#### NIPS - In-band sensor
+#### NIPS uses In-band sensor
 * NIPS sensor must be installed **in-band** to your network traffic. All packets must go through in-band sensor devices/
 
 <p align="center">
 <img width="73%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a2fc0101b75e32a25150d516dcef9e8a9ef5ad86/NIPS.png" />
 </p>
 
-#### NIDS - Out-of-band sensor
+#### NIDS uses Out-of-band sensor
 * NIDS sensor, being **passive**, is normally installed **out-of-band** of the communication. Just plugging it into a switch only allows the sensor to see traffic to and from the switch plus broadcast traffic. The common out-of-band devices is a **network tap** or a **port mirror.**
 
 <p align="center">
@@ -1356,7 +1396,6 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 <p align="center">
 <img width="50%" src="https://www.garlandtechnology.com/hs-fs/hubfs/A-NewSite2017/Products/Product%20images/Bypass/P1GMCx_Quarter-Products625x400.png?width=400&name=P1GMCx_Quarter-Products625x400.png" />
 </p>
-
 
 #### Port Mirror
 Also called a Switch Port Analyzer, or SPAN in Cisco Devices, is a special port on a managed switch configured to listen for all data going in and out of the switch. Unlike a network tap, port mirroing is convenient and easily changed to reflect any changes in your NIDS/NIPS monitoring stragegy.
@@ -1379,11 +1418,20 @@ Also called a Switch Port Analyzer, or SPAN in Cisco Devices, is a special port 
 
 * **WORM - Write Once Read Many**: The concept being is that log files are precious, and a lot of times you might want to look at them in an archival way, so that we can use optical media like WORM drives to store them.
 
-#### Tools
+#### SIEM Tools
 
 * **[Splunk](https://www.splunk.com/)**
+	![splunk](https://www.splunk.com/content/dam/splunk2/images/screenshots/platform-journey/conflaunch/SS-UI-Light-Mode-frame.png)
+
+<br>
+
 * **[ArcSight](https://www.microfocus.com/en-us/products/siem-security-information-event-management/overview)**
+	![arcsight](https://i.ytimg.com/vi/N7J0EwdbKF0/maxresdefault.jpg)
+
+<br>
+
 * **[ELK - Elastic Search, Log Stash and Kibana](https://www.elastic.co/what-is/elk-stack) (Open Source)**
+	![elk](https://i.imgur.com/lydtCwn.png)
 
 # Network - Part 2, Beyond the Basics 
 
@@ -1393,13 +1441,15 @@ Also called a Switch Port Analyzer, or SPAN in Cisco Devices, is a special port 
 
 ![80211](https://steemitimages.com/p/X37EMQ9WSwsMfHTdm8pfEYwuZbTCWFHqXbdDf3mYpu7MPCSF4g1H91WdvbEPreHqYfn7wJWqACH9w9uZtcuSAd6cDn1sAibTMxevS?format=match&mode=fit)
 
-## **Wireless Access Point (WAP) - Concepts**
+## **Wireless Access Point (WAP)**
 
 * Wireless Access Point is a Bridge between **802.11** and **Ethernet**.
 * Every WAP have MAC address
 * **SSID (Service Set identifier)** associated to the MAC address on a WAP is known as **BSSID - (Basic Service Set Identifier)**
 * When a large network is connected multiple WAP's through a **Common Ethernet Broadcast Domain** - turns out **ESSID - (Extended Service Set Identifier)**
 
+🛑 - WAP is a bridge - extends the wired network on the wireless network (operates on OSI Layer 2 - data link)
+🛑 - Not a wireless router; A wireless router is a router and a WAP in a single device.
 ### **WEP** - Wireless Equivalency Privacy
 
 * 64/128 bit RC4 ICV 
@@ -1438,6 +1488,10 @@ Also called a Switch Port Analyzer, or SPAN in Cisco Devices, is a special port 
 **CCMP** - Cipher Block Chaining Message Code Protocol<br>
 **AES** - Advanced Encryption System
 
+<p align="center">
+<img src="http://www.maxi-pedia.com/web_files/images/WPA_WPA2_comparison.png" />
+</p>
+
 ## Vulnerabilities with Wireless Access Points
 
 ### **Rogue Access Point**
@@ -1456,13 +1510,12 @@ Deauth Attack Is a type of denial-of-service attack that targets communication b
 
 An attacker can send a deauthentication frame at any time to a wireless access point, with a spoofed address for the victim. The protocol does not require any encryption for this frame, even when the session was established with Wired Equivalent Privacy (WEP) for data privacy, and the attacker only needs to know the victim's MAC address, which is available in the clear through wireless network sniffing.
 
-
 ## Cracking WEP, WPA, WPA2 and WPS
 
 ### **WEP**
 * **IV Attack** - Initialization Vector is vulnerable to cracking.
 	* Aircrack can grab WEP keys and crack them.
-* WEP is the oldest security standard 802.11
+* WEP is the **oldest security standard 802.11**
 
 ### **WPA/WPA2**
 * WPA/WPA2 uses 4-way handshake
@@ -1487,7 +1540,6 @@ An attacker can send a deauthentication frame at any time to a wireless access p
 <p align="center">
 <img width="50%" src="https://www.networkcomputing.com/sites/default/files/styles/flexslider_full/public/1-Worst-WiFi-security-mistakes-intro_0.png?itok=HHMt1WvU" />
 </p>
-
 
 * Survey installation issues
 * Maintaining existing wireless networks
@@ -1522,7 +1574,11 @@ An attacker can send a deauthentication frame at any time to a wireless access p
 
 ## Fat vs. Thin Access Points
 
-### Thick Client
+<p align="center">
+<img src="https://www.nusoft.com.tw/us/product_info/oap/images/fat_thin_compare.jpg" />
+</p>
+
+### Fat AP
 * Good for small environments 
 * Management console to configure security controls
 * ACLs
@@ -1531,7 +1587,7 @@ An attacker can send a deauthentication frame at any time to a wireless access p
 * Manage individually
 * Also called controller-based AP
 
-### Thin Client
+### Thin AP
 * Good for big environments. *(i.e A building with multiple floors and hundreds of users might rely on one good switch (with a redundant backup) to control dozens of thin access points)*
 * Act as a repeater taking the wireless signal and pushing it ot a managed access control (AC) switch that handles encryption and other security. Also called **Standalone AP**
 
@@ -1566,7 +1622,6 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 <img src="https://uploads-eu-west-1.insided.com/nos-pt/attachment/9f17bbc7-8feb-4ba7-9a2d-f31a7315095a.png" />
 </p>
 
-
 ### **2.4 GHz**
 * Longer range
 * Penetrate walls easily
@@ -1597,7 +1652,7 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 * Snapshots and backups 
 * Network Separation
 
-### Virtual Threats 
+### Virtual Threats
 * VM sprawl - the out-of-control creation of VMs outside of security controls.
 * VM escape - when a user inside a VM finds a way to break out the VM and get into the underlying hypervisor/host OS.
 
@@ -1789,7 +1844,6 @@ Installation of third-party applications that is different from original Applica
 <p align="center">
 <img width="65%" src="https://www.galloglas.org/wp-content/uploads/2019/09/security-risks2_orig.jpg" />
 </p>
-
 
 ### **Deterrent** Physical Controls
 * Outside light, Parking Lot Lighting
@@ -1989,8 +2043,30 @@ Secure Socket Layer (**SSL**) and Transport Layer Security (**TLS**), they are p
 ### Load Balancer
 *  Load balancer is actually a proxy because he takes all the incoming requests for the Web site and then distributes it around to the servers
 * Enhance security and efficiency
+* Distribute the load for multiple servers
+* Large-scale implementtions
+* Fault tolerance
+	- Server outages have no effects
+	- Very fast convergence
+
 <p align="center">
 <img width="71%" src="https://1.bp.blogspot.com/-HlGvzm614dI/VchpAXr0dTI/AAAAAAAAKAI/O9IDZa4_it4/s1600/load-balancing.png" />
+</p>
+
+* TCP offload
+	- protocol overhead
+* SSL offload 
+	- offloads the encryption process
+* Caching
+	- Fast response
+
+### Load Balancer - Scheduling 
+* Round-robin: each server is selected in turn
+* Additional round-robin options
+	* Weighted round-robin: Prioritize the server use
+	* Dynamic round-robin: Monitor the server load and distribute to the server with the lowest use
+<p align="center">
+<img width="81%" src="https://avinetworks.com/wp-content/uploads/2019/02/round-robin-load-balancing-diagram.png" />
 </p>
 
 ### DDoS Mitigator
@@ -1998,14 +2074,12 @@ Secure Socket Layer (**SSL**) and Transport Layer Security (**TLS**), they are p
 * Will send an alert to emergency response services which assist in traffic flow to the site under attack
 * Act like a proxy for websites
 
-
 ## Secure Code Development
 
 ### Waterfall Model
 <p align="center">
 <img width="71%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Waterfall_model.svg/1200px-Waterfall_model.svg.png" />
 </p>
-
 
 ### Agile 
 * Created to be better than Waterfall Model
@@ -3186,14 +3260,14 @@ $2b$10$vES9mCPsE10//vOc1u01XeUVmJrZyHGMPaRfo39OIUoJ2g7iPtDnu
 
 # 7. Testing the Infrastructure
 <p align="center">
-<img width="70%" src="https://t3.ftcdn.net/jpg/01/68/76/94/240_F_168769418_GHALsqlIr8jlG6iIhIfuSPOr2hnWk53r.jpg"/>
+<img width="70%" src="https://blog.beyondsecurity.com/wp-content/uploads/cybersecurity_shield_blue_pink_network_SCANNING_rendered.png"/>
 </p>
 
 ## Vulnerability Scanning Tools 👁‍🗨
-* traceroute/tracert command
-* Advanced IP scanner 
-* Nmap
-* MBSA - Microsoft Baseline Security Analyzer (determine the security state of a system by assessing missing security updates and less-secure security settings; report good information for vulnerability assessment)
+* **Advanced IP scanner** - Advanced IP Scanner is fast and free software for network scanning. It will allow you to quickly detect all network computers and obtain access to them. With a single click, you can turn a remote PC on and off, connect to it via Radmin, and much more.
+* **Nmap** - Nmap is a free and open-source network scanner. Nmap is used to discover hosts and services on a computer network by sending packets and analyzing the responses. Nmap provides a number of features for probing computer networks, including host discovery and service and operating system detection.
+* **MBSA - Microsoft Baseline Security Analyzer** (determine the security state of a system by assessing missing security updates and less-secure security settings; report good information for vulnerability assessment)
+* **`traceroute`/`tracert` command** - show how packets get from host to another endpoint. Traceroute is helpful to see what routers are being hit, both internal and external.
 
 ### Scan Types:
 1. **Non-intrusive**: Gather information, don't try to exploit a vulnerability.
@@ -3228,8 +3302,17 @@ The purpose of Vulnerability Scanning is to identify vulnerabilities cause by la
 
 ## Vulnerability Assessment Tools
 * [Nessus](https://www.tenable.com/products/nessus) by Tenable
+	![nessus](https://www.tenable.com/sites/all/themes/tenablefourteen/img/nessus/nessus-live-results_large.png)
+
+<br>
+
 * [Nexpose](https://www.rapid7.com/products/nexpose/) by Rapid7
-* [OpenVAS](https://www.openvas.org/) (Open Source) 
+	![nexpose](https://www.rapid7.com/globalassets/_images/product/nexpose/story-image/nexpose-update-product-story-image.jpg)
+
+<br>
+
+* [OpenVAS](https://www.openvas.org/) (Open Source)
+	![openvas](https://sempreupdate.com.br/wp-content/uploads/2016/07/como-utilizar-openvas-greenbone-security-assistant-no-linux.png)
 
 ## Principles of Social Engineering 🗣👤
 1. **Authority**
@@ -3266,7 +3349,6 @@ The purpose of Vulnerability Scanning is to identify vulnerabilities cause by la
 
 ## Common Web Application Attacks
 
-
 <p align="center">
 <img width="80%" src="https://www.ptsecurity.com/upload/corporate/ww-en/images/analytics/article_300527/300527_6.jpg"/>
 </p>
@@ -3290,12 +3372,12 @@ injected into trusted web site
 * **Comand Injection** - ommand injection is an attack in which the goal is execution of arbitrary commands on the host operating system via a vulnerable application. 
 
 * **SQL injection (queries)**
-	* inner join 
-	* select from 
-	* insert into 
+	* `inner join`
+	* `select from` 
+	* `insert into` 
 
 * **LDAP injection (queries info)** 
-	* based on X.500 protocol
+	* Based on X.500 protocol
 		* DC = Domain Component
 		* OU = Organizational Unit
 		* CN = Common Name
@@ -3303,7 +3385,6 @@ injected into trusted web site
 * **Buffer Overflow** - overflows the input directly to the memory 
 
 * **Integer Overflow** - overflow an input variable (i.e typing a large number on calculate forcing an error)
-
 
 ### Applications Vulnerabilities
 * **Race Condition** - A race condition is a flaw that produces an unexpected result when timing of actions impact other actions. An example may be seen on a multithreaded application where actions are being performed on the same data. Race conditions, by their very nature, are difficult to test for.
@@ -3459,7 +3540,7 @@ Is the practice of testing a computer system, network or web application to find
 
 ## Incident Response Plan
 **CIRT - Cyber Incident Response Team**
-*This group is responsible for responding to security breaches, viruses and other potentially catastrophic incidents in enterprises that face significant security risks. In addition to technical specialists capable of dealing with specific threats, it should include experts who can guide enterprise executives on appropriate communication in the wake of such incidents. The CIRT normally operates in conjunction with other enterprise groups, such as site security, public-relations and disaster recovery teams. (See cyber incident and CIRP.*
+*This group is responsible for responding to security breaches, viruses and other potentially catastrophic incidents in enterprises that face significant security risks. In addition to technical specialists capable of dealing with specific threats, it should include experts who can guide enterprise executives on appropriate communication in the wake of such incidents. The CIRT normally operates in conjunction with other enterprise groups, such as site security, public-relations and disaster recovery teams.*
 
 - A group of people whose job is to response to all incident
 - Full or part time - or both
@@ -3680,3 +3761,5 @@ Port | Description
 1723 | PPTP - Point-to-Point Tunneling Protocol - VPN
 3389 | RDP - Remote Desktop Protocol 
 5060, 5061 | SIP - Session Initiation Protocol
+
+***
