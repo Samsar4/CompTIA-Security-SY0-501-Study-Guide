@@ -198,11 +198,11 @@ Different levels of RAID arrays or combination is for:
 ### RAID 1+0 (10)
 * **Disk mirroring with striping** - combines both RAID level 0 and 1 for performance and redundancy; a strip of two mirrored arrays.
 
-🛑 **The most common RAID styles includes 0, 1, 5 and 10.**
+> 🛑 **The most common RAID styles includes 0, 1, 5 and 10.**
 
-🛑 **RAID 1 and RAID 0 requires at least 2 drives.**
+> 🛑 **RAID 1 and RAID 0 requires at least 2 drives.**
 
-🛑 **RAID 5 requires 3 or more drives and RAID 10 requires 4 drives.** 
+> 🛑 **RAID 5 requires 3 or more drives and RAID 10 requires 4 drives.** 
 
 ## NAS and SAN
 Storage area networks and network-attached storage both provide networked storage solutions. A NAS is a single storage device that operates on data files, while a SAN is a local network of several devices.
@@ -230,7 +230,7 @@ Storage area networks and network-attached storage both provide networked storag
 * **Data Execution Prevention (DEP)**
 DEP is refer to Windows, in generic term is *Executable space protection*; DEP is almost always on by default on Windows. 
 
-🛑 DEP should be always be on, quietly protecting systems from buffer overflows. **The need to turn off DEP is rare**.
+> 🛑 DEP should be always be on, quietly protecting systems from buffer overflows. **The need to turn off DEP is rare**.
 
 * Disabling Ports (can be done in the BIOS); Turn off legacy non-active ports to avoid vulnerable entry point.
 
@@ -347,7 +347,7 @@ Microchip built into a computer hardware that is used to store cryptographic inf
 * TrueCrypt (non-TPM)
 * FileVault (for macOS - non-TPM)
 
-🛑 **BitLocker is a built-in Windows Utility Drive Encryption Tool; must have a recovery key to access the data.**
+> 🛑 **BitLocker is a built-in Windows Utility Drive Encryption Tool; must have a recovery key to access the data.**
 
 ### Secure Boot - TPM
 <p align="center">
@@ -385,7 +385,7 @@ Is any type of hardware that's designed to do security work. For ATMs, Web Serve
 
 * **Mobile OS - Apple iOS and Android OS**
 
-🛑 *Picking an OS based on least functionality is a good security practice.*
+> 🛑 Picking an OS based on least functionality is a good security practice.
 
 
 ## Secure Peripherals ⌨️📱🖨
@@ -443,7 +443,7 @@ Is any type of hardware that's designed to do security work. For ATMs, Web Serve
 * **Class2** is 33' foot *(10 meters)*
 * **Class3** is 3' foot *(1 meter)*
 
-🛑 **Most Mobile phones and Bluetooth headsets are Class2 (10 meters).**
+> 🛑 **Most Mobile phones and Bluetooth headsets are Class2 (10 meters).**
 
 ### 802.11
 Many peripherals can connect to an 802.11 network as a host. Printers and multifunction devices (MFDs) are very commonly connected with 802.11.
@@ -537,7 +537,7 @@ Many peripherals can connect to an 802.11 network as a host. Printers and multif
 * The output is really an Access Control List
 * Use of Least privilege and whitelisting 
 
-🛑 **False positive** - scan results identify a file that may not actually harm a system or is allowed on the system. (i.e. you just downloaded the Cain & Abel to crack some passwords on your assessment, probably Windows Defender will try to block it out).
+> 🛑 **False positive** - scan results identify a file that may not actually harm a system or is allowed on the system. (i.e. you just downloaded the Cain & Abel to crack some passwords on your assessment, probably Windows Defender will try to block it out).
 
 ### File Integrity Check
 Verify the integrity of file is in good order and ready to run. 
@@ -548,7 +548,7 @@ Verify the integrity of file is in good order and ready to run.
 * tampered
 * version and date
 
-🛑 *To create a file integrity check, you can Generate a hash from source code - checksum. If somebody tamper the file or change from source code, the output hash will be different.*
+> 🛑 *To create a file integrity check, you can Generate a hash from source code - checksum. If somebody tamper the file or change from source code, the output hash will be different.*
 
 ### Application Whitelisting
 Everything about software management, application whitelisting, the main job - it's to make sure that users are running the right applications on each individual systems.
@@ -569,9 +569,9 @@ Everything about software management, application whitelisting, the main job - i
 * IPS is usually close to the edge the network
 * Action to prevent will occur at the IPS device
 
-🛑 **IDS: Notifies**
-🛑 **IPS: Acts to stop**
-🛑 **Firewall: Filters**
+> 🛑 **IDS: Notifies**
+> 🛑 **IPS: Acts to stop**
+> 🛑 **Firewall: Filters**
 
 ## Automation Strategies
 *Automation is often used with various scans and updates based on configurable trigger.*
@@ -591,12 +591,12 @@ Everything about software management, application whitelisting, the main job - i
 ### Clearing/Clear
 Clear means to tell the device through user commands inherent to the massa storage device to sanitize the data. *(i.e. send commands to a hard drive to erase data)*
 
-🛑 **Can be done with commands such as erase, format and delete (these methods are not final)**
+> 🛑 **Can be done with commands such as erase, format and delete (these methods are not final)**
 
 ### Purge
 Purging will process the device to remove data from the drive, the device might will no longer be usable. Means to use anything other than an internal command to sanitize the data on the media. *(i.e. Degausser: machine with a strong magnetic field that destroys/purge the data from massa storage devices)*
 
-🛑 **Purge also means that the device is basically not useful anymore**
+> 🛑 **Purge also means that the device is basically not useful anymore**
 
 ### Crypto Erase
 * In case you lost the keys to encrypted device.
@@ -638,7 +638,7 @@ PING www.google.com (172.217.168.164): 56 data bytes
 2 packets transmitted, 2 packets received, 0.0% packet loss
 round-trip min/avg/max/stddev = 25.236/25.608/25.981/0.373 ms
 ```
-🛑 In Windows you need to add a **-t** flag to keep running.
+> 🛑 In **Windows** you need to add a **-t** flag to keep running.
 
 **Most useful switches for Ping command - Windows:**
 
@@ -811,7 +811,7 @@ Wireshark is the world’s foremost and widely-used network protocol analyzer. I
 
 * *With Wirehsark you can inspect and detect ARP poisonings, Rogue DHCP servers, Broadcast Storm etc.*
 
-🛑 Broadcast Storm - when a NIC (or port on a switch) sends large amounts of broadcast traffic, thereby crippling network resources.
+> 🛑 Broadcast Storm - when a NIC (or port on a switch) sends large amounts of broadcast traffic, thereby crippling network resources.
 
 ### `tcpdump`
 tcpdump is a data-network packet analyzer computer program that runs under a command line interface. It allows the user to display TCP/IP and other packets being transmitted or received over a network to which the computer is attached. Distributed under the BSD license, tcpdump is free software
@@ -899,8 +899,7 @@ Simple Network Management Protocol (SNMP) is an Internet Standard protocol for c
 * Use SNMP Systems
 	* Pulls informaton needed and generates graphs and charts
 
-🛑 Monitoring-as-a-Services (MaaS)
-
+> 🛑 Monitoring-as-a-Services (MaaS)
 
 ### SIEM - Security Information and Event Management
 Collects data points from network, including **log files, traffic captures, SNMP messages, and so on**, from every host on the network. **SIEM can collect all this data into one centralized location and correlate it for analysis to look for security and performance issues, as well negative trends all in real time.**
@@ -919,7 +918,7 @@ Auditing also consists of other activities, such as:
 * Penetration Test
 * Compliance Audits
 
-🛑 **Auditing can reveal weak security configurations**
+> 🛑 **Auditing can reveal weak security configurations**
 
 ### Trend Analysis
 Enables network administrator to correlate different data sources and data points from various places in the network, such as log files, IDS logs, wireless and wired sniffing as well as other event sources, and seek to identify on-going trends in both performance and security. The goal is find patterns that can indicate a emerging issue.
@@ -943,9 +942,9 @@ A network switch is networking hardware that connects devices on a computer netw
 * Where VLANs are set up
 * **STP (Spanning Tree Protocol)** prevents bridge loop / loop floods
 
-🛑 **Operates in the Data Link layer**
+> 🛑 **Operates in the Data Link layer**
 
-🛑 **Bridge Loop/Switching Loop** - A switching loop or bridge loop occurs in computer networks when there is more than one Layer 2 path between two endpoints. The loop creates broadcast storms as broadcasts and multicasts are forwarded by switches out every port, the switch or switches will repeatedly rebroadcast the broadcast messages flooding the network.
+> 🛑 **Bridge Loop/Switching Loop** - A switching loop or bridge loop occurs in computer networks when there is more than one Layer 2 path between two endpoints. The loop creates broadcast storms as broadcasts and multicasts are forwarded by switches out every port, the switch or switches will repeatedly rebroadcast the broadcast messages flooding the network.
 
 ### VLANs
 A virtual LAN is any broadcast domain that is partitioned and isolated in a computer network at the data link layer. LAN is the abbreviation for local area network and in this context virtual refers to a physical object recreated and altered by additional logic.
@@ -970,9 +969,9 @@ Router is a networking device which helps in routing the data packets between ho
 * Allocates IP addresses to the devices connected to it using a DHCP server.
 * It performs NAT (Network Address Translation)
 
-🛑 *Generally operates in the Network layer*
+> 🛑 *Generally operates in the Network layer*
 
-🛑 A firewall is a piece of software that is commonly run on a gateway router which protects us from the evils of the Internet, so it can forward and filter based on port numbers, based on IP addresses, URL's, all kinds of different stuff. **So we would call this a network firewall because the gateway is running the firewall software** and protecting us from the evil of the Internet.
+> 🛑 A firewall is a piece of software that is commonly run on a gateway router which protects us from the evils of the Internet, so it can forward and filter based on port numbers, based on IP addresses, URL's, all kinds of different stuff. **So we would call this a network firewall because the gateway is running the firewall software** and protecting us from the evil of the Internet.
 
 ## Network Topologies - Basics
 The actual organization of a network in terms of how is the data moving around and the best way to do it.
@@ -1018,7 +1017,7 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 <img width="64%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8c176b8a798fb5749c4391c45015ee5d14d56f13/intranet.png" />
 </p>
 
-🛑 **Extranet**: example of some vendor who need to access the Intranet network.
+> 🛑 **Extranet**: example of some vendor who need to access the Intranet network.
 
 ## Network Zones - Concepts
 
@@ -1114,6 +1113,7 @@ Developed initially as an extension to the authentication part of PPP. EAP is on
 - Can encrypt traffic into/out of the network
 - Can proxy traffic
 - Most firewalls can be **layer 3 devices (routers)**
+
 ## **Stateless** Firewall
 * Typically faster and perform better under havier traffic loads.
 
@@ -1167,7 +1167,7 @@ Most proxies in use are application proxies; Many proxies are multipurpose proxi
 	* FTP proxy
 	* VOIP proxy
 
-🛑 One of the simplest 'proxies' is NAT (Network Address Translation) - a Network-level proxy.
+> 🛑 One of the simplest 'proxies' is NAT (Network Address Translation) - a Network-level proxy.
  
 ### **Forward Proxy - Client**
 The proxy simply forward the requests of respective client and retrieve the response back to the client.
@@ -1287,7 +1287,7 @@ The **IP Security (IPsec) protocol** provides a framework for configuring secure
 ## IPSec - Internet Protocol Security
 Is a suite of protocols developed to ensure the integrity, confidentiality and authentication of data communications over an IP network.
 
-🛑 IPSec works at the IP layer
+> 🛑 IPSec works at the Layer 3 - Network (IPv4) 
 
 ## **IPSec Components**
 
@@ -1348,7 +1348,7 @@ Both technologies watch network traffic to detect exploits against OS, applicati
 <img width="80%" src="https://3th2q02cq5up44zpe81rwase-wpengine.netdna-ssl.com/wp-content/uploads/2019/11/Intrusion-Detection-IDS-VS-Intrusion-Prevention-IPS-What%E2%80%99s-The-Difference.png" />
 </p>
 
-🛑 Attacks could be in the form of malformed network traffic or excessive amounts of traffic.
+> 🛑 Attacks could be in the form of malformed network traffic or excessive amounts of traffic.
 
 ### Prevention vs. Detection
 
@@ -1368,11 +1368,11 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 * **Rule** - Preconfigured rules in a ruleset - like firewall
 * **Heuristic** - Use AI to identify (Anomaly and Signature)
 
-🛑 *Anomaly-based NIPS/NIDS detect new patterns and are much more efficient than signature-based, which can only work with known variants.*
+> 🛑 *Anomaly-based NIPS/NIDS detect new patterns and are much more efficient than signature-based, which can only work with known variants.*
 
-🛑 Remember all these technologies can report **False positives** or **False negatives**.
+> 🛑 Remember all these technologies can report **False positives** or **False negatives**.
 
-🛑 In simple words: **IDS: Notifies, IPS: Acts to stop, Firewall: Filters**.
+> 🛑 In simple words: **IDS: Notifies, IPS: Acts to stop, Firewall: Filters**.
 
 ### Sensors
 
@@ -1447,9 +1447,61 @@ Also called a Switch Port Analyzer, or SPAN in Cisco Devices, is a special port 
 * Every WAP have MAC address
 * **SSID (Service Set identifier)** associated to the MAC address on a WAP is known as **BSSID - (Basic Service Set Identifier)**
 * When a large network is connected multiple WAP's through a **Common Ethernet Broadcast Domain** - turns out **ESSID - (Extended Service Set Identifier)**
+* MAC Filtering - limit access through the physical hardware address. 
 
-🛑 - WAP is a bridge - extends the wired network on the wireless network (operates on OSI Layer 2 - data link)
-🛑 - Not a wireless router; A wireless router is a router and a WAP in a single device.
+<p align="center">
+<img src="https://www.cisco.com/c/dam/en/us/support/docs/smb/wireless/cisco-small-business-100-series-wireless-access-points/images/ijgm-06302017-configure-cluster-wap-step0.png" />
+</p>
+
+> 🛑 **WAP is a bridge** - extends the wired network on the wireless network (operates on OSI Layer 2 - data link)
+
+> 🛑 **Not a wireless router!** A wireless router is a router and a WAP in a single device.
+
+> #### 🛑 Security Through Obscurity:
+> * **Enabling MAC Filtering don't provide security** - the addresses can easily spoofed.
+> * **Disabling SSID broadcasting don't provide security** - is easily determined through wireless network analysis.
+
+### Wireless LAN (WLAN) Controllers
+* **Controlling Multiple Access Points**
+* Centralized management
+
+<p align="center">
+<img src="https://blog.smartcity.com/wp-content/uploads/2015/01/WLAN-Controller.jpg" />
+</p>
+
+* Deploy new access points
+* Performance and security monitoring
+* Configure and deploy changes to all sites
+* Report on access point use
+* Usually a proprietary system
+	- The wireless controlled is paired with the access points
+
+* **LWAPP** 
+	- **Lightweight Access Point Protocol** - is a protocol that can control multiple Wi-Fi wireless access points at once.
+	- Cisco proprietary - CAPWAP, based on LWAPP
+	- Manage multiple access points simultaneously
+
+### Fat / Thick Access Point
+* Thick/Fat access points
+	- The access point handles most wireless tasks
+	- The switch is not wireless-aware
+
+* **Good for small environments**
+* Management console to configure security controls
+* ACLs
+* White/black listing
+* Encryption
+* Manage individually
+* Also called controller-based AP
+
+### Thin Access Point
+- Just enough to be 802.11 wireless
+- The intelligence is in the switch
+- Less expensive
+
+* **Good for big environments.** *(i.e A building with multiple floors and hundreds of users might rely on one good switch (with a redundant backup) to control dozens of thin access points)*
+* **Act as a repeater** taking the wireless signal and pushing it ot a managed access control (AC) switch that handles encryption and other security. Also called **Standalone AP**
+
 ### **WEP** - Wireless Equivalency Privacy
 
 * 64/128 bit RC4 ICV 
@@ -1457,7 +1509,7 @@ Also called a Switch Port Analyzer, or SPAN in Cisco Devices, is a special port 
 **RC4** - Rivest Cipher 4 Stream Cipher Algorithm<br>
 **ICV** - Integrity Check Value
 
-🛑 *Very old and insecure.*
+>🛑 Very old and insecure.
 
 ### **WPA** - Wi-Fi Protected Access
 
@@ -1572,25 +1624,6 @@ An attacker can send a deauthentication frame at any time to a wireless access p
 	* AP isolation enabled 
 	* 802.1X is more robust
 
-## Fat vs. Thin Access Points
-
-<p align="center">
-<img src="https://www.nusoft.com.tw/us/product_info/oap/images/fat_thin_compare.jpg" />
-</p>
-
-### Fat AP
-* Good for small environments 
-* Management console to configure security controls
-* ACLs
-* White/black listing
-* Encryption
-* Manage individually
-* Also called controller-based AP
-
-### Thin AP
-* Good for big environments. *(i.e A building with multiple floors and hundreds of users might rely on one good switch (with a redundant backup) to control dozens of thin access points)*
-* Act as a repeater taking the wireless signal and pushing it ot a managed access control (AC) switch that handles encryption and other security. Also called **Standalone AP**
-
 ## Antenna Types
 The most commonly used wireless antenna on both WAPs and wireless devices is an omnidirectional (or omni) antenna. Omnidirectional antennas transmit and receive signals in all directions at the same time. This allows wireless devices to connect to a WAP from any direction.
 
@@ -1604,9 +1637,13 @@ Another type of antenna is a directional antenna. A directional antenna transmit
 	* Signals goes on every direction. 
 * **Dipole**
 * **Directional**
-	* Long individual beam  
+	* Long individual beam, increased distances. 
+	* **Yagi antenna**
+		- Very directional and high gain.
+	* **Parabolic antenna**
+		- Focus the signal to a single point.
 * **Patch Graphic**
-	* Half Omni (i.e stick to the wall the get one side signals)
+	* Half Omni (i.e stick to the wall the get one side signals).
 
 ### Antenna Placement Examples
 *Antennas should be centrally located throughout different areas of the facility so that hey can adequately span all areas of coverage within a facility, without being too close to exterior walls or the roof whenever possible.*
@@ -1614,6 +1651,18 @@ Another type of antenna is a directional antenna. A directional antenna transmit
 * Stadium like = **Omnidirectional Antenna**
 * Outdoors = **Dipole Antenna**
 * Shooting long distances *(one building to another)* = **Directional Antenna**
+
+#### Example on 2.4 GHz Frequency Ranges
+
+<p align="center">
+<img width="70%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/28db15e18559c5a634b2a2b4b3d021690a7ec9f5/antenna.png" />
+</p>
+
+* Make sure to have multiple access points that were not overlapping any of the frequencies
+* **On 2.4 GHz frquency ranges to avoid one overlaps each other.**
+	* Channel 1
+	* Channel 6
+	* Channel 11
 
 ## Band Selection - 2.4 vs 5 GHz
 The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz wireless networks, therefore, cover a larger range than 5 GHz networks. In particular, signals of 5 GHz frequencies do not penetrate solid objects as well as 2.4 GHz signals, and this limits the reach of 5 GHz frequencies inside homes.**
@@ -1630,6 +1679,7 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 * Faster choice
 * Automated channels
 * Wider Channels = better
+
 
 ## Virtualization - Concepts
 * Virtual version of host hardware
@@ -1838,7 +1888,7 @@ Installation of third-party applications that is different from original Applica
 ### Full Device Encryption
 * Encrypt the entire storage of the device
 
-🛑 - *Some companies provides **MDM solutions** (i.e Google - Android: What applications people can install, security policies and so on)* 
+> 🛑 *Some companies provides **MDM solutions** (i.e Google - Android: What applications people can install, security policies and so on)* 
 
 ## Physical Controls
 <p align="center">
@@ -1898,9 +1948,9 @@ Temporary fixes when these controls are weakened.<br> *i.e - If the outside fenc
 <img width="80%" src="https://www.colocationamerica.com/images/hot-vs-cold-aisle-containment.jpg" />
 </p>
 
-🛑 - MAC filtering is a good idea on system controllers of HVAC
+> 🛑 MAC filtering is a good idea on system controllers of HVAC
 
-* **Remote Monitoring** - VPN access, 802.1X
+> 🛑 **Remote Monitoring** - VPN access, 802.1X
 
 ## Fire Suppression
 ### Types of Fires and Appropriate Fire Extinguishers
@@ -1912,9 +1962,9 @@ B | Liquids(Gases, oil) | CO2, Foam, Powder
 C | Electrical (eletronic equipment) | CO2
 D | Combustible metals (sodium, magnesium) | Powder
 
-🛑 FM200 is a special extinguisher liquid that is great because it can stops fires, but can still save the electrical equipment; "Gold Standard" for fire suppression on server rooms.
+> 🛑 FM200 is a special extinguisher liquid that is great because it can stops fires, but can still save the electrical equipment; "Gold Standard" for fire suppression on server rooms.
 
-🛑 Class C is best extinguisher for suppress fire on Server Room, but it may ruin some electronics due to the corrosive powder inside.
+> 🛑 Class C is best extinguisher for suppress fire on Server Room, but it may ruin some electronics due to the corrosive powder inside.
 
 # Protocols Security
 
@@ -1923,7 +1973,7 @@ D | Combustible metals (sodium, magnesium) | Powder
 * Designed to run in a tunneling mode (encrypted); And then can provide their own encryption (AES, DES...)
 * Runs on Port 22
 
-🛑 Almost any encrypted application or protocol number do some kind of key exchange.
+> 🛑 Almost any encrypted application or protocol number do some kind of key exchange.
 
 ### HTTP over TLS = HTTPS
 Unencrypted HTTP running TLS encryption
@@ -1960,7 +2010,7 @@ Unencrypted HTTP running TLS encryption
 
 * Internet addresss: 2000:0BD8:A388:0000:0000:A2E8:3844:1337
  
-🛑 Very common within the IPv6 wolrd to have more than one IP address
+> 🛑 Very common within the IPv6 wolrd to have more than one IP address
 
 ### **Transport Protocols**
 **TCP** - connection oriented; lots of packets being set; three-way handshake is the cornerstone of TCP
@@ -1993,9 +2043,9 @@ Port | Description
 ## SSL and TLS
 Secure Socket Layer (**SSL**) and Transport Layer Security (**TLS**), they are protocols that are designed to make secure connections between two points. 
 
-🛑 SSL and TLS originally designed for Secure Websites (**HTTPS**)<br>
-🛑 TLS is more robust and new solution for secure connection than SSL<br>
-🛑 SSL/TLS is not only for HTTPS, you can see in e-mails, VPNs, all over the internet.
+> 🛑 SSL and TLS originally designed for Secure Websites (**HTTPS**)<br>
+> 🛑 TLS is more robust and new solution for secure connection than SSL<br>
+> 🛑 SSL/TLS is not only for HTTPS, you can see in e-mails, VPNs, all over the internet.
 
 * **Making a Secure Connection**
 	* *Client Hello - Body/Example (from Wireshark):*
@@ -2017,7 +2067,7 @@ Secure Socket Layer (**SSL**) and Transport Layer Security (**TLS**), they are p
 * Avoid Replay Attacks and Spoofing
 
 ## E-mail (SMTP, POP, IMAP)
-🛑 SMTP, POP and IMAP is not secure.
+* **SMTP, POP and IMAP is not secure.**
 
 ### SMTP over TLS/SSL
 * Encrypt the connection to the server
@@ -2220,8 +2270,8 @@ The information on credentials identifies the user.
 	* Access to resources is defines by a set of rules
 	* by Groups (i.e. Admin Groups --> Rights and Perms | Sales Group --> Rights and Perms)
 
-#### 🛑 Access is defined by **ACL, Access Control List**.
-#### 🛑 **Implicity deny** prevents access unless specifically permitted.
+> 🛑 **Access is defined by ACL, Access Control List**.
+> 🛑 **Implicity deny** prevents access unless specifically permitted.
 
 ## Password Security
 * **Complexity**
@@ -2400,7 +2450,7 @@ NTFS permissions are granted to users and groups on folders and files.
 * **Read** -  Open the file
 * **Write** - Open and Write to the file
 
-🛑 *Deny is stronger than allow*
+> 🛑 **Deny is stronger than allow**.
 
 ### Moving and Copying NTFS Objects
 1. **Copy and Move** from drive X: to Y: - will take the NTFS permissions of the **destination** drive.
@@ -2415,11 +2465,11 @@ Monitoring all users account activity
 * Track Log on and Log off activity
 * Track file access
 
-🛑 - Shared Accounts = Bad!!!<br>
-🛑 - Multiple Accounts = Use different user/pass.<br>
-🛑 - Use least privilege - enough necessary to accomplish task.<br>
-🛑 - Monitor and log activity of users with multiple accounts. (Log everything)<br>
-🛑 - Avoid default usernames on user accounts.
+> 🛑 Shared Accounts = Bad!!!
+> 🛑 Multiple Accounts = Use different user/pass.
+> 🛑 Use least privilege - enough necessary to accomplish task.
+> 🛑 Monitor and log activity of users with multiple accounts. (Log everything)
+> 🛑 Avoid default usernames on user accounts.
 
 ## Triple AAA - Authentication, Authorization and Accounting
 
@@ -3298,7 +3348,7 @@ The purpose of Vulnerability Scanning is to identify vulnerabilities cause by la
 	- Especially newer ones
 	- Occasionally the old ones
 
-🛑 - *Sometimes Vulnerability Scanners show **False Positives**(a vulnerability is identified that doesn't really exist) or **False Negatives**(a vulnerability exists, but the scanner didn't detect it). To dealing with this, updated to the latest signatures and patch it.*
+> 🛑 *Sometimes Vulnerability Scanners show **False Positives** (a vulnerability is identified that doesn't really exist) or **False Negatives** (a vulnerability exists, but the scanner didn't detect it). To deal with this, update to the latest signatures and patch it.*
 
 ## Vulnerability Assessment Tools
 * [Nessus](https://www.tenable.com/products/nessus) by Tenable
@@ -3677,7 +3727,7 @@ The context is most often for usage of data in a court of law, though digital fo
 **Alternative business practices**<br>
 **After action reports** - A clear and detailed documentation of everything that happened so that if it ever happens again you'll be ready to handle any form of business contingency planning.
 
-🛑 Through planning and practice is what makes recovery plans successful when disasters occur
+> 🛑 Through planning and practice is what makes recovery plans successful when disasters occur
 
 ## Backups
 - `stat` **Linux** command - stat can return the status of an entire file system, the status of the first hard disk and so on.
@@ -3694,7 +3744,7 @@ The context is most often for usage of data in a court of law, though digital fo
 <img width="73%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/differential-backup.png" />
 </p>
 
-🛑 *Differential there are less backup sets but they get bigger.*<br>
+> 🛑 *Differential there are less backup sets but they get bigger.*<br>
 
 ### **Incremental Backup**
 - Only backs up changes made from last backup
@@ -3702,7 +3752,7 @@ The context is most often for usage of data in a court of law, though digital fo
 <img width="73%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/incremental-backup.png" />
 </p>
 
-🛑 *Incremental more backup sets but smaller.*
+> 🛑 *Incremental more backup sets but smaller.*
 
 ### **Snapshots**
 Snapshots typically under virtual machines and they are an absolute perfect way of making a copy of something that's happened in the past.
