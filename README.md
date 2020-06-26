@@ -26,11 +26,19 @@ Identity and Access Management | 16%
 Risk Management | 14%
 Cryptography and PKI | 12%
 
-#### 🆓 Helpful resources:
+#### ✳️ Free Security+ Resources
 1. [Practice Questions](https://www.examcompass.com/comptia/security-plus-certification/free-security-plus-practice-tests) - I recommend to test your knowledge after study all topics presented on the exam.
 
 2. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos (13 hours of content) from Professor Messer - Security+.
 
+#### ➕ Free Cybersecurity Resources
+
+1. [Networking, Linux, OSINT, DFIR, Malware Analysis, and Ethical Hacking](https://dfirdiva.com/free-training)
+2. [Bug Bounty Wiki](https://github.com/EdOverflow/bugbountywiki/wiki)
+3. [Resources for Bug Bounty](https://github.com/nahamsec/Resources-for-Beginner-Bug-Bounty-Hunters)
+4. [Big List of Free Programming Books](https://github.com/EbookFoundation/free-programming-books)
+5. [CTFs for Beginners](https://wheresmykeyboard.com/2016/07/hacking-sites-ctfs-wargames-practice-hacking-skills/)
+6. [Curated list of CTFs](https://github.com/apsdehal/awesome-ctf)
 *** 
 
 # Brief Introduction
@@ -47,13 +55,13 @@ The CIA triad is put into pratice through various security mechanisms and contro
 <img width="50%" src="https://cyberdirective.com/wp-content/uploads/cyberdir/CIATriad-300x261.png" />
 </p>
 
-### **Confidentiality**: 
+### **Confidentiality**
 Keeping systems and data from being accessed, seen, read to anyone who is not authorized to do so. 
 
-### **Integrity**: 
+### **Integrity**
 Protect the data from modification or deletion by unauthorized parties, and ensuring that when authorized people make changes that shouldn't have been made the damage can be undone.
 
-### **Availability**:
+### **Availability**
 Systems, access channels, and authentication mechanisms must all be working properly for the information they provide and protect to be available when needed.
 
 **Note: In addition, other properties, such as authenticity, accountability, non-repudiation and reliability can also be involved. (ISO/IEC 27000:2009)**
@@ -316,7 +324,6 @@ Refers to efficiently distributing incoming network traffic across a group of ba
 <img width="80%" src="https://i0.wp.com/gbhackers.com/wp-content/uploads/2018/12/Load-Balancer.jpg?fit=759%2C387&ssl=1" />
 </p>
 
-
 #### Virtualize the serves 
 
 * Scalability
@@ -364,7 +371,15 @@ During the boot process, the TPM and UEFI generate reports about the process and
 * **Self-encrypting Drive (SED)**
 
 ### Hardware Security Module (HSM)
+<p align="center">
+<img width="90%" src="https://www.secureidnews.com/wp-content/uploads/2014/06/harsare-security-module-hsm-slider.jpg" />
+</p>
+
 Is any type of hardware that's designed to do security work. For ATMs, Web Servers, or other applications that perform an unusually high amount of key handling, it's usually a good idea to offload this work to other hardware.
+
+- Designed for cryptoprocessing
+- The gold standard for encryption key security
+- **Cryptoprocessors such as HSMs use algorithms to encrypt data to offer an increased level of security. HSMs can encrypt and decrypt information and can manage digital keys.**
 
 ## Secure OS Types
 
@@ -551,7 +566,7 @@ Verify the integrity of file is in good order and ready to run.
 > 🛑 *To create a file integrity check, you can Generate a hash from source code - checksum. If somebody tamper the file or change from source code, the output hash will be different.*
 
 ### Application Whitelisting
-Everything about software management, application whitelisting, the main job - it's to make sure that users are running the right applications on each individual systems.
+* Everything about software management, application whitelisting, the main job - it's to make sure that users are running the right applications on each individual systems.
 
 ## IDS and IPS
 
@@ -573,6 +588,7 @@ Everything about software management, application whitelisting, the main job - i
 > 🛑 **IPS: Acts to stop**
 > 🛑 **Firewall: Filters**
 
+> IDS and IPS will be explained with more details later below.
 ## Automation Strategies
 *Automation is often used with various scans and updates based on configurable trigger.*
 
@@ -1104,11 +1120,40 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 
 * **Airgap** - Simply means a disconnect to provide real isolation and the use of a completely separate internet from the world; Private internet.
 
-## Network Access Controls
+## Network Access Control
+**Wireless Network, Remote Access, VPN Access**
 
-* Wireless Network
-* Remote Access
-* VPN Access
+* Access control
+	- Control from wherever you are (inside or outside)
+	- Access can be based on many rules (by user, group, location, application etc)
+	- Access can be easily revoked or changed
+
+#### Posture assessment
+*BYOD, Malware infections, missing anti-malware, unauthorized applications.*
+
+- Before connecting to the network, perform a helth check:
+	- Is it a trusted device?
+	- Is it a running anti-virus? Which one? Is it updated?
+	- Are the corporate applications installed?
+	- Is the disk encrypted?
+<p align="center">
+<img width="70%" src="https://mk0gcgablogq2ifx558u.kinstacdn.com/wp-content/uploads/2013/10/NAC.jpg
+" />
+</p>	
+
+#### Health checks from Posture Assessment
+- Persistent agents
+	- Permanently installed onto a system
+- Dissolvable agents
+	- No installation is required
+	- Runs during the posture assessment
+	- Terminates when no longer required
+- Agentless NAC
+	- Integrated with Active Directory
+	- Checks are made during login and logoff
+	- Can't be scheduled
+
+> 🛑 **If Posture Assessment fails**, the quarantine network notify administrators, just enough network access to fix the issue.
 
 ### **PPP** - Point-to-Point Protocol
 In computer networking, Point-to-Point Protocol (PPP) is a data link layer (layer 2) communications protocol between two routers directly without any host or any other networking in between. It can provide connection authentication, transmission encryption, and compression. 
@@ -1466,6 +1511,26 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 #### Port Mirror
 Also called a Switch Port Analyzer, or SPAN in Cisco Devices, is a special port on a managed switch configured to listen for all data going in and out of the switch. Unlike a network tap, port mirroing is convenient and easily changed to reflect any changes in your NIDS/NIPS monitoring stragegy.
 
+## Mail Gateways
+* **Unsolicited email - stop it at the gateway before it reaches the user**
+* Can be on-site or cloud-based
+
+<p align="center">
+<img width="90%" src="https://campus.barracuda.com/resources/attachments/image/73719391/2/mail_gw_basic.png" />
+</p>
+
+* **Email filtering - Inbound and outbound**
+	- Unsolicited email advertisments
+	- Control of phishing attempts
+	- Anti-virus - blocking bad attachments
+	- DLP - Data Loss Prevention - Block confidential information in emails
+
+* **Another Features**:
+	- Whitelisting (only receive email from trusted users)
+	- SMTP standards cheking - Block anything doesn't follow RFC standards
+	- rDNS - Reverse DNS - Block email where the sender's domain doesn't match the IP Address
+	- Tarpitting - Intentionally slow down the server conversation
+	- Encryption - can be required on the gateway based on policy; force encryptionS
 
 ## SIEM - Security Information and Event Management
 *SIEM tools aggregate and correlate data, allowing you to organize it into valuable information. You can get to the time sequence of an event in all the logs quickly, have alerts and the ability to notify you based on a configurable trigger.*
@@ -1483,8 +1548,8 @@ Also called a Switch Port Analyzer, or SPAN in Cisco Devices, is a special port 
 * **Normalization**: Will actually create multiple tables / organize in such a way that the data can become more efficient and allows our analysis and reports tools to work better.
 
 * **WORM - Write Once Read Many**: The concept being is that log files are precious, and a lot of times you might want to look at them in an archival way, so that we can use optical media like WORM drives to store them.
-<br>
 
+### Another SIEM features
 * **Time synchronization**:
 	- Switches, routers, firewalls, servers, workstation has its own clock.
 	- **Synchronizing the clocks becomes critical for Log Files, authentication information, outage details**.
@@ -1496,9 +1561,25 @@ Also called a Switch Port Analyzer, or SPAN in Cisco Devices, is a special port 
 	- Require a lot disk space
 	- WORM drive technology
 
+* **Event de-duplication**:
+	- Preventing Event storms
+	- Filter out the noise - focus on the real problems
+	- Flapping (down / up / down)
+
+* **Automated alerting and triggers**:
+	- Constant information flow (important metrics in the incoming logs)
+	- Track important statistics
+	- Send alerts when problems are found *(email, text etc)*
+	- Create triggers to automate responses *(i.e open a ticket, reboot a server)*
+	
 > 🛑 **SYSLOG stands for System Logging Protocol** and is a standard protocol used to send system log or event messages to a specific server, called a syslog server. It is primarily used to collect various device logs from several different machines in a central location for monitoring and review.
 
-#### Most Popular SIEM Tools:
+#### SIEM Logs Example
+<p align="center">
+<img src="https://www.solarwinds.com/-/media/solarwinds/swdcv2/licensed-products/security-event-manager/images/product-screenshots/sem-overview.ashx?la=pt&rev=87e8cfd54bc24fcfa44ef31866dbf126&hash=55F99F855053253F8079D600DF97E6CA6F72F6A5" />
+</p>
+
+### Most Popular SIEM Tools:
 
 * **[Splunk](https://www.splunk.com/)**
 	![splunk](https://www.splunk.com/content/dam/splunk2/images/screenshots/platform-journey/conflaunch/SS-UI-Light-Mode-frame.png)
@@ -2059,7 +2140,7 @@ D | Combustible metals (sodium, magnesium) | Powder
 Unencrypted HTTP running TLS encryption
 
 * TLS encryption is a protocol that you can plug it into different types of applications
-* Runs on Port 443
+* **Runs on Port 443**
 
 ## Network Models
 
@@ -2163,12 +2244,19 @@ Secure Socket Layer (**SSL**) and Transport Layer Security (**TLS**), they are p
 
 ## Protecting Servers
 ### SSL Accelerator
-* Dedicated card placed behind the gateweay router between the internet, to handle all SSL/TLS encryption & decryption going across the network.
-* Can be done on a dedicated machine
-
 <p align="center">
 <img width="69%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Sun-crypto-accelerator-1000.jpg/1920px-Sun-crypto-accelerator-1000.jpg" />
 </p>
+
+* **Dedicated card placed behind the gateweay router between the internet, to handle all SSL/TLS encryption & decryption going across the network.**
+* Can be done on a dedicated machine
+* The SSL Accelerator offloads the handshake process to hardware
+
+<p align="center">
+<img width="69%" src="https://docs.oracle.com/cd/E99483_01/pt857pbr1/eng/pt/tprt/img/ia2cf27cn-7e9f.png" />
+</p>
+
+> 🛑 SSL Offloading and SSL Termination are the same thing.
 
 ### Load Balancer
 *  Load balancer is actually a proxy because he takes all the incoming requests for the Web site and then distributes it around to the servers
@@ -2246,41 +2334,47 @@ Benefits of DevOps:
 ### **Compiled vs. Runtime code** 
 Compile-time is the instance where the code you entered is converted to executable. Run-time is the instance where the executable is run.
 
-### **Error Handling**
+### 1. **Error Handling**
 **Proper Error Handling**: isn't going to stop all errors, but it will prevent errors from apperaring on the user interface for easy viewing for attackes / bad actors.
 
 <p align="center">
 <img width="81%" src="https://www.getastra.com/blog/wp-content/uploads/2017/06/Server-Error-Message.png" />
 </p>
 
-### **Input Validation**
+### 2. **Input Validation**
 **Proper Input Validation**: helps prevent these types of attacks: **command insertion, cross-site scripting, buffer overflows, and SQL injection**.
 
-### **Normalization**
+### 3. **Normalization**
 Is a database term meaning to store and organize data so that it exists in one form only. For example, a user database has the three tables shown. (name table, zip code table etc).
 
-### **Stored Procedures**
+### 4. **Stored Procedures**
 Stored Procedures harden web apps; Is a piece of code, custom written by devs of the app and stored in the Database. **This code only respond to a specific query format defined by the eveloper, this can prevent SQL injection or common bad queries used by attackers.**
 
-### **Encryption / Code signing**
+### 5. **Encryption / Code signing**
 Code signing means to sign an individual executable/interpred code digitally so that users have confidence the code they run is the actual code from the developer.
 
-### **Obfuscation**
+### 6. **Obfuscation**
 To make harder an attacker reverse-engineer the code (i.e Minifying Javascript)
 
-### **Code reuse / Dead Code**
+<p align="center">
+<img src="https://isc.sans.edu/diaryimages/24a8bdaf622212fadfc4127b6ed55cd8" />
+</p>
+
+
+
+### 7. **Code reuse / Dead Code**
 Get rid of dead code inside the web app. (i.e Commented unecessary code)
 
-### **Server-side vs. Client-side**
+### 8. **Server-side vs. Client-side**
 In general, a server-side platform is more secure than a client-side platform, but client-side is generally faster and may receive big chunks of code to the client, to prevent that you can use encryption. 
 
-### **Memory Management**
+### 9. **Memory Management**
 Watch out the memory leaks to avoid buffer overflow attack and code reuse.
 
-### **Third-party libraries**
+### 10. **Third-party libraries**
 Weaknesses of third-party libraries can result on bad actor exploring this. To avoid this type of risk, maintain patch updates, stay on top of any announcements, check the dependencies of the third-party libraries using OWASP dependency checker.
 
-### **Data Exposure**
+### 11. **Data Exposure**
 If you have data that is a part of your app some of that data has risk of exposure. And our job as developers is to reduce if not eliminate any risk of that data exposure especially if it's personally identifiable information or personal health information. We almost always today go through aggressive encryptions any time.
 
 ## Code Quality & Testing
@@ -2365,6 +2459,11 @@ The information on credentials identifies the user.
 
 ### Password Security
 #### Password Policy (Local Security Policy - Windows)
+
+<p align="center">
+<img width="90%" src="https://www.premiumexam.net/wp-content/uploads/2018/11/word-image-289.png" />
+</p>
+
 * **Enforce Password History**: determine the number of new unique passwords [1-24]
 * **Maximum Password Age**: Password age [1-999 days] 
 * **Minimum Password Age**: Limit until request password change [1-998 days]
@@ -2384,7 +2483,12 @@ The information on credentials identifies the user.
 * **Reset Account Lockout Duration**: Period of time that must elapse before the account lockout counter is reset to 0 bad logon attempts. [1-99,999]
 
 ### Group Policy Objects (AD DS)
-Set of rules that allow an administrator granular control over the configuration of objects in Active Directory, including user accounts, operation systems, applications and other AD objects. Can apply over multiple domains, groups and OU's.
+
+<p align="center">
+<img width="90%" src="https://docs.microsoft.com/pt-pt/azure/active-directory-domain-services/media/active-directory-domain-services-admin-guide/gp-editor.png" />
+</p>
+
+* Set of rules that allow an administrator granular control over the configuration of objects in Active Directory, including user accounts, operation systems, applications and other AD objects. Can apply over multiple domains, groups and OU's.
 
 ## Linux - File Permissions
 
@@ -2994,10 +3098,15 @@ Determine how long the particular equipament going to last. (qualitative)
 # Organizing Data
 The first step to dealing with data security is **organization**.
 
+<p align="center">
+<img  width="70%" src="https://research.aimultiple.com/wp-content/uploads/2018/05/data-mgmt.png" />
+</p>
+
 * Analyze individual chuncks of data (such as databases, files, access control lists..)
 * Determine the importance - **the sensitivity of data.**
 
 ## Data Sensitivity | Labeling
+
 * **Public Data**: Has no restrictions. (stills needs integrity and availability)
 
 * **Confidential Information**: Limited to authorized viewing as agreed by the parties involved.
@@ -3009,7 +3118,8 @@ The first step to dealing with data security is **organization**.
 * **PHI - Protected Health Information**: Not only Health information, PII may include on PHI.
 
 ## Data Roles
-* **Owner of the data / Data Owner**: Legally responsible for the data, can be entity responsible.
+
+* **Data Owners**: Legally responsible for the data, can be entity responsible.
 
 * **Steward / Custodian**: Maintain the accuracy and integrity of data.
 
@@ -3026,8 +3136,24 @@ The first step to dealing with data security is **organization**.
 
 * **Data Owner | System Owner**: People or organizations who have legal ownership of this particular data set or particular system.
 
-# Security Training
+## Data Loss Prevention (DLP)
+Data Loss Prevention (DLP) is the practice of detecting and preventing data breaches, exfiltration, or unwanted destruction of sensitive data. Organizations use DLP to protect and secure their data and comply with regulations.
 
+* The DLP term refers to defending organizations against both data loss and data leakage prevention. 
+
+<p align="center">
+<img width="90%" src="https://miro.medium.com/max/720/1*FG9LR51eySVRQJUjhVv-9A.png" />
+</p>
+
+#### Organizations typically use DLP to:
+
+- Protect Personally Identifiable Information (PII) and comply with relevant regulations
+- Protect Intellectual Property critical for the organization
+- Achieve data visibility in large organizations
+- Secure mobile workforce and enforce security in Bring Your Own Device (BYOD) environments
+- Secure data on remote cloud systems
+
+# Security Training
 ### **Onboarding**:
 New hires or contractors
 * Background check
