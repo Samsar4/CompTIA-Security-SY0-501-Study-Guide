@@ -31,14 +31,8 @@ Cryptography and PKI | 12%
 
 2. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos (13 hours of content) from Professor Messer - Security+.
 
-#### ➕ Free Cybersecurity Resources
+3. [Big list of free resources, books and courses from different topics in Cybersecurity](https://dfirdiva.com/free-training)
 
-1. [Networking, Linux, OSINT, DFIR, Malware Analysis, and Ethical Hacking](https://dfirdiva.com/free-training)
-2. [Bug Bounty Wiki](https://github.com/EdOverflow/bugbountywiki/wiki)
-3. [Resources for Bug Bounty](https://github.com/nahamsec/Resources-for-Beginner-Bug-Bounty-Hunters)
-4. [Big List of Free Programming Books](https://github.com/EbookFoundation/free-programming-books)
-5. [CTFs for Beginners](https://wheresmykeyboard.com/2016/07/hacking-sites-ctfs-wargames-practice-hacking-skills/)
-6. [Curated list of CTFs](https://github.com/apsdehal/awesome-ctf)
 *** 
 
 # Brief Introduction
@@ -1136,9 +1130,9 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 	- Is it a running anti-virus? Which one? Is it updated?
 	- Are the corporate applications installed?
 	- Is the disk encrypted?
+
 <p align="center">
-<img width="70%" src="https://mk0gcgablogq2ifx558u.kinstacdn.com/wp-content/uploads/2013/10/NAC.jpg
-" />
+<img width="70%" src="https://mk0gcgablogq2ifx558u.kinstacdn.com/wp-content/uploads/2013/10/NAC.jpg" />
 </p>	
 
 #### Health checks from Posture Assessment
