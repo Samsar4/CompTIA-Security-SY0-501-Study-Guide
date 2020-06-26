@@ -8,7 +8,7 @@
 * Cover all topics presented on CompTIA Security+ SY0-501 exam.
 * Gather as many information as possible from many sources on internet.
 * Help you pass the exam without paying any expensive training courses.
-* Contribute with open source community and cyber security community & students.
+* Contribute with open source community and cyber security community <3.
 
 #### ℹ️ About the exam
 *CompTIA Security+ is the first security certification IT professionals should earn. It establishes the core knowledge required of any cybersecurity role and provides a springboard to intermediate-level cybersecurity jobs. Security+ incorporates best practices in hands-on trouble-shooting to ensure security professionals have practical security problem-solving skills. Cybersecurity professionals with Security+ know how to address security incidents – not just identify them.*
@@ -68,7 +68,7 @@ Anyone can validate the authenticity of a message as well as the source of the m
 
 # 1. Securing Individual Systems 
 <p align="center">
-<img width="100%" height="350px" src="https://praesidiumintl.com/wp-content/uploads/2019/08/Maritime-Cybersecurity-Solutions.jpg" />
+<img width="90%" src="https://praesidiumintl.com/wp-content/uploads/2019/08/Maritime-Cybersecurity-Solutions.jpg" />
 </p>
 
 ## Understanding Attacks
@@ -97,7 +97,7 @@ Anyone can validate the authenticity of a message as well as the source of the m
 ### Distributed-Denial-of-Service (DDoS)
 * Uses multiple systems to attack a single host - Generally controlled by **BotNets**, which is a type of malware that uses remotely controlled malicious software to control a large range of computers.
 <p align="center">
-<img width="69%" src="https://www.cloudflare.com/img/learning/ddos/glossary/dos-attack/dos-vs-ddos-attack.png" />
+<img width="79%" src="https://www.cloudflare.com/img/learning/ddos/glossary/dos-attack/dos-vs-ddos-attack.png" />
 </p>
 
 ## Common Host Threats
@@ -313,7 +313,7 @@ Refers to efficiently distributing incoming network traffic across a group of ba
 * Distributes work loads across multiple machines
 
 <p align="center">
-<img width="79%" src="https://i0.wp.com/gbhackers.com/wp-content/uploads/2018/12/Load-Balancer.jpg?fit=759%2C387&ssl=1" />
+<img width="80%" src="https://i0.wp.com/gbhackers.com/wp-content/uploads/2018/12/Load-Balancer.jpg?fit=759%2C387&ssl=1" />
 </p>
 
 
@@ -586,7 +586,7 @@ Everything about software management, application whitelisting, the main job - i
 * Built-in tools vs Shell Scripting to Automate (Powershell(Windows) , Bash(Linux) ..)
 
 ## Media Sanitization | Data Destruction 
-
+<img src="https://mk0reclamere2uhq86qh.kinstacdn.com/wp-content/uploads/2018/02/datadestruction_Reclamere.jpg" />
 
 ### Clearing/Clear
 Clear means to tell the device through user commands inherent to the massa storage device to sanitize the data. *(i.e. send commands to a hard drive to erase data)*
@@ -620,16 +620,19 @@ Ruin the media in such a way tha it is no longer functional.
 
 # 2. Tools 
 <p align="center">
-<img width="100%" height="350px" src="https://cdn.nextgov.com/media/img/upload/2020/02/14/NGcybersecurity20200214/860x394.jpg" />
+<img width="90%" src="https://cdn.nextgov.com/media/img/upload/2020/02/14/NGcybersecurity20200214/860x394.jpg" />
 </p>
 
 ## OS Utilities - Command Line (Linux & Windows)
 
-### `ping`
+- Security+ covers simple Linux and Windows commands.
+- To understand the functionality behind the commands I recommend to test them at your own.
+
+## `ping`
 Can be handful for DNS checks (up / or down) | is a DNS tool to resolves web addresses to an IP address.
 
 ```console
-ping www.google.com 
+~#: ping www.google.com 
 
 PING www.google.com (172.217.168.164): 56 data bytes
 64 bytes from 172.217.168.164: icmp_seq=0 ttl=55 time=25.981 ms
@@ -650,7 +653,7 @@ Switch | Description
 **-6** | Force using IPv4
 
 
-### `netstat`
+## `netstat`
 get info on host system TCP / UDP connections and status of all open and listening ports and routing table.
 
 * Who you talking to? 
@@ -661,17 +664,24 @@ netstat -a (server)
 netstat -n (host)
 ```
 
-### `tracert` | `traceroute`
+## `tracert` | `traceroute`
 traceroute - how packets get from host to another endpoint. Traceroute is helpful to see what routers are being hit, both internal and external.
 
 * tracert - Windows
 * traceroute - Linux
 
-### `arp` 
+## `arp` 
 address resolution protocol - caches of ip-to-ethernet
+```console
+~#: arp -a
 
+? (192.168.1.3) at 00:11:22:33:44:55 [ether] on enp0s10
+? (192.168.1.128) at e8:33:b0:70:2c:71 [ether] on enp0s10
+? (192.168.1.4) at 2c:33:5c:a4:2e:8a [ether] on enp0s10
+_gateway (192.168.1.1) at 00:31:33:8b:2a:da [ether] on enp0s10
+```
 
-### `ipconfig` 
+## `ipconfig` 
 show all IP configuration on **Windows-only** systems.
 
 **Useful switches:**
@@ -684,18 +694,67 @@ Switch | Description
 **/flushdns** | Clears the host's DNS cache
 **/displaydns** | Displays the host's DNS cache
 
-### `ifconfig`
+## `ifconfig`
 equivalent to ipconfig for UNIX/Linux OS.
 
-### `iwconfig`
+```console
+~#: ifconfig
+docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 00:11:22:33:44:55  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s10: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.128  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::acf6:2ae2:ab5c:6316  prefixlen 64  scopeid 0x20<link>
+        ether aa:bb:cc:dd:ee:ff  txqueuelen 1000  (Ethernet)
+        RX packets 156651  bytes 29382856 (28.0 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 76400  bytes 23111524 (22.0 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+## `iwconfig`
 similar to ifconfig, but is dedicated to the wireless network interface.
 
-### `ip addr`
+```console
+~#: iwconfig
+lo        no wireless extensions.
+
+enp0s10   no wireless extensions.
+
+wlp3s0b1  IEEE 802.11  ESSID:off/any  
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=19 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          
+docker0   no wireless extensions.
+```
+
+## `ip addr`
 show / manipulate routing, network devices, interfaces and tunnels.
 
 Show all the ip configuration, mac address, ipv6 etc.
 
-### `nslookup`
+```console
+~#: ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp0s10: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether aa:bb:cc:dd:ee:ff brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.111/24 brd 192.168.1.255 scope global dynamic noprefixroute enp0s10
+       valid_lft 4761sec preferred_lft 4761sec
+    inet6 fe80::acf6:2ae2:ab5c:6316 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+```
+## `nslookup`
 query Internet name servers interactively; check if the DNS server is working
 
 ```console
@@ -719,7 +778,7 @@ Address: 162.241.216.11
 
 ```
 
-### `dig` 
+## `dig` 
 DNS lookup tool - Functions like nslookup, but allows for further functionality.
 
 ```console
@@ -734,7 +793,7 @@ output:
 
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 2048
-; COOKIE: 70bd915b07b3fd08757c9ad65e5d6f3e549d5787b59e97cb (good)
+; COOKIE: 71bd915b07b3fd08757c9ad65e5d6f3e549d5187359e97cb (good)
 ;; QUESTION SECTION:
 ;certifiedhacker.com.           IN      A
 
@@ -748,16 +807,19 @@ certifiedhacker.com.    14400   IN      A       162.241.216.11
 
 ```
 
-### `netcat`
+## `netcat`
 TCP/IP swiss army knife; you can make any type of connection and see the results from a command line. With nc you can connect to anything on any port number or you can make your system listen on a port number. Can be an agressive tool for recon.
+
+<p align="center">
+<img src="https://www.researchgate.net/publication/329745450/figure/fig3/AS:705181092179978@1545139682702/Remote-Command-and-Control-example-through-Netcat.ppm" />
+</p>
 
 ## Network Scanners
 **Useful for collect and inventory the hosts on a network, and is useful for reconnaissance of your system.**
 
-### Nmap
+## `Nmap`
 The Best way to query a system to check if they have open ports, services, system versions, service versions etc.
 
-*Zenmap is a GUI version of Nmap.*
 
 ```console
 nmap -v -A -T5 scanme.nmap.org 
@@ -782,6 +844,8 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ...
 
 ```
+> 🛑 **[Zenmap](https://nmap.org/zenmap/) is a GUI version of Nmap.**
+
 ## Protocol Analyzers
 **Protocol Analyzers collect and inventory the network traffic.**
 
@@ -799,14 +863,14 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 Does a good job using simple protocols, mainly ping, to query a single IP address or an address range. 
 
 <p align="center">
-<img width="70%" src="https://img.creativemark.co.uk/uploads/images/808/17808/img3File.png" />
+<img width="90%" src="https://img.creativemark.co.uk/uploads/images/808/17808/img3File.png" />
 </p>
 
 ## Wireshark
 Wireshark is the world’s foremost and widely-used network protocol analyzer. It lets you see what’s happening on your network at a microscopic level.
 
 <p align="center">
-<img width="70%" src="https://upload.wikimedia.org/wikipedia/commons/0/03/Wireshark_screenshot.png" />
+<img width="90%" src="https://upload.wikimedia.org/wikipedia/commons/0/03/Wireshark_screenshot.png" />
 </p>
 
 * *With Wirehsark you can inspect and detect ARP poisonings, Rogue DHCP servers, Broadcast Storm etc.*
@@ -817,7 +881,7 @@ Wireshark is the world’s foremost and widely-used network protocol analyzer. I
 tcpdump is a data-network packet analyzer computer program that runs under a command line interface. It allows the user to display TCP/IP and other packets being transmitted or received over a network to which the computer is attached. Distributed under the BSD license, tcpdump is free software
 
 <p align="center">
-<img width="70%" src="https://packetflows.com/wp-content/uploads/2017/05/tcpdump_i.png" />
+<img width="90%" src="https://packetflows.com/wp-content/uploads/2017/05/tcpdump_i.png" />
 </p>
 
 
@@ -891,7 +955,7 @@ Simple Network Management Protocol (SNMP) is an Internet Standard protocol for c
 ### Centralized vs Descentralized Log Management
 **Descentralized log management** - In environments such as very small networks and don't have large infrastructure or in isolated network segments, descentralized log management is usually the norm.
 
-**Centralized log management** - means that the log files from different machines are automatically sent to a centralized logging facility or server, such as a syslog server, administrators review logs from a centralized loogging facility on the network. Enterprise correlate them into one unifed management interface, so the administrator can look for trends or events.
+**Centralized log management** - Means that the log files from different machines are automatically sent to a centralized logging facility or server, such as a syslog server, administrators review logs from a centralized loogging facility on the network. Enterprise correlate them into one unifed management interface, so the administrator can look for trends or events. This can be achieved by using **SIEM tools.**
 
 **Centralized** features:
 * Uses a Central repository
@@ -904,6 +968,7 @@ Simple Network Management Protocol (SNMP) is an Internet Standard protocol for c
 ### SIEM - Security Information and Event Management
 Collects data points from network, including **log files, traffic captures, SNMP messages, and so on**, from every host on the network. **SIEM can collect all this data into one centralized location and correlate it for analysis to look for security and performance issues, as well negative trends all in real time.**
 
+> SIEM will be explained with more details later below.
 
 ### Continuos Monitoring
 Is a proactive way of ensuring that the network administrator receives all the different logs and other data points throughout the network from all network devices and all systems, on a constant basis. This data is continually fed into.
@@ -927,14 +992,14 @@ Enables network administrator to correlate different data sources and data point
 
 # 3. Networks and Infrastructure - Basics 
 <p align="center">
-<img width="100%" height="350px" src="https://www.netnit.com/wp-content/uploads/2019/05/bigstock-Network-switch-and-ethernet-ca-285322981-845x321.jpg" />
+<img  src="https://www.netnit.com/wp-content/uploads/2019/05/bigstock-Network-switch-and-ethernet-ca-285322981-845x321.jpg" />
 </p>
 
 ## Switches
 A network switch is networking hardware that connects devices on a computer network by using packet switching to receive and forward data to the destination device. A network switch is a multiport network bridge that uses **MAC addresses** to forward data at the **data link layer of the OSI model.**
 
 <p align="center">
-<img width="64%" src="https://cdn.networklessons.com/wp-content/uploads/2014/01/xcisco-smb-vlans.png.pagespeed.ic.O1ruqFKn-i.png)" />
+<img width="79%" src="https://cdn.networklessons.com/wp-content/uploads/2014/01/xcisco-smb-vlans.png.pagespeed.ic.O1ruqFKn-i.png)" />
 </p>
 
 * Filter & forward data based on **MAC address**
@@ -942,7 +1007,7 @@ A network switch is networking hardware that connects devices on a computer netw
 * Where VLANs are set up
 * **STP (Spanning Tree Protocol)** prevents bridge loop / loop floods
 
-> 🛑 **Operates in the Data Link layer**
+> 🛑 **Operates in the OSI Layer 2 (Data Link)**
 
 > 🛑 **Bridge Loop/Switching Loop** - A switching loop or bridge loop occurs in computer networks when there is more than one Layer 2 path between two endpoints. The loop creates broadcast storms as broadcasts and multicasts are forwarded by switches out every port, the switch or switches will repeatedly rebroadcast the broadcast messages flooding the network.
 
@@ -950,7 +1015,7 @@ A network switch is networking hardware that connects devices on a computer netw
 A virtual LAN is any broadcast domain that is partitioned and isolated in a computer network at the data link layer. LAN is the abbreviation for local area network and in this context virtual refers to a physical object recreated and altered by additional logic.
 
 <p align="center">
-<img width="64%" src="https://qph.fs.quoracdn.net/main-qimg-1d62c3cc4e470287ee71383fafe1df66" />
+<img width="79%" src="https://qph.fs.quoracdn.net/main-qimg-1d62c3cc4e470287ee71383fafe1df66" />
 </p>
 
 * Provides layer 2 separation of networks
@@ -961,7 +1026,7 @@ A virtual LAN is any broadcast domain that is partitioned and isolated in a comp
 Router is a networking device which helps in routing the data packets between home network & other networks.
 
 <p align="center">
-<img width="64%" src="https://geek-university.com/wp-content/images/ccna/how_routers_work.jpg" />
+<img width="79%" src="https://geek-university.com/wp-content/images/ccna/how_routers_work.jpg" />
 </p>
 
 * Filter & forward based on **IP address** 
@@ -981,7 +1046,7 @@ The actual organization of a network in terms of how is the data moving around a
 * A LAN is a network that has a logical and physical borders that a computer can broadcast
 
 <p align="center">
-<img width="64%" src="https://www.geocities.ws/alcantara97/starhttt.gif" />
+<img width="74%" src="https://www.geocities.ws/alcantara97/starhttt.gif" />
 </p>
 
 ### WAN - Wide Area Network
@@ -989,14 +1054,14 @@ The actual organization of a network in terms of how is the data moving around a
 * WAN is a multiple LANs or additional WANs with routing functionality for interconnectivity.
 
 <p align="center">
-<img width="64%" src="https://gist.github.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a3f9b5f3f243467208da83e0d0e543b32233c5d6/wan-topo.jpg" />
+<img width="74%" src="https://gist.github.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a3f9b5f3f243467208da83e0d0e543b32233c5d6/wan-topo.jpg" />
 </p>
 
 
 ### MAN - Metropolitan Area Network 
 
 <p align="center">
-<img width="64%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/f37cec4e00f726cb4be3661f20ccad77751e003a/man-topo.jpg" />
+<img width="89%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/f37cec4e00f726cb4be3661f20ccad77751e003a/man-topo.jpg" />
 </p>
 
 ### Internet
@@ -1005,7 +1070,7 @@ Connecting WANs through WANs until complete the entire world = Internet.
 * The protocol which runs the internet is TCP/IP
 * As long you're using legitimate IPv4 address or IPv6
 <p align="center">
-<img width="64%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8c176b8a798fb5749c4391c45015ee5d14d56f13/internet.png" />
+<img width="89%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8c176b8a798fb5749c4391c45015ee5d14d56f13/internet.png" />
 </p>
 
 ### Intranet
@@ -1014,7 +1079,7 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 * Intranet is a private network which still runs TCP/IP
 
 <p align="center">
-<img width="64%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8c176b8a798fb5749c4391c45015ee5d14d56f13/intranet.png" />
+<img width="79%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8c176b8a798fb5749c4391c45015ee5d14d56f13/intranet.png" />
 </p>
 
 > 🛑 **Extranet**: example of some vendor who need to access the Intranet network.
@@ -1028,7 +1093,7 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 * **DMZ** - Demilitarized Zone: Perimeter network, isolating untrusted network from LAN area. DMZ is a firewall configuration used to secure hosts on a network segment, in most DMZs the hosts on the DMZ are connected behind a Firewall that is connected to a public network(internet).
 
 <p align="center">
-<img width="80%" src="https://1.bp.blogspot.com/_cbXvML3JELc/TCRH6WvlEvI/AAAAAAAAAGg/7xsnkGmBqo0/s1600/111.gif" />
+<img width="100%" src="https://1.bp.blogspot.com/_cbXvML3JELc/TCRH6WvlEvI/AAAAAAAAAGg/7xsnkGmBqo0/s1600/111.gif" />
 </p>
 
 * **Wireless Network** - Basically a LAN connected to an Wireless Access Point (WAP).
@@ -1062,10 +1127,8 @@ Developed initially as an extension to the authentication part of PPP. EAP is on
 
 
 <p align="center">
-<img width="70%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/f9232015768452b7755659cb454c02711e15fad4/EAP.png" />
+<img width="89%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/f9232015768452b7755659cb454c02711e15fad4/EAP.png" />
 </p>
-
-
 
 * **EAP - MD5**
 	* basically MSCHAP
@@ -1092,8 +1155,14 @@ Developed initially as an extension to the authentication part of PPP. EAP is on
 	* **PEAP** (Microsoft) - PEAP is weak nowdays 
 
 ## Network Firewalls - Concepts
+
 * Control  the flow of network traffic
 * Standard issue - home, office, and in your operating system
+
+<p align="center">
+<img width="70%" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Firewall.png"/>
+</p>
+
 * Corporate control of outbount and inbound area (sensitive data)
 * Control of inappropriate content
 * Protection adware, spyware etc
@@ -1104,9 +1173,6 @@ Developed initially as an extension to the authentication part of PPP. EAP is on
 	- Can be very general or very specific
 	- Implicit deny - prevents access unless specifically permitted.
 
-<p align="center">
-<img width="50%" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Firewall.png"/>
-</p>
 
 - Filters traffic by port number
 	- OSI layer 4 (TCP/UDP) - *some firewalls can filter through OSI layer 7*
@@ -1157,7 +1223,7 @@ A box/piece of software running on a computer acts an intermediary between two d
 * Useful for caching information, access control, URL filtering, content scanning.
 
 <p align="center">
-<img width="60%" src="https://networkencyclopedia.com/wp-content/uploads/2019/08/proxy-server-1024x649.png"/>
+<img width="87%" src="https://networkencyclopedia.com/wp-content/uploads/2019/08/proxy-server-1024x649.png"/>
 </p>
 
 Most proxies in use are application proxies; Many proxies are multipurpose proxies (HTTP, HTTPS, FTP, etc)
@@ -1173,7 +1239,7 @@ Most proxies in use are application proxies; Many proxies are multipurpose proxi
 The proxy simply forward the requests of respective client and retrieve the response back to the client.
 
 <p align="center">
-<img width="60%" src="https://iq.opengenus.org/content/images/2018/06/forward_proxy.jpg"/>
+<img width="80%" src="https://iq.opengenus.org/content/images/2018/06/forward_proxy.jpg"/>
 </p>
  
 * **Hides the client**
@@ -1187,7 +1253,7 @@ The proxy simply forward the requests of respective client and retrieve the resp
 Like a forward proxy but complete reverse.
 
 <p align="center">
-<img width="60%" src="https://iq.opengenus.org/content/images/2018/06/reverse_proxy.jpg"/>
+<img width="80%" src="https://iq.opengenus.org/content/images/2018/06/reverse_proxy.jpg"/>
 </p>
 
 * **Hides the servers**
@@ -1295,13 +1361,13 @@ Is a suite of protocols developed to ensure the integrity, confidentiality and a
 
 2. **Authentication Header (AH)** – It also provides data integrity, authentication and anti replay and it does not provide encryption. The anti replay protection, protects against unauthorized transmission of packets. It does not protect data’s confidentiality.
 <p align="center">
-<img width="69%" src="https://media.geeksforgeeks.org/wp-content/uploads/newb.png" />
+<img width="90%" src="https://media.geeksforgeeks.org/wp-content/uploads/newb.png" />
 </p>
 
 3. **Internet Key Exchange (IKE)** – It is a network security protocol designed to dynamically exchange encryption keys and find a way over Security Association (SA) between 2 devices. The Security Association (SA) establishes shared security attributes between 2 network entities to support secure communication. **The Key Management Protocol (ISAKMP) and Internet Security Association which provides a framework for authentication and key exchange.** ISAKMP tells how the set up of the Security Associations (SAs) and how direct connections between two hosts that are using IPsec.
 
 <p align="center">
-<img width="69%" src="https://media.geeksforgeeks.org/wp-content/uploads/1212-2.png" />
+<img width="90%" src="https://media.geeksforgeeks.org/wp-content/uploads/1212-2.png" />
 </p>
 
 ### **IPSec Transport Mode and Tunnel Mode**
@@ -1313,12 +1379,12 @@ When IPsec protects traffic, it has a couple of services and modes to choose fro
 
 1. *Some TCP data will be sent over:*
 <p align="center">
-<img width="69%" src="https://community.cisco.com/legacyfs/online/legacy/5/1/2/166215-Screen%20Shot%202013-11-12%20at%2011.52.30%20AM.png" />
+<img width="85%" src="https://community.cisco.com/legacyfs/online/legacy/5/1/2/166215-Screen%20Shot%202013-11-12%20at%2011.52.30%20AM.png" />
 </p>
 
 2. *And now about how those IP protocols fit in the two modes.*
 <p align="center">
-<img width="69%" src="https://community.cisco.com/legacyfs/online/legacy/6/1/2/166216-Screen%20Shot%202013-11-12%20at%2011.52.17%20AM.png" />
+<img width="85%" src="https://community.cisco.com/legacyfs/online/legacy/6/1/2/166216-Screen%20Shot%202013-11-12%20at%2011.52.17%20AM.png" />
 </p>
 
 The last mode is what is typically used with crypto map based IPsec VPNs.
@@ -1345,7 +1411,7 @@ Both technologies watch network traffic to detect exploits against OS, applicati
 	- Active device that detect and prevents when something on the network traffic is suspicious by blocking it.
 
 <p align="center">
-<img width="80%" src="https://3th2q02cq5up44zpe81rwase-wpengine.netdna-ssl.com/wp-content/uploads/2019/11/Intrusion-Detection-IDS-VS-Intrusion-Prevention-IPS-What%E2%80%99s-The-Difference.png" />
+<img src="https://3th2q02cq5up44zpe81rwase-wpengine.netdna-ssl.com/wp-content/uploads/2019/11/Intrusion-Detection-IDS-VS-Intrusion-Prevention-IPS-What%E2%80%99s-The-Difference.png" />
 </p>
 
 > 🛑 Attacks could be in the form of malformed network traffic or excessive amounts of traffic.
@@ -1380,21 +1446,21 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 * NIPS sensor must be installed **in-band** to your network traffic. All packets must go through in-band sensor devices/
 
 <p align="center">
-<img width="73%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a2fc0101b75e32a25150d516dcef9e8a9ef5ad86/NIPS.png" />
+<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a2fc0101b75e32a25150d516dcef9e8a9ef5ad86/NIPS.png" />
 </p>
 
 #### NIDS uses Out-of-band sensor
 * NIDS sensor, being **passive**, is normally installed **out-of-band** of the communication. Just plugging it into a switch only allows the sensor to see traffic to and from the switch plus broadcast traffic. The common out-of-band devices is a **network tap** or a **port mirror.**
 
 <p align="center">
-<img width="73%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a2fc0101b75e32a25150d516dcef9e8a9ef5ad86/NIDS.png" />
+<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a2fc0101b75e32a25150d516dcef9e8a9ef5ad86/NIDS.png" />
 </p>
 	
 #### Network Tap
 * Is a device that you can insert anywhere along a run to grab packets.
 
 <p align="center">
-<img width="50%" src="https://www.garlandtechnology.com/hs-fs/hubfs/A-NewSite2017/Products/Product%20images/Bypass/P1GMCx_Quarter-Products625x400.png?width=400&name=P1GMCx_Quarter-Products625x400.png" />
+<img width="60%" src="https://www.garlandtechnology.com/hs-fs/hubfs/A-NewSite2017/Products/Product%20images/Bypass/P1GMCx_Quarter-Products625x400.png?width=400&name=P1GMCx_Quarter-Products625x400.png" />
 </p>
 
 #### Port Mirror
@@ -1405,20 +1471,34 @@ Also called a Switch Port Analyzer, or SPAN in Cisco Devices, is a special port 
 *SIEM tools aggregate and correlate data, allowing you to organize it into valuable information. You can get to the time sequence of an event in all the logs quickly, have alerts and the ability to notify you based on a configurable trigger.*
 
 <p align="center">
-<img width="69%" src="https://secureops.com/wp-content/uploads/2020/01/components-of-siem.jpg" />
+<img width="90%" src="https://secureops.com/wp-content/uploads/2020/01/components-of-siem.jpg" />
 </p>
 
-* **Aggregation** - Collecting data from disparate sources and organizing the data into a single format. Any device within a SIEM system that collects data is called collector or an aggregator.
+* **Aggregation**: Collecting data from disparate sources and organizing the data into a single format. Any device within a SIEM system that collects data is called collector or an aggregator.
 
-* **Correlation** - is the logic that looks at data from disparate sources and can make determinations about events taking place on your network. (could be in-band or out-of-band, depending on the placement of the NIDS/NIPS)
-	* Alerts - for notification if something goes bad
-	* Triggering - Exceeding thresholds
+* **Correlation**: Is the logic that looks at data from disparate sources and can make determinations about events taking place on your network. (Could be in-band or out-of-band, depending on the placement of the NIDS/NIPS).
+	* **Alerts** - For notification if something goes bad.
+	* **Triggering** - Exceeding thresholds.
 
-* **Normalization** - will actually create multiple tables / organize in such a way that the data can become more efficient and allows our analysis and reports tools to work better.
+* **Normalization**: Will actually create multiple tables / organize in such a way that the data can become more efficient and allows our analysis and reports tools to work better.
 
 * **WORM - Write Once Read Many**: The concept being is that log files are precious, and a lot of times you might want to look at them in an archival way, so that we can use optical media like WORM drives to store them.
+<br>
 
-#### SIEM Tools
+* **Time synchronization**:
+	- Switches, routers, firewalls, servers, workstation has its own clock.
+	- **Synchronizing the clocks becomes critical for Log Files, authentication information, outage details**.
+	- Automatic update with **NTP (Network Time Protocol)**.
+
+* **SYSLOG**:
+	- Standard for message logging: Diverse systems, consolidated log
+	- Usually a central loggin receiver: Integrated into the SIEM
+	- Require a lot disk space
+	- WORM drive technology
+
+> 🛑 **SYSLOG stands for System Logging Protocol** and is a standard protocol used to send system log or event messages to a specific server, called a syslog server. It is primarily used to collect various device logs from several different machines in a central location for monitoring and review.
+
+#### Most Popular SIEM Tools:
 
 * **[Splunk](https://www.splunk.com/)**
 	![splunk](https://www.splunk.com/content/dam/splunk2/images/screenshots/platform-journey/conflaunch/SS-UI-Light-Mode-frame.png)
@@ -1437,14 +1517,14 @@ Also called a Switch Port Analyzer, or SPAN in Cisco Devices, is a special port 
 
 ### **802.11**
 
-*IEEE 802.11 is part of the IEEE 802 set of LAN protocols, and specifies the set of media access control (MAC) and physical layer (PHY) protocols for implementing wireless local area network (WLAN) Wi-Fi computer communication in various frequencies, including but not limited to 2.4 GHz, 5 GHz, and 60 GHz frequency bands.*
+*IEEE 802.11 is part of the IEEE 802 set of LAN protocols, and speci fies the set of media access control (MAC) and physical layer (PHY) protocols for implementing wireless local area network (WLAN) Wi-Fi computer communication in various frequencies, including but not limited to 2.4 GHz, 5 GHz, and 60 GHz frequency bands.*
 
 ![80211](https://steemitimages.com/p/X37EMQ9WSwsMfHTdm8pfEYwuZbTCWFHqXbdDf3mYpu7MPCSF4g1H91WdvbEPreHqYfn7wJWqACH9w9uZtcuSAd6cDn1sAibTMxevS?format=match&mode=fit)
 
 ## **Wireless Access Point (WAP)**
 
 * Wireless Access Point is a Bridge between **802.11** and **Ethernet**.
-* Every WAP have MAC address
+* Every WAP have MAC address.
 * **SSID (Service Set identifier)** associated to the MAC address on a WAP is known as **BSSID - (Basic Service Set Identifier)**
 * When a large network is connected multiple WAP's through a **Common Ethernet Broadcast Domain** - turns out **ESSID - (Extended Service Set Identifier)**
 * MAC Filtering - limit access through the physical hardware address. 
@@ -1630,7 +1710,7 @@ The most commonly used wireless antenna on both WAPs and wireless devices is an 
 Another type of antenna is a directional antenna. A directional antenna transmits in a single direction and receives signals back from the same direction. Because the power of the antenna is focused in a single direction, the directional antenna has greater gain than an omni antenna, and it can transmit and receive signals over greater distances.
 
 <p align="center">
-<img width="65%" src="https://mk0gcgablogq2ifx558u.kinstacdn.com/wp-content/uploads/2016/06/Wireless-Antenna.jpg" />
+<img width="92%" src="https://mk0gcgablogq2ifx558u.kinstacdn.com/wp-content/uploads/2016/06/Wireless-Antenna.jpg" />
 </p>
 
 * **Omnidirectional**
@@ -1655,7 +1735,7 @@ Another type of antenna is a directional antenna. A directional antenna transmit
 #### Example on 2.4 GHz Frequency Ranges
 
 <p align="center">
-<img width="70%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/28db15e18559c5a634b2a2b4b3d021690a7ec9f5/antenna.png" />
+<img width="90%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/28db15e18559c5a634b2a2b4b3d021690a7ec9f5/antenna.png" />
 </p>
 
 * Make sure to have multiple access points that were not overlapping any of the frequencies
@@ -1892,7 +1972,7 @@ Installation of third-party applications that is different from original Applica
 
 ## Physical Controls
 <p align="center">
-<img width="65%" src="https://www.galloglas.org/wp-content/uploads/2019/09/security-risks2_orig.jpg" />
+<img width="85%" src="https://www.galloglas.org/wp-content/uploads/2019/09/security-risks2_orig.jpg" />
 </p>
 
 ### **Deterrent** Physical Controls
@@ -1932,14 +2012,14 @@ Temporary fixes when these controls are weakened.<br> *i.e - If the outside fenc
 
 * **Infrared Camera** - we can determine heats more easily
 <p align="center">
-<img width="80%" src="https://www.castlerockinspections.com/DataCentIR_1.jpg" />
+<img width="85%" src="https://www.castlerockinspections.com/DataCentIR_1.jpg" />
 </p>
 
 
 * **Zone-based HVAC**
 
 <p align="center">
-<img width="80%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/661979a429189cf1c6538c0dff8758a7474fb360/zonebased-hvac.png" />
+<img width="85%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/661979a429189cf1c6538c0dff8758a7474fb360/zonebased-hvac.png" />
 </p>
 
 * **Hot & Cold aisles** - Used in server rooms, HVAC use either hot and cold aisles a contained system to vent hot air out and away from ther server racks; Layout of data centers inteligently and efficiently. Aisles of equipment racks are set up such that there are alternating hot and cold aisles. 
@@ -2000,7 +2080,7 @@ Unencrypted HTTP running TLS encryption
 * *32-bit address with 4 octets*
 
 <p align="center">
-<img width="80%" src="https://www.certiology.com/wp-content/uploads/2015/05/Private-Ip-Addresses.jpg" />
+<img width="90%" src="https://www.certiology.com/wp-content/uploads/2015/05/Private-Ip-Addresses.jpg" />
 </p>
 
 ### **IPv6** Address
@@ -2057,7 +2137,7 @@ Secure Socket Layer (**SSL**) and Transport Layer Security (**TLS**), they are p
 
 ## DNS - Domain Name System
 
-🛑 DNS is a nonsecure protocol
+> 🛑 DNS is a nonsecure protocol
 
 ### DNSSEC 
 **DNSSEC is not encryption, is an authentication tool to avoid spoof and replay attack.**
@@ -2100,7 +2180,7 @@ Secure Socket Layer (**SSL**) and Transport Layer Security (**TLS**), they are p
 	- Very fast convergence
 
 <p align="center">
-<img width="71%" src="https://1.bp.blogspot.com/-HlGvzm614dI/VchpAXr0dTI/AAAAAAAAKAI/O9IDZa4_it4/s1600/load-balancing.png" />
+<img width="81%" src="https://1.bp.blogspot.com/-HlGvzm614dI/VchpAXr0dTI/AAAAAAAAKAI/O9IDZa4_it4/s1600/load-balancing.png" />
 </p>
 
 * TCP offload
@@ -2116,7 +2196,7 @@ Secure Socket Layer (**SSL**) and Transport Layer Security (**TLS**), they are p
 	* Weighted round-robin: Prioritize the server use
 	* Dynamic round-robin: Monitor the server load and distribute to the server with the lowest use
 <p align="center">
-<img width="81%" src="https://avinetworks.com/wp-content/uploads/2019/02/round-robin-load-balancing-diagram.png" />
+<img src="https://avinetworks.com/wp-content/uploads/2019/02/round-robin-load-balancing-diagram.png" />
 </p>
 
 ### DDoS Mitigator
@@ -2137,7 +2217,7 @@ Secure Socket Layer (**SSL**) and Transport Layer Security (**TLS**), they are p
 * Scrum
 
 <p align="center">
-<img width="81%" src="https://testingtypes.files.wordpress.com/2013/06/agile-model.jpg" />
+<img width="91%" src="https://testingtypes.files.wordpress.com/2013/06/agile-model.jpg" />
 </p>
 
 ### DevOps
@@ -2229,7 +2309,7 @@ If you have data that is a part of your app some of that data has risk of exposu
 # 4. Identity and Access Management
 
 <p align="center">
-<img width="65%" src="https://miro.medium.com/max/698/1*ytjCMDPDQVgEJbRuYpAttw.jpeg" />
+<img width="80%" src="https://miro.medium.com/max/698/1*ytjCMDPDQVgEJbRuYpAttw.jpeg" />
 </p>
 
 ## Identification and AAA
@@ -2466,9 +2546,13 @@ Monitoring all users account activity
 * Track file access
 
 > 🛑 Shared Accounts = Bad!!!
+
 > 🛑 Multiple Accounts = Use different user/pass.
+
 > 🛑 Use least privilege - enough necessary to accomplish task.
+
 > 🛑 Monitor and log activity of users with multiple accounts. (Log everything)
+
 > 🛑 Avoid default usernames on user accounts.
 
 ## Triple AAA - Authentication, Authorization and Accounting
@@ -2524,7 +2608,7 @@ Similar to the CHAP; uses a challenge hashed message with a different process th
 **Uses Port 88**
 
 <p align="center">
-<img width="75%" src="https://www.manageengine.com/products/active-directory-audit/kb/images/event-4771-kerberos-authentication-illustration.jpg" />
+<img width="90%" src="https://www.manageengine.com/products/active-directory-audit/kb/images/event-4771-kerberos-authentication-illustration.jpg" />
 </p>
 
 ### **SAML** - Security Assertion Markup Language
@@ -2545,7 +2629,7 @@ Query Directories: Structured language that allows one computer to go into someb
 # 5. Risk Management
 Risk management is the identification, evaluation, and prioritization of risks followed by coordinated and economical application of resources to minimize, monitor, and control the probability or impact of unfortunate events or to maximize the realization of opportunities.
 <p align="center">
-<img width="60%" src="https://csrc.nist.gov/CSRC/media/Projects/Risk-Management/images-media/NIST-RMF.png" />
+<img width="80%" src="https://csrc.nist.gov/CSRC/media/Projects/Risk-Management/images-media/NIST-RMF.png" />
 </p>
 
 
@@ -2713,11 +2797,11 @@ Defense in Depth uses **administrative, physical and technical controls**.
 Physical defense in depth
 </p>
 <p align="center">
-<img width="70%" src="https://www.ciatec.com/wp-content/uploads/2018/03/Defense-in-Depth.jpg" />
+<img src="https://www.ciatec.com/wp-content/uploads/2018/03/Defense-in-Depth.jpg" />
 </p>
 
 <p align="center">
-<img width="80%" src="https://www.researchgate.net/profile/James_Cusick/publication/322161382/figure/fig1/AS:578042084814848@1514827380600/Security-Defense-in-Depth-Model.png" />
+<img src="https://www.researchgate.net/profile/James_Cusick/publication/322161382/figure/fig1/AS:578042084814848@1514827380600/Security-Defense-in-Depth-Model.png" />
 </p>
 
 ### **Redundacy**
@@ -2753,7 +2837,7 @@ Step by step process of how to do something.
 Security controls, Policies and standards help define and build the **Procedures**.
 
 <p align="center">
-<img width="75%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/0aff7f60c0b9b6bf8d8c420fd2ded843eb29984d/it-governance.jpg" />
+<img width="90%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/0aff7f60c0b9b6bf8d8c420fd2ded843eb29984d/it-governance.jpg" />
 </p>
 
 # Security Policies
@@ -2813,7 +2897,7 @@ Frameworks come from a variety of sources including:
 <b>NIST Risk Management Framework:</b>
 </p>
 <p align="center">
-<img width="70%" src="https://csrc.nist.gov/CSRC/media/Projects/Risk-Management/images-media/OrgRMF.png" /> </p>
+<img width="90%" src="https://csrc.nist.gov/CSRC/media/Projects/Risk-Management/images-media/OrgRMF.png" /> </p>
 
 # Quantitative Risk Assessment
 Is based on objective data -typically, numerical data; Exact values, for instance, can be used to describe impact or loss of an asset.
@@ -2893,7 +2977,7 @@ To create a **(PIA) - Privacy Impact Assessment**, the organization needs to per
 Determine how long the particular equipament going to last. (qualitative)
 
 <p align="center">
-<img  width="70%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/13cf0c9fbcd0acba680220cce03829cbf0ce1506/MTBF.png" />
+<img  width="89%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/13cf0c9fbcd0acba680220cce03829cbf0ce1506/MTBF.png" />
 </p>
 
 * **MTTF = Mean Time to Failure**
@@ -3057,7 +3141,7 @@ Agreement used in public sector.
 
 # 6. Cryptography and PKI
 <p align="center">
-<img width="100%" height="350px" src="https://wp.technologyreview.com/wp-content/uploads/2019/07/quantumexplainer3.2-01-10.jpg" />
+<img src="https://wp.technologyreview.com/wp-content/uploads/2019/07/quantumexplainer3.2-01-10.jpg" />
 </p>
 
 
@@ -3310,7 +3394,7 @@ $2b$10$vES9mCPsE10//vOc1u01XeUVmJrZyHGMPaRfo39OIUoJ2g7iPtDnu
 
 # 7. Testing the Infrastructure
 <p align="center">
-<img width="70%" src="https://blog.beyondsecurity.com/wp-content/uploads/cybersecurity_shield_blue_pink_network_SCANNING_rendered.png"/>
+<img width="90%" src="https://blog.beyondsecurity.com/wp-content/uploads/cybersecurity_shield_blue_pink_network_SCANNING_rendered.png"/>
 </p>
 
 ## Vulnerability Scanning Tools 👁‍🗨
@@ -3383,7 +3467,7 @@ The purpose of Vulnerability Scanning is to identify vulnerabilities cause by la
 ## Social Engineering Attacks
 
 <p align="center">
-<img width="50%" src="https://mfgtec.org/wp-content/uploads/2019/07/Social-Engineering.png"/>
+<img width="70%" src="https://mfgtec.org/wp-content/uploads/2019/07/Social-Engineering.png"/>
 </p>
 
 * **Phishing** - the fraudulent attempt to obtain sensitive information such as usernames, passwords and credit card details by disguising oneself as a trustworthy entity in an electronic communication<br>
@@ -3398,11 +3482,21 @@ The purpose of Vulnerability Scanning is to identify vulnerabilities cause by la
 * **Dumpster Diving** - Used to retrieve information that could be used to carry out an attack on a computer network.
 
 ## Common Web Application Attacks
+<p align="center">
+<img width="90%" src="https://ictinstitute.nl/wp-content/uploads/2017/12/OWASP-top10-changes-2013-2017.png"/>
+
+</p>
+<p align="center">
+<small>Source: <a href="https://owasp.org/www-project-top-ten/" target="_blank">OWASP</a></small>
+</p>
 
 <p align="center">
-<img width="80%" src="https://www.ptsecurity.com/upload/corporate/ww-en/images/analytics/article_300527/300527_6.jpg"/>
+<img width="90%" src="https://www.ptsecurity.com/upload/corporate/ww-en/images/analytics/article_300527/300527_6.jpg"/>
+
 </p>
-<p align="center">2018 - source: ptsecurity</p>
+<p align="center">
+<small>2018 | Source: ptsecurity</small>
+</p>
 
 * **Cross-site scripting (XSS)** - Client-side script 
 injected into trusted web site
@@ -3505,7 +3599,7 @@ injected into trusted web site
 ## Penetration Testing / Pentesting 
 
 <p align="center">
-<img width="85%" src="https://www.appknox.com/hubfs/Appknox%20-%20Penetration%20Testing%20Stages.jpg"/>
+<img src="https://www.appknox.com/hubfs/Appknox%20-%20Penetration%20Testing%20Stages.jpg"/>
 </p>
 
 Is the practice of testing a computer system, network or web application to find security vulnerabilities that an attacker could exploit. Penetration testing can be automated with software applications or performed manually.
@@ -3545,7 +3639,7 @@ Is the practice of testing a computer system, network or web application to find
 
 <h3 align="center">Incident Response Process</h3>
 <p align="center">
-<img width="70%" src="https://48p4co31imez19sw3n1qudx0-wpengine.netdna-ssl.com/wp-content/uploads/incident_response_process.png"/>
+<img width="90%" src="https://48p4co31imez19sw3n1qudx0-wpengine.netdna-ssl.com/wp-content/uploads/incident_response_process.png"/>
 </p>
 
 **1. Preparation**
@@ -3626,7 +3720,7 @@ Is the practice of testing a computer system, network or web application to find
 ## Digital Forensics
 
 <p align="center">
-<img width="75%" src="https://www.dw.com/image/16866326_303.jpg"/>
+<img src="https://www.seecra.com/wp-content/uploads/2018/03/digital-for.jpg"/>
 </p>
 
 Digital forensics is the process of uncovering and interpreting electronic data. The goal of the process is to preserve any evidence in its most original form while performing a structured investigation by collecting, identifying and validating the digital information for the purpose of reconstructing past events.
@@ -3639,7 +3733,7 @@ The context is most often for usage of data in a court of law, though digital fo
 
 #### **Chain of Custody Process**
 <p align="center">
-<img width="80%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/315dda37f0f07dc2f1c79a3a4ac44fe0f33c5396/forensics-chain-custody.png"/>
+<img width="90%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/315dda37f0f07dc2f1c79a3a4ac44fe0f33c5396/forensics-chain-custody.png"/>
 </p>
 
 1. Define the Evidence
@@ -3733,7 +3827,7 @@ The context is most often for usage of data in a court of law, though digital fo
 - `stat` **Linux** command - stat can return the status of an entire file system, the status of the first hard disk and so on.
 
 <p align="center">
-<img width="73%" src="https://www.howtoforge.com/images/command-tutorial/big/stat-basic.png" />
+<img width="88%" src="https://www.howtoforge.com/images/command-tutorial/big/stat-basic.png" />
 </p>
 
 - Archive attribute - **Windows** - if something is created or changed
@@ -3741,7 +3835,7 @@ The context is most often for usage of data in a court of law, though digital fo
 ### **Differential Backup**
 - Backup all the changes since the last full backup
 <p align="center">
-<img width="73%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/differential-backup.png" />
+<img width="83%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/differential-backup.png" />
 </p>
 
 > 🛑 *Differential there are less backup sets but they get bigger.*<br>
@@ -3749,7 +3843,7 @@ The context is most often for usage of data in a court of law, though digital fo
 ### **Incremental Backup**
 - Only backs up changes made from last backup
 <p align="center">
-<img width="73%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/incremental-backup.png" />
+<img width="83%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/incremental-backup.png" />
 </p>
 
 > 🛑 *Incremental more backup sets but smaller.*
@@ -3770,7 +3864,7 @@ Cloud backups work beautifully, however, they have one big downside and that is 
 
 ***
 
-## List of Common Ports for Security+ exam
+## List of All Ports for Security+ Exam
 
 Port | Description
 :-:|:-
