@@ -2,6 +2,8 @@
 <img width="100%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/232dd1aac3219bb680af5b3e2e86d85f6aa163fb/banner-splus.jpg" />
 </p>
 
+<hr> 
+
 ### 📢 About
 
 **The main objectives of this repo**
@@ -26,12 +28,12 @@ Identity and Access Management | 16%
 Risk Management | 14%
 Cryptography and PKI | 12%
 
-#### ✳️ Free Security+ Resources
+#### ✳️ Free Resources
 1. [Practice Questions](https://www.examcompass.com/comptia/security-plus-certification/free-security-plus-practice-tests) - I recommend to test your knowledge after study all topics presented on the exam.
 
 2. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos (13 hours of content) from Professor Messer - Security+.
 
-3. [Big list of free resources, books and courses from different topics in Cybersecurity](https://dfirdiva.com/free-training)
+3. [Another resources](https://dfirdiva.com/free-training) - Big list of free resources from different areas of cyber security.
 
 *** 
 
@@ -1117,15 +1119,14 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 ## Network Access Control
 **Wireless Network, Remote Access, VPN Access**
 
-* Access control
-	- Control from wherever you are (inside or outside)
-	- Access can be based on many rules (by user, group, location, application etc)
-	- Access can be easily revoked or changed
+- Control from wherever you are (inside or outside)
+- Access can be based on many rules (by user, group, location, application etc)
+- Access can be easily revoked or changed
 
 #### Posture assessment
 *BYOD, Malware infections, missing anti-malware, unauthorized applications.*
 
-- Before connecting to the network, perform a helth check:
+- Before connecting to the network, perform a **health check**:
 	- Is it a trusted device?
 	- Is it a running anti-virus? Which one? Is it updated?
 	- Are the corporate applications installed?
@@ -1807,7 +1808,7 @@ Another type of antenna is a directional antenna. A directional antenna transmit
 * Outdoors = **Dipole Antenna**
 * Shooting long distances *(one building to another)* = **Directional Antenna**
 
-#### Example on 2.4 GHz Frequency Ranges
+<h3 align="center"> Example on 2.4 GHz Frequency Ranges</h3>
 
 <p align="center">
 <img width="90%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/28db15e18559c5a634b2a2b4b3d021690a7ec9f5/antenna.png" />
@@ -2117,6 +2118,10 @@ B | Liquids(Gases, oil) | CO2, Foam, Powder
 C | Electrical (eletronic equipment) | CO2
 D | Combustible metals (sodium, magnesium) | Powder
 
+
+<img width="75%" src="https://northlandfire.com/wp-content/uploads/2019/03/Extinguisher-Classes.jpg" />
+
+
 > 🛑 FM200 is a special extinguisher liquid that is great because it can stops fires, but can still save the electrical equipment; "Gold Standard" for fire suppression on server rooms.
 
 > 🛑 Class C is best extinguisher for suppress fire on Server Room, but it may ruin some electronics due to the corrosive powder inside.
@@ -2211,6 +2216,7 @@ Secure Socket Layer (**SSL**) and Transport Layer Security (**TLS**), they are p
 
 
 ## DNS - Domain Name System
+The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
 
 > 🛑 DNS is a nonsecure protocol
 
@@ -2329,47 +2335,45 @@ Benefits of DevOps:
 Compile-time is the instance where the code you entered is converted to executable. Run-time is the instance where the executable is run.
 
 ### 1. **Error Handling**
-**Proper Error Handling**: isn't going to stop all errors, but it will prevent errors from apperaring on the user interface for easy viewing for attackes / bad actors.
+* **Proper Error Handling**: isn't going to stop all errors, but it will prevent errors from apperaring on the user interface for easy viewing for attackes / bad actors.
 
 <p align="center">
 <img width="81%" src="https://www.getastra.com/blog/wp-content/uploads/2017/06/Server-Error-Message.png" />
 </p>
 
 ### 2. **Input Validation**
-**Proper Input Validation**: helps prevent these types of attacks: **command insertion, cross-site scripting, buffer overflows, and SQL injection**.
+* **Proper Input Validation**: helps prevent these types of attacks: **command insertion, cross-site scripting, buffer overflows, and SQL injection**.
 
 ### 3. **Normalization**
-Is a database term meaning to store and organize data so that it exists in one form only. For example, a user database has the three tables shown. (name table, zip code table etc).
+* Is a database term meaning to store and organize data so that it exists in one form only. For example, a user database has the three tables shown. (name table, zip code table etc).
 
 ### 4. **Stored Procedures**
-Stored Procedures harden web apps; Is a piece of code, custom written by devs of the app and stored in the Database. **This code only respond to a specific query format defined by the eveloper, this can prevent SQL injection or common bad queries used by attackers.**
+* Stored Procedures harden web apps; Is a piece of code, custom written by devs of the app and stored in the Database. **This code only respond to a specific query format defined by the eveloper, this can prevent SQL injection or common bad queries used by attackers.**
 
 ### 5. **Encryption / Code signing**
-Code signing means to sign an individual executable/interpred code digitally so that users have confidence the code they run is the actual code from the developer.
+* Code signing means to sign an individual executable/interpred code digitally so that users have confidence the code they run is the actual code from the developer.
 
 ### 6. **Obfuscation**
-To make harder an attacker reverse-engineer the code (i.e Minifying Javascript)
+* To make harder an attacker reverse-engineer the code (i.e Minifying Javascript)
 
 <p align="center">
 <img src="https://isc.sans.edu/diaryimages/24a8bdaf622212fadfc4127b6ed55cd8" />
 </p>
 
-
-
 ### 7. **Code reuse / Dead Code**
-Get rid of dead code inside the web app. (i.e Commented unecessary code)
+* Get rid of dead code inside the web app. (i.e Commented unecessary code)
 
 ### 8. **Server-side vs. Client-side**
-In general, a server-side platform is more secure than a client-side platform, but client-side is generally faster and may receive big chunks of code to the client, to prevent that you can use encryption. 
+* In general, a server-side platform is more secure than a client-side platform, but client-side is generally faster and may receive big chunks of code to the client, to prevent that you can use encryption. 
 
 ### 9. **Memory Management**
-Watch out the memory leaks to avoid buffer overflow attack and code reuse.
+* Watch out the memory leaks to avoid buffer overflow attack and code reuse.
 
 ### 10. **Third-party libraries**
-Weaknesses of third-party libraries can result on bad actor exploring this. To avoid this type of risk, maintain patch updates, stay on top of any announcements, check the dependencies of the third-party libraries using OWASP dependency checker.
+* Weaknesses of third-party libraries can result on bad actor exploring this. To avoid this type of risk, maintain patch updates, stay on top of any announcements, check the dependencies of the third-party libraries using OWASP dependency checker.
 
 ### 11. **Data Exposure**
-If you have data that is a part of your app some of that data has risk of exposure. And our job as developers is to reduce if not eliminate any risk of that data exposure especially if it's personally identifiable information or personal health information. We almost always today go through aggressive encryptions any time.
+* If you have data that is a part of your app some of that data has risk of exposure. And our job as developers is to reduce if not eliminate any risk of that data exposure especially if it's personally identifiable information or personal health information. We almost always today go through aggressive encryptions any time.
 
 ## Code Quality & Testing
 
@@ -2452,7 +2456,7 @@ The information on credentials identifies the user.
 	* Reusage and retention
 
 ### Password Security
-#### Password Policy (Local Security Policy - Windows)
+<h4 align="center"> Password Policy, Local Security Policy - Windows:</h4>
 
 <p align="center">
 <img width="90%" src="https://www.premiumexam.net/wp-content/uploads/2018/11/word-image-289.png" />
@@ -2733,15 +2737,14 @@ Risk management is the identification, evaluation, and prioritization of risks f
 
 # Defining Risk
 
-**Vulnerability: A weakness; System flaw**
+* **Vulnerability:** A weakness; System flaw.
+* **Threat:** Exploit vulnerabilities to harm assets.
+* **Risk:** The likelihood of a THREAT exploiting a VULNERABILITY, resulting in a loss.
 
-**Threat: Exploit vulnerabilities to harm assets.**
-
-**Risk: The likelihood of a THREAT exploiting a VULNERABILITY, resulting in a loss.**
-
-**Formulas:**<br>
-*threats x vulnerability = risk*<br>
-*threats -> vulnerability = risk*
+*Formula:*<br>
+> THREATS x VULNERABILITY = RISK
+> OR
+> THREATS -> VULNERABILITY = RISK
 
 ## 1) Asset:
 Is a part of an IT infrastructure that has a value. You can measure value either tangibly or intangibly. A gateway router is an example of an asset with tangible value, if it fails, you can easily calculate the cost to replace the router.
@@ -2815,13 +2818,13 @@ A threat actor can be a malicious person, such as a hacker accessing corporate s
 		* Take financial information
 
 # Risk Assessment
-### 1) Vulnerability Assessment
+### 1. Vulnerability Assessment
 * NIST SP 800-30
 * CVE (Common Vulnerabilities and Exposures)
 * Nessus scanner
 * Penetration Testing
 
-### 2) Threat Assessment
+### 2. Threat Assessment
 * **Environmental**: Natural disasters outside the control of humans
 * **Manmade**: Any threat that is not environmental
 * **Internal**: Threat generated by internal sources, usually an insider to the organization
@@ -2934,9 +2937,9 @@ Step by step process of how to do something.
 
 Security controls, Policies and standards help define and build the **Procedures**.
 
-<p align="center">
-<img width="90%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/0aff7f60c0b9b6bf8d8c420fd2ded843eb29984d/it-governance.jpg" />
-</p>
+
+<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/0aff7f60c0b9b6bf8d8c420fd2ded843eb29984d/it-governance.jpg" />
+
 
 # Security Policies
 ### **The Acceptable Use Policy (AUP)**:
@@ -3318,13 +3321,13 @@ Algorithm | Block or Streaming | Block Size | Rounds | Key Size | Notes
 ### **Block modes**
 * **ECB** - Eletronic Code Block *(deprecated because nowdays is a week method that always produces the same output results with same input)*
 
-*All block modes below uses IV, which ensures the output block is uniquely different*
+> 🛑 *All block modes below uses IV, which ensures the output block is uniquely different*
 * **CBC** - Cipher Block Chaining
 * **CFB** - Cipher Feedback
 * **OFB** - Output Feedback 
 * **CTR** - Counter
 
-*A **Binary Block** is a plaintext converted into 16-bit, 64-bit or 128-bit binary ciphertext.*
+> 🛑 *A **Binary Block** is a plaintext converted into 16-bit, 64-bit or 128-bit binary ciphertext.*
 
 ## Asymmetric Algorithms
 ### RSA
