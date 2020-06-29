@@ -635,13 +635,156 @@ Ruin the media in such a way tha it is no longer functional.
 <img width="90%" src="https://cdn.nextgov.com/media/img/upload/2020/02/14/NGcybersecurity20200214/860x394.jpg" />
 </p>
 
+#### Passive Security
+* You're a network ninja
+* Watch packets go by
+* There's a lot to learn
+* Top talkers, servers, clients, applications, OS, services
+
+#### Active Security
+* Send traffic to a device, watch the results
+* Query a login page
+* Try a known vulnerability
+* Check account access
+
+## Protocol Analyzers
+**Protocol Analyzers collect and inventory the network traffic.**
+
+**Sniffer** - Some type of software that grab all the data that is going in and out of particular interface. 
+
+### Why Protocol Analyze?
+* Count all the packets coming through over a certain time period to get a strong ideas to your network utilization.
+* Inspect packets for single protocols to verify they are working properly.
+* Monitor communication between client and a server to look for problems.
+* Look for servers that aren't authorized on the network.
+* Find systems broadcasting bad data.
+* Find problems in authentication by watching each step of the process.
+
+### Angry IP Scanner (GUI) - for Windows
+Does a good job using simple protocols, mainly ping, to query a single IP address or an address range. 
+
+<p align="center">
+<img width="90%" src="https://img.creativemark.co.uk/uploads/images/808/17808/img3File.png" />
+</p>
+
+### Wireshark
+Wireshark is the world’s foremost and widely-used network protocol analyzer. It lets you see what’s happening on your network at a microscopic level.
+
+<p align="center">
+<img width="90%" src="https://upload.wikimedia.org/wikipedia/commons/0/03/Wireshark_screenshot.png" />
+</p>
+
+* *With Wirehsark you can inspect and detect ARP poisonings, Rogue DHCP servers, Broadcast Storm etc.*
+
+> 🛑 Broadcast Storm - when a NIC (or port on a switch) sends large amounts of broadcast traffic, thereby crippling network resources.
+>
+
+## Wireless Scanners and Crackers
+
+* **Wireless Monitoring**:
+	- Packet capturing
+* **Wireless attacks**: 
+	- Rogue access points
+	- Deauthentication attacks
+* **Cracking**:
+	- Find a wireless netowrk key
+	- WEP - Cryptographic vulnerabilities - relatively straightforward
+	- WPA PSK and WPA2 PSK - Dictionary brute force, rainbow tables
+* **Many Open Source projects**:
+	- Aircrack-ng Suite, Fern
+
+<p align="center">
+<img width="90%" src="https://i.ytimg.com/vi/9yqnmeFD_s8/maxresdefault.jpg" />
+</p>
+
+<p align="center">
+<small>aircrack-ng</small>
+</p>
+
+## Password Crackers
+* Passwords are stored as Hashes
+* It's a one-way trip (you can't convert hash to plain-text password)
+* Some are stored without much complexity - relatively straightforward to brute-force a weak hash
+* As an attacker, After get the hashes you can use a good wordlist or rainbow-table to crack them.
+* **Many tools available:** 
+	- John The Ripper
+	- Ophcrack
+
+<p align="center">
+<img width="90%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT-WSgD_yV72VdwAoDoORawZsfsqn8chA4m_Q&usqp=CAU" />
+</p>
+
+<p align="center">
+<small>John The Ripper</small>
+</p>
+
+<p align="center">
+<img width="90%" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Ophcrack-3.2.0_screenshot.png" />
+</p>
+
+<p align="center">
+<small>Ophcrack</small>
+</p>
+
+## Vulnerability Scanners
+- Gather as much information as possible
+- Security Patches alert
+
+- **Popular tools**:
+	- **MBSA** - Microsoft Baseline Secuirty Analyzer
+	- **Nessus** by Tenable
+	- **Nikto**
+
+> 🛑 Vulnerability Scanners will be explained with more details later below at *Chapter 7 - Testing Infrastructure.*
+
+## Configuration Compliance Scanner
+- **The devices must meet minimum security configurations**
+	- Comply with internal requirements or industry regulations
+
+- **Check for varios configurations**
+	- OS version
+	- Installed applications
+	- Network settings
+	- Anti-virus / anti-malware settings, versions and signatures
+	- Server configurations
+
+- **Auditing may be ongoing**
+	- Report on current status, identify changes over time
+	- Integrated with login process and/or VPN connection
+
+## Exploitation Frameworks
+- On the browser, OS, applications, embedded devices, etc.
+- Build an exploit using different techniques
+- Those frameworks are heavily updated with newest CVEs and most common exploits
+
+- **Tools**:
+	- **BeEF** - The browser Exploitation Framework Project
+	- **RouterSploit** - Router Exploitation Framework
+	- **Metasploit** - Build your own vulnerability tests or use modules in the existing exploit database.
+<p align="center">
+<img width="90%" src="https://www.offensive-security.com/wp-content/uploads/2016/03/using-exploits.png" />
+</p>
+
+<p align="center">
+<small>Metasploit Framework - exploits</small>
+</p>
+
+## Data Sanitization Tools
+- Sanitize entire hard drives
+	- Darik's Boot and Nuke (DBAN)
+- Sanitize individual files or folders
+	- Microsoft SDelete
+
+> 🛑 Cache and temporary files can be tricky to track sometimes.
+
 ## OS Utilities - Command Line (Linux & Windows)
 
-- Security+ covers simple Linux and Windows commands.
-- To understand the functionality behind the commands I recommend to test them at your own.
+- Security+ covers simple **Linux** and **Windows commands**.
+- *To understand the functionality behind the commands I recommend to test them at your own.*
 
-## `ping`
-Can be handful for DNS checks (up / or down) | is a DNS tool to resolves web addresses to an IP address.
+### `ping`
+* Can be handful for DNS checks (up / or down) | is a DNS tool to resolves web addresses to an IP address.
+* Test reachability - determine round-trip time, and uses ICMP protocol.
 
 ```console
 ~#: ping www.google.com 
@@ -665,25 +808,59 @@ Switch | Description
 **-6** | Force using IPv4
 
 
-## `netstat`
-get info on host system TCP / UDP connections and status of all open and listening ports and routing table.
+### `netstat`
+* Network statistics
+* Get info on host system TCP / UDP connections and status of all open and listening ports and routing table.
 
 * Who you talking to? 
 * Who trying talking to you? 
 
 ```console
-netstat -a (server)
-netstat -n (host)
+netstat -a # (show all active connections) (servers)
+netstat -n # (hosts)
+netstat -b # (Show binaries Windows)
+
 ```
 
-## `tracert` | `traceroute`
-traceroute - how packets get from host to another endpoint. Traceroute is helpful to see what routers are being hit, both internal and external.
+### `tracert` | `traceroute`
+* Traceroute - how packets get from host to another endpoint. Traceroute is helpful to see what routers are being hit, both internal and external.
 
 * tracert - Windows
 * traceroute - Linux
 
-## `arp` 
-address resolution protocol - caches of ip-to-ethernet
+* **Take advantage of ICMP Time to Live (TTL) Exceeded error message**
+	- The time in TTL refers to hops, not seconds or minutes.
+	- TTL=1 is the first router.
+	- TTL=2 is the second router, and so on.
+
+<p align="center">
+<img width="90%" src="https://2.bp.blogspot.com/-bJD787kOoXg/WxfnpFe4tVI/AAAAAAAAXN4/XTCxg0nFEAQOjtEVcvDzL2N-pK-EbQA2wCLcBGAs/s1600/0.png" />
+</p>
+
+* *As shown above, on HOP 2 the TTL exceeded and back to the device A, counting 3 on TTL for the next HOP.*
+
+```console
+~#: traceroute google.com
+
+traceroute to google.com (172.217.17.14), 64 hops max, 52 byte packets
+ 1  192.168.1.1 (192.168.1.1)  4.960 ms  3.928 ms  3.724 ms
+ 2  10.10.124.254 (10.10.127.254)  11.175 ms  14.938 ms  15.257 ms
+ 3  10.133.200.17 (10.137.201.17)  13.212 ms  12.581 ms  12.742 ms
+ 4  10.255.44.86 (10.255.45.86)  16.369 ms  15.100 ms  17.488 ms
+ 5  72.14.201.214 (72.14.201.214)  13.287 ms  29.262 ms  16.591 ms
+ 6  74.125.235.68 (74.125.242.68)  22.488 ms
+    74.125.235.84 (74.125.242.84)  13.833 ms *
+ 7  74.125.252.202 (74.125.252.202)  24.147 ms
+    108.170.252.241 (108.170.25@.241)  26.352 ms
+    74.125.252.202 (74.125.252.202)  23.598 ms
+ 8  108.170.252.247 (108.170.252.247)  31.187 ms
+    74.125.252.199 (74.125.252.199)  22.885 ms
+```
+
+### `arp` 
+* Address resolution protocol - caches of ip-to-ethernet
+* Determine a MAC address based on IP addresses
+* Option `-a`: view local ARP table
 ```console
 ~#: arp -a
 
@@ -693,8 +870,8 @@ address resolution protocol - caches of ip-to-ethernet
 _gateway (192.168.1.1) at 00:31:33:8b:2a:da [ether] on enp0s10
 ```
 
-## `ipconfig` 
-show all IP configuration on **Windows-only** systems.
+### `ipconfig` 
+* Show all IP configuration on **Windows-only** systems.
 
 **Useful switches:**
 
@@ -706,8 +883,12 @@ Switch | Description
 **/flushdns** | Clears the host's DNS cache
 **/displaydns** | Displays the host's DNS cache
 
-## `ifconfig`
-equivalent to ipconfig for UNIX/Linux OS.
+<p align="center">
+<img src="https://www.howtogeek.com/wp-content/uploads/2017/07/tcp_1.png" />
+</p>
+
+### `ifconfig`
+* Equivalent to ipconfig for UNIX/Linux OS.
 
 ```console
 ~#: ifconfig
@@ -728,7 +909,7 @@ enp0s10: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-## `iwconfig`
+### `iwconfig`
 similar to ifconfig, but is dedicated to the wireless network interface.
 
 ```console
@@ -746,7 +927,7 @@ wlp3s0b1  IEEE 802.11  ESSID:off/any
 docker0   no wireless extensions.
 ```
 
-## `ip addr`
+### `ip addr`
 show / manipulate routing, network devices, interfaces and tunnels.
 
 Show all the ip configuration, mac address, ipv6 etc.
@@ -766,8 +947,8 @@ Show all the ip configuration, mac address, ipv6 etc.
     inet6 fe80::acf6:2ae2:ab5c:6316 scope link noprefixroute 
        valid_lft forever preferred_lft forever
 ```
-## `nslookup`
-query Internet name servers interactively; check if the DNS server is working
+### `nslookup`
+* Query Internet name servers interactively; check if the DNS server is working
 
 ```console
 nslookup www.certifiedhacker.com
@@ -790,8 +971,8 @@ Address: 162.241.216.11
 
 ```
 
-## `dig` 
-DNS lookup tool - Functions like nslookup, but allows for further functionality.
+### `dig` 
+* DNS lookup tool - Functions like nslookup, but allows for further functionality.
 
 ```console
 dig www.certifiedhacker.com
@@ -819,17 +1000,32 @@ certifiedhacker.com.    14400   IN      A       162.241.216.11
 
 ```
 
-## `netcat`
+### `netcat`
 TCP/IP swiss army knife; you can make any type of connection and see the results from a command line. With nc you can connect to anything on any port number or you can make your system listen on a port number. Can be an agressive tool for recon.
+
+* "Read" or "Write" to the network
+	- Open a port and send or receive some traffic
+	- Listen on a port number
+	- Transfer data
+	- Scan ports and send data to be a port
+* Become a backdoor
+	- Run a shell from a remote device
 
 <p align="center">
 <img src="https://www.researchgate.net/publication/329745450/figure/fig3/AS:705181092179978@1545139682702/Remote-Command-and-Control-example-through-Netcat.ppm" />
 </p>
 
+### `tcpdump`
+* Tcpdump is a data-network packet analyzer computer program that runs under a command line interface. It allows the user to display TCP/IP and other packets being transmitted or received over a network to which the computer is attached. Distributed under the BSD license, tcpdump is free software
+
+<p align="center">
+<img width="90%" src="https://packetflows.com/wp-content/uploads/2017/05/tcpdump_i.png" />
+</p>
+
 ## Network Scanners
 **Useful for collect and inventory the hosts on a network, and is useful for reconnaissance of your system.**
 
-## `Nmap`
+### `Nmap`
 The Best way to query a system to check if they have open ports, services, system versions, service versions etc.
 
 
@@ -857,45 +1053,6 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ```
 > 🛑 **[Zenmap](https://nmap.org/zenmap/) is a GUI version of Nmap.**
-
-## Protocol Analyzers
-**Protocol Analyzers collect and inventory the network traffic.**
-
-**Sniffer** - Some type of software that grab all the data that is going in and out of particular interface. 
-
-### Why Protocol Analyze?
-* Count all the packets coming through over a certain time period to get a strong ideas to your network utilization.
-* Inspect packets for single protocols to verify they are working properly.
-* Monitor communication between client and a server to look for problems.
-* Look for servers that aren't authorized on the network.
-* Find systems broadcasting bad data.
-* Find problems in authentication by watching each step of the process.
-
-## Angry IP Scanner (GUI) - for Windows
-Does a good job using simple protocols, mainly ping, to query a single IP address or an address range. 
-
-<p align="center">
-<img width="90%" src="https://img.creativemark.co.uk/uploads/images/808/17808/img3File.png" />
-</p>
-
-## Wireshark
-Wireshark is the world’s foremost and widely-used network protocol analyzer. It lets you see what’s happening on your network at a microscopic level.
-
-<p align="center">
-<img width="90%" src="https://upload.wikimedia.org/wikipedia/commons/0/03/Wireshark_screenshot.png" />
-</p>
-
-* *With Wirehsark you can inspect and detect ARP poisonings, Rogue DHCP servers, Broadcast Storm etc.*
-
-> 🛑 Broadcast Storm - when a NIC (or port on a switch) sends large amounts of broadcast traffic, thereby crippling network resources.
-
-### `tcpdump`
-tcpdump is a data-network packet analyzer computer program that runs under a command line interface. It allows the user to display TCP/IP and other packets being transmitted or received over a network to which the computer is attached. Distributed under the BSD license, tcpdump is free software
-
-<p align="center">
-<img width="90%" src="https://packetflows.com/wp-content/uploads/2017/05/tcpdump_i.png" />
-</p>
-
 
 ## SNMP - Simple Network Management Protocol
 Simple Network Management Protocol (SNMP) is an Internet Standard protocol for collecting and organizing information about managed devices on IP networks and for modifying that information to change device behavior. Devices that typically support SNMP include cable modems, routers, switches, servers, workstations, printers, and more.
@@ -1327,6 +1484,9 @@ Emulate a web server, vulnerable machine purposely to attack; Inviting target to
 
 * **Usually located in the DMZ to get close to the source but still isolated to capture the traffic.**
 
+* **Tools**: 
+	- [Project Honeypot](https://www.projecthoneypot.org/) 
+	- [Honeyd](http://www.honeyd.org/)
 <p align="center">
 <img src="https://s.profissionaisti.com.br/wp-content/uploads/2013/12/Honeypot1.jpg"/>
 </p>
@@ -3411,7 +3571,17 @@ Hash Message Authentication Code - Used in conjunction with symmetric key both t
 * It is based on standard hashes (SHA-1, MD5, etc)
 
 ## Steganography
-The art of hide information inside the data (hide data within data), and can be encrypted.
+* The art of hide information inside the data (hide data within data), and can be encrypted.
+
+<p align="center">
+<img width="90%" src="https://miro.medium.com/max/519/1*cwioZQ85xqDVlkn9gXe-vg.png" />
+</p>
+
+* Common steganography techniques:
+	- **Network Based** - Embed messages in TCP packets
+	- **Use an image** - Embed the message in the image itself
+	- **Invisible watermarks** - Yellow dots on printers can reaveal serial number and timestamps
+
 
 ## Certificates and Trust
 * Certificates include a public key and at least one digital signature.
@@ -3984,6 +4154,18 @@ Remote backup is good for disasters in general.
 
 ### Cloud Backup
 Cloud backups work beautifully, however, they have one big downside and that is they take up a tremendous amount of time to get the initial backups going.
+
+### Backup Utilities
+
+- Protect from unexpected downtime
+	- Malware infection
+	- Ransomware
+	- Server defacement
+- Real-time file sync
+	- rsync
+- Regular partial backups - hourly incremental backups
+- Full backups - complete file backups
+- Complete coverage, fast recovery
 
 ***
 
