@@ -1,5 +1,5 @@
 <p align="center">
-<img width="100%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/232dd1aac3219bb680af5b3e2e86d85f6aa163fb/banner-splus.jpg" />
+<img width="100%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8e33e5510bd7caeb474910b9e5fffb6ae16eb993/banner-splus2.jpg" />
 </p>
 
 <hr> 
@@ -3574,7 +3574,7 @@ Hash Message Authentication Code - Used in conjunction with symmetric key both t
 * The art of hide information inside the data (hide data within data), and can be encrypted.
 
 <p align="center">
-<img width="90%" src="https://miro.medium.com/max/519/1*cwioZQ85xqDVlkn9gXe-vg.png" />
+<img width="60%" src="https://miro.medium.com/max/519/1*cwioZQ85xqDVlkn9gXe-vg.png" />
 </p>
 
 * Common steganography techniques:
