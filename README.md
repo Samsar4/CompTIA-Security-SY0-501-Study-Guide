@@ -7,10 +7,9 @@
 ### 📢 About
 
 **The main objectives of this repo**
-* Cover all topics presented on CompTIA Security+ SY0-501 exam.
-* Gather as many information as possible from many sources on internet.
-* Help you pass the exam without paying any expensive training courses.
-* Contribute with open source community and cyber security community <3.
+* This is a *'Open Source Study Guide'* for Security+, gathering as many information as possible from many sources on internet.
+* The main objective is to cover all topics presented on CompTIA Security+ SY0-501 exam.
+* The second objective is to help you pass the exam without paying any expensive training courses and contribute to open source and cyber security community <3 .
 
 #### ℹ️ About the exam
 *CompTIA Security+ is the first security certification IT professionals should earn. It establishes the core knowledge required of any cybersecurity role and provides a springboard to intermediate-level cybersecurity jobs. Security+ incorporates best practices in hands-on trouble-shooting to ensure security professionals have practical security problem-solving skills. Cybersecurity professionals with Security+ know how to address security incidents – not just identify them.*
@@ -2288,6 +2287,59 @@ D | Combustible metals (sodium, magnesium) | Powder
 
 # Protocols Security
 
+<p align="center">
+<img src="https://www.antaira.com/site/images/blogs/Wireless%20Encryption%20Protocols.png" />
+</p>
+
+## Unencrypted Protocols
+
+* For Authentication method, is a critical process - all data must be protected
+* Some protocols **aren't encrypted, which means all traffic sent in  the clear**
+
+> 🛑 You can verify by capturing and anylizing the packets sent over the network.
+### Clear Text Protocols ❌🔓
+
+Protocol | Port | Description
+:-:|:-:|:-
+20, 21 | FTP | Used for upload and download files to a remote server
+23 | Telnet | Terminal session access
+25 | SMTP | Mail transfer
+80 | HTTP | Defines how messages are formatted and transmitted between webservers and browsers 
+110 | POP3 | Mail transfer
+143 | IMAPv4 | Mail transfer
+139, 445 | NETBIOS | TCP NetBIOS connections between 2 hosts using SMB (Samba)
+161, 162 | SNMP | Simple Network Management Protocol is a way for different devices on a network to share information with one another
+1521 | SQLnet | TCP port that listens for and handles network requests to be passed to a database instance, usually a SQL/Oracle database
+
+### Threats of Clear Text Protocols
+- Good password policy doesn't help
+- Same passwords for everything are a threat
+- Is dangerous to use Telnet or FTP internally
+- Confidentiality becomes a major problem using FTP, Telnet and SMTP
+- Switched networks do not prevent sniffing
+- Where ever you go wireless networks can be detected
+- War driving could become a major issue
+
+#### Sniffing Tools:
+- Etheral
+- Ngrep
+- Ettercap, Bettercap
+- Kismet
+- Dsniff
+- Drifnet
+
+### Encrypting Traffic ✅🔒
+Clear Text Protocol | Port | SSL/TLS
+:-:|:-:|:-
+HTTP | 80 | 443
+NNTP | 119 | 563
+FTP-data | 20 | 989
+FTP-control | 21 | 990 
+Telnet | 23 | 992
+IMAP | 143 | 993
+POP3 | 110 | 995
+SMTP | 25 | 465 (revoked)
+
 ### SSH protocol
 * Key exchange algorithms 
 * Designed to run in a tunneling mode (encrypted); And then can provide their own encryption (AES, DES...)
@@ -2307,9 +2359,9 @@ Unencrypted HTTP running TLS encryption
 <img width="73%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/9c85f770fd5223658b960848f0fe56378fddbfe8/Osi-model.png" />
 </p>
 
-<p align="center">
-<b>TCP/IP MODEL vs OSI MODEL</b>
-</p>
+
+<h3 align="center">TCP/IP & OSI MODEL</h3>
+
 <p align="center">
 <img width="80%" src="https://miro.medium.com/max/631/1*S0ZaTC0BuYuEaPcgPi_5bg.jpeg" />
 </p>
