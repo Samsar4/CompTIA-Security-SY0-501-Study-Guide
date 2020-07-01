@@ -4179,6 +4179,7 @@ The context is most often for usage of data in a court of law, though digital fo
 
 ### **Differential Backup**
 - Backup all the changes since the last full backup
+
 <p align="center">
 <img width="83%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/differential-backup.png" />
 </p>
@@ -4187,6 +4188,7 @@ The context is most often for usage of data in a court of law, though digital fo
 
 ### **Incremental Backup**
 - Only backs up changes made from last backup
+
 <p align="center">
 <img width="83%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/incremental-backup.png" />
 </p>
