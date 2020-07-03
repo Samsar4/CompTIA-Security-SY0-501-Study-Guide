@@ -7,8 +7,7 @@
 ### 📢 About
 
 **The main objectives of this repo**
-* This is a *'Open Source Study Guide'* for Security+, gathering as many information as possible from many sources on internet.
-* The main objective is to cover all topics presented on CompTIA Security+ SY0-501 exam.
+* This is a *'Open Source Study Guide'* for Security+ SY0-501, gathering as many information as possible from many sources on internet to ensure to cover all topics presented on exam.
 * The second objective is to help you pass the exam without paying any expensive training courses and also contribute to infosec community <3 .
 
 #### ℹ️ About the exam
@@ -280,6 +279,16 @@ Discharge of an electrical current through the air, arcing from a point of a rel
 	4. Deploying the patch
 		* Scheduling
 	5. Document what is patched 
+
+## Web server hardening
+*Make sure that have no data leaks; The server access must be secure.*
+- Most poupular servers are: Microsoft Internet Information Server, Apache, etc*
+
+* **Security Concerns:**
+	- Information leakege, banner information, directory browsing
+	- Permissions: Run from a non-privileged account, configure file permissions
+	- Configure SSL certificate
+	- Log everything - monitor access and error logs
 
 ### Anti-Malware
 
@@ -2539,12 +2548,12 @@ The Domain Name System (DNS) is the phonebook of the Internet. Humans access inf
 
 > 🛑 **DNS is a nonsecure protocol**
 
-#### DNSSEC 
-**DNSSEC is not encryption, is an authentication tool to avoid spoof and replay attack.**
-
+#### DNSSEC - Domain Name System Security Extensions 
 * Uses PKE (publick key encryption)
 * Adds Integrity and Authentication
 * Avoid Replay Attacks and Spoofing
+
+> 🛑 DNSSEC is not encryption, is an authentication tool to avoid spoof and replay attack.
 
 ### SNMP - Simple Network Management Protocol
 Simple Network Management Protocol (SNMP) is an Internet Standard protocol for collecting and organizing information about managed devices on IP networks and for modifying that information to change device behavior. Devices that typically support SNMP include cable modems, routers, switches, servers, workstations, printers, and more.
@@ -3239,14 +3248,23 @@ The cornerstone of IT security is understanding security controls and how to app
 * Separation of Duties
 * Principle of Least Privilege
 
-# Defense in Depth
+# Defense-in-Depth
 Every IT infrastructure might be looked at as a series of concentric shells. The location of these shells depends on the types of threats you are mitigating.
 
 Defense in Depth uses **administrative, physical and technical controls**.
 
-<p align="center">
-Physical defense in depth
-</p>
+### 1) Physical Controls
+- Door locks, fences, rack locks, cameras, mantraps
+
+### 2) Technical Controls
+- Hardware and software to keep things secure
+- Firewalls, active directory authentication, disk encryption
+
+### 3) Administrative Controls
+- Policies and Procedures
+- On boarding and off boarding
+- Backup media handling
+
 <p align="center">
 <img src="https://www.ciatec.com/wp-content/uploads/2018/03/Defense-in-Depth.jpg" />
 </p>
@@ -3262,17 +3280,51 @@ Try different set of security controls in a random pattern.
 * **Vendor Diversity**: Uses several vendors to supply equipament and services.
 
 # IT Governance
-Influences how the organization conducts IT security.
+All about rules and requirements applied to an organization that dictate how it conducts business, protects data, and obeys the law. Governance comes in the forms of laws, regulations, internal rules, and industry standards.
+<p align="center">
+<img width="70%" src="https://miro.medium.com/max/601/1*RbD54S6-ASV0QndoGnK-CQ.png" />
+</p>
 
-In its most core function is to actually make the right set of security controls.
+* Influences how the organization conducts IT security.
+* In its most core function is to actually make the right set of security controls.
 
-1) Laws and Regulations
-* HIPAA (Health Insurance Portability and Accountability - USA)
-2) Standards
-* **Governament Standards**: NIST, ISO<br>
-* **Industry Standards**: PCI-DSS (Payment Card Industry Data Security Standard)
-3) Best Practices
-4) Common-Sense
+1. **Laws and Regulations**
+	* Regulations:
+		* **HIPAA - Health Insurance Portability and Accountability**, (USA); Extensive healthcare standards for storage, use, and transmission of health care information.
+		* **SOX - Sarbanes-Oxley Act**, The Public Company Accounting Reform and Investor Protection Act of 2002.
+		* **GLBA - The Gram-Leach-Bliley Act** of 1999; Disclosure of privacy information from financial institutions.
+2. **Standards**
+	* Governament Standards: NIST, ISO
+	* Industry Standards: PCI-DSS (Payment Card Industry Data Security Standard)
+3. **Best Practices**
+4. **Common-Sense**
+
+## Frameworks
+- Structure and organization
+	- What works best for IT?
+- Process management
+	- Getting the IT 'product' to work best with the organization
+- Best practices
+	- Guidelines and examples for IT management; Cost effective, agile
+- Training - for everyone
+
+## Industry-Standard Frameworks:
+### COBIT - Framework
+*Control Objectives for Information and Related Technologies*
+- Created by ISACA, formerly the Information Systems Audit and Control Association
+- Focus on regulatory compliance, risk management and aligning IT strategy with organizational goals
+
+### ITIL - Framework
+*Information Technology Infrastructure Library*
+- Multiple stages of the IT lifecycle
+- Multiple services:
+	- Service Design
+	- Service Transition
+	- Service Operation
+	- Service Strategy
+	- Continual Service Improvement
+
+> 🛑 By using these industry-specific frameworks, an organization can structure their IT departments to best serve the overall need of the organization.
 
 ## Policies
 Document that defines how we're going to be doing something. Define Roles and Responsabilities.
@@ -3501,7 +3553,7 @@ Data Loss Prevention (DLP) is the practice of detecting and preventing data brea
 - Secure data on remote cloud systems
 
 # Security Training
-### **Onboarding**:
+### **On boarding**:
 New hires or contractors
 * Background check
 * NDA (Non-disclosure agrement)
@@ -3510,7 +3562,7 @@ New hires or contractors
 * Rules of Behavior (e.g. Good AUP)
 * General Security Policies (e.g. Personal Email, Social network...)
 
-### **Offboarding**:
+### **Off boarding**:
 When the employee leaves the company
 * Disable accounts (never delete an account)
 * Return Credentials
