@@ -335,6 +335,11 @@ Refers to efficiently distributing incoming network traffic across a group of ba
 <img width="80%" src="https://i0.wp.com/gbhackers.com/wp-content/uploads/2018/12/Load-Balancer.jpg?fit=759%2C387&ssl=1" />
 </p>
 
+* Servers can be added and removed 
+	- Real-time response to load
+* Performs constant health checks
+	- If a server disappears, it is removed from the rotation
+
 #### Virtualize the serves 
 
 * Scalability
@@ -906,7 +911,11 @@ _gateway (192.168.1.1) at 00:31:33:8b:2a:da [ether] on enp0s10
 ### `ipconfig` 
 * Show all IP configuration on **Windows-only** systems.
 
-**Useful switches:**
+<p align="center">
+<img src="https://www.howtogeek.com/wp-content/uploads/2017/07/tcp_1.png" />
+</p>
+
+* **Useful switches:**
 
 Switch | Description
 --|--
@@ -916,9 +925,7 @@ Switch | Description
 **/flushdns** | Clears the host's DNS cache
 **/displaydns** | Displays the host's DNS cache
 
-<p align="center">
-<img src="https://www.howtogeek.com/wp-content/uploads/2017/07/tcp_1.png" />
-</p>
+
 
 ### `ifconfig`
 * Equivalent to ipconfig for UNIX/Linux OS.
@@ -1225,7 +1232,15 @@ Router is a networking device which helps in routing the data packets between ho
 * Filter & forward based on **IP address** 
 * OSI Layer 3 [Network]
 * Allocates IP addresses to the devices connected to it using a DHCP server.
-* It performs NAT (Network Address Translation)
+* It performs **NAT** (Network Address Translation)
+
+> 🛑 **NAT** doesn't provide any security mechanisms. It's simply a way to convert from one IP address to another while the traffic is going through the network.
+
+***NAT example:***
+Origin address | NAT address
+:-:|:-:
+Internal Network | External Network
+172.17.20.3 | 10.0.2.5
 
 > 🛑 *Generally operates in the Network layer*
 
@@ -1275,27 +1290,81 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 <img width="79%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8c176b8a798fb5749c4391c45015ee5d14d56f13/intranet.png" />
 </p>
 
-> 🛑 **Extranet**: example of some vendor who need to access the Intranet network.
+> 🛑 **Extranet**: example of some vendor who need to access the Intranet network. Works like a DMZ but for private access.
 
 ## Network Zones - Concepts
+
+* **DMZ** - **Demilitarized Zone**: Perimeter network; isolating untrusted network from LAN area. DMZ is a firewall configuration used to secure hosts on a network segment, in most DMZs the hosts on the DMZ are connected behind a Firewall that is connected to a public network(internet).
+
+<p align="center">
+<img width="90%" src="https://www.cisco.com/c/dam/en/us/support/docs/smb/routers/cisco-rv-series-small-business-routers/images/pole-20position-20-20dmz-20-202.png" />
+</p>
 
 * **LAN** - the core of your network.
 
 * **VLAN** - physical device that designate separate broadcast domains....
 
-* **DMZ** - Demilitarized Zone: Perimeter network, isolating untrusted network from LAN area. DMZ is a firewall configuration used to secure hosts on a network segment, in most DMZs the hosts on the DMZ are connected behind a Firewall that is connected to a public network(internet).
-
-<p align="center">
-<img width="100%" src="https://1.bp.blogspot.com/_cbXvML3JELc/TCRH6WvlEvI/AAAAAAAAAGg/7xsnkGmBqo0/s1600/111.gif" />
-</p>
-
 * **Wireless Network** - Basically a LAN connected to an Wireless Access Point (WAP).
 
-* **Guest Network** - e.g. Coffee Shop network. 
+* **Guest Network** - Optional network for meetings, demos, etc; Have no access to the internal network.
+
+* **Ad hoc** - Wireless without an access point; Point to point communication; *(e.g AirDrop, contact sharing apps, etc)*
 
 * **Virtualization** 
 
-* **Airgap** - Simply means a disconnect to provide real isolation and the use of a completely separate internet from the world; Private internet.
+* **Airgap** - Simply means a disconnect to provide real isolation and the use of a completely separate internet from the world; Private internet. *(e.g Military/governmental computer network/systems)*
+
+> 🛑 **NAT** doesn't provide any security mechanisms. It's simply a way to convert from one IP address to another while the traffic is going through the network.
+
+## Network Segmentation 
+- Physical, logical, or virtual segmentation
+	- Devices, VLANs, virtual networks
+- Performance
+	- High-bandwidth applications
+- Security
+	- Users should not talk directly to database servers
+	- The only applicatons in the core are SQL and SSH
+
+### Physical Segmentation - Switches
+
+<p align="center">
+<img width="90%" src="https://www.illumio.com/sites/default/files/2020-04/firewall_segmentation_diagram.png" />
+</p>
+
+- **Devices are physically separate**
+	- Switch A and Switch B, and so on
+- Must be connected to provide communication
+	- **Direct connect**, or another switch or router
+- **Web servers in one rack, Database servers on another**
+
+### Logical Segmentation - VLANs
+<p align="center">
+<img width="80%" src="https://www.pcwdld.com/wp-content/uploads/image21-1.png" />
+</p>
+
+
+- Separated logically instead of physically
+- Cannot communicate between VLANs without a Layer 3 Device / Router
+
+### Virtualizing everything
+- When you get rid of physical devices
+- Servers, switches, routers, firewalls, load balancers
+- Instant and complete control
+	- Build a new network
+	- Route between IP subnets
+	- Drop a firewall between
+	- Drag and drop devices between networks
+
+### Airgaps
+- Remove any connectivity between components
+	- No possible way for one device to communicate to another
+	- No shared components
+- Network separation
+	- Secure networks
+	- Industrial systems (SCADA, manufacturing)
+	- Military/governmental computer network/systems
+
+> 🛑 Removable media can jump the gap
 
 ## Network Access Control
 **Wireless Network, Remote Access, VPN Access**
@@ -1550,14 +1619,26 @@ The **IP Security (IPsec) protocol** provides a framework for configuring secure
 <img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/61b8c0d475d2e4d5dbb31bd9c8b8c25497f9dbf8/vpn+topologies.png" />
 </p>
 
-* A **remote-access** VPN is created when VPN information is not statically set up, but instead allows for dynamically changing information and can be enabled and disabled. Consider a telecommuter who needs VPN access to corporate data over the Internet. The telecommuter does not necessarily have the VPN connection set up at all times. The telecommuter's PC is responsible for establishing the VPN, each host typically has Cisco VPN client software. 
+### Remote-access VPN 
+is created when VPN information is not statically set up, but instead allows for dynamically changing information and can be enabled and disabled. Consider a telecommuter who needs VPN access to corporate data over the Internet. The telecommuter does not necessarily have the VPN connection set up at all times. The telecommuter's PC is responsible for establishing the VPN, each host typically has Cisco VPN client software. 
 
-* A **site-to-site** VPN is created when connection devices on both sides of the VPN connection are aware of the VPN configuration in advance.
+### Site-to-Site VPN 
+is created when connection devices on both sides of the VPN connection are aware of the VPN configuration in advance.
 
-### VPN Setup Steps
-
+#### VPN Setup Steps
 1. Protocol to set up tunnel
 2. Protocol to handle authentication and encryption
+
+### VPN Concentrators
+- VPN appliances are usually located on the edge of the network
+	- Internet-facing
+- Sites connect from one site to another across the Internet
+
+<p align="center">
+<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/3cdecbe619de48ac076a3065725df04e5d233e16/vpn-2.png" />
+</p>
+
+- The Appliances can be a standalone VPN devices or it may be integrated into another technology, such as Firewall.
 
 ### Early VPNs Protocols
 
@@ -1597,11 +1678,12 @@ Is a suite of protocols developed to ensure the integrity, confidentiality and a
 
 > 🛑 IPSec works at the Layer 3 - Network (IPv4) 
 
-## **IPSec Components**
+### **IPSec Components**
 
 1. **Encapsulating Security Payload (ESP)** – It provides data integrity, encryption, authentication and anti replay. It also provides authentication for payload.
 
 2. **Authentication Header (AH)** – It also provides data integrity, authentication and anti replay and it does not provide encryption. The anti replay protection, protects against unauthorized transmission of packets. It does not protect data’s confidentiality.
+
 <p align="center">
 <img width="90%" src="https://media.geeksforgeeks.org/wp-content/uploads/newb.png" />
 </p>
@@ -1620,11 +1702,13 @@ When IPsec protects traffic, it has a couple of services and modes to choose fro
 **Tunnel mode** - encapsulating entire IP datagram within a new header, essentially tunneling the packet. (The gateway creates the tunnel)
 
 1. *Some TCP data will be sent over:*
+
 <p align="center">
 <img width="85%" src="https://community.cisco.com/legacyfs/online/legacy/5/1/2/166215-Screen%20Shot%202013-11-12%20at%2011.52.30%20AM.png" />
 </p>
 
 2. *And now about how those IP protocols fit in the two modes.*
+
 <p align="center">
 <img width="85%" src="https://community.cisco.com/legacyfs/online/legacy/6/1/2/166216-Screen%20Shot%202013-11-12%20at%2011.52.17%20AM.png" />
 </p>
@@ -1669,18 +1753,21 @@ Both technologies watch network traffic to detect exploits against OS, applicati
 ### Identification technologies
 NIDS/NIPS solutions act very much like firewalls in that they inspect packets. 
 
-**There's 4 types of detection methods:**
+#### There's 4 types of detection methods:
 
-* **Behavioral/Anomaly** - Comparing traffic with a baseline of patterns considered normal for the network
-* **Signature** - Preconfigured Signature-based
-* **Rule** - Preconfigured rules in a ruleset - like firewall
-* **Heuristic** - Use AI to identify (Anomaly and Signature)
+1. **Behavioral/Anomaly** - Comparing traffic with a baseline of patterns considered normal for the network
+2. **Signature** - Preconfigured Signature-based
+3. **Rule** - Preconfigured rules in a ruleset - like firewall
+4. **Heuristic** - Use AI to identify (Anomaly and Signature)
 
 > 🛑 *Anomaly-based NIPS/NIDS detect new patterns and are much more efficient than signature-based, which can only work with known variants.*
 
 > 🛑 Remember all these technologies can report **False positives** or **False negatives**.
 
-> 🛑 In simple words: **IDS: Notifies, IPS: Acts to stop, Firewall: Filters**.
+> 🛑 **In simple words:**
+> - **IDS: Notifies**
+> - **IPS: Acts to stop**
+> - **Firewall: Filters**
 
 ### Sensors
 
@@ -1688,25 +1775,41 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 * NIPS sensor must be installed **in-band** to your network traffic. All packets must go through in-band sensor devices/
 
 <p align="center">
-<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a2fc0101b75e32a25150d516dcef9e8a9ef5ad86/NIPS.png" />
+<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/0cd26c1a7bbc2b0d6594c6980b27ae3097b947de/NIPS.png" />
 </p>
 
 #### NIDS uses Out-of-band sensor
 * NIDS sensor, being **passive**, is normally installed **out-of-band** of the communication. Just plugging it into a switch only allows the sensor to see traffic to and from the switch plus broadcast traffic. The common out-of-band devices is a **network tap** or a **port mirror.**
 
 <p align="center">
-<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a2fc0101b75e32a25150d516dcef9e8a9ef5ad86/NIDS.png" />
+<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/0cd26c1a7bbc2b0d6594c6980b27ae3097b947de/NIDS.png" />
 </p>
 	
 #### Network Tap
-* Is a device that you can insert anywhere along a run to grab packets.
+* Is a device that you can insert anywhere along a run to grab packets / intercepting network traffic
+* Physical taps
+	- Disconnect the link, the tap goes in the middle
+	- Can be an active or passive tap
 
 <p align="center">
 <img width="60%" src="https://www.garlandtechnology.com/hs-fs/hubfs/A-NewSite2017/Products/Product%20images/Bypass/P1GMCx_Quarter-Products625x400.png?width=400&name=P1GMCx_Quarter-Products625x400.png" />
 </p>
 
 #### Port Mirror
-Also called a Switch Port Analyzer, or SPAN in Cisco Devices, is a special port on a managed switch configured to listen for all data going in and out of the switch. Unlike a network tap, port mirroing is convenient and easily changed to reflect any changes in your NIDS/NIPS monitoring stragegy.
+**Port Mirror is a software-based tap, also called a Switch Port Analyzer, or SPAN in Cisco devices**, is a special port on a managed switch configured to listen for all data going in and out of the switch. Unlike a network tap, port mirroing is convenient and easily changed to reflect any changes in your NIDS/NIPS monitoring stragegy.
+
+## Other types of Sensors and Collectors
+- **Gather information from network devices**
+	- Built-in sensors, separate devices
+	- Integrated into switches, routers, servers, firewalls, etc
+- **Sensors**
+	- IPS
+	- Firewall logs
+	- Authentication logs,
+	- Web server access logs, database transaction logs, email logs
+- **Collectors**
+	- Proprietary consoles IPS, Firewall, SIEM consoles, syslo servers
+	- Many SIEMs include a correlation engine to compare diverse sensor data
 
 ## Mail Gateways
 * **Unsolicited email - stop it at the gateway before it reaches the user**
@@ -2045,7 +2148,7 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 * Hardware consolidation and reduced energy consumption
 * System Recovery
 
-### Types
+#### Types
 * **Type 2** - Runs on top of host OS
 * **Type 1** - Runs directly on top of hardware, independent of host OS. *(e.g bootable Linux thumbdrive)*
 * **Cloud-based Virtualization**
@@ -2061,8 +2164,8 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 * Network Separation
 
 ### Virtual Threats
-* VM sprawl - the out-of-control creation of VMs outside of security controls.
-* VM escape - when a user inside a VM finds a way to break out the VM and get into the underlying hypervisor/host OS.
+* **VM sprawl** - the out-of-control creation of VMs outside of security controls.
+* **VM escape** - when a user inside a VM finds a way to break out the VM and get into the underlying hypervisor/host OS.
 
 ### Virtualization Hardening
 * Remove remnant data
@@ -2129,6 +2232,24 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 * Monitoring security and firmware updates
 * **Defense in depth**
 	* Network Segmentation - VLANs with Firewalls; VPN to connect a pipeline securely.
+
+## SDN - Software Defined Networking
+Technology that separates the **control plane** management of network devices from the underlying **data plane** that forwards network traffic.
+
+<p align="center">
+<img width="90%" src="https://www.sdxcentral.com/wp-content/uploads/2020/01/WhatIsSDN2020FeaturedImage.jpg" />
+</p>
+
+* Directly programmable
+	- Configuration is different than forwarding
+* Agile
+	- Changes can be made dynamically
+* Centrally managed
+	- Global view, single pane of glass
+* Programmatically configured
+	- Orchestration without human intervention
+* Open standards / vendor neutral
+	- Standard interface to the network
 
 ## Mobile Connectivity
 
@@ -2604,16 +2725,19 @@ Simple Network Management Protocol (SNMP) is an Internet Standard protocol for c
 ## Protecting Servers
 ### SSL Accelerator
 <p align="center">
-<img width="69%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Sun-crypto-accelerator-1000.jpg/1920px-Sun-crypto-accelerator-1000.jpg" />
+<img width="79%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Sun-crypto-accelerator-1000.jpg/1920px-Sun-crypto-accelerator-1000.jpg" />
 </p>
 
 * **Dedicated card placed behind the gateweay router between the internet, to handle all SSL/TLS encryption & decryption going across the network.**
+
+<p align="center">
+<img width="79%" src="https://docs.oracle.com/cd/E99483_01/pt857pbr1/eng/pt/tprt/img/ia2cf27cn-7e9f.png" />
+</p>
+
+
 * Can be done on a dedicated machine
 * The SSL Accelerator offloads the handshake process to hardware
 
-<p align="center">
-<img width="69%" src="https://docs.oracle.com/cd/E99483_01/pt857pbr1/eng/pt/tprt/img/ia2cf27cn-7e9f.png" />
-</p>
 
 > 🛑 SSL Offloading and SSL Termination are the same thing.
 
@@ -2650,6 +2774,13 @@ Simple Network Management Protocol (SNMP) is an Internet Standard protocol for c
 * A box that can detect when denial of service attacks are coming through.
 * Will send an alert to emergency response services which assist in traffic flow to the site under attack
 * Act like a proxy for websites
+
+### Other Methods to Mitigate DDoS
+* Cloud-base provider
+	- Internet provider or reverse proxy service
+* On-site tools
+	- DDoS filtering in a Firewall or IPS
+* Positioned between you and the internet
 
 ## Secure Code Development
 
