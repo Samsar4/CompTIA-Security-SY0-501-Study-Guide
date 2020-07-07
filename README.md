@@ -146,31 +146,54 @@ Anyone can validate the authenticity of a message as well as the source of the m
 
 * **Session Hijacking** - Inject information on middle of connection 
 
-#### System Resiliency
+### System Resiliency
 * Generally they handle risks better, adding technologies and processes to enable the system recovery easily.
 
-#### Scalability
+### Scalability
 * Adding more resources to take care the demand (manually added)
 
-#### Elasticity
+### Elasticity
 * The resources grow on demand as they required (e.g. IaaS)
 
-#### Redundancy - Distributed Allocation
+### Redundancy - Distributed Allocation
 *Is a form of distributive allocation.*
 
-* Mass storage
-* Redundant systems
-* Redundant networks
+* Web servers, database servers, middleware, security devices, monitoring systems
+
+* Easier to add security between the segmented areas
+* **Mass storage**
+* **Redundant systems**
+* **Redundant networks**
 
 *You can create more than one copy of non-OS critical data so that if one copy dies, another copy is ready to go to keep the systems up and running.*
 
-#### Non-persistance
+### Redundancy and Fault tolerance
+* **Maintain uptime**
+	- The organization continues to function
+* **No hardware failure**
+	- Server keep running
+* **No software failure**
+	- Service always available
+* **No system failure**
+	- Network performing optimally
+* **Redundant hardware components**
+	- Multiple devices, load balancing power supplies
+* **RAID**
+	- Redundant Array of Independent Disks
+* **UPS - Uninterruptible power supplies** 
+	- Prepare for the disconnections
+* **Clustering**
+	- A logical collective of servers
+* **Load balancing**
+	- Shared service load across components
+
+### Non-persistance
 *Is data that is collected but will not be saved on restart.*
 
-* Snapshots - take the current state of something (e.g binary level) and store. A snapshot reverts to known state.
-* Virtualization
-* Revert/rollbacks tools - The rollback method bring the system back to a previous state. (e.g. Bad Driver, broken Updated etc).
-* Live boot
+* **Snapshots** - take the current state of something (e.g binary level) and store. A snapshot reverts to known state.
+* **Virtualization**
+* **Revert/rollbacks tools** - The rollback method bring the system back to a previous state. (e.g. Bad Driver, broken Updated etc).
+* **Live boot**
 
 ## RAID - (Redudant Array of Independent Disks) 
 Different levels of RAID arrays or combination is for:
@@ -180,7 +203,7 @@ Different levels of RAID arrays or combination is for:
 * Or both
 
 <p align="center">
-<img width="80%" src="https://ipwithease.com/wp-content/uploads/2018/01/img_57f86df8509a6.png" />
+<img width="90%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/440bf9fa00239d19924cb1f8631f03212e1e3efa/raid-1.png" />
 </p>
 
 ### RAID 0
@@ -1451,18 +1474,6 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 
 > 🛑 **If Posture Assessment fails**, the quarantine network notify administrators, just enough network access to fix the issue.
 
-### **PPP** - Point-to-Point Protocol
-In computer networking, Point-to-Point Protocol (PPP) is a data link layer (layer 2) communications protocol between two routers directly without any host or any other networking in between. It can provide connection authentication, transmission encryption, and compression. 
-
-* Transport layer protocol
-	* Initiate connection
-	* Get address information
-	* Make connection
-
-* Poor authentication mechanisms:
-	* PAP - password authentical protocol (passwords in the clear)
-	* CHAP - Challenge handshake authentication protocol - (use of hashing)
-
 ### **EAP** - Extensible Authentication Protocol
 Developed initially as an extension to the authentication part of PPP. EAP is only an extension for the protocol that having a connection, and was created as a better authentication method to PPP.
 
@@ -2053,7 +2064,7 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 **AES** - Advanced Encryption System
 
 <p align="center">
-<img src="http://www.maxi-pedia.com/web_files/images/WPA_WPA2_comparison.png" />
+<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a6960e23a5da2cc3c689416f284376f35d599c58/encryption2.png" />
 </p>
 
 ## Vulnerabilities with Wireless Access Points
@@ -2629,12 +2640,17 @@ Technology that separates the **control plane** management of network devices fr
 ### **Preventive** Physical Controls
 * **External**
 	* Fences, Gates, Barricades, K ratings(designed to stop vehicles)
-	* Mantrap (some type of entry system, consisting of 2 doors)
-	* Cabling systems - (Using AirGap ; VPNs or VLANs)
+	* Mantraps (some type of entry system, consisting of 2 doors)
+	* Cabling systems 
+		- Airgap
+			- Physical separation between networks
+		- Protected Distribution System (PDS)
+			- Protect your cables and fibers to prevent direct and inductive taps
+		
 * **Internal**
-	* Safe for Important documents
+	* Safe - for important documents
 	* Locked cabinets
-	* Faraday cages - to protect sensitive eletronic equipment
+	* Faraday cages - block eletromagnetic fields to protect sensitive eletronic equipment
 	* Locks
 		* Key management system (where the keys are stored? who is in possession of those keys?...)
 
@@ -2648,6 +2664,8 @@ Technology that separates the **control plane** management of network devices fr
 * Motion detectors
 * Infrared detectors
 * Log Files - can be important in terms of tracking
+	- Caben be physical or digital
+	- e.g - *Entering the parking area; Identification upon entering the building; Badge assignment tracks door operation*
 
 ### **Compensating & Corrective** Physical Control
 Temporary fixes when these controls are weakened.<br> *e.g - If the outside fence in some way got a big hole, you need to place a security guard on that location until the fences got fixed.*
@@ -2679,7 +2697,15 @@ Temporary fixes when these controls are weakened.<br> *e.g - If the outside fenc
 > 🛑 **Remote Monitoring** - VPN access, 802.1X
 
 ## Fire Suppression
-### Types of Fires and Appropriate Fire Extinguishers
+* Eletronics require unique responses to fire
+	- Water is generally a bad thing
+* Detection
+	- Smoke detector, flame detector, heat detector
+* Suppress with water
+* Suppress with chemicals
+	- FM200 is a great option
+
+#### Types of Fires and Appropriate Fire Extinguishers
 
 Class | Type | Contains 
 --|--|--
@@ -2687,7 +2713,6 @@ A | Ordinary(Wood, Paper) | Foam, Water
 B | Liquids(Gases, oil) | CO2, Foam, Powder
 C | Electrical (eletronic equipment) | CO2
 D | Combustible metals (sodium, magnesium) | Powder
-
 
 <img width="84%" src="https://northlandfire.com/wp-content/uploads/2019/03/Extinguisher-Classes.jpg" />
 
@@ -3147,23 +3172,27 @@ Simple Network Management Protocol (SNMP) is an Internet Standard protocol for c
 </p>
 
 ## Identification and AAA
-Identification, authentication, authorization, and accounting work together to manage assets securely.
+**Identification, Authentication, Authorization**, and **Accounting** work together to manage assets securely.
 
 ### **Identification**
 The information on credentials identifies the user.
 
 ### **Authentication**
 * **Authentication Factors:**
-  * Something you **know** (password)
-  * Something you **have** (smart card)
-  * Something you **are** (fingerprint)
-  * Something you **do** (android pattern)
-  * **Somewhere** you are (geolocation)
-  * *Multi-factor authentication generally uses two of this examples (Something you Know and Something you Have), never on same category*
+	* Something you **know** (e.g. - password)
+	* Something you **have** (e.g. - smart card)
+	* Something you **are** (e.g. - fingerprint)
+	* Something you **do** (e.g. - android pattern; manual signature)
+	* **Somewhere** you are (e.g. - geolocation)
+> 🛑 **Multi-factor authentication** *generally uses two of this examples (e.g. - Something you **Know(1)** and Something you **Have(2)**, never on same category*
 * **Trusts and Federated Authentication**:
-   * **Trust Relationship** - Active Directory DS
-   * **Transitive Trust** - The organization trusts another entity because they are trusted by someone else that the organization trusts.
-   * **Federated System** - Common authentication and credentials database that multiple entities use and share. (Active Directory: Different Domains could be used in other domains in the same forest).
+	* **Trust Relationship** - Active Directory DS
+	* **Transitive Trust** - The organization trusts another entity because they are trusted by someone else that the organization trusts.
+	* **Federated System** - Common authentication and credentials database that multiple entities use and share. (Active Directory: Different Domains could be used in other domains in the same forest).
+	* **Other types of trust**:
+		- One-way trust: Domain B trusts Domain A, Domain A doesn't trust Domain B.
+		- Two-way trust: Both domains are peers, both trust each other equally.
+		- Non-transitive trust: A trust is specifically created and applies only to that domain.
 
 ### **Authorization**
 * **Permissions**: Applied to resources
@@ -3186,6 +3215,96 @@ The information on credentials identifies the user.
 
 > 🛑 **Access is defined by ACL, Access Control List**.
 > 🛑 **Implicity deny** prevents access unless specifically permitted.
+
+## Triple AAA
+### Authentication, Authorization and Accounting
+
+<p align="center">
+<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/c2fcf4e5c9ff2c3e00dc6d7d62ac7f7c069dab07/radius.png" />
+</p>
+
+Two most popular protocols of triple AAA is RADIUS and TACACS+, providing centralized **Authentication**, **Authorization** and **Account management and registry logging** for computers to connect and use a **network service** securely.
+
+RADIUS or TACACS+ server resides on a remote system and responds to queries from clientes such as VPN clients, wireless access points, routers and switches.
+
+#### How RADIUS and TACACS+ works:
+
+1. **[Authentication]** -> The server authenticates **username and password**
+2. **[Authorization]** -> Determine if a user is **allowed to connect** to the client
+3. **[Accounting]** -> **Log** the connection 
+
+### RADIUS - Remote Authentication Dial-In User Service
+used for network access
+
+1. **Radius Server**: Get the stack of usernames and passwords (can be MySQL, AD/DS, etc.)
+2. **Radius Client**: The Gateway between users and servers
+3. **Radius Supplicant**: The person that want to authenticate
+
+*RADIUS can use up to 4 different ports:*
+Ports used by RADIUS | 
+:-:|-
+**1812** |
+**1813** |
+**1645** | 
+**1646** |
+
+### TACACS+ - Terminal Access Controller Access-Control System Plus
+Is really good to manage a big number of network devices.
+
+Provide the same as RADIUS but the service decouple the authorization from the authentication. Manages the authorization better than RADIUS.
+
+> 🛑 **Uses TCP Port 49**  
+
+## Authentication Methods
+
+* **PAP** - *Password Authentication Protocol*
+	- Is the oldest authentication method. PAP sends username and password **in the clear / plaintext**
+
+* **CHAP** - *Challenge Handshake Authentication Protocol*
+	- Uses a hash value of challenge message to authenticate
+
+* **NTLM** - *NT LAN Manager* for Windows
+	- Similar to the CHAP; uses a challenge hashed message with a different process than CHAP
+	- > 🛑 NTLM is vulnerable to a credentials forwarding attack (use credentials of one computer to gain access to another) -> Most secure systems migrate to Kerberos
+	
+### **Kerberos** for Active Directory Domain Services (AD DS)
+1. Authenticator (Encrypted with user's password)
+2. TGT (Encrypted with KDC's key) [ticket-grant-ticket]
+3. Resource Ticket (Encrypted with Resource's key by the KDC and issued to the user)
+4. Resource Ticket used by Client to access the resources
+
+> 🛑 **Uses Port 88**
+
+<p align="center">
+<img width="90%" src="https://www.manageengine.com/products/active-directory-audit/kb/images/event-4771-kerberos-authentication-illustration.jpg" />
+</p>
+
+### **SAML** - Security Assertion Markup Language
+Used exclusive for **Web Application**
+
+### **LDAP** - Lightweight Directory Access Protocol
+Query Directories: Structured language that allows one computer to go into somebody's directory and query, update...
+
+> 🛑 **Uses TCP/UDP Port 389**
+
+### Single Sign-On
+*Authenticate one time - gain access to everything*
+
+* **LAN**: Windows Active Directory is dominant for **security SSO**
+* **SAML**: SSO for **Web Application** / used to manage multiple apps using a single account
+
+### **PPP** - Point-to-Point Protocol
+In computer networking, Point-to-Point Protocol (PPP) is a data link layer (layer 2) communications protocol between two routers directly without any host or any other networking in between. It can provide connection authentication, transmission encryption, and compression. 
+
+* Transport layer protocol
+	* Initiate connection
+	* Get address information
+	* Make connection
+
+* Poor authentication mechanisms:
+	* PAP - password authentical protocol (passwords in the clear)
+	* CHAP - Challenge handshake authentication protocol - (use of hashing)
+	* MS-CHAP (Microsoft CHAP)
 
 ## Password Security
 * **Complexity**
@@ -3399,74 +3518,7 @@ Monitoring all users account activity
 
 > 🛑 Avoid default usernames on user accounts.
 
-## Triple AAA - Authentication, Authorization and Accounting
 
-Two most popular protocols of triple AAA is RADIUS and TACACS+, providing centralized **Authentication**, **Authorization** and **Account management and registry logging** for computers to connect and use a **network service** securely.
-
-RADIUS or TACACS+ server resides on a remote system and responds to queries from clientes such as VPN clients, wireless access points, routers and switches.
-
-#### How RADIUS and TACACS+ works:
-
-* The server authenticates **username and password** [authentication]
-* Determine if a user is **allowed to connect** to the client [authorization]
-* **Log** the connection [accounting]
-
-### RADIUS - Remote Authentication Dial-In User Service
-used for network access
-
-1. **Radius Server**: Get the stack of usernames and passwords (can be MySQL, AD/DS, etc.)
-2. **Radius Client**: The Gateway between users and servers
-3. **Radius Supplicant**: The person that want to authenticate
-
-**RADIUS can use up to 4 different ports:**
-
-* **1812**
-* **1813**
-* **1645**
-* **1646**
-
-### TACACS+ - Terminal Access Controller Access-Control System Plus
-Is really good to manage a big number of network devices.
-
-Provide the same as RADIUS but the service decouple the authorization from the authentication. Manages the authorization better than RADIUS.
-
-**Uses TCP Port 49**  
-
-## Authentication Methods
-
-### **PAP** - Password Authentication Protocol
-Is the oldest authentication method. PAP sends username and password **in the clear / plaintext**
-
-### **CHAP** - Challenge Handshake Authentication Protocol
-Uses a hash value of challenge message to authenticate
-
-### **NTLM** - NT LAN Manager for Windows
-Similar to the CHAP; uses a challenge hashed message with a different process than CHAP
-
-### **Kerberos** - for AD/DS 
-1. Authenticator (Encrypted with user's password)
-2. TGT (Encrypted with KDC's key) [ticket-grant-ticket]
-3. Resource Ticket (Encrypted with Resource's key by the KDC and issued to the user)
-4. Resource Ticket used by Client to access the resources
-
-**Uses Port 88**
-
-<p align="center">
-<img width="90%" src="https://www.manageengine.com/products/active-directory-audit/kb/images/event-4771-kerberos-authentication-illustration.jpg" />
-</p>
-
-### **SAML** - Security Assertion Markup Language
-Used exclusive for **Web Application**
-
-### **LDAP** - Lightweight Directory Access Protocol
-Query Directories: Structured language that allows one computer to go into somebody's directory and query, update...
-
-**Uses TCP/UDP Port 389**
-
-### Single Sign-On
-
-* **LAN**: Windows Active Directory is dominant for **security SSO**
-* **SAML**: SSO for **Web Application** / used to manage multiple apps using a single account
 
 ***
 
