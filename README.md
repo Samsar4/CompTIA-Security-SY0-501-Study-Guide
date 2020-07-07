@@ -2193,15 +2193,33 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 * Wider Channels = better
 
 
-## Virtualization - Concepts
+## Virtualization
+
+<p align="center">
+<img width="90%" src="https://www.unixtutorial.org/images/posts/Hardware-Virtualization-Desktop-Virtualization-Example.png" />
+</p>
+
 * Virtual version of host hardware
+* Separate OS, independent CPU, memory, network, etc
 * Multiple virtual servers on one box/physical device
 * Hardware consolidation and reduced energy consumption
-* System Recovery
 
-#### Types
-* **Type 2** - Runs on top of host OS
-* **Type 1** - Runs directly on top of hardware, independent of host OS. *(e.g bootable Linux thumbdrive)*
+* System Recovery
+### Hypervisor
+* Virtual Machine Manager
+	- Manages the virtual platform and guest OS
+* Hardware management (CPU, Networking, Security etc)
+
+#### Types of Hypervisors
+* **Type II**
+	- Runs on top of host OS (Windows, Linux, Mac, etc)
+* **Type I**
+	- Runs directly on top of hardware, independent of host OS. *(e.g bootable Linux thumbdrive)*
+	- Bare metal, embedded, native
+* **Application containerization**
+	- Run an application without launching an entire VM
+	- Uses just the right resources for the application
+	- Everything you need to run the app is in the image (container/cell)
 * **Cloud-based Virtualization**
 	* IaaS (e.g. AWS, MS Azure)
 
@@ -2216,6 +2234,10 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 
 ### Virtual Threats
 * **VM sprawl** - the out-of-control creation of VMs outside of security controls.
+	- It becomes almost too easy to build instances
+	- The virtual machines are sprawled everywhere in which become extremely difficult to deprovision
+	- The correct way to deploy many instances is through a formal process and detailed documentation
+		- You should have information on every virtual object
 * **VM escape** - when a user inside a VM finds a way to break out the VM and get into the underlying hypervisor/host OS.
 
 ### Virtualization Hardening
@@ -2223,45 +2245,81 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 * Make good policies 
 * Define user privileges
 * Patch everything!
-* CASB - Cloud Access Security Brokers: Intermediary between your infrastructure(in-house stuff) and the cloud; Make sure policies are controlled; watches for malware; 
+* **CASB - Cloud Access Security Brokers:** Intermediary between your infrastructure(in-house stuff) and the cloud; Make sure policies are controlled; watches for malware; 
+	- Visibility - determine what apps are in use; are they authorized to use the apps?
+	- Compliance - are users complying with HIPAA, PCI?
+	- Threat prevention - allow access by authorized users, prevent attacks
+	- Data security - ensure that all data transfers are encrypted; Protect the transfer of PII with DLP
 
-## Containers
+### Containers
+
+<p align="center">
+<img width="90%" src="https://d33wubrfki0l68.cloudfront.net/26a177ede4d7b032362289c6fccd448fc4a91174/eb693/images/docs/container_evolution.svg" />
+</p>
+
 * Containers are self-contained applications that can communicate with network resources that have been explicity allowed
 * Runs isolated instances of programs and services
 * Can depend on each other, and can be configured to communicate with each other on a single host
 * Runs a single program and all its dependencies, when the programs exists
 
-## IaaS - Infrastructure-as-a-Service
+### IaaS - Infrastructure-as-a-Service
 * Basically virtual machines hosted by a cloud provider's infrastructure; Users simply connect to them via RDP (remote desktop protocol) or another secure remote connection protocol and use the as they would any other computer.
-	* *e.g: AWS, Microsoft Azure, Digital Ocean, Google Cloud.*
+	* **e.g: AWS, Microsoft Azure, Digital Ocean, Google Cloud.**
 
-## PaaS - Platform-as-a-Service
+### PaaS - Platform-as-a-Service
 * Offers a computing platform, such as Web application server or database server with easy setup focusing on quick deployment; Enables you to access a software development platform without the need to host it yourself.
-	* *e.g: Heroku*
+	* **e.g: Heroku, SalesForce**.
 
-## SaaS - Software-as-a-Service
+### SaaS - Software-as-a-Service
 * SaaS is a subscription based license; Access applications via subscription; 
-	* *e.g: Microsoft Office 365, Dropbox storage, Google Docs*
+	* **e.g: Microsoft Office 365, Dropbox storage, Google Docs**.
+
+<h4 align="center">IaaS | PaaS | SaaS</h4>
+
+<p align="center">
+<img width="90%" src="https://img.alicdn.com/tfs/TB1WyglO7voK1RjSZFwXXciCFXa-2305-1450.png" />
+</p>
+
+> 🛑 **On-premise**: Your application are on local hardware; Your servers are in your data center in your building
 
 ## Cloud Deployment Models
 
-* Private Cloud 
+* **Private Cloud** 
 	* A group of virtual machines that only the organization can access.
 
-* Public Cloud
+* **Public Cloud**
 	* Amazon S3, Microsoft Azure - Open for business
 
-* Community Cloud
+* **Community Cloud**
 	* Is make up of infrastructure from several different entitites wich may be cloud providers, business partners, and so on. (members only type of thing)
 
-* Hybrid Cloud
+* **Hybrid Cloud**
 	* Any combination of the cloud models described above
 
-* Virtual Desktop Environment (VDE)
+* **Virtual Desktop Environment (VDE)**
 	* Remote Access to a Remote System that **is not virtualised**
 
-* Virtual Desktop Integration (VDI)
+### Security in the Cloud
+* **Virtual Desktop Integration (VDI)**
 	* The actual virtualized environment in the cloud
+	* Enhanced security
+		- Centralized and easier to manage
+		- Changes can be easily controlled
+		- The data never leaves the data center
+
+#### Security as a Service (SECaaS)
+
+<p align="center">
+<img width="70%" src="https://lantech-it.com/wp-content/uploads/2019/06/security-as-a-service-SEC.png" />
+</p>
+
+- Instead of managing your own security solution, move it to the cloud
+	- Pay of what you use
+	- Scale up and down as needed
+- Continuously monitoring
+	- Uniformly applies to all traffic
+- Anti-virus/anti-malware signatures are constantly udpated
+	- Block emerging threats without deploying updates
 
 ## Embedded Systems - Static Hosts
 ### IoT (Internet of Things):
@@ -2289,11 +2347,11 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 	- Very hard to recover from a infrastructure DoS
 
 ### SCADA | ICS:
-* **ICS** - Industrial Control Systems	
-	* HVAC - Heating Ventilation, and Air Conditioning
-
 * **SCADA** - Supervisory Control and Data Acquisition
 	* Pretty much ICS with more funcionality
+
+* **ICS** - Industrial Control Systems	
+	* HVAC - Heating Ventilation, and Air Conditioning
 
 <p align="center">
 <img width="70%" src="https://www.nordstargroup.com/wp-content/uploads/2017/12/scada-system-3.jpg" />
@@ -2558,6 +2616,7 @@ Technology that separates the **control plane** management of network devices fr
 	- Write for a single VMI platform
 
 ## Physical Controls
+
 <p align="center">
 <img width="85%" src="https://www.galloglas.org/wp-content/uploads/2019/09/security-risks2_orig.jpg" />
 </p>
@@ -2966,29 +3025,54 @@ Simple Network Management Protocol (SNMP) is an Internet Standard protocol for c
 <img width="81%" src="https://miro.medium.com/max/2560/1*sK_T0uuIuo48khIl0mLtIw.jpeg" />
 </p>
 
-* **Static Code Analysis**
-	* Look for standard types of errors
-	* They don't run the code 
+#### Static Code Analysis
+* Look for standard types of errors
+* They don't run the code 
+* **SAST** - Static Application Security Testing
+	- Help identify security flaws
+	- Can present false positive
 
-* **Dynamic Code Analysis**
-	* Actually runs the code
-	* Looks for logic errors
-	* Look for Security holes
-	* Memory Leak
-	* Database querying
+#### Dynamic Code Analysis (Fuzzing)
+* Send random input to an application
+	- Fault-injecting, robustness testing, syntax testing, negative testing
+* Looking for something out of the ordinary
+* Actually runs the code
+* Looks for logic errors
+* Look for Security holes
+* Memory Leak
+* Database querying
+* Many different fuzzing options (frameworks and fuzzing engines)
 
-* **Staging**
-	* **Stress Test** - aggressive test of issues such as multiple user simultaneous inputs, multiple server data syncing ...
-	* **Sandboxing** - Isolated testing environment; Test the systems, almost always virtual machines (VMs), that enable developers to run the application aggressively.
+#### Staging
+* **Stress Test** - aggressive test of issues such as multiple user simultaneous inputs, multiple server data syncing ...
+* **Sandboxing** - Isolated testing environment; Test the systems, almost always virtual machines (VMs), that enable developers to run the application aggressively.
 
-* **Model Verification** - **Model** defines how developers expect some feature of the final code to perform. **Model Verification** match the application to the aspect of the model. (e.g -This button drive the user to the home or not?)
+#### Model Verification 
+* **Model** defines how developers expect some feature of the final code to perform. **Model Verification** match the application to the aspect of the model. *(e.g -This button drive the user to the home or not?)*
 
-* **Production** - When the testing are done and it's time to pull the application online and running. (expose to the public / internet). The process of moving an application from the development environment to the production environment is called **provisioning**. The process of remove an application from the production is called **desprovisioning**.
+* **Verification**
+	- Does the software work properly?
+	- Are there any bugs to address?
+	- Are we building the product right?
+* **Validation**
+	- Did you meet the high level requirements?
+	- Are we building the right product?
+
+#### Production
+* When the testing are done and it's time to pull the application online and running. (expose to the public / internet). The process of moving an application from the development environment to the production environment is called **provisioning**. The process of remove an application from the production is called **desprovisioning**.
+
+#### Compiled vs. Runtime code
+* **Compiled code**
+	- You don't see the source code
+	- The application is an executable compiled from the source
+	- The compiled code is specific to an OS and CPU
+	- Logical bugs can be identified at compile time
+* **Runtime code**
+	- Source code is usually viewable
+	- The code instructions execute when the application is run
+	- No opportunity to find compile-time errors, so errors are detected during or after the execution
 
 ## Secure Code Techniques
-### **Compiled vs. Runtime code** 
-Compile-time is the instance where the code you entered is converted to executable. Run-time is the instance where the executable is run.
-
 ### 1. **Error Handling**
 * **Proper Error Handling**: isn't going to stop all errors, but it will prevent errors from apperaring on the user interface for easy viewing for attackes / bad actors.
 * Bad actors loves mishandled exceptions that can allow execution of code
