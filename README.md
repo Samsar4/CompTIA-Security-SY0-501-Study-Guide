@@ -3194,27 +3194,80 @@ The information on credentials identifies the user.
 		- Two-way trust: Both domains are peers, both trust each other equally.
 		- Non-transitive trust: A trust is specifically created and applies only to that domain.
 
-### **Authorization**
-* **Permissions**: Applied to resources
-* **Rights** / **Privileges**: Assign at system level 
+### Authorization concepts
+* **Permissions**:
+	* Applied to resources
+* **Rights** / **Privileges**:
+	* Assign at system level 
 * **Authorization strategies**:
-  * Least privileged
-  * Separation of Duties
+	* Least privileged
+	* Separation of Duties
 
 ### Authorization Models
 
+<p align="center">
+<img width="80%" src="https://security-architect.com/wp-content/uploads/FGA.png" />
+</p>
+
 * **Mandatory Access Control (MAC)**:
-	* Labelling
+	* Every object gets a **label**
+		- Confidential, secret, top secret, etc
+	* The administrator decides who gets access to what security level; Users cannot change these settings
 	* Used on old systems (e.g. Top Secret Gov. information)
 * **Discretionary Access Control (DAC)**:
+	* Used in most OS
 	* Owner of the data defines access
-	* Roles
+	* Very flexible access control; Very weak security
 * **Role-based Access Control (RBAC)**:
-	* Access to resources is defines by a set of rules
-	* by Groups (e.g. Admin Groups --> Rights and Perms | Sales Group --> Rights and Perms)
+	* Access to resources is defines by a set of rules defined by a role in your organization/job function (Manager, Director etc)
+	* Administrators provide access based on the role of the user
+		- Rights are gained implicity instead of explicity
+	* In Windows, use **Groups** to provide role-based access control
+		- e.g. Admin Groups --> Rights and Perms,
+		- Sales Group --> Rights and Perms
+* **Attribute-based Access Control (ABAC)**:
+	* Users can have complex relationships to applications and data
+		- Access may be based on many different criteria
+	* ABAC can combine and evaluate multiple parameters
+		- Resource information, IP address, time of day, desired action, relationship to the data, etc 
+* **Rule-based Access Control**:
+	* Generic term for **Following Rules**
+		- Conditions other than who you are
+	* Access is determined through system-enforced rules
+		- System administrators, not users
+	* The rule is associated with the object
+		- System checks the ACLs for that object
+	* Rule examples
+		- Permitting access for an account or group to a network connection at certain hours of the day or days of the week
+		- Only Chrome browsers may complete this web form
+
+> 🛑 Rule Based Access Control (RBAC) introduces acronym ambiguity by using the same four letter abbreviation (RBAC) as Role Based Access Control.
+> Under Rules Based Access Control, access is allowed or denied to resource objects based on a set of rules defined by a system administrator.
 
 > 🛑 **Access is defined by ACL, Access Control List**.
 > 🛑 **Implicity deny** prevents access unless specifically permitted.
+
+### File system security
+* Store files and access them
+	- Hard drives, SSDs, flash drives, DVDs
+	- Part of most OS's
+* Accessing information
+	- ACL - Access Control List
+	- Group/User rights and permissions
+	- Can be centrally administred and/or users can manage files they own
+* Encryption can be built-in
+	- The file system handles encryption and decryption
+
+### Database security
+* Databases have their own Access Control
+	- Username, password, permissions
+* Encryption may be an option
+	- Most databases support data encryption
+* Data integrity is usually an option
+	- No data is lost because of a fault
+	- Part of the database server operation
+* Applications can provide a secure front-end
+	- Prevent SQL injections and inappropriate access to data
 
 ## Triple AAA
 ### Authentication, Authorization and Accounting
@@ -3500,7 +3553,42 @@ NTFS permissions are granted to users and groups on folders and files.
 2. **Copy** from drive X: to the same drive X: - **will loose the NTFS permissions.**
 3. **Move** from drive X: to the same drive X: - **will inheritance the NTFS permissions**
 
+## Accounts Types 👤
+
+#### User accounts
+- This is the account type most people will use
+- Storage and files can be private to that user
+- No privileged access to the OS
+
+#### Shared accounts
+- Used by more than one person/guest login, anonymous login
+- Very difficult to create an audit trail
+- Password management becomes harder
+- Best practice is simply DON'T use these dumb type of accounts
+
+#### Service accounts
+- Used exclusively by services running on a computer
+	- No interactive/user access(ideally)
+	- Web server, database server, etc
+- Access can be defined for a specific server
+	- Web server rights and permissions will be different than a database server
+- Commonly use usernames and passwords using policy to determine best passwords practices
+
+#### Privileged accounts
+- Administrator, Root
+- Complete access to the system
+- This account should NOT be used for normal administration
+- Needs to be HIGHLY secured - Strong passwords, 2FA, scheduled password changes
+
 ## User Account Management
+### Least privilege
+* Rights and permissions should be set to the bare minimum
+	- You only get exactly what's needed to complete your objective
+* This is apply to all users in the organization
+* All users accounts must be limited
+	- **Applications should run with minimal privileges**
+* **Don't allow users to run with administrative privileges**
+	- Limits the scope of malicious behavior
 
 ### Continuous Access Monitoring
 Monitoring all users account activity
@@ -3508,17 +3596,100 @@ Monitoring all users account activity
 * Track Log on and Log off activity
 * Track file access
 
-> 🛑 Shared Accounts = Bad!!!
+> 🛑 **Shared Accounts = BAD!!!**
 
-> 🛑 Multiple Accounts = Use different user/pass.
+> 🛑 **Multiple Accounts = Use different user/pass**
 
-> 🛑 Use least privilege - enough necessary to accomplish task.
+> 🛑 **Use least privilege - enough necessary to accomplish task**
 
-> 🛑 Monitor and log activity of users with multiple accounts. (Log everything)
+> 🛑 **Monitor and log activity of users with multiple accounts (LOG EVERYTHING)**
 
-> 🛑 Avoid default usernames on user accounts.
+> 🛑 **Avoid default usernames on user accounts**
+
+## Access Control Technologies
+### Proximity Cards
+
+<img width="50%" src="https://www.idcardgroup.com/blog/wp-content/uploads/2017/01/ProxCard-Blog-Image.jpg" />
+
+* Close range card - contactless smart card
+* Passive deivce
+	- No power in the card - powered from the reader
+* Not a large data storage device 
+	- Often used as an identifier
+	- Keycard door access, library cards, payment systems
+	- The identifier is linked to data stored elsewhere
+
+### Smart cards
+
+<img width="50%" src="https://images-na.ssl-images-amazon.com/images/I/618ww4xSoPL._AC_SX679_.jpg" />
+
+* Integrated circuit card - contact or contactless
+* Common on credit cards - Also used for access control
+* Must have physical card to provide digital access - a digital certificate
+* Multiple factors - use the card with a PIN or fingerprint
 
 
+### Biometrics
+
+<img width="50%" src="https://www.flexenable.com/lib/images/100310-biometricauthentication.jpg" />
+
+* Fingerprints
+* Facial Recognition
+* Vocal Recongnition
+* Can lock and unlock devices
+* Use to configure applications
+* **Biometric acceptance rates**:
+	- **False acceptance rate (FAR)**
+		- Likelihood that an unauthorized user will be **accepted** (This would be bad)
+	- **False injection rate (FRR)**
+		- Likelihood that an authorized user will be **rejected**
+	- **Crossover error rate (CER)**
+		- The rate at which FAR and FRR are equal
+		- Adjust sensitivity to equalize both values
+		- Used to quantitatively compare biometric systems
+
+### Token generators
+
+<img width="50%" src="https://www.researchgate.net/profile/Maryblessing_Umeh/publication/340234262/figure/fig1/AS:873738811756545@1585326974784/RSA-SecurID-token-an-example-of-a-disconnected-token-generator.png" />
+
+* Pseudo-random token generators - useful authentication factor
+* Carry around a physical hardware token generator
+* Use software-based token generator on your phone
+
+#### HOTP
+* **HMAC-based One-time Password algorithm**
+* One-time passwords
+	- Use them once, and never again
+	- Once a session, once each authentication attempt
+	- Keyed-hash message authentication code (HMAC)
+	- The keys are based on a secrete key and a counter
+* Token-based authentication
+	- The hash is different every time
+* Hardware and software tokens available
+
+#### TOTP
+* **Time-based One-Time Password algorithm**
+	- Use a secret key and the time of day
+	- No incremental counter
+* Secret key is configured ahead of time
+	- Timestamps are synchronized via NTP
+* Timestamp usually increments every 30 seconds
+	- Put in your username, password, and TOPT code
+* One of the more common OTP methods used by Google, Facebook, Microsoft, etc
+
+### Certificate-based authentication
+
+<img width="90%" src="https://xlsbt27nbyq24kl4l1tdpqh5-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/2.png" />
+
+* Smart card
+* PIV (Personal Identity Verification) card
+	- US Federal Government smart card
+	- Picture and identification information
+* CAC (Common Access Card)
+	- US DoD smart card
+	- Picture and ID
+* IEEE 802.1X
+	- Gain access to the network using a certificate on device storage or separate physical device
 
 ***
 
@@ -3527,7 +3698,6 @@ Risk management is the identification, evaluation, and prioritization of risks f
 <p align="center">
 <img width="80%" src="https://csrc.nist.gov/CSRC/media/Projects/Risk-Management/images-media/NIST-RMF.png" />
 </p>
-
 
 # Defining Risk
 
@@ -3774,9 +3944,7 @@ Step by step process of how to do something.
 
 Security controls, Policies and standards help define and build the **Procedures**.
 
-
 <img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/0aff7f60c0b9b6bf8d8c420fd2ded843eb29984d/it-governance.jpg" />
-
 
 # Security Policies
 ### **The Acceptable Use Policy (AUP)**:
@@ -4714,7 +4882,12 @@ The context is most often for usage of data in a court of law, though digital fo
 6. All locations of the evidence (e.g inital collection, moved to law enforcement...)
 
 ### **Order of Volatility**
-*The order of volatility is a process that **enumerates when, where, and how to gather the data/evidence before the data changes or disappears***.
+
+<p align="center">
+<img width="90%" src="https://mk0gcgablogq2ifx558u.kinstacdn.com/wp-content/uploads/2013/05/OrderVolatility.png"/>
+</p>
+
+The order of volatility is a process that enumerates **when**, **where**, and **how** to **gather the data/evidence before the data changes or disappears**.
 - **Memory**
 	- Caches
 	- Routing tables
