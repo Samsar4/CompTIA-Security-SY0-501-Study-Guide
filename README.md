@@ -3791,9 +3791,9 @@ Internet services | The public or private-facing resources an organization provi
 ## 2) Probability
 Probability means the likelihood - over a defined period of time - of someone or something damaging assets.
 
-**Quantitative likelihood:** based on numbers and data, can be more easy to measure anually.
+### Quantitative likelihood: *based on numbers and data, can be more easy to measure anually.*
 
-**Qualitative likelihood:** is more subjective like (low/medium/high).
+### Qualitative likelihood: *is more subjective like - LOW | MEDIUM | HIGH.*
 
 ## 3) Threat actors
 A threat actor can be a malicious person, such as a hacker accessing corporate secrets.
@@ -3858,16 +3858,27 @@ A threat actor can be a malicious person, such as a hacker accessing corporate s
 * **External**: Threat generated from outside your infrastructure 
 
 
-## Risk Response
+## Risk response techniques
 *After identified and analyzed risk, you must decide how to responde to the risks produced as a result of the analysis.*
-### **1) Risk Mitigation**
+### 1) Risk Mitigation
 Is an attempt to reduce the risk, or at least minimize its effects on an asset.
-### **2) Risk Transference**
+### 2) Risk Transference
 Or Risk Sharing, deals with risk by sharing with third-party. Example buying insurance to protect against natural disasters.
-### **3) Risk Acceptance**
+### 3) Risk Acceptance
 Means the organization has implemented controls and some risk remains. (residual risk). Remember that risk can never be completely eliminated.
-### **4) Risk Avoidance**
+### 4) Risk Avoidance
 Means thtat the organization could choose not to participate in activities that cause unnecessary or excessive risk.
+
+## Change management
+*Provide more uptime availability and decrease the risk for the entire organization.*
+
+- How to make a change
+	- Upgrade software, change firewall configuration, modify switch ports
+- One of the most common risks in the enterprise
+	- Occurs very frequently
+- Often overlooked or ignored
+- Have clear policies
+	- Frquency, duration, installation process, fallback procedures
 
 ## Risk Frameworks
 * NIST - Risk Management Framework SP 800-37
@@ -3909,7 +3920,7 @@ The cornerstone of IT security is understanding security controls and how to app
 
 *Most of security controls are **preventive** phase controls*
 
-## Interesting Security Controls
+## Another Security Controls
 * Mandatory Vacation
 * Job Rotation
 * Multi-person Control
@@ -3994,27 +4005,31 @@ All about rules and requirements applied to an organization that dictate how it 
 
 > 🛑 By using these industry-specific frameworks, an organization can structure their IT departments to best serve the overall need of the organization.
 
-## Policies
-Document that defines how we're going to be doing something. Define Roles and Responsabilities.
+### Policies - *Document that defines how we're going to be doing something. Define Roles and Responsabilities.*
+
+### Procedures - *Step by step process of how to do something.*
+
+* Security controls, Policies and standards help define and build the **Procedures**.
 
 ## Organizational Standards
-Have much more detail than policies. Define the acceptable level of performance policy.
+* Have much more detail than policies. Define the acceptable level of performance policy.
 
-*The security controls come from the policies and standards.*
-
-## Procedures
-Step by step process of how to do something.
-
-Security controls, Policies and standards help define and build the **Procedures**.
+### The security controls come from the policies and standards.
 
 <img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/0aff7f60c0b9b6bf8d8c420fd2ded843eb29984d/it-governance.jpg" />
 
 # Security Policies
+
+<p align="center">
+<img width="80%" src="https://fortytwo.nl/wp-content/uploads/2018/05/common-mistakes-in-Information-security-policies.png" />
+</p>
+
+
 ### **The Acceptable Use Policy (AUP)**:
-Defines what a person can or can not do when using company assets and equipament. *(The paper you sign before entry a job position).*
+* Defines what a person can or can not do when using company assets and equipament. *(The paper you sign before entry a job position).*
 
 ### **Data Sensitivity and Classification Policies**:
-Define the importance or nature of the data. *(e.g. Applying labels on the Government, they use Top Secret, Classified, etc).*
+* Define the importance or nature of the data. *(e.g. Applying labels on the Government, they use Top Secret, Classified, etc).*
 
 ### **Access Control Policies**:
 * How people get access to data or resources
@@ -4029,11 +4044,50 @@ Define the importance or nature of the data. *(e.g. Applying labels on the Gover
 * Password reuse
 * Complexity
 
-### **Care and Use of Equipament**
-How you maintain company equipament.
+### **Care and Use of Equipament**:
+* How you maintain company equipament.
 
 ### **Privacy Policy**:
-Are often for customers; defines how your data or usage will be shared with other resoruces. *(e.g. Services like Facebook etc).*
+* Are often for customers; defines how your data or usage will be shared with other resoruces. *(e.g. Services like Facebook etc).*
+
+### General Security Policies:
+* **Social media policies**
+	- Balance the company reputation with employee participation
+	- Extension of your code of conduct
+		- Define requirements and expectations
+		- Identification as an employee
+		- Personal responsibility
+	- Confidential information
+		- Public companies are legally bound
+		- There's company spokesperson for public comments
+* **Personal email policies**
+	- Qualify the use of email - business use not personal use
+	- Prohibit disruptive or offensive use
+	- Compliance use
+		- Some organizations are legally required to prohibit personal email
+	- The line becomes hazy when browser-based email is used
+
+# Personnel Management
+
+<p align="center">
+<img width="70%" src="https://kissflow.com/wp-content/uploads/2019/09/personnel-management-system-1.png" />
+</p>
+
+## **On boarding**:
+New hires or contractors
+* Background check
+* NDA (Non-disclosure agrement)
+* Standard Operation Procedures
+* Specialized Issues (e.g. Clean Desk)
+* Rules of Behavior (e.g. Good AUP)
+* General Security Policies (e.g. Personal Email, Social network...)
+
+## **Off boarding**:
+When the employee leaves the company
+* Disable accounts (never delete an account)
+* Return Credentials
+* Exit interview
+* Knowledge transfer
 
 ### **Personnel Policies**:
 * Background Check
@@ -4041,6 +4095,55 @@ Are often for customers; defines how your data or usage will be shared with othe
 * Job Rotation
 * Separation of Duties
 * Multi-person Control
+
+## Personnel Management Controls
+* **Mandatory Vacation**: 
+    * Required
+    * Prevents collusion
+    * Dependency issues
+    * Makes fraud harder
+
+* **Job Rotation**:
+    * Redundancy and Backup
+    * Allows for cross-training
+    * Makes fraud harder
+
+* **Separation of Duties**:
+    * Requires dual execution *(at least two people to do a sensitive function)*
+
+* **Multi-Person control**:
+    * Moren than one person required in a task/function
+
+## Role-Based Data Controls
+* **System Owner**:
+    * Management level role
+    * Maintains security of the system (defines security policies and backup policies)
+    * Defines a system administrator
+    * Works with all **Data Owners** to ensure data security
+
+* **System Administrator**:
+    * Day-to-day administration of a system
+    * Implement security controls
+
+* **Data Owner**:
+    * Defines the sensitivity of the data
+    * Defines the protection of the data
+    * Works with **System Owner** to protect data
+    * Defines access to the data
+
+* **User**:
+    * Accesses and uses the assigned data responsibly
+	* Has least privileged access to the application and data
+
+* **Privileged**:
+    * Has special access to data beyond the typical user (additional application and data permissions)
+    * Works closely with **System Administrators** to ensure data security
+	* Area manager, report creation, user and password changes
+
+* **Executive User**:
+    * **Read only** access but can look at **all business data**
+	* Responsible for the overall operation of the application
+	* Evaluates goals and makes decisions about future directions
 
 # Risk Management Frameworks
 A framework is a description of a complex process, concentranting on major steps and the flows between the steps. **Describes the major steps and flows of the complex process of applying security controls in an organized and controlled fashion.**
@@ -4066,10 +4169,11 @@ Frameworks come from a variety of sources including:
 <b>NIST Risk Management Framework:</b>
 </p>
 <p align="center">
-<img width="90%" src="https://csrc.nist.gov/CSRC/media/Projects/Risk-Management/images-media/OrgRMF.png" /> </p>
+<img width="90%" src="https://csrc.nist.gov/CSRC/media/Projects/Risk-Management/images-media/OrgRMF.png" />
+</p>
 
 # Quantitative Risk Assessment
-Is based on objective data -typically, numerical data; Exact values, for instance, can be used to describe impact or loss of an asset.
+Is based on **objective data, typically numerical data**; Exact values, for instance, can be used to describe impact or loss of an asset.
 
 ## Asset Value (AV)
 When valuing an asset, consider not only the replacement cost, but also the revenue the asset generates, as this will be lost as well if the asset is not available.
@@ -4114,12 +4218,29 @@ Flood on Server room, base on data: one flood in about 10 years, 1/10 (0.1). [SL
 ## Annualized Loss Expectancy (ALE)
 Essentially looks at the amount of loss from the SLE and determines how much loss the organization could realistically expect in a one-year period. 
 
-**Formula**:<br>
-ALE (Annualized loss expectancy) = SLE x ARO<br>
-**SLE x ARO = ALE**
+* **Formula**:<br>
+> **ALE (Annualized loss expectancy) = SLE x ARO**
+> * **SLE x ARO = ALE**
 
+## Evaluating risk
+- Risk register
+	- Every project has a plan, but also has risk
+	- Identify and document the risk associated with each step
+	- Apply possible solutions to the identified risks
+	- Monitor the results
+- Supply chain assessment
+	- Get a product or service from supplier to customer
+	- Evaluate coordination between groups
+	- Identify areas of improvement
+	- Asses the IT systems supporting the operation
+	- Document the business process changes
 
 # Business Impact Analysis
+
+<p align="center">
+<img src="https://www.whatissixsigma.net/wp-content/uploads/2014/06/Business-Impact-Analysis-Steps.png" />
+</p>
+
 Designed to mitigate the effects of an incident, **not to prevent an incident**.
 
 * Determine mission process. *(make sure servers are up)*
@@ -4129,36 +4250,87 @@ Designed to mitigate the effects of an incident, **not to prevent an incident**.
 * Identify recovery priorities. *(prioritize most important steps to kepp whatever essential function running)*
 
 ## Types of Impact
-* Property
-* Safety / Life / People
-* Finance (Credit, Cash flows...)
-* Reputation
-* Privacy
+* **Property**
+	- The risk to buildings and assets
+* **Safety | Life | People**
+	- Some environments are too dangerous too work
+* **Finance (Credit, Cash flows...)**
+	- The resulting financial cost
+* **Reputation**
+	- An event can cause status or character problems
+* **Privacy**
+	- Some compliance requires a public privacy statement
+		- Gramm-Leach-Bliley Act (financial information)
+		- HIPAA (health care), etc
 
 ### **Privacy Impact Assessment (PIA) and Privacy Threshold Assessment (PTA)**
-PIA: Determine the impact on the privacy of the individuals who data is beign stored; and ensure that the organization has sufficient security controls applied to be within compliance of applicable laws or standards.
 
-To create a **(PIA) - Privacy Impact Assessment**, the organization needs to perform a **(PTA) - Privacy Threshold Assessment** on its infrastructure to locate **personal information**, what personal info. is stored and from whom the personal info is collected.
+### PTA
+The **first step** in the compliance process
+- **Identify** business processes that are **privacy-sensitive**
+- Determines if a privacy impact assessment is required
+
+### PIA
+Determine the impact on the privacy of the individuals who data is beign stored; and ensure that the organization has sufficient security controls applied to be within compliance of applicable laws or standards.
+- Ensures compliance with privacy laws and regulations
+- **What PII is collected, and why**
+- **How the PII data will be collected, used, and secured**
+
+> 🛑 To create a **(PIA) - Privacy Impact Assessment**, the organization needs to perform a **(PTA) - Privacy Threshold Assessment** on its infrastructure to locate **personal information**, what personal info. is stored and from whom the personal info is collected.
 
 *PTA and PIA - in order to understand the impact of the loss of personal information can do to a particular business.*
 
 ## Calculating Impact
-Determine how long the particular equipament going to last. (qualitative)
+### Determine how long the particular equipament going to last. (qualitative)
 
 <p align="center">
 <img  width="89%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/13cf0c9fbcd0acba680220cce03829cbf0ce1506/MTBF.png" />
 </p>
 
 * **MTTF = Mean Time to Failure**
+	- The expected lifetime of a non-repairable product or system
 * **MTTR = Mean Time to Repair**
+	- Mean time to repair
 * **MTBF = Mean Time Between Failure**
+	- Predict the time between failures
 
-## Recovery Time Objective (RTO):
+### Recovery Time Objective (RTO):
 * Maximum amount of time that a resource may remain unavailable before an unacceptable impact on other system resources occurs.
-## Recovery Point Objective (RPO):
-* Defines de amount of time that will pass between an incident and recovery from backup.
+* Get up and running quickly
+* Get back to a particular service level
 
-*Recovery priorities help define what needs to be addressed to maintain business continuity.*
+### Recovery Point Objective (RPO):
+* Defines the amount of time that will pass between an incident and recovery from backup.
+* How much data loss is acceptable?
+* Bring the system back online; how far back does data go?
+
+> 🛑 *Recovery priorities help define what needs to be addressed to maintain business continuity.*
+
+## Calculating uptime and availability
+* Expressed as a percentage over time 
+	- 99.999% availability
+* 'Availability' is a negotiated definition
+	- Especially if it's part of your bonus
+	
+<p align="center">
+<img width="80%" src="https://www.intermedia.net/blog/wp-content/uploads/2014/01/wiki-300x247.jpg" />
+</p>
+
+* **e.g. - The 'four nines' (99.99%) - means that during the year, you could be down for a total of 52 minutes and 56 seconds.**
+
+## Removing single points of failure
+A **single point of failure** is a part of a system that, if it fails, will stop the entire system from working.
+
+- A single event can ruin your day
+	- Unless you make some plans
+- Network configuration
+	- Multiple devices
+- Facility / Utilities
+	- Backup power, multiple cooling devices
+- People / Location
+	- A good hurricane can disrupt personnel travel
+- There's no practical way to remove all points of failure (money drives redundancy)
+
 
 # Organizing Data
 The first step to dealing with data security is **organization**.
@@ -4218,70 +4390,8 @@ Data Loss Prevention (DLP) is the practice of detecting and preventing data brea
 - Secure mobile workforce and enforce security in Bring Your Own Device (BYOD) environments
 - Secure data on remote cloud systems
 
-# Security Training
-### **On boarding**:
-New hires or contractors
-* Background check
-* NDA (Non-disclosure agrement)
-* Standard Operation Procedures
-* Specialized Issues (e.g. Clean Desk)
-* Rules of Behavior (e.g. Good AUP)
-* General Security Policies (e.g. Personal Email, Social network...)
 
-### **Off boarding**:
-When the employee leaves the company
-* Disable accounts (never delete an account)
-* Return Credentials
-* Exit interview
-* Knowledge transfer
-
-## Personnel Management Controls
-* **Mandatory Vacation**: 
-    * Required
-    * Prevents collusion
-    * Dependency issues
-    * Makes fraud harder
-
-* **Job Rotation**:
-    * Redundancy and Backup
-    * Allows for cross-training
-    * Makes fraud harder
-
-* **Separation of Duties**:
-    * Requires dual execution *(at least two people to do a sensitive function)*
-
-* **Multi-Person control**:
-    * Moren than one person required in a task/function
-
-## Role-Based Data Controls
-* **System Owner**:
-    * Management level role
-    * Maintains security of the system
-    * Defines a system administrator
-    * Works with all **Data Owners** to ensure data security
-
-* **System Administrator**:
-    * Day-to-day administration of a system
-    * Implement security controls
-
-* **Data Owner**:
-    * Defines the sensitivity of the data
-    * Defines the protection of the data
-    * Works with **System Owner** to protect data
-    * Defines access to the data
-
-* **User**:
-    * Accesses and uses the assigned data responsibly
-    * Monitors and reports security breaches
-
-* **Privileged**:
-    * Has special access to data beyond the typical user
-    * Works closely with **System Administrators** to ensure data security
-
-* **Executive User**:
-    * **Read only** access but can look at all business data
-
-# Third-Party Risk - Agreements
+# Agreements Types
 
 <p align="center">
 <img width="90%" src="https://www.law365.co/wp-content/uploads/2019/11/4-types-of-business-agreements-that-you-should-be-aware-of.png" />
