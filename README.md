@@ -3269,7 +3269,7 @@ The information on credentials identifies the user.
 * Applications can provide a secure front-end
 	- Prevent SQL injections and inappropriate access to data
 
-## Triple AAA
+# Triple AAA
 ### Authentication, Authorization and Accounting
 
 <p align="center">
@@ -3359,18 +3359,183 @@ In computer networking, Point-to-Point Protocol (PPP) is a data link layer (laye
 	* CHAP - Challenge handshake authentication protocol - (use of hashing)
 	* MS-CHAP (Microsoft CHAP)
 
+## Accounts Types 👤
+
+#### User accounts
+- This is the account type most people will use
+- Storage and files can be private to that user
+- No privileged access to the OS
+
+#### Shared accounts
+- Used by more than one person/guest login, anonymous login
+- Very difficult to create an audit trail
+- Password management becomes harder
+- Best practice is simply DON'T use these dumb type of accounts
+
+#### Service accounts
+- Used exclusively by services running on a computer
+	- No interactive/user access(ideally)
+	- Web server, database server, etc
+- Access can be defined for a specific server
+	- Web server rights and permissions will be different than a database server
+- Commonly use usernames and passwords using policy to determine best passwords practices
+
+#### Privileged accounts
+- Administrator, Root
+- Complete access to the system
+- This account should NOT be used for normal administration
+- Needs to be HIGHLY secured - Strong passwords, 2FA, scheduled password changes
+
+## User Account Management
+### Least privilege
+* Rights and permissions should be set to the bare minimum
+	- You only get exactly what's needed to complete your objective
+* This is apply to all users in the organization
+* All users accounts must be limited
+	- **Applications should run with minimal privileges**
+* **Don't allow users to run with administrative privileges**
+	- Limits the scope of malicious behavior
+
+### Continuous Access Monitoring
+Monitoring all users account activity
+
+* Track Log on and Log off activity
+* Track file access
+
+> 🛑 **Shared Accounts = BAD!!!**
+
+> 🛑 **Multiple Accounts = Use different user/pass**
+
+> 🛑 **Use least privilege - enough necessary to accomplish task**
+
+> 🛑 **Monitor and log activity of users with multiple accounts (LOG EVERYTHING)**
+
+> 🛑 **Avoid default usernames on user accounts**
+
+## Access Control Technologies
+### Proximity Cards
+
+<img width="50%" src="https://www.idcardgroup.com/blog/wp-content/uploads/2017/01/ProxCard-Blog-Image.jpg" />
+
+* Close range card - contactless smart card
+* Passive deivce
+	- No power in the card - powered from the reader
+* Not a large data storage device 
+	- Often used as an identifier
+	- Keycard door access, library cards, payment systems
+	- The identifier is linked to data stored elsewhere
+
+### Smart cards
+
+<img width="50%" src="https://images-na.ssl-images-amazon.com/images/I/618ww4xSoPL._AC_SX679_.jpg" />
+
+* Integrated circuit card - contact or contactless
+* Common on credit cards - Also used for access control
+* Must have physical card to provide digital access - a digital certificate
+* Multiple factors - use the card with a PIN or fingerprint
+
+
+### Biometrics
+
+<img width="50%" src="https://www.flexenable.com/lib/images/100310-biometricauthentication.jpg" />
+
+* Fingerprints
+* Facial Recognition
+* Vocal Recongnition
+* Can lock and unlock devices
+* Use to configure applications
+* **Biometric acceptance rates**:
+	- **False acceptance rate (FAR)**
+		- Likelihood that an unauthorized user will be **accepted** (This would be bad)
+	- **False injection rate (FRR)**
+		- Likelihood that an authorized user will be **rejected**
+	- **Crossover error rate (CER)**
+		- The rate at which FAR and FRR are equal
+		- Adjust sensitivity to equalize both values
+		- Used to quantitatively compare biometric systems
+
+### Token generators
+
+<img width="50%" src="https://www.researchgate.net/profile/Maryblessing_Umeh/publication/340234262/figure/fig1/AS:873738811756545@1585326974784/RSA-SecurID-token-an-example-of-a-disconnected-token-generator.png" />
+
+* Pseudo-random token generators - useful authentication factor
+* Carry around a physical hardware token generator
+* Use software-based token generator on your phone
+
+#### HOTP - HMAC-based One-time Password algorithm
+* One-time passwords
+	- Use them once, and never again
+	- Once a session, once each authentication attempt
+	- Keyed-hash message authentication code (HMAC)
+	- The keys are based on a secrete key and a counter
+* Token-based authentication
+	- The hash is different every time
+* Hardware and software tokens available
+
+#### TOTP - Time-based One-Time Password algorithm
+* Use a secret key and the time of day
+* No incremental counter
+* Secret key is configured ahead of time
+	- Timestamps are synchronized via NTP
+* Timestamp usually increments every 30 seconds
+	- Put in your username, password, and TOPT code
+* One of the more common OTP methods used by Google, Facebook, Microsoft, etc
+
+### Certificate-based authentication
+
+<img width="90%" src="https://xlsbt27nbyq24kl4l1tdpqh5-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/2.png" />
+
+* Smart card
+* PIV (Personal Identity Verification) card
+	- US Federal Government smart card
+	- Picture and identification information
+* CAC (Common Access Card)
+	- US DoD smart card
+	- Picture and ID
+* IEEE 802.1X
+	- Gain access to the network using a certificate on device storage or separate physical device
+
+## Account Policy Enforcement
+
+<h3 align="center"> Windows Group Policy Management</h4>
+<p align="center">
+<img width="90%" src="https://i.ytimg.com/vi/azup50LaIN0/maxresdefault.jpg" />
+</p>
+
+* Apply security and admin setting across many computers
+* Different than NTFS or Share permissions that control the use of the OS
+* **Linked to Active Directory administrative boundaries**
+	- Sites, Domains, Organization Units (OUs)
+	- Define by Groups, Locations, etc
+
+<h3 align="center">  Group Policy Management Editor - Windows</h4>
+<p align="center">
+<img width="90%" src="https://docs.microsoft.com/pt-pt/azure/active-directory-domain-services/media/active-directory-domain-services-admin-guide/gp-editor.png" />
+</p>
+
+* **Administrative Policies**
+	- Remove add or Remove Programs
+	- Prohibit changing sounds
+	- Allow font downloads
+	- ONly allow approved domains to use ActiveX controls without prompt
+
+* **Security Policies**
+	- Specify minimum password length
+	- Require smart card
+	- Maximum security log size
+	- Enforce user login restrictions
+
 ## Password Security
-* **Complexity**
+1. **Complexity**
 	* Length and character requirements
 
-* **Expiration**
+2. **Expiration**
 	* Reset and time triggers
 
-* **Password history**
+3. **Password history**
 	* Reusage and retention
 
-### Password Security
-<h4 align="center"> Password Policy, Local Security Policy - Windows:</h4>
+<h3 align="center"> Local Security Policy - Password Policy - Windows</h4>
 
 <p align="center">
 <img width="90%" src="https://www.premiumexam.net/wp-content/uploads/2018/11/word-image-289.png" />
@@ -3394,6 +3559,32 @@ In computer networking, Point-to-Point Protocol (PPP) is a data link layer (laye
 * **Account Lockout Threshold**: Number of failed logon attempts [0-999]
 * **Reset Account Lockout Duration**: Period of time that must elapse before the account lockout counter is reset to 0 bad logon attempts. [1-99,999]
 
+> 🛑 **Local Security Policy** applies policies for the host machine/local.
+> 🛑 **Group Policy Management** applies policies for the organization through Active Directory Domains, Groups, OUs, etc.
+
+### 1. Good practices - Password complexity
+- AVOID single words or obvious passwords
+	- Name of dog, parent, partner
+- Use upper, lower case and special characters on each password
+- At least 8 characters
+	- Consider a phrase or set of words
+- Prevent password reuse
+	- System remember password history, requires unique passwords
+
+### 1.1 Good practices - Password expiration and recovery
+- All passwords should expire
+	- Change every **30 days, 60 days, 90 days**
+- Critical systems might change more frequently
+	- Every 15 days or every week
+- The recovery process should NOT be trivial!
+	- Some organizations have a very formal process
+
+### 1.2 Good practices - Account lockout and disablement
+- Always turn on the policy of Account Lockout to avoid brute-force try out
+- Disable accounts is better than Delete account; Often users save data, encryption keys, etc; Makes easier to retrieve this information. 
+
+
+
 ### Group Policy Objects (AD DS)
 
 <p align="center">
@@ -3402,13 +3593,48 @@ In computer networking, Point-to-Point Protocol (PPP) is a data link layer (laye
 
 * Set of rules that allow an administrator granular control over the configuration of objects in Active Directory, including user accounts, operation systems, applications and other AD objects. Can apply over multiple domains, groups and OU's.
 
-## Linux - File Permissions
+
+## Permissions - Windows
+NTFS permissions are granted to users and groups on folders and files.
+
+<p align="center">
+<img width="60%" src="https://blogvaronis2.wpengine.com/wp-content/uploads/2016/10/1.png" />
+</p>
+
+### NTFS Permissions - Folder
+* **Full Control** - Anything
+* **Modify** - Read, Write and Delete Files and Subfolders
+* **Read/Execute** - See contents and Run Programs
+* **List** Folder Contents - See Contents of Folders and Subfolders
+* **Read** - View Contents and Open data files
+* **Write** - Write to Files and Create new files and folders
+
+### NTFS Permissions - File
+* **Full Control** - Anything
+* **Modify** - Read, Write and Delete files
+* **Read/Execute** - Open and Run the file
+* **List** Folder Contents - Open the file See Contents of Folders and Subfolders
+* **Read** -  Open the file
+* **Write** - Open and Write to the file
+
+> 🛑 **Deny is stronger than allow**.
+
+### Moving and Copying NTFS Objects
+1. **Copy and Move** from drive X: to Y: - will take the NTFS permissions of the **destination** drive.
+2. **Copy** from drive X: to the same drive X: - **will loose the NTFS permissions.**
+3. **Move** from drive X: to the same drive X: - **will inheritance the NTFS permissions**
+
+## Permissions - Linux
 
 Linux has three permissions and they can be set for the owner, group or other.
 
-**r = read** - open a file, view a file.<br>
-**w = write** - edit a file, add or delete files for directories.<br>
-**x = execute** - run a file, execute a program or script, CD to a different directory.<br>
+<p align="center">
+<img width="90%" src="https://pamirwebhost.com/wp-content/uploads/2018/07/Files-permissions-and-ownership-basics-in-Linux.png" />
+</p>
+
+* **r = read** - open a file, view a file.
+* **w = write** - edit a file, add or delete files for directories.
+* **x = execute** - run a file, execute a program or script, CD to a different directory.
 
 
 Owner | Group | Other
@@ -3527,169 +3753,6 @@ ls -l
 sudo passwd
 ```
 
-## Windows - NTFS File & Folder Permissions
-NTFS permissions are granted to users and groups on folders and files.
-
-### NTFS Permissions - Folder
-* **Full Control** - Anything
-* **Modify** - Read, Write and Delete Files and Subfolders
-* **Read/Execute** - See contents and Run Programs
-* **List** Folder Contents - See Contents of Folders and Subfolders
-* **Read** - View Contents and Open data files
-* **Write** - Write to Files and Create new files and folders
-
-### NTFS Permissions - File
-* **Full Control** - Anything
-* **Modify** - Read, Write and Delete files
-* **Read/Execute** - Open and Run the file
-* **List** Folder Contents - Open the file See Contents of Folders and Subfolders
-* **Read** -  Open the file
-* **Write** - Open and Write to the file
-
-> 🛑 **Deny is stronger than allow**.
-
-### Moving and Copying NTFS Objects
-1. **Copy and Move** from drive X: to Y: - will take the NTFS permissions of the **destination** drive.
-2. **Copy** from drive X: to the same drive X: - **will loose the NTFS permissions.**
-3. **Move** from drive X: to the same drive X: - **will inheritance the NTFS permissions**
-
-## Accounts Types 👤
-
-#### User accounts
-- This is the account type most people will use
-- Storage and files can be private to that user
-- No privileged access to the OS
-
-#### Shared accounts
-- Used by more than one person/guest login, anonymous login
-- Very difficult to create an audit trail
-- Password management becomes harder
-- Best practice is simply DON'T use these dumb type of accounts
-
-#### Service accounts
-- Used exclusively by services running on a computer
-	- No interactive/user access(ideally)
-	- Web server, database server, etc
-- Access can be defined for a specific server
-	- Web server rights and permissions will be different than a database server
-- Commonly use usernames and passwords using policy to determine best passwords practices
-
-#### Privileged accounts
-- Administrator, Root
-- Complete access to the system
-- This account should NOT be used for normal administration
-- Needs to be HIGHLY secured - Strong passwords, 2FA, scheduled password changes
-
-## User Account Management
-### Least privilege
-* Rights and permissions should be set to the bare minimum
-	- You only get exactly what's needed to complete your objective
-* This is apply to all users in the organization
-* All users accounts must be limited
-	- **Applications should run with minimal privileges**
-* **Don't allow users to run with administrative privileges**
-	- Limits the scope of malicious behavior
-
-### Continuous Access Monitoring
-Monitoring all users account activity
-
-* Track Log on and Log off activity
-* Track file access
-
-> 🛑 **Shared Accounts = BAD!!!**
-
-> 🛑 **Multiple Accounts = Use different user/pass**
-
-> 🛑 **Use least privilege - enough necessary to accomplish task**
-
-> 🛑 **Monitor and log activity of users with multiple accounts (LOG EVERYTHING)**
-
-> 🛑 **Avoid default usernames on user accounts**
-
-## Access Control Technologies
-### Proximity Cards
-
-<img width="50%" src="https://www.idcardgroup.com/blog/wp-content/uploads/2017/01/ProxCard-Blog-Image.jpg" />
-
-* Close range card - contactless smart card
-* Passive deivce
-	- No power in the card - powered from the reader
-* Not a large data storage device 
-	- Often used as an identifier
-	- Keycard door access, library cards, payment systems
-	- The identifier is linked to data stored elsewhere
-
-### Smart cards
-
-<img width="50%" src="https://images-na.ssl-images-amazon.com/images/I/618ww4xSoPL._AC_SX679_.jpg" />
-
-* Integrated circuit card - contact or contactless
-* Common on credit cards - Also used for access control
-* Must have physical card to provide digital access - a digital certificate
-* Multiple factors - use the card with a PIN or fingerprint
-
-
-### Biometrics
-
-<img width="50%" src="https://www.flexenable.com/lib/images/100310-biometricauthentication.jpg" />
-
-* Fingerprints
-* Facial Recognition
-* Vocal Recongnition
-* Can lock and unlock devices
-* Use to configure applications
-* **Biometric acceptance rates**:
-	- **False acceptance rate (FAR)**
-		- Likelihood that an unauthorized user will be **accepted** (This would be bad)
-	- **False injection rate (FRR)**
-		- Likelihood that an authorized user will be **rejected**
-	- **Crossover error rate (CER)**
-		- The rate at which FAR and FRR are equal
-		- Adjust sensitivity to equalize both values
-		- Used to quantitatively compare biometric systems
-
-### Token generators
-
-<img width="50%" src="https://www.researchgate.net/profile/Maryblessing_Umeh/publication/340234262/figure/fig1/AS:873738811756545@1585326974784/RSA-SecurID-token-an-example-of-a-disconnected-token-generator.png" />
-
-* Pseudo-random token generators - useful authentication factor
-* Carry around a physical hardware token generator
-* Use software-based token generator on your phone
-
-#### HOTP
-* **HMAC-based One-time Password algorithm**
-* One-time passwords
-	- Use them once, and never again
-	- Once a session, once each authentication attempt
-	- Keyed-hash message authentication code (HMAC)
-	- The keys are based on a secrete key and a counter
-* Token-based authentication
-	- The hash is different every time
-* Hardware and software tokens available
-
-#### TOTP
-* **Time-based One-Time Password algorithm**
-	- Use a secret key and the time of day
-	- No incremental counter
-* Secret key is configured ahead of time
-	- Timestamps are synchronized via NTP
-* Timestamp usually increments every 30 seconds
-	- Put in your username, password, and TOPT code
-* One of the more common OTP methods used by Google, Facebook, Microsoft, etc
-
-### Certificate-based authentication
-
-<img width="90%" src="https://xlsbt27nbyq24kl4l1tdpqh5-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/2.png" />
-
-* Smart card
-* PIV (Personal Identity Verification) card
-	- US Federal Government smart card
-	- Picture and identification information
-* CAC (Common Access Card)
-	- US DoD smart card
-	- Picture and ID
-* IEEE 802.1X
-	- Gain access to the network using a certificate on device storage or separate physical device
 
 ***
 
@@ -4218,7 +4281,12 @@ When the employee leaves the company
 * **Executive User**:
     * **Read only** access but can look at all business data
 
-# Third-Party Risk / Agreements
+# Third-Party Risk - Agreements
+
+<p align="center">
+<img width="90%" src="https://www.law365.co/wp-content/uploads/2019/11/4-types-of-business-agreements-that-you-should-be-aware-of.png" />
+</p>
+
 
 ### **Business Partnership Agreement (BPA)**:
 Most common used in private sector.
