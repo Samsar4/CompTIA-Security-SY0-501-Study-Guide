@@ -3629,7 +3629,7 @@ NTFS permissions are granted to users and groups on folders and files.
 Linux has three permissions and they can be set for the owner, group or other.
 
 <p align="center">
-<img width="90%" src="https://pamirwebhost.com/wp-content/uploads/2018/07/Files-permissions-and-ownership-basics-in-Linux.png" />
+<img width="90%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/01260d855800248f380bd6c2b58fe0425067cebf/linux-perms.png" />
 </p>
 
 * **r = read** - open a file, view a file.
