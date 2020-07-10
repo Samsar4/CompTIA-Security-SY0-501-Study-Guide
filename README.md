@@ -35,6 +35,26 @@ Cryptography and PKI | 12%
 
 *** 
 
+* **Index**
+
+	1. Securing Systems
+
+	2. Security Tools 
+
+	3. Networking  
+
+	4. Identity and Access Management 
+
+	5. Risk Management
+
+	6. Incident Response & Forensics
+
+	7. Testing the Infrastructure
+
+	8. Cryptography and Public Key Infrastructure (PKI)
+
+***
+
 # Brief Introduction
 Information security, sometimes shortened to infosec, is the practice of protecting information by mitigating information risks. It is part of information risk management. It typically involves preventing or at least reducing the probability of unauthorized/inappropriate access, use, disclosure, disruption, deletion/destruction, corruption, modification, inspection, recording or devaluation, although it may also involve reducing the adverse impacts of incidents.
 
@@ -68,30 +88,12 @@ Anyone can validate the authenticity of a message as well as the source of the m
 
 ***
 
-# 1. Securing Individual Systems 
+# 1. Securing Systems 
 <p align="center">
-<img width="90%" src="https://praesidiumintl.com/wp-content/uploads/2019/08/Maritime-Cybersecurity-Solutions.jpg" />
+<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8de6aca3dae9c92ac477ce8c638d86f035ccc2e5/unnamed.jpg" />
 </p>
 
 ## Understanding Attacks
-
-### Attack Types
-
-* **Volumetric Attack**
-  * Ping Flood
-  * UDP Flood
-
-* **Protocol Attack**
-  * SYN Flood/TCP SYN Attack
-
-* **Application Attack**
-  * SlowLoris Attack - *(tries to keep many connections to the target web server open and hold them open as long as possible)*
-
-* **Amplification Attack**
-	* Generate a high volume of packets to flood the target website without alerting the intermediary, by returning a large reply to a small request. The basic defense against these attacks is blocking spoofed-source packets.
-
-* **Smurf Attack**
-	* Flooded with spoofed ping messages.
 
 ### Denial-of-Service (DoS)
 * Prevents others from accessing a system / comprimising the availability.
@@ -101,6 +103,28 @@ Anyone can validate the authenticity of a message as well as the source of the m
 <p align="center">
 <img width="79%" src="https://www.cloudflare.com/img/learning/ddos/glossary/dos-attack/dos-vs-ddos-attack.png" />
 </p>
+
+* **Volumetric Attack**
+	* **Ping Flood**
+		- *A ping flood is a simple denial-of-service attack where the attacker overwhelms the victim with ICMP "echo request" packets.*
+	* **UDP Flood**
+		- *A UDP flood is a form of volumetric Denial-of-Service (DoS) attack where the attacker targets and overwhelms random ports on the host with IP packets containing User Datagram Protocol (UDP) packets.*
+
+* **Protocol Attack**
+	* **SYN Flood/TCP SYN Attack**
+		- A SYN flood is a form of denial-of-service attack in which an attacker sends a succession of SYN requests to a target's system in an attempt to consume enough server resources to make the system unresponsive to legitimate traffic
+
+* **Application Attack**
+	* **SlowLoris Attack**
+		- *Tries to keep many connections to the target web server open and hold them open as long as possible*
+
+* **Amplification Attack**
+	* Generate a high volume of packets to flood the target website without alerting the intermediary, by returning a large reply to a small request. The basic defense against these attacks is blocking spoofed-source packets.
+
+* **Smurf Attack**
+	* Flooded with spoofed ping (ICMP) packets.
+
+> 🛑 **ICMP (Internet Control Message Protocol)** is an error-reporting protocol network devices like routers use to generate error messages to the source IP address when network problems prevent delivery of IP packets.
 
 ## Common Host Threats
 * **Spam** - Spam is electronic junk mail or junk newsgroup postings. Some people define spam even more generally as any unsolicited email. Real spam is generally email advertising for some product sent to a mailing list or newsgroup.
@@ -232,11 +256,7 @@ Different levels of RAID arrays or combination is for:
 > 🛑 **RAID 5 requires 3 or more drives and RAID 10 requires 4 drives.** 
 
 ## NAS and SAN
-Storage area networks and network-attached storage both provide networked storage solutions. A NAS is a single storage device that operates on data files, while a SAN is a local network of several devices.
-
-<p align="center">
-<img src="https://www.lifewire.com/thmb/w4dk2kMnVAycdG6bCGRmjVShV30=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/san-vs-nas-818005-v2-5c1042ba46e0fb0001bf6882.png" />
-</p>
+**Storage Area Networks** and **Network-Attached Storage** both provide networked storage solutions. A NAS is a single storage device that operates on data files, while a SAN is a local network of several devices.
 
 ### Network Attached Storage (NAS)
 * Runs over a standard network
@@ -249,6 +269,10 @@ Storage area networks and network-attached storage both provide networked storag
 * Fibre Channel (FC) or iSCSI 
 * Expensive implementation
 
+<p align="center">
+<img src="https://www.lifewire.com/thmb/w4dk2kMnVAycdG6bCGRmjVShV30=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/san-vs-nas-818005-v2-5c1042ba46e0fb0001bf6882.png" />
+</p>
+
 ## Physical Hardening
 **Policies can control how system hardware acts or reacts to an action**.
 
@@ -260,6 +284,10 @@ DEP is refer to Windows, in generic term is *Executable space protection*; DEP i
 * Designate sections of memory as executing code or data
 	- Code can't run from protected memory locations
 	- Prevents malware and viruses from executing
+
+<p align="center">
+<img width="80%" src="https://kbimg.dell.com/library/legacy/kcswisdom/images/kcswisdom_sol_20140222120504/1391152932516.DEP.PNG" />
+</p>
 
 > 🛑 DEP should be always be on, quietly protecting systems from buffer overflows. **The need to turn off DEP is rare**.
 
@@ -742,7 +770,7 @@ Ruin the media in such a way tha it is no longer functional.
 
 ***
 
-# 2. Tools 
+# 2. Security Tools 
 <p align="center">
 <img width="90%" src="https://cdn.nextgov.com/media/img/upload/2020/02/14/NGcybersecurity20200214/860x394.jpg" />
 </p>
@@ -789,7 +817,6 @@ Wireshark is the world’s foremost and widely-used network protocol analyzer. I
 * *With Wirehsark you can inspect and detect ARP poisonings, Rogue DHCP servers, Broadcast Storm etc.*
 
 > 🛑 Broadcast Storm - when a NIC (or port on a switch) sends large amounts of broadcast traffic, thereby crippling network resources.
->
 
 ## Wireless Scanners and Crackers
 
@@ -4148,7 +4175,7 @@ When the employee leaves the company
 # Risk Management Frameworks
 A framework is a description of a complex process, concentranting on major steps and the flows between the steps. **Describes the major steps and flows of the complex process of applying security controls in an organized and controlled fashion.**
 
-Frameworks come from a variety of sources including:
+### Frameworks come from a variety of sources including:
 * **Regulatory**
 * **Non-Regulatory**
 * **National**
@@ -4331,7 +4358,6 @@ A **single point of failure** is a part of a system that, if it fails, will stop
 	- A good hurricane can disrupt personnel travel
 - There's no practical way to remove all points of failure (money drives redundancy)
 
-
 # Organizing Data
 The first step to dealing with data security is **organization**.
 
@@ -4445,266 +4471,269 @@ Agreement used in public sector.
 
 ***
 
-# 6. Cryptography and PKI
-<p align="center">
-<img src="https://wp.technologyreview.com/wp-content/uploads/2019/07/quantumexplainer3.2-01-10.jpg" />
-</p>
+# 6. Incident Response & Forensics
+Incident response is an organized approach to addressing and managing the aftermath of a security breach or cyberattack, also known as an IT incident, computer incident or security incident. The goal is to handle the situation in a way that limits damage and reduces recovery time and costs.
 
+## Examples of incident categories
+* External/removable media
+	- Attack used removable media
+* Attrition
+	- Brute-force attack
+* Web
+	- Attack executed from a web site or web-base application
+* Email
+	- Attack executed from an email message or attachment
+* Improper usage
+	- Attack resulted from a violation of the Acceptable Use Policy (AUP)
+* Loss or theft of equipment
+	- Laptop or mobiel device stole
+* Many others
 
-Cryptography is the practice of disguising information in a way that looks random
-
-### **Obfuscation**
-Hidden sensitive data - providing confidentiality
-
-
-### **Classic Algorithms - by Substituition**
-* **Caesar Cipher** (ROT1-25) - *The earliest known and simples ciphers*
-* **Vigenère Cipher** *(Employs the Caesar cipher as one element of the encryption process + the key)*
-
-### **Kerkchoff Principle**
-The crypto algorithm should be public and the key is the secret.
-
-### Where to **Encrypt & Decrypt**?
-* **Data-at-Rest**: Resides in storage
-* **Data-in-Transit**: Transport / Network
-* **Data-in-Process**: RAM & CPU
-
-### **Symmetric Encryption**
-* Fast
-* One Single Key / Session Key to encryption and decryption
-* Primary way to encrypt data
-* Ephemeral Key
-  * Temporary
-  * Provides perfect forward secrecy
-
-### **Asymmetric Encryption**
-* Slow
-* Uses a Key pair **(Public Key and Private Key)**  
-   * Public Key - encrypt
-   * Private Key - decrypt
-
-### Cryptosystem
-Defines key properties, communication requirements for the key exchange; actions through encryption and decryption process.
-
-*(Ex: Using asymetric encryption to exchange Session keys after that communicate using Symmetric encryption.)*
-
-### **Symmetric CryptoSystems** 
-
-Algorithm | Block or Streaming | Block Size | Rounds | Key Size | Notes
---|--|--|--|--|--
-**DES** | Block | 64-bit | 16 | 56 bits | Uses five modes of operation: ECB, CBC, CFB, OFB and CTR.
-**Blowfish** | Block | 64-bit | 16 | 32-448 bits | Public domain algorithm. 
-**Twofish** | Block | 128-bit | 16 | 128, 192 and 256 bits | Public domain algorithm.
-**3DES** | Block | 64-bit | 16 | 168 bits (56 x 3) | Repeats DES process 3 times.
-**AES** | Block | 128-bit | 10, 12, or 14 | 128, 192 or 256 bits | Encryption standard for the US Gov.
-**RC4** | Streaming | N/A | 1 | 40-2048 bits | Used in WEP, SSL and TLS; largely deprecated in current technologies.
-
-*Rounds: Repeating the XOR/left-shift iteration X times.*
-
-### **Block modes**
-* **ECB** - Eletronic Code Block *(deprecated because nowdays is a week method that always produces the same output results with same input)*
-
-> 🛑 *All block modes below uses IV, which ensures the output block is uniquely different*
-* **CBC** - Cipher Block Chaining
-* **CFB** - Cipher Feedback
-* **OFB** - Output Feedback 
-* **CTR** - Counter
-
-> 🛑 *A **Binary Block** is a plaintext converted into 16-bit, 64-bit or 128-bit binary ciphertext.*
-
-## Asymmetric Algorithms
-### RSA
-Rivest Shamir and Edelman - Asymmetric algorithm, **generates the private and public key**.
-
-### ECC
-Elliptic Curve Cryptography - Can create a smaller key than RSA, provides the same security with increased performance (more faster).
-
-### Diffie-Hellman
-* **Does not** use Public or Private keys
-* Uses key exchange protocol
-* Diffie Hellman groups help by defining the size or type of key structure to use: 
-
-**Diffie Hellman Groups**
-Group | Size
---|--
-Group 1 | 768-bit modulus 
-Group 2 | 1024-bit modulus 
-Group 5 | 1536-bit modulus 
-Group 14 | 2048 bit modulus 
-Group 19 | 256-bit elliptic curve 
-Group 20 | 384-bit elliptic curve 
-Group 21 | 521-bit elliptic curve 
-
-
-## PGP - Pretty Good Privacy
-Uses both asymmetric and symmetric keys for a wide variety of operations uses web-of-trust instead PKI.
-
-### PGP Certificates
-* Symantec Corp.
-  * Enterprise $olution
-  * Encrypts Massa storage
-  * Signing
-  * Disk Encryption
-  * BitLocker
-  * FileVault
-  * Enterprise Cloud Solutions
-
-* OpenPGP
-  * Free
-  * Encrypted email
-  * PKI Support
-  * S/MIME
-
-* GPG (GNU Privacy Guard)
-  * Free Toolset
-  * File and Disk encryption
-
-## Hashing
-One-way encryption providing integrity.
-
-Hash | Algo.
---|--
-MD5 | 128 bit hash
-SHA-1 | 160 bit hash
-
-**SHA-1 and MD5 has the same cryptographic flaws, that can cause hash collision.**
-
-### **SHA-2** Family
-SHA-256 | minor version: SHA-224<br>
-SHA-512 | minor version: SHA-384
-
-### **SHA-3** 
-Uses a hash function called Keccack and has the same length of SHA-2. 
-
-SHA-1 and SHA-2 have been replaced by the latest iteration of SHA known as SHA-3.
-
-### **RIPEMD**
-RACE Integrity Primitives Evaluation Message Digest.
-* Not very common 
-* Open Standard
-* 128, 168, 256, 320 bit digests
-
-### **HMAC**
-Hash Message Authentication Code - Used in conjunction with symmetric key both to authenticate and verify integrity of the message.
-
-* Provides message integrity
-
-* Requires each side of the conversation to have the same key
-
-* It is based on standard hashes (SHA-1, MD5, etc)
-
-## Steganography
-* The art of hide information inside the data (hide data within data), and can be encrypted.
+## Incident Response Process
 
 <p align="center">
-<img width="60%" src="https://miro.medium.com/max/519/1*cwioZQ85xqDVlkn9gXe-vg.png" />
+<img width="90%" src="https://48p4co31imez19sw3n1qudx0-wpengine.netdna-ssl.com/wp-content/uploads/incident_response_process.png"/>
 </p>
 
-* Common steganography techniques:
-	- **Network Based** - Embed messages in TCP packets
-	- **Use an image** - Embed the message in the image itself
-	- **Invisible watermarks** - Yellow dots on printers can reaveal serial number and timestamps
+**1. Preparation**
+- The big plan
+- Who's doing what
+- Organize types of incidents that might happen
+
+**1.1 Reporting**
+- What reports go to whom?
+- Escalation
+
+**2. Identification**
+- Recognize what incident has ocurred
+- Report from users
+- Check the monitoring tools you use
+- Watch alerts and logs
+- Assess the impact
+- Define who's involved
+
+**3. Containment**
+- Mitigate the damage
+- Stop the attack
+- Segregate the network
+- Shutdown the system
+- Turn off a service
+
+**4. Eradication**
+- Remove the malware
+- Close off vulnerabilities
+- Add new controls
+
+**5. Recovery**
+- Restore from backups
+- Pull from snapshots
+- Hire replacemente personnel
+- Monitor to ensure good operation
+
+**6. Documentation**
+- Document the incident
+- What failed?
+- What worked?
 
 
-## Certificates and Trust
-* Certificates include a public key and at least one digital signature.
+## Incident Response Plan
+### Cyber Incident Response Team - CIRT
+*This group is responsible for responding to security breaches, viruses and other potentially catastrophic incidents in enterprises that face significant security risks. In addition to technical specialists capable of dealing with specific threats, it should include experts who can guide enterprise executives on appropriate communication in the wake of such incidents. The CIRT normally operates in conjunction with other enterprise groups, such as site security, public-relations and disaster recovery teams.*
 
-### Digital Signature
-* To create a digital signature for a document, you hash the document using your private key. Others can verify your digital signature with your public key.
+- A group of people whose job is to response to all incident
+- Full or part time - or both
+- IT Security Team
+- IT Department
+- Human Resources
+- Legal
+- Public Relations
 
-### **Web of Trust**
-* Web of Trust uses a web of mutually trusting peers.
-* Requires a lots of maintenance
+**Document incident types / Category definitions**
+- Physical access
+- Malware Phishing
+- Social engineering
+- Data access
 
-### **PKI** - Public Key Infrastructure
-Is a system consisting of hardware, software, policies and procedures that creates, manage, distributes, uses, store and revoke **DIGITAL CERTIFICATES.**
+**Roles and Responsabilities**
+- Users 
+- Help Desk
+- Human Resources
+- Database manager
+- Incident Hotline
+- IR manager/ IR officer
+- IR team
 
-PKI is the way we do internet. Uses a hierarchical structure with root servers.
+**Reporting Requirements / Escalation**
+- Determine Severity
+- Based on severity have a clear chain of escalation
+- Informing law enforcement
 
-* Certificate Authority (CA): Issues the certificates (Verisign, Thawte, etc).
+**Practice**
+- Annual scenario drills 
 
-### **CRL - Certificate Revocation List**
-A list of serial numbers of certificates that have been revoked or are no longer valid, therefore should not be relied on.
+## Digital Forensics
 
-* Downside it is slow and old.
+<p align="center">
+<img src="https://www.seecra.com/wp-content/uploads/2018/03/digital-for.jpg"/>
+</p>
 
-### **OCSP - Online Certificate Status Protocol**
-Is a more modern version of CRL that are used today, have a better performance.
+Digital forensics is the process of uncovering and interpreting electronic data. The goal of the process is to preserve any evidence in its most original form while performing a structured investigation by collecting, identifying and validating the digital information for the purpose of reconstructing past events.
 
-### Common Types of Digital Certificates:
-* **PKCS-7**: is a way to store certificates as individual files.
-* **PKCS-12**: stores the certificates and the private keys as packages.
-* **X.509** 
+The context is most often for usage of data in a court of law, though digital forensics can be used in other instances.
 
-## Cryptographic Attacks 🔐
-* **Known PlainText Attack (KPA)**
-	* The attacker knows at least one sample of both the plaintext and the ciphertext.
-* **Brute Force**
-	* Online - keep trying the login process (very slow), most accounts will lockout after a number of failed attempts.
-	* Offline - force the hash, calculate a password hash, compare it to a stored hash; require a large computational resource requirement.
-* **Dictionary Attack**
-	* Is a form of brute force attack technique for defeating a cipher or authentication mechanism by trying to determine its decryption key or passphrase by trying thousands or millions of likely possibilities, such as words in a dictionary or previously used passwords, often from lists obtained from past security breaches. 
-* **Rainbow Table (dictionary of hashes)**
-* **Collision Attack**
-	* Is the same hash value for two different plaintexts. The attacker will generate multiple versions of plaintext to match the hashes. *(e.g In a classroom of 30 students, what is the chance of two students sharing a birthday? - about 70%)*
-* **Replay Attack** - A hash with no salt, no session ID tracking, no encryption, can easily grabbed and replayed by an attacker.
-* **Downgrade attack** - is a cryptographic attack that makes it change the encrypted connection to the older one *(e.g. cleartext; HTTPS to HTTP).*
+### Chain of Custody
+*The whole idea of hcina of custody is to show good integrity of the evidence itself.*
+- Gathering Evidence - data is of high integrity
 
-### **Salt**
-Salt is an arbitrary value, usually created by the application or OS storing passwords, added to the end of the password before it is hashed, making cracking harder.
+#### **Chain of Custody Process**
+<p align="center">
+<img width="90%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/315dda37f0f07dc2f1c79a3a4ac44fe0f33c5396/forensics-chain-custody.png"/>
+</p>
 
-**Password Example**
-```console
-Password: 123456
+1. Define the Evidence
+2. Document collection method
+3. Data/time collected
+4. Person(s) handling the evidence
+5. Function of person handling evidence (qualified person)
+6. All locations of the evidence (e.g inital collection, moved to law enforcement...)
 
-> Salt (arbitrary):
-	aksfle3t
+### **Order of Volatility**
 
-> Concatenated with Salt:
-	123456aksfle3t
+<p align="center">
+<img width="90%" src="https://mk0gcgablogq2ifx558u.kinstacdn.com/wp-content/uploads/2013/05/OrderVolatility.png"/>
+</p>
 
-> Salted password (SHA-256): 02FCD2C88B089D2E1816070FFF8B80E13242264DA14233A57821CDAF4DDA45DF
-```
+The order of volatility is a process that enumerates **when**, **where**, and **how** to **gather the data/evidence before the data changes or disappears**.
+- **Memory**
+	- Caches
+	- Routing tables
+	- ARP tables
+- **Data on the Disk**
+	- Optical, flash drives
+	- Cache files, temp files
+	- Write blocks enabled tools
+- **Remotely logged data**
+	- Web site data
+	- Remote file server logs
+	- Backups
+- **Backups**
+	- Trends
+	- Low volatility takes time to gather data
 
-**HTTP Header - Cookie Example**
-```console
-### [Fixed Value without Salt] ###
-HTTP/1.x 200 OK
-Cookie: Ud9E40FgE1337
+### **Forensic Data Acquisition**
+*Checklist of issues you should consider when you're performing Digital Forensics.*
 
-### [Salted Value - Changes on every request made by user] ###
-HTTP/1.x 200 OK
-Cookie: ef4fh61F39E4033Gf496fgg040vxDDer40213d==
-```
-* *The salted cookie prevents cookie theft and other types of attack.*
+1. Capture the system image
+2. Netwrok traffic and logs
+3. Capture video 
+	- Security cameras
+	- Record time offset
+4. Take Hashes
+5. Take screenshots
+6. Interview witnesses
+7. Track man hours
 
-### **Keystretching**
-Combine a very long salt and a huge number of hashing iterations to make cracking even more harder.
+## Contingency Planning
+*Attempts to mitigate adverse incidents to preserve business continuity*.
+- How do we recover from a specific type of a disaster?
+- What to do for keep the **Business Continuity** going?
 
-Two most popular Key derivation functions
-* PBKDF2 (Password-Based Key Derivation Function 2) algorithm
-* BCrypt algorithm
+### Disaster Recovery - Evacuation Plan
 
-*Example*:
-```
-PBKDF2 
+#### Backup Sites:
 
-Password:
-123456
+![a](https://www.nakivo.com/blog/wp-content/uploads/2019/01/Comparison-of-DR-site-options.jpg)
+- **Cold site**
+	- It takes weeks to bring online
+	- Basic office spaces (e.g building, chairs, AC...)
+	- No operational equipment
+	- Cheapest recovery site
+- **Warm site**
+	- It takes days to bring online
+	- Operational equipment but little or no data
+- **Hot site**
+	- It take hours to bring online
+	- Real-time synchronization
+	- Almost all data ready to go - often just a quick update
+	- Very expensive
 
-Hash:
-rYoSDg62evyzhE1+lWBa9A==:YaeMu71c8KU3H0RYFPle0Q==
+- **Distance & Location** - different backup sites
+- **Internet requirements**
+- **Housing & entertainment**
+- **Legal Issues** 
 
---------------------------
+### Order of Restoration
+- Power
+- Wired LAN (is open and running)
+- ISP link (running)
+- Active Directory/DNS/DHCP server (up and cooking)
+- Account servers 
+- Sales and account workstations
+- Production servers
+- Production workstation
+- Wireless access
+- Peripherals (Printers, Camers, Scanners, faxes...)
 
-BCrypt
+**Annual exercises**<br>
+**Failover** - simpe means the process of making recovery site happen.<br>
+**Alternative Processing Sites** - different types of processing sites<br>
+**Alternative business practices**<br>
+**After action reports** - A clear and detailed documentation of everything that happened so that if it ever happens again you'll be ready to handle any form of business contingency planning.
 
-Password: 
-123456
+> 🛑 Through planning and practice is what makes recovery plans successful when disasters occur
 
-Hash:
-$2b$10$vES9mCPsE10//vOc1u01XeUVmJrZyHGMPaRfo39OIUoJ2g7iPtDnu
-```
+## Backups
+- `stat` **Linux** command - stat can return the status of an entire file system, the status of the first hard disk and so on.
+
+<p align="center">
+<img width="88%" src="https://www.howtoforge.com/images/command-tutorial/big/stat-basic.png" />
+</p>
+
+- Archive attribute - **Windows** - if something is created or changed
+
+### **Differential Backup**
+- Backup all the changes since the last full backup
+
+<p align="center">
+<img width="83%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/differential-backup.png" />
+</p>
+
+> 🛑 *Differential there are less backup sets but they get bigger.*<br>
+
+### **Incremental Backup**
+- Only backs up changes made from last backup
+
+<p align="center">
+<img width="83%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/incremental-backup.png" />
+</p>
+
+> 🛑 *Incremental more backup sets but smaller.*
+
+### **Snapshots**
+Snapshots typically under virtual machines and they are an absolute perfect way of making a copy of something that's happened in the past.
+
+### What Media
+- External hard-drive
+- Tape
+- Cloud
+
+### Offsite Backup
+Remote backup is good for disasters in general.
+
+### Cloud Backup
+Cloud backups work beautifully, however, they have one big downside and that is they take up a tremendous amount of time to get the initial backups going.
+
+### Backup Utilities
+
+- Protect from unexpected downtime
+	- Malware infection
+	- Ransomware
+	- Server defacement
+- Real-time file sync
+	- rsync
+- Regular partial backups - hourly incremental backups
+- Full backups - complete file backups
+- Complete coverage, fast recovery
 
 ***
 
@@ -4951,251 +4980,264 @@ Is the practice of testing a computer system, network or web application to find
 
 ***
 
-# 8. Incident Response & Forensics
-
-<h3 align="center">Incident Response Process</h3>
+# 8. Cryptography and Public Key Infrastructure (PKI)
 <p align="center">
-<img width="90%" src="https://48p4co31imez19sw3n1qudx0-wpengine.netdna-ssl.com/wp-content/uploads/incident_response_process.png"/>
+<img src="https://wp.technologyreview.com/wp-content/uploads/2019/07/quantumexplainer3.2-01-10.jpg" />
 </p>
 
-**1. Preparation**
-- The big plan
-- Who's doing what
-- Organize types of incidents that might happen
+Cryptography is the practice of disguising information in a way that looks random
 
-**1.1 Reporting**
-- What reports go to whom?
-- Escalation
+### **Obfuscation**
+Hidden sensitive data - providing confidentiality
 
-**2. Identification**
-- Recognize what incident has ocurred
-- Report from users
-- Check the monitoring tools you use
-- Watch alerts and logs
-- Assess the impact
-- Define who's involved
 
-**3. Containment**
-- Mitigate the damage
-- Stop the attack
-- Segregate the network
-- Shutdown the system
-- Turn off a service
+### **Classic Algorithms - by Substituition**
+* **Caesar Cipher** (ROT1-25) - *The earliest known and simples ciphers*
+* **Vigenère Cipher** *(Employs the Caesar cipher as one element of the encryption process + the key)*
 
-**4. Eradication**
-- Remove the malware
-- Close off vulnerabilities
-- Add new controls
+### **Kerkchoff Principle**
+The crypto algorithm should be public and the key is the secret.
 
-**5. Recovery**
-- Restore from backups
-- Pull from snapshots
-- Hire replacemente personnel
-- Monitor to ensure good operation
+### Where to **Encrypt & Decrypt**?
+* **Data-at-Rest**: Resides in storage
+* **Data-in-Transit**: Transport / Network
+* **Data-in-Process**: RAM & CPU
 
-**6. Documentation**
-- Document the incident
-- What failed?
-- What worked?
+### **Symmetric Encryption**
+* Fast
+* One Single Key / Session Key to encryption and decryption
+* Primary way to encrypt data
+* Ephemeral Key
+  * Temporary
+  * Provides perfect forward secrecy
 
-## Incident Response Plan
-**CIRT - Cyber Incident Response Team**
-*This group is responsible for responding to security breaches, viruses and other potentially catastrophic incidents in enterprises that face significant security risks. In addition to technical specialists capable of dealing with specific threats, it should include experts who can guide enterprise executives on appropriate communication in the wake of such incidents. The CIRT normally operates in conjunction with other enterprise groups, such as site security, public-relations and disaster recovery teams.*
+### **Asymmetric Encryption**
+* Slow
+* Uses a Key pair **(Public Key and Private Key)**  
+   * Public Key - encrypt
+   * Private Key - decrypt
 
-- A group of people whose job is to response to all incident
-- Full or part time - or both
-- IT Security Team
-- IT Department
-- Human Resources
-- Legal
-- Public Relations
+### Cryptosystem
+Defines key properties, communication requirements for the key exchange; actions through encryption and decryption process.
 
-**Document incident types / Category definitions**
-- Physical access
-- Malware Phishing
-- Social engineering
-- Data access
+*(Ex: Using asymetric encryption to exchange Session keys after that communicate using Symmetric encryption.)*
 
-**Roles and Responsabilities**
-- Users 
-- Help Desk
-- Human Resources
-- Database manager
-- Incident Hotline
-- IR manager/ IR officer
-- IR team
+### **Symmetric CryptoSystems** 
 
-**Reporting Requirements / Escalation**
-- Determine Severity
-- Based on severity have a clear chain of escalation
-- Informing law enforcement
+Algorithm | Block or Streaming | Block Size | Rounds | Key Size | Notes
+--|--|--|--|--|--
+**DES** | Block | 64-bit | 16 | 56 bits | Uses five modes of operation: ECB, CBC, CFB, OFB and CTR.
+**Blowfish** | Block | 64-bit | 16 | 32-448 bits | Public domain algorithm. 
+**Twofish** | Block | 128-bit | 16 | 128, 192 and 256 bits | Public domain algorithm.
+**3DES** | Block | 64-bit | 16 | 168 bits (56 x 3) | Repeats DES process 3 times.
+**AES** | Block | 128-bit | 10, 12, or 14 | 128, 192 or 256 bits | Encryption standard for the US Gov.
+**RC4** | Streaming | N/A | 1 | 40-2048 bits | Used in WEP, SSL and TLS; largely deprecated in current technologies.
 
-**Practice**
-- Annual scenario drills 
+*Rounds: Repeating the XOR/left-shift iteration X times.*
 
-## Digital Forensics
+### **Block modes**
+* **ECB** - Eletronic Code Block *(deprecated because nowdays is a week method that always produces the same output results with same input)*
 
-<p align="center">
-<img src="https://www.seecra.com/wp-content/uploads/2018/03/digital-for.jpg"/>
-</p>
+> 🛑 *All block modes below uses IV, which ensures the output block is uniquely different*
+* **CBC** - Cipher Block Chaining
+* **CFB** - Cipher Feedback
+* **OFB** - Output Feedback 
+* **CTR** - Counter
 
-Digital forensics is the process of uncovering and interpreting electronic data. The goal of the process is to preserve any evidence in its most original form while performing a structured investigation by collecting, identifying and validating the digital information for the purpose of reconstructing past events.
+> 🛑 *A **Binary Block** is a plaintext converted into 16-bit, 64-bit or 128-bit binary ciphertext.*
 
-The context is most often for usage of data in a court of law, though digital forensics can be used in other instances.
+## Asymmetric Algorithms
+### RSA
+Rivest Shamir and Edelman - Asymmetric algorithm, **generates the private and public key**.
 
-### Chain of Custody
-*The whole idea of hcina of custody is to show good integrity of the evidence itself.*
-- Gathering Evidence - data is of high integrity
+### ECC
+Elliptic Curve Cryptography - Can create a smaller key than RSA, provides the same security with increased performance (more faster).
 
-#### **Chain of Custody Process**
-<p align="center">
-<img width="90%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/315dda37f0f07dc2f1c79a3a4ac44fe0f33c5396/forensics-chain-custody.png"/>
-</p>
+### Diffie-Hellman
+* **Does not** use Public or Private keys
+* Uses key exchange protocol
+* Diffie Hellman groups help by defining the size or type of key structure to use: 
 
-1. Define the Evidence
-2. Document collection method
-3. Data/time collected
-4. Person(s) handling the evidence
-5. Function of person handling evidence (qualified person)
-6. All locations of the evidence (e.g inital collection, moved to law enforcement...)
+**Diffie Hellman Groups**
+Group | Size
+--|--
+Group 1 | 768-bit modulus 
+Group 2 | 1024-bit modulus 
+Group 5 | 1536-bit modulus 
+Group 14 | 2048 bit modulus 
+Group 19 | 256-bit elliptic curve 
+Group 20 | 384-bit elliptic curve 
+Group 21 | 521-bit elliptic curve 
 
-### **Order of Volatility**
+## PGP - Pretty Good Privacy
+Uses both asymmetric and symmetric keys for a wide variety of operations uses web-of-trust instead PKI.
 
-<p align="center">
-<img width="90%" src="https://mk0gcgablogq2ifx558u.kinstacdn.com/wp-content/uploads/2013/05/OrderVolatility.png"/>
-</p>
+### PGP Certificates
+* Symantec Corp.
+  * Enterprise $olution
+  * Encrypts Massa storage
+  * Signing
+  * Disk Encryption
+  * BitLocker
+  * FileVault
+  * Enterprise Cloud Solutions
 
-The order of volatility is a process that enumerates **when**, **where**, and **how** to **gather the data/evidence before the data changes or disappears**.
-- **Memory**
-	- Caches
-	- Routing tables
-	- ARP tables
-- **Data on the Disk**
-	- Optical, flash drives
-	- Cache files, temp files
-	- Write blocks enabled tools
-- **Remotely logged data**
-	- Web site data
-	- Remote file server logs
-	- Backups
-- **Backups**
-	- Trends
-	- Low volatility takes time to gather data
+* OpenPGP
+  * Free
+  * Encrypted email
+  * PKI Support
+  * S/MIME
 
-### **Forensic Data Acquisition**
-*Checklist of issues you should consider when you're performing Digital Forensics.*
+* GPG (GNU Privacy Guard)
+  * Free Toolset
+  * File and Disk encryption
 
-1. Capture the system image
-2. Netwrok traffic and logs
-3. Capture video 
-	- Security cameras
-	- Record time offset
-4. Take Hashes
-5. Take screenshots
-6. Interview witnesses
-7. Track man hours
+## Hashing
+One-way encryption providing integrity.
 
-## Contingency Planning
-*Attempts to mitigate adverse incidents to preserve business continuity*.
-- How do we recover from a specific type of a disaster?
-- What to do for keep the **Business Continuity** going?
+Hash | Algo.
+--|--
+MD5 | 128 bit hash
+SHA-1 | 160 bit hash
 
-### Disaster Recovery - Evacuation Plan
+**SHA-1 and MD5 has the same cryptographic flaws, that can cause hash collision.**
 
-#### Backup Sites:
+### **SHA-2** Family
+SHA-256 | minor version: SHA-224<br>
+SHA-512 | minor version: SHA-384
 
-![a](https://www.nakivo.com/blog/wp-content/uploads/2019/01/Comparison-of-DR-site-options.jpg)
-- **Cold site**
-	- It takes weeks to bring online
-	- Basic office spaces (e.g building, chairs, AC...)
-	- No operational equipment
-	- Cheapest recovery site
-- **Warm site**
-	- It takes days to bring online
-	- Operational equipment but little or no data
-- **Hot site**
-	- It take hours to bring online
-	- Real-time synchronization
-	- Almost all data ready to go - often just a quick update
-	- Very expensive
+### **SHA-3** 
+Uses a hash function called Keccack and has the same length of SHA-2. 
 
-- **Distance & Location** - different backup sites
-- **Internet requirements**
-- **Housing & entertainment**
-- **Legal Issues** 
+SHA-1 and SHA-2 have been replaced by the latest iteration of SHA known as SHA-3.
 
-### Order of Restoration
-- Power
-- Wired LAN (is open and running)
-- ISP link (running)
-- Active Directory/DNS/DHCP server (up and cooking)
-- Account servers 
-- Sales and account workstations
-- Production servers
-- Production workstation
-- Wireless access
-- Peripherals (Printers, Camers, Scanners, faxes...)
+### **RIPEMD**
+RACE Integrity Primitives Evaluation Message Digest.
+* Not very common 
+* Open Standard
+* 128, 168, 256, 320 bit digests
 
-**Annual exercises**<br>
-**Failover** - simpe means the process of making recovery site happen.<br>
-**Alternative Processing Sites** - different types of processing sites<br>
-**Alternative business practices**<br>
-**After action reports** - A clear and detailed documentation of everything that happened so that if it ever happens again you'll be ready to handle any form of business contingency planning.
+### **HMAC**
+Hash Message Authentication Code - Used in conjunction with symmetric key both to authenticate and verify integrity of the message.
 
-> 🛑 Through planning and practice is what makes recovery plans successful when disasters occur
+* Provides message integrity
 
-## Backups
-- `stat` **Linux** command - stat can return the status of an entire file system, the status of the first hard disk and so on.
+* Requires each side of the conversation to have the same key
+
+* It is based on standard hashes (SHA-1, MD5, etc)
+
+## Steganography
+* The art of hide information inside the data (hide data within data), and can be encrypted.
 
 <p align="center">
-<img width="88%" src="https://www.howtoforge.com/images/command-tutorial/big/stat-basic.png" />
+<img width="60%" src="https://miro.medium.com/max/519/1*cwioZQ85xqDVlkn9gXe-vg.png" />
 </p>
 
-- Archive attribute - **Windows** - if something is created or changed
+* Common steganography techniques:
+	- **Network Based** - Embed messages in TCP packets
+	- **Use an image** - Embed the message in the image itself
+	- **Invisible watermarks** - Yellow dots on printers can reaveal serial number and timestamps
 
-### **Differential Backup**
-- Backup all the changes since the last full backup
 
-<p align="center">
-<img width="83%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/differential-backup.png" />
-</p>
+## Certificates and Trust
+* Certificates include a public key and at least one digital signature.
 
-> 🛑 *Differential there are less backup sets but they get bigger.*<br>
+### Digital Signature
+* To create a digital signature for a document, you hash the document using your private key. Others can verify your digital signature with your public key.
 
-### **Incremental Backup**
-- Only backs up changes made from last backup
+### **Web of Trust**
+* Web of Trust uses a web of mutually trusting peers.
+* Requires a lots of maintenance
 
-<p align="center">
-<img width="83%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/incremental-backup.png" />
-</p>
+### **PKI** - Public Key Infrastructure
+Is a system consisting of hardware, software, policies and procedures that creates, manage, distributes, uses, store and revoke **DIGITAL CERTIFICATES.**
 
-> 🛑 *Incremental more backup sets but smaller.*
+PKI is the way we do internet. Uses a hierarchical structure with root servers.
 
-### **Snapshots**
-Snapshots typically under virtual machines and they are an absolute perfect way of making a copy of something that's happened in the past.
+* Certificate Authority (CA): Issues the certificates (Verisign, Thawte, etc).
 
-### What Media
-- External hard-drive
-- Tape
-- Cloud
+### **CRL - Certificate Revocation List**
+A list of serial numbers of certificates that have been revoked or are no longer valid, therefore should not be relied on.
 
-### Offsite Backup
-Remote backup is good for disasters in general.
+* Downside it is slow and old.
 
-### Cloud Backup
-Cloud backups work beautifully, however, they have one big downside and that is they take up a tremendous amount of time to get the initial backups going.
+### **OCSP - Online Certificate Status Protocol**
+Is a more modern version of CRL that are used today, have a better performance.
 
-### Backup Utilities
+### Common Types of Digital Certificates:
+* **PKCS-7**: is a way to store certificates as individual files.
+* **PKCS-12**: stores the certificates and the private keys as packages.
+* **X.509** 
 
-- Protect from unexpected downtime
-	- Malware infection
-	- Ransomware
-	- Server defacement
-- Real-time file sync
-	- rsync
-- Regular partial backups - hourly incremental backups
-- Full backups - complete file backups
-- Complete coverage, fast recovery
+## Cryptographic Attacks 🔐
+* **Known PlainText Attack (KPA)**
+	* The attacker knows at least one sample of both the plaintext and the ciphertext.
+* **Brute Force**
+	* Online - keep trying the login process (very slow), most accounts will lockout after a number of failed attempts.
+	* Offline - force the hash, calculate a password hash, compare it to a stored hash; require a large computational resource requirement.
+* **Dictionary Attack**
+	* Is a form of brute force attack technique for defeating a cipher or authentication mechanism by trying to determine its decryption key or passphrase by trying thousands or millions of likely possibilities, such as words in a dictionary or previously used passwords, often from lists obtained from past security breaches. 
+* **Rainbow Table (dictionary of hashes)**
+* **Collision Attack**
+	* Is the same hash value for two different plaintexts. The attacker will generate multiple versions of plaintext to match the hashes. *(e.g In a classroom of 30 students, what is the chance of two students sharing a birthday? - about 70%)*
+* **Replay Attack** - A hash with no salt, no session ID tracking, no encryption, can easily grabbed and replayed by an attacker.
+* **Downgrade attack** - is a cryptographic attack that makes it change the encrypted connection to the older one *(e.g. cleartext; HTTPS to HTTP).*
+
+### **Salt**
+Salt is an arbitrary value, usually created by the application or OS storing passwords, added to the end of the password before it is hashed, making cracking harder.
+
+**Password Example**
+```console
+Password: 123456
+
+> Salt (arbitrary):
+	aksfle3t
+
+> Concatenated with Salt:
+	123456aksfle3t
+
+> Salted password (SHA-256): 02FCD2C88B089D2E1816070FFF8B80E13242264DA14233A57821CDAF4DDA45DF
+```
+
+**HTTP Header - Cookie Example**
+```console
+### [Fixed Value without Salt] ###
+HTTP/1.x 200 OK
+Cookie: Ud9E40FgE1337
+
+### [Salted Value - Changes on every request made by user] ###
+HTTP/1.x 200 OK
+Cookie: ef4fh61F39E4033Gf496fgg040vxDDer40213d==
+```
+* *The salted cookie prevents cookie theft and other types of attack.*
+
+### **Keystretching**
+Combine a very long salt and a huge number of hashing iterations to make cracking even more harder.
+
+Two most popular Key derivation functions
+* PBKDF2 (Password-Based Key Derivation Function 2) algorithm
+* BCrypt algorithm
+
+*Example*:
+```
+PBKDF2 
+
+Password:
+123456
+
+Hash:
+rYoSDg62evyzhE1+lWBa9A==:YaeMu71c8KU3H0RYFPle0Q==
+
+--------------------------
+
+BCrypt
+
+Password: 
+123456
+
+Hash:
+$2b$10$vES9mCPsE10//vOc1u01XeUVmJrZyHGMPaRfo39OIUoJ2g7iPtDnu
+```
 
 ***
 
