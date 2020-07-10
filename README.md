@@ -845,25 +845,20 @@ Wireshark is the world’s foremost and widely-used network protocol analyzer. I
 * It's a one-way trip (you can't convert hash to plain-text password)
 * Some are stored without much complexity - relatively straightforward to brute-force a weak hash
 * As an attacker, After get the hashes you can use a good wordlist or rainbow-table to crack them.
-* **Many tools available:** 
-	- John The Ripper
-	- Ophcrack
 
+**Many tools available:** 
+
+* John the Ripper
 <p align="center">
 <img width="90%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT-WSgD_yV72VdwAoDoORawZsfsqn8chA4m_Q&usqp=CAU" />
 </p>
 
-<p align="center">
-<small>John The Ripper</small>
-</p>
+* Ophcrack 
 
 <p align="center">
-<img width="90%" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Ophcrack-3.2.0_screenshot.png" />
+<img width="90%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/f08afb55e1b490562b8ffc7306cbdf272a916825/Ophcrack-3.2.0_screenshot.png" />
 </p>
 
-<p align="center">
-<small>Ophcrack</small>
-</p>
 
 ## Vulnerability Scanners
 - Gather as much information as possible
