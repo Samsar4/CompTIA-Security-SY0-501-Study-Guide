@@ -41,7 +41,7 @@ Cryptography and PKI | 12%
 
 	2. Security Tools 
 
-	3. Networking  
+	3. Networks and Infrastructure  
 
 	4. Identity and Access Management 
 
@@ -1983,7 +1983,7 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 * **[ELK - Elastic Search, Log Stash and Kibana](https://www.elastic.co/what-is/elk-stack) (Open Source)**
 	![elk](https://i.imgur.com/lydtCwn.png)
 
-# Network - Part 2, Beyond the Basics 
+# 3. Networks and Infrastructure part 2 - Beyond the Basics 
 
 ### **802.11**
 
