@@ -90,7 +90,7 @@ Anyone can validate the authenticity of a message as well as the source of the m
 
 # 1. Securing Systems 
 <p align="center">
-<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8de6aca3dae9c92ac477ce8c638d86f035ccc2e5/unnamed.jpg" />
+<img width="90%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8de6aca3dae9c92ac477ce8c638d86f035ccc2e5/unnamed.jpg" />
 </p>
 
 ## Understanding Attacks
@@ -4487,49 +4487,97 @@ Incident response is an organized approach to addressing and managing the afterm
 ## Incident Response Process
 
 <p align="center">
-<img width="90%" src="https://48p4co31imez19sw3n1qudx0-wpengine.netdna-ssl.com/wp-content/uploads/incident_response_process.png"/>
+<img src="https://www.abiliosimeao.com/wp-content/uploads/2020/02/nist.png"/>
+</p>
+<p align="center">
+<small><i>NIST SP800-61 - Computer Security Incident Handling Guide</i></small>
 </p>
 
-**1. Preparation**
-- The big plan
+### NIST SP800-61
+The popular guideline for Incident Response process is the **NIST SP800-61 - Computer Security Incident Handling Guide** 
+- The incident response lifecyle:
+	- **Preparation**
+	- **Detection and Analysis**
+	- **Containment, Eradication, and Recovery**
+	- **Post-incident Activity**
+
+### Preparation
 - Who's doing what
+- Incident handling hardware and software
+	- Laptops, removable media, forensic software, digital cameras, etc
 - Organize types of incidents that might happen
+- Incident analysis resources
+	- Documentation, network diagrams, baselines, critical file hash values
+- Incident mitigation software
+- Policies needed for incident handling
 
-**1.1 Reporting**
-- What reports go to whom?
-- Escalation
+### Detection
+- Many different detection sources
+	- Different levels of detail, different levels of perception
+- Large amout of 'volume'
+	- Attacks are incoming all the time
+	- How do you identify the legitimate threats?
+- Incidents are almost always complex
+	- Extensive knowledge needed
 
-**2. Identification**
-- Recognize what incident has ocurred
-- Report from users
-- Check the monitoring tools you use
-- Watch alerts and logs
-- Assess the impact
-- Define who's involved
+**Incident precursors**
+- An incident might occur in the future
+- Web server log: vulnerability scanner in use
+- Montly patch release
+- Direct threats
 
-**3. Containment**
+**Incident indicators**
+- When an attack is underway / or an exploit is successful
+- Can be identified by IDS/IPS
+- Anti-virus software identifies malwares
+- Host-based monitor detects a configuration change
+	- Constantly monitors system files
+- Network traffic flows deviate from the norm
+	- Requires constant monitoring
+
+
+### Containment and Isolation
 - Mitigate the damage
 - Stop the attack
+- Sandboxes
+	- The attacker thinks they're on a real system
 - Segregate the network
 - Shutdown the system
 - Turn off a service
 
-**4. Eradication**
-- Remove the malware
-- Close off vulnerabilities
-- Add new controls
+### Recovery after an Incident
+- Eradicate the bug
+	- Remove malware
+	- Disable breached user accounts
+	- Fix vulnerabilities
+- Recover the system
+	- Restore from backups
+	- Pull from snapshots
+	- Hire replacement personnel
+	- Monitor to ensure good operation
+	- Tighten down the perimeter
 
-**5. Recovery**
-- Restore from backups
-- Pull from snapshots
-- Hire replacemente personnel
-- Monitor to ensure good operation
+### Reconstitution
+- Recovery may take a long time
+	- Large-scale incidents require a large amount of work
+- The plan should be efficient
+	- Start with quick, high-value security changes
+		- Patches, firewall policy changes
+	- Later phases involve much 'heavier lifting'
+		- Infrastructure changes, large-scale security rollouts
 
-**6. Documentation**
+### Lessons learned
+- Learn and improve
+	- No system is perfect
+- Post-incident meeting
+	- Invite everyone affected by the incident
 - Document the incident
-- What failed?
-- What worked?
-
+	- Timestamp of the events
+	- How did the incident plan work?
+		- Did the process operate successfully?
+	- What would you do differently next time?
+	- Which indicators would you watch next time?
+		- Different precursors may give you better alerts
 
 ## Incident Response Plan
 ### Cyber Incident Response Team - CIRT
@@ -4576,9 +4624,53 @@ Digital forensics is the process of uncovering and interpreting electronic data.
 
 The context is most often for usage of data in a court of law, though digital forensics can be used in other instances.
 
+### Forensic procedures
+- Collect and protect information relating to an intrusion
+	- Many different data sources and protection mechanisms
+- RFC 3227 - Guidelines for Evidence Collection and Archiving
+	- A good set of best practices
+- Standard digital forensic process
+	- Acquisition, analysis, and reporting
+- Must be detail oriented
+
+### **Order of Volatility**
+
+<p align="center">
+<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/729868682540a09d6a8cc66494c31dc98ca0e808/volatile.png"/>
+</p>
+
+- The order of volatility is a process that enumerates **when**, **where**, and **how** to **gather the data/evidence before the data changes or disappears**. (How long does data stick around?
+	- Some media is much more volatile than others;
+	- Gather data in order from the most volatile to less volatile
+
+**Memory**
+- Caches
+- Routing tables
+- ARP tables
+
+**Data on the Disk**
+- Optical, flash drives
+- Cache files, temp files
+- Write blocks enabled tools
+
+**Remotely logged data**
+- Web site data
+- Remote file server logs
+- Backups
+
+**Backups**
+- Trends
+- Low volatility takes time to gather data
+
 ### Chain of Custody
-*The whole idea of hcina of custody is to show good integrity of the evidence itself.*
+*The whole idea of Chain of Custody is to show good integrity of the evidence itself.*
 - Gathering Evidence - data is of high integrity
+	- Control evidence - Maintain integrity
+- Everyone who contacts the evidence
+	- Avoid tampering
+		- Use hashes
+- Label and catalog everything
+	- Seal and store
 
 #### **Chain of Custody Process**
 <p align="center">
@@ -4592,65 +4684,83 @@ The context is most often for usage of data in a court of law, though digital fo
 5. Function of person handling evidence (qualified person)
 6. All locations of the evidence (e.g inital collection, moved to law enforcement...)
 
-### **Order of Volatility**
-
-<p align="center">
-<img width="90%" src="https://mk0gcgablogq2ifx558u.kinstacdn.com/wp-content/uploads/2013/05/OrderVolatility.png"/>
-</p>
-
-The order of volatility is a process that enumerates **when**, **where**, and **how** to **gather the data/evidence before the data changes or disappears**.
-- **Memory**
-	- Caches
-	- Routing tables
-	- ARP tables
-- **Data on the Disk**
-	- Optical, flash drives
-	- Cache files, temp files
-	- Write blocks enabled tools
-- **Remotely logged data**
-	- Web site data
-	- Remote file server logs
-	- Backups
-- **Backups**
-	- Trends
-	- Low volatility takes time to gather data
-
 ### **Forensic Data Acquisition**
 *Checklist of issues you should consider when you're performing Digital Forensics.*
 
-1. Capture the system image
-2. Netwrok traffic and logs
-3. Capture video 
-	- Security cameras
+1. **Capture the system image**
+	- Bit-for-bit, byte-for-byte
+	- Software imaging tools - bootable device
+	- Remove the physical drive
+	- Get the backup tapes
+2. **Netwrok traffic and logs**
+	- Firewalls log a lot of information
+	- IDS/IPS logs
+	- Raw network traffic data
+		- Stream-to-disk
+		- An exact recording of network communication
+			- Rebuild images, email messages, browser sessions, file transfers
+3. **Capture video**
+	- Security cameras, mobile devices
 	- Record time offset
-4. Take Hashes
-5. Take screenshots
-6. Interview witnesses
-7. Track man hours
+4. **Take Hashes**
+	- Ensure that there's no tampering
+	- MD5 (Message Digest 5)
+		- 128 bits, displayed as hexadecimal
+		- Chance of duplication is one in 2^128
+		- CRC (Cyclical Redundancy Check)
+			- 32 bits, displayed as hexadecimal
+			- One in 2^32
+		- Create an MD5 hash for an image, file, or groups of files
+			- Data can be verified at any time
+5. **Take screenshots**
+	- Capture the state of the screen
+	- External capture (Camera, Mobile device)
+	- Internal capture (PrintScreen)
+6. **Interview witnesses**
 
-## Contingency Planning
+7. **Track man hours**
+
+### Contingency Planning
 *Attempts to mitigate adverse incidents to preserve business continuity*.
 - How do we recover from a specific type of a disaster?
 - What to do for keep the **Business Continuity** going?
 
-### Disaster Recovery - Evacuation Plan
+## Disaster Recovery - Evacuation Plan
 
 #### Backup Sites:
 
 ![a](https://www.nakivo.com/blog/wp-content/uploads/2019/01/Comparison-of-DR-site-options.jpg)
-- **Cold site**
-	- It takes weeks to bring online
-	- Basic office spaces (e.g building, chairs, AC...)
-	- No operational equipment
-	- Cheapest recovery site
-- **Warm site**
-	- It takes days to bring online
-	- Operational equipment but little or no data
-- **Hot site**
-	- It take hours to bring online
-	- Real-time synchronization
-	- Almost all data ready to go - often just a quick update
-	- Very expensive
+
+### 🔵 Cold site 
+
+<img width="70%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/29c5e018095b135baec32aaece84a900a43b23ca/cc-cold.png"/>
+
+- **Empty site, no hardware, no data, no people**
+- It takes weeks to bring online
+- Basic office spaces (e.g building, chairs, AC...)
+- No operational equipment
+- Cheapest recovery site
+
+### 🟡 Warm site 
+
+<img width="60%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/29c5e018095b135baec32aaece84a900a43b23ca/cc-warm.png"/>
+
+- **Somewhere between cold and hot - Just enough to get going (Big room with rack space, you bring the hardware)**
+- Hardware is ready and waiting - you bring the software and data
+- It takes days to bring online
+- Operational equipment but little or no data
+
+### 🔴 Hot site 
+
+<img width="60%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/29c5e018095b135baec32aaece84a900a43b23ca/cc-hot.png"/>
+
+- **Exact replica of production systems**
+- Applications and software are constantly updated
+- Flip a switch and everyting moves
+- It take hours to bring online
+- Real-time synchronization
+- Almost all data ready to go - often just a quick update
+- Very expensive
 
 - **Distance & Location** - different backup sites
 - **Internet requirements**
