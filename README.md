@@ -740,17 +740,19 @@ Verify the integrity of file is in good order and ready to run.
 ## Media Sanitization | Data Destruction 
 <img src="https://mk0reclamere2uhq86qh.kinstacdn.com/wp-content/uploads/2018/02/datadestruction_Reclamere.jpg" />
 
-### Clearing/Clear
-Clear means to tell the device through user commands inherent to the massa storage device to sanitize the data. *(e.g. send commands to a hard drive to erase data)*
 
-> 🛑 **Can be done with commands such as erase, format and delete (these methods are not final)**
-
-### Purge
+### Sanitizing media
+#### Purge
 Purging will process the device to remove data from the drive, the device might will no longer be usable. Means to use anything other than an internal command to sanitize the data on the media. *(e.g. Degausser: machine with a strong magnetic field that destroys/purge the data from massa storage devices)*
 
 > 🛑 **Purge also means that the device is basically not useful anymore**
 
-### Crypto Erase
+#### Clearing/Clear
+Clear means to tell the device through user commands inherent to the massa storage device to sanitize the data. *(e.g. send commands to a hard drive to erase data)*
+
+> 🛑 **Can be done with commands such as erase, format and delete (these methods are not final)**
+
+#### Crypto Erase
 * In case you lost the keys to encrypted device.
 
 ### Destroy / Data Destruction
@@ -761,12 +763,29 @@ Ruin the media in such a way tha it is no longer functional.
 * Floppy disks
 * Paper
 
-#### Methods:
+#### Protect your rubbish
+- Secure your garbage (fence and lock)
+- Shred your documents (e.g. Governments burn the good stuff)
+- Burn documents
+- Pulp the paper
 
-* Burning
-* Pulping
-* Shredding
-* Pulverizing
+#### Physical destruction
+- Shredder / pulverizer
+	- Heavy machinery
+	- Complete destruction
+- Drill / Hammer
+	- Quick and easy
+	- Platters, all the way through
+- Electromagnetic (degaussing)
+	- Remove the magnetic field
+	- Destroys the drive data and the electronics
+- Incineration
+
+#### Certificate of destruction
+- Destruction is often done by a 3rd party
+- Confirmation that your data is destroyed
+- Paper trail of broken data
+	- You know exactly what happened
 
 ***
 
@@ -858,7 +877,6 @@ Wireshark is the world’s foremost and widely-used network protocol analyzer. I
 <p align="center">
 <img width="90%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/f08afb55e1b490562b8ffc7306cbdf272a916825/Ophcrack-3.2.0_screenshot.png" />
 </p>
-
 
 ## Vulnerability Scanners
 - Gather as much information as possible
@@ -1139,6 +1157,10 @@ certifiedhacker.com.    14400   IN      A       162.241.216.11
 ### `netcat`
 TCP/IP swiss army knife; you can make any type of connection and see the results from a command line. With nc you can connect to anything on any port number or you can make your system listen on a port number. Can be an agressive tool for recon.
 
+<p align="center">
+<img src="https://www.researchgate.net/publication/329745450/figure/fig3/AS:705181092179978@1545139682702/Remote-Command-and-Control-example-through-Netcat.ppm" />
+</p>
+
 * "Read" or "Write" to the network
 	- Open a port and send or receive some traffic
 	- Listen on a port number
@@ -1147,9 +1169,14 @@ TCP/IP swiss army knife; you can make any type of connection and see the results
 * Become a backdoor
 	- Run a shell from a remote device
 
+### `stat` 
+stat can return the status of an entire file system, the status of the first hard disk and so on.
+
 <p align="center">
-<img src="https://www.researchgate.net/publication/329745450/figure/fig3/AS:705181092179978@1545139682702/Remote-Command-and-Control-example-through-Netcat.ppm" />
+<img width="88%" src="https://www.howtoforge.com/images/command-tutorial/big/stat-basic.png" />
 </p>
+
+- Archive attribute - **Windows** - if something is created or changed
 
 ### `tcpdump`
 * Tcpdump is a data-network packet analyzer computer program that runs under a command line interface. It allows the user to display TCP/IP and other packets being transmitted or received over a network to which the computer is attached. Distributed under the BSD license, tcpdump is free software
@@ -2672,7 +2699,7 @@ Technology that separates the **control plane** management of network devices fr
 * **Internal**
 	* Safe - for important documents
 	* Locked cabinets
-	* Faraday cages - block eletromagnetic fields to protect sensitive eletronic equipment
+	* Faraday cages - block eletromagnetic fields to protect sensitive electronic equipment
 	* Locks
 		* Key management system (where the keys are stored? who is in possession of those keys?...)
 
@@ -2733,7 +2760,7 @@ Class | Type | Contains
 --|--|--
 A | Ordinary(Wood, Paper) | Foam, Water
 B | Liquids(Gases, oil) | CO2, Foam, Powder
-C | Electrical (eletronic equipment) | CO2
+C | Electrical (Electronic equipment) | CO2
 D | Combustible metals (sodium, magnesium) | Powder
 
 <img width="84%" src="https://northlandfire.com/wp-content/uploads/2019/03/Extinguisher-Classes.jpg" />
@@ -3879,7 +3906,6 @@ A threat actor can be a malicious person, such as a hacker accessing corporate s
 * **Internal**: Threat generated by internal sources, usually an insider to the organization
 * **External**: Threat generated from outside your infrastructure 
 
-
 ## Risk response techniques
 *After identified and analyzed risk, you must decide how to responde to the risks produced as a result of the analysis.*
 ### 1) Risk Mitigation
@@ -3907,6 +3933,7 @@ Means thtat the organization could choose not to participate in activities that 
 * ISACA Risk IT Framework
 
 # Security Controls
+## Control Types
 The cornerstone of IT security is understanding security controls and how to apply them.
 
 1) **Administrative Control** (People -> IT Security)
@@ -3923,22 +3950,22 @@ The cornerstone of IT security is understanding security controls and how to app
     * Encryption 
 
 3) **Physical Control** (Physical World)
-    * Gates
-    * Guards
-    * Mantraps
-    * Keys
+	* Gates
+	* Guards
+	* Mantraps
+	* Keys
 
 ## Activity Phase Control Types
 
-1) **Deterrent control**: Deters the actor from **attempting** the threat. *(Warning Sign, SSH Banner)*
+1) **Deterrent control**: Deters the actor from **attempting** the threat. *(Warning Sign, SSH Login Banner)*
 
-2) **Preventive control**: Deters the actor from **performing** the threat. *(Fence, Server Locks, Password Complexity)*
+2) **Preventive control**: Deters the actor from **performing** the threat. *(Fence, Server Locks, Password Complexity, Firewall)*
 
-3) **Detective control**: Recognizes an actor's threat. *(Background check, CCTV, IDS)*
+3) **Detective control**: Recognizes an actor's threat. *(Background check, CCTV, IDS/IPS)*
 
-4) **Corrective**: Mitigates the impact of a manifested threat. *(Backups)*
+4) **Compensating**: Provides alternative fixes to any of the above functions
 
-5) **Compensating**: Provides alternative fixes to any of the above functions
+5) **Corrective**: Mitigates the impact of a manifested threat. *(Backups can mitigate a ransonware; IPS can block an attacker)*
 
 *Most of security controls are **preventive** phase controls*
 
@@ -4373,15 +4400,20 @@ The first step to dealing with data security is **organization**.
 
 * **Proprietary Information**: Information owned by a company that gives a certain competitive advantages. (e.g. The secret formula of Coca-Cola).
 
+* **PII - Personally Identifiable Information**: Individual information (Name, birth, morther's name, biometric information, SSN, passport number)
 * **PHI - Protected Health Information**: Not only Health information, PII may include on PHI.
 
 ## Data Roles
 
 * **Data Owners**: Legally responsible for the data, can be entity responsible.
 
-* **Steward / Custodian**: Maintain the accuracy and integrity of data.
+* **Steward**: Responsible for data accuracy, privacy, and security; Associates sensitivity labels to the data and ensure compliance with any applicable laws and standards.
 
-* **Privacy Officer**: Ensures data adhere to privacy policies and procedures.
+* **Custodian**: Manages the access rights to the data; Implements security controls; Sometimes the same person as the data steward.
+
+* **Privacy Officer**: Ensures data adhere to privacy policies and procedures. Set policies, implements processes and procedures.
+
+
 
 ## User Roles
 * **Users**: Assigned standard permissions to complete tasks. | Must understand how system functions works and have proper security training to recognize common issues (Malware, etc).
@@ -4534,7 +4566,6 @@ The popular guideline for Incident Response process is the **NIST SP800-61 - Com
 	- Constantly monitors system files
 - Network traffic flows deviate from the norm
 	- Requires constant monitoring
-
 
 ### Containment and Isolation
 - Mitigate the damage
@@ -4736,7 +4767,7 @@ The context is most often for usage of data in a court of law, though digital fo
 <img width="70%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/29c5e018095b135baec32aaece84a900a43b23ca/cc-cold.png"/>
 
 - **Empty site, no hardware, no data, no people**
-- It takes weeks to bring online
+- **It takes weeks to bring online**
 - Basic office spaces (e.g building, chairs, AC...)
 - No operational equipment
 - Cheapest recovery site
@@ -4747,7 +4778,7 @@ The context is most often for usage of data in a court of law, though digital fo
 
 - **Somewhere between cold and hot - Just enough to get going (Big room with rack space, you bring the hardware)**
 - Hardware is ready and waiting - you bring the software and data
-- It takes days to bring online
+- **It takes days to bring online**
 - Operational equipment but little or no data
 
 ### 🔴 Hot site 
@@ -4757,79 +4788,62 @@ The context is most often for usage of data in a court of law, though digital fo
 - **Exact replica of production systems**
 - Applications and software are constantly updated
 - Flip a switch and everyting moves
-- It take hours to bring online
+- **It take hours to bring online**
 - Real-time synchronization
 - Almost all data ready to go - often just a quick update
 - Very expensive
 
-- **Distance & Location** - different backup sites
-- **Internet requirements**
-- **Housing & entertainment**
-- **Legal Issues** 
-
 ### Order of Restoration
-- Power
-- Wired LAN (is open and running)
-- ISP link (running)
-- Active Directory/DNS/DHCP server (up and cooking)
-- Account servers 
-- Sales and account workstations
-- Production servers
-- Production workstation
-- Wireless access
-- Peripherals (Printers, Camers, Scanners, faxes...)
+1. Power
+2. Wired LAN (is open and running)
+3. ISP link (running)
+4. Active Directory/DNS/DHCP server (up and cooking)
+5. Account servers 
+6. Sales and account workstations
+7. Production servers
+8. Production workstation
+9. Wireless access
+10. Peripherals (Printers, Camers, Scanners, faxes...)
 
-**Annual exercises**<br>
-**Failover** - simpe means the process of making recovery site happen.<br>
-**Alternative Processing Sites** - different types of processing sites<br>
-**Alternative business practices**<br>
-**After action reports** - A clear and detailed documentation of everything that happened so that if it ever happens again you'll be ready to handle any form of business contingency planning.
+### Annual exercises - Continuity of Operations
+* **Failover**
+	- Simple means the process of making recovery site happen.
+* **Alternative Processing Sites**
+	- Different types of processing sites
+* **Alternative Business Practices**
+	- Manual transactions, paper receipts, phone calls for transaction approvals
+	- These must be documented and tested before problem occurs
+* **After-action Reports (AAR)**
+	- A clear and detailed documentation of everything that happened so that if it ever happens again you'll be ready to handle any form of business contingency planning.
 
 > 🛑 Through planning and practice is what makes recovery plans successful when disasters occur
 
-## Backups
-- `stat` **Linux** command - stat can return the status of an entire file system, the status of the first hard disk and so on.
-
-<p align="center">
-<img width="88%" src="https://www.howtoforge.com/images/command-tutorial/big/stat-basic.png" />
-</p>
-
-- Archive attribute - **Windows** - if something is created or changed
-
-### **Differential Backup**
-- Backup all the changes since the last full backup
-
-<p align="center">
-<img width="83%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/differential-backup.png" />
-</p>
-
-> 🛑 *Differential there are less backup sets but they get bigger.*<br>
-
-### **Incremental Backup**
-- Only backs up changes made from last backup
-
-<p align="center">
-<img width="83%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/incremental-backup.png" />
-</p>
-
-> 🛑 *Incremental more backup sets but smaller.*
-
-### **Snapshots**
-Snapshots typically under virtual machines and they are an absolute perfect way of making a copy of something that's happened in the past.
-
-### What Media
+## Backups 📑
+**Media for Backups**
 - External hard-drive
 - Tape
 - Cloud
 
 ### Offsite Backup
-Remote backup is good for disasters in general.
+Remote backup is **good for natural disasters** in general (fire, flood, water pipe burst, hurricane, tornando).
+* Vaulting
+	- Send your backup media to an outside storage facility
+	- E-valuating - Send the data electronically
+* Organization-owned site or 3rd-party
+	- Usually a secure facility
+* Backups require extensive protection
+	- Data loss and thef is a significant concern
+* Many compliance mandates (SOX, HIPAA, etc)
+
+> 🛑 **Location selection** have legal implications and Data sovereignty (data that resides in a country is subject to the laws of that country)
 
 ### Cloud Backup
 Cloud backups work beautifully, however, they have one big downside and that is they take up a tremendous amount of time to get the initial backups going.
 
-### Backup Utilities
+### Snapshots
+Snapshots typically under **virtual machines** and they are an absolute perfect way of making a copy of something that's happened in the past.
 
+### Backup Utilities
 - Protect from unexpected downtime
 	- Malware infection
 	- Ransomware
@@ -4839,6 +4853,32 @@ Cloud backups work beautifully, however, they have one big downside and that is 
 - Regular partial backups - hourly incremental backups
 - Full backups - complete file backups
 - Complete coverage, fast recovery
+
+### **Differential Backup**
+- Backup all the changes since the last full backup
+
+<p align="center">
+<img width="90%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/differential-backup.png" />
+</p>
+
+> 🛑 *Differential there are less backup sets but they get bigger.*<br>
+
+### **Incremental Backup**
+- Only backs up changes made from last backup
+
+<p align="center">
+<img width="90%" src="https://www.easeus.com/images/en/screenshot/todo-backup/guide/incremental-backup.png" />
+</p>
+
+> 🛑 *Incremental more backup sets but smaller.*
+
+Type | Data Selection | Backup | Restore Time | Archive Attribute
+-|-|-|-|-
+**Full** | All selected data | High (one tape set) | Low | Cleared
+**Incremental** | New files and files modified since the last backup | Low (multiple tape sets) | High | Cleared
+**Differential** | All data modified since the last full backup | Moderate (no more than 2 sets) | Moderate | Not cleared
+
+
 
 ***
 
@@ -5085,49 +5125,81 @@ Is the practice of testing a computer system, network or web application to find
 
 ***
 
-# 8. Cryptography and Public Key Infrastructure (PKI)
+# 8. Cryptography
 <p align="center">
-<img src="https://wp.technologyreview.com/wp-content/uploads/2019/07/quantumexplainer3.2-01-10.jpg" />
+<img src="https://cdn.ttgtmedia.com/rms/onlineImages/security_cissp_cryptography_mobile.jpg" />
 </p>
 
-Cryptography is the practice of disguising information in a way that looks random
+Cryptography is the practice of disguising information in a way that looks random.
+- Provide confidentiality and integrity
+- Used for authentication and access control
+- Non-repudiation
+	- You said it. You can't deny it
+
+### Cryptography Terms
+- **Plaintext**
+	- An unencrypted message (in the clear)
+- **Ciphertext**
+	- An encrypted message
+- **Cipher**
+	- The algorithm used to encrypt and decrypt
+- **Cryptanalysis**
+	- The art of cracking encryption
+	- Researchers are constantly trying to find weaknesses in ciphers
+		- Mathematically flawed cipher is bad for everyone
 
 ### **Obfuscation**
 Hidden sensitive data - providing confidentiality
 
-
 ### **Classic Algorithms - by Substituition**
-* **Caesar Cipher** (ROT1-25) - *The earliest known and simples ciphers*
-* **Vigenère Cipher** *(Employs the Caesar cipher as one element of the encryption process + the key)*
+* **Caesar Cipher** / ([ROT 1-25](https://en.wikipedia.org/wiki/ROT13)) - *The earliest known and simples ciphers.*
+	- It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
 
-### **Kerkchoff Principle**
-The crypto algorithm should be public and the key is the secret.
+<p align="center">
+<img width="90%" src="https://1.bp.blogspot.com/-EZWlZPPN5Cg/UmVp-D3QIHI/AAAAAAAABOs/iYSpAUHGdIk/s1600/caesar.png"/>
+</p>
+
+* **Vigenère Cipher** - *Employs the Caesar cipher as one element of the encryption process + the key.*
+
+<p align="center">
+<img width="90%" src="https://pages.mtu.edu/~shene/NSF-4/Tutorial/VIG/FIG-VIG-Table.jpg"/>
+</p>
+
+> 🛑 **Kerkchoff Principle** - *The crypto algorithm should be public and the key is the secret.*
 
 ### Where to **Encrypt & Decrypt**?
 * **Data-at-Rest**: Resides in storage
 * **Data-in-Transit**: Transport / Network
 * **Data-in-Process**: RAM & CPU
 
-### **Symmetric Encryption**
-* Fast
-* One Single Key / Session Key to encryption and decryption
+## Symmetric Encryption
+* **One Single Key** / **Session Key to encryption and decryption**
 * Primary way to encrypt data
 * Ephemeral Key
   * Temporary
   * Provides perfect forward secrecy
+* Very fast to use
+	- Less overhead than asymmetric encryption
+	- Often combined with asymmetric encryption
 
-### **Asymmetric Encryption**
-* Slow
-* Uses a Key pair **(Public Key and Private Key)**  
-   * Public Key - encrypt
-   * Private Key - decrypt
+## Asymmetric Encryption
+* **Uses a Key pair**:
+	- **Public Key** - Anyone can see this key; give it away
+	- **Private Key**  - Keep this private
 
-### Cryptosystem
-Defines key properties, communication requirements for the key exchange; actions through encryption and decryption process.
+
+<p align="center">
+<img width="90%" src="https://www.preveil.com/wp-content/uploads/2019/10/end-to-end-encryption-1024x550.png"/>
+</p>
+
+> 🛑 **Symmetric key from Asymmetric keys** -
+
+### Cryptosystem 🔑🗝
+Defines **key properties**, communication requirements for the **key exchange**; actions through encryption and decryption process.
 
 *(Ex: Using asymetric encryption to exchange Session keys after that communicate using Symmetric encryption.)*
 
-### **Symmetric CryptoSystems** 
+### **Symmetric Cryptosystems** 
 
 Algorithm | Block or Streaming | Block Size | Rounds | Key Size | Notes
 --|--|--|--|--|--
@@ -5140,17 +5212,6 @@ Algorithm | Block or Streaming | Block Size | Rounds | Key Size | Notes
 
 *Rounds: Repeating the XOR/left-shift iteration X times.*
 
-### **Block modes**
-* **ECB** - Eletronic Code Block *(deprecated because nowdays is a week method that always produces the same output results with same input)*
-
-> 🛑 *All block modes below uses IV, which ensures the output block is uniquely different*
-* **CBC** - Cipher Block Chaining
-* **CFB** - Cipher Feedback
-* **OFB** - Output Feedback 
-* **CTR** - Counter
-
-> 🛑 *A **Binary Block** is a plaintext converted into 16-bit, 64-bit or 128-bit binary ciphertext.*
-
 ## Asymmetric Algorithms
 ### RSA
 Rivest Shamir and Edelman - Asymmetric algorithm, **generates the private and public key**.
@@ -5160,7 +5221,7 @@ Elliptic Curve Cryptography - Can create a smaller key than RSA, provides the sa
 
 ### Diffie-Hellman
 * **Does not** use Public or Private keys
-* Uses key exchange protocol
+* **Uses key exchange protocol**
 * Diffie Hellman groups help by defining the size or type of key structure to use: 
 
 **Diffie Hellman Groups**
@@ -5173,6 +5234,17 @@ Group 14 | 2048 bit modulus
 Group 19 | 256-bit elliptic curve 
 Group 20 | 384-bit elliptic curve 
 Group 21 | 521-bit elliptic curve 
+### **Block modes**
+* **ECB** - Eletronic Code Block *(deprecated because nowdays is a week method that always produces the same output results with same input)*
+
+> 🛑 *All block modes below uses IV, which ensures the output block is uniquely different*
+* **CBC** - Cipher Block Chaining
+* **CFB** - Cipher Feedback
+* **OFB** - Output Feedback 
+* **CTR** - Counter
+
+> 🛑 *A **Binary Block** is a plaintext converted into 16-bit, 64-bit or 128-bit binary ciphertext.*
+
 
 ## PGP - Pretty Good Privacy
 Uses both asymmetric and symmetric keys for a wide variety of operations uses web-of-trust instead PKI.
@@ -5197,15 +5269,35 @@ Uses both asymmetric and symmetric keys for a wide variety of operations uses we
   * Free Toolset
   * File and Disk encryption
 
-## Hashing
-One-way encryption providing integrity.
+## Hashes
+**One-way encryption providing integrity.**
+- Impossible to recover the original message from the digest
+- Used to **store passwords** providing **confidentiality**.
 
 Hash | Algo.
 --|--
 MD5 | 128 bit hash
 SHA-1 | 160 bit hash
+SHA256 | 256 bit hash
 
-**SHA-1 and MD5 has the same cryptographic flaws, that can cause hash collision.**
+*Examples*:
+```console
+String: hello world!
+MD5 Hash: FC3FF98E8C6A0D3087D515C0473F8677
+
+String: hello world!
+SHA-1 Hash: 430CE34D020724ED75A196DFC2AD67C77772D169
+
+String: hello world!
+SHA256 Hash: 7509E5BDA0C762D2BAC7F90D758B5B2263FA01CCBC542AB5E3DF163BE08E6CA9
+```
+
+> 🛑 If you change a single character, the entire Hash value changes. See the example below, changing the last character '!' to '.'
+
+* String: **hello world!**
+	```MD5 Hash: FC3FF98E8C6A0D3087D515C0473F8677```
+* String: **hello world.**
+	```MD5 Hash: 3C4292AE95BE58E0C58E4E5511F09647```
 
 ### **SHA-2** Family
 SHA-256 | minor version: SHA-224<br>
@@ -5231,24 +5323,30 @@ Hash Message Authentication Code - Used in conjunction with symmetric key both t
 
 * It is based on standard hashes (SHA-1, MD5, etc)
 
-## Steganography
-* The art of hide information inside the data (hide data within data), and can be encrypted.
+### Practical use of Hashing
+- **Verify a downloaded file**
+	- Hashes may be provided on the download site
+	- Compare the donwloaded file hash with the posted hash value
 
 <p align="center">
-<img width="60%" src="https://miro.medium.com/max/519/1*cwioZQ85xqDVlkn9gXe-vg.png" />
+<img width="90%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/f35aab734fa7b2f086250197d8283c02d7c0f16e/hash-kali.png" />
 </p>
 
-* Common steganography techniques:
-	- **Network Based** - Embed messages in TCP packets
-	- **Use an image** - Embed the message in the image itself
-	- **Invisible watermarks** - Yellow dots on printers can reaveal serial number and timestamps
-
+- **Password storage**
+	- Instead of storing the password in the clear, store a salted hash
+	- Compare hashes during the authentication process
 
 ## Certificates and Trust
-* Certificates include a public key and at least one digital signature.
+* Certificates include a **public key** and at least one **Digital signature**.
 
-### Digital Signature
-* To create a digital signature for a document, you hash the document using your private key. Others can verify your digital signature with your public key.
+* **Digital Signature**
+	1. To create a digital signature for a document
+	2. **Signing:** You hash the document using your private key. 
+	3. **Verification:** Others can verify your digital signature with your public key.
+
+<p align="center">
+<img src="https://www.revasolutions.com/wp-content/uploads/digital-signatures-methodology.jpg" />
+</p>
 
 ### **Web of Trust**
 * Web of Trust uses a web of mutually trusting peers.
@@ -5274,7 +5372,58 @@ Is a more modern version of CRL that are used today, have a better performance.
 * **PKCS-12**: stores the certificates and the private keys as packages.
 * **X.509** 
 
-## Cryptographic Attacks 🔐
+## Cryptographic nonce
+*Cryptographic randomization schemes*
+
+- Used once - 'for the nonce'/ for the time being
+- A random or pseudo-random number
+	- Somehting that can't be reasonably guessed
+	- Can also be a counter
+- Use a nonce during the login process
+	- Server gives you a nonce
+	- Calculate your password hash using the nonce
+	- **Each password hash sent to the host will be different**, so a replay attack won't work
+
+### Initialization vectors
+- Is a type of nonce
+	- Used for randomizing an encryption scheme
+	- The more random the better
+- Use in encryption ciphers, WEP, and older SSL implementations
+
+<p align="center">
+<img src="https://defuse.ca/images/cbc_encryption.png" />
+</p>
+
+### **Salt**
+- A nonce most commonly associated with password randomization, making the pasword hash unpredictable.
+
+- Salt is an arbitrary value
+- Usually created by the application or OS storing passwords, added to the end of the password before it is hashed
+- Makes cracking harder
+
+> 🛑 If the password database is breached, you can't correlate any passwords because **even users with the same password have different hashes stored**.
+
+*Salt Example*:
+* Password: ```123456``` 
+* Salt: ```s4Lt1337=```
+* Add salt: ```123456s4Lt1337=```
+* Hash function: ```B2099F11CC4D34E9E8EED83E83D815732986D50097CA765BB8AFB355EABFFFB9```
+
+
+**HTTP Header - Cookie Example**
+```console
+### [Fixed Value without Salt] ###
+HTTP/1.x 200 OK
+Cookie: Ud9E40FgE1337
+
+### [Salted Value - Changes on every request made by user] ###
+HTTP/1.x 200 OK
+Cookie: ef4fh61F39E4033Gf496fgg040vxDDer40213d==
+```
+* *The salted cookie prevents cookie theft and other types of attack.*
+
+
+## Cryptographic Attacks 🗡🔑
 * **Known PlainText Attack (KPA)**
 	* The attacker knows at least one sample of both the plaintext and the ciphertext.
 * **Brute Force**
@@ -5288,33 +5437,6 @@ Is a more modern version of CRL that are used today, have a better performance.
 * **Replay Attack** - A hash with no salt, no session ID tracking, no encryption, can easily grabbed and replayed by an attacker.
 * **Downgrade attack** - is a cryptographic attack that makes it change the encrypted connection to the older one *(e.g. cleartext; HTTPS to HTTP).*
 
-### **Salt**
-Salt is an arbitrary value, usually created by the application or OS storing passwords, added to the end of the password before it is hashed, making cracking harder.
-
-**Password Example**
-```console
-Password: 123456
-
-> Salt (arbitrary):
-	aksfle3t
-
-> Concatenated with Salt:
-	123456aksfle3t
-
-> Salted password (SHA-256): 02FCD2C88B089D2E1816070FFF8B80E13242264DA14233A57821CDAF4DDA45DF
-```
-
-**HTTP Header - Cookie Example**
-```console
-### [Fixed Value without Salt] ###
-HTTP/1.x 200 OK
-Cookie: Ud9E40FgE1337
-
-### [Salted Value - Changes on every request made by user] ###
-HTTP/1.x 200 OK
-Cookie: ef4fh61F39E4033Gf496fgg040vxDDer40213d==
-```
-* *The salted cookie prevents cookie theft and other types of attack.*
 
 ### **Keystretching**
 Combine a very long salt and a huge number of hashing iterations to make cracking even more harder.
@@ -5343,6 +5465,18 @@ Password:
 Hash:
 $2b$10$vES9mCPsE10//vOc1u01XeUVmJrZyHGMPaRfo39OIUoJ2g7iPtDnu
 ```
+
+## Steganography
+* The art of hide information inside the data (hide data within data), and can be encrypted.
+
+<p align="center">
+<img width="60%" src="https://miro.medium.com/max/519/1*cwioZQ85xqDVlkn9gXe-vg.png" />
+</p>
+
+* Common steganography techniques:
+	- **Network Based** - Embed messages in TCP packets
+	- **Use an image** - Embed the message in the image itself
+	- **Invisible watermarks** - Yellow dots on printers can reaveal serial number and timestamps
 
 ***
 
