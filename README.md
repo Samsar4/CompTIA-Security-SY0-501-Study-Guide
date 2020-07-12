@@ -5148,16 +5148,22 @@ Cryptography is the practice of disguising information in a way that looks rando
 	- Researchers are constantly trying to find weaknesses in ciphers
 		- Mathematically flawed cipher is bad for everyone
 
-### **Obfuscation**
-Hidden sensitive data - providing confidentiality
-
 ### **Classic Algorithms - by Substituition**
-* **Caesar Cipher** / ([ROT 1-25](https://en.wikipedia.org/wiki/ROT13)) - *The earliest known and simples ciphers.*
+* **Caesar Cipher** - *The earliest known and simples ciphers.*
 	- It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
 
 <p align="center">
-<img width="90%" src="https://1.bp.blogspot.com/-EZWlZPPN5Cg/UmVp-D3QIHI/AAAAAAAABOs/iYSpAUHGdIk/s1600/caesar.png"/>
+<img width="75%" src="https://1.bp.blogspot.com/-EZWlZPPN5Cg/UmVp-D3QIHI/AAAAAAAABOs/iYSpAUHGdIk/s1600/caesar.png"/>
 </p>
+
+* **ROT13** - Rotate by 13 places
+	- Substitute one letter with another
+	- e.g., ```"URYYB"``` is ```"HELLO"```
+
+<p align="center">
+<img width="75%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/ROT13_table_with_example.svg/320px-ROT13_table_with_example.svg.png"/>
+</p>
+
 
 * **Vigenère Cipher** - *Employs the Caesar cipher as one element of the encryption process + the key.*
 
@@ -5168,25 +5174,46 @@ Hidden sensitive data - providing confidentiality
 > 🛑 **Kerkchoff Principle** - *The crypto algorithm should be public and the key is the secret.*
 
 ### Where to **Encrypt & Decrypt**?
+* **Data-in-Transit** / **Data-in motion**: Transport / Network
+	- Not much protection as it travels
+		- Many different switches, routers, devices
+	- Network-based protection:
+		- Firewall, IPS
+	- Provide transport encryption:
+		- TLS, IPsec
 * **Data-at-Rest**: Resides in storage
-* **Data-in-Transit**: Transport / Network
-* **Data-in-Process**: RAM & CPU
+	- Hard drive, SSD, flash drive, etc
+	- Encrypt the data
+		- Whole disk encryption
+		- Database encryption
+		- File or/ folder-level encryption
+	- Apply permissions
+		- Access control lists
+		- Only authorized users can access the data
+* **Data-in-use** / **Data-in-process**: RAM & CPU
+	- The data is in memory or CPU registers and cache
+	- The data is almost always decrypted
 
 ## Symmetric Encryption
 * **One Single Key** / **Session Key to encryption and decryption**
 * Primary way to encrypt data
-* Ephemeral Key
+* **Ephemeral Key** / **Session key**:
   * Temporary
   * Provides perfect forward secrecy
+  * Is possible to Share a symmetric session key using asymmetric encryption:
+	1. *Client encrypts a random (symmetric) key with a server's public key*
+	2. *Ther server decrypts this shared key and uses it to encrypt data*
+	3. *This is the session key*
 * Very fast to use
 	- Less overhead than asymmetric encryption
 	- Often combined with asymmetric encryption
+* 128-bit or larger symmetric keys are common
 
 ## Asymmetric Encryption
 * **Uses a Key pair**:
 	- **Public Key** - Anyone can see this key; give it away
 	- **Private Key**  - Keep this private
-
+* Larger keys than symmetric encryption; Common to see key lengths of 3,072 bits or larger
 
 <p align="center">
 <img width="90%" src="https://www.preveil.com/wp-content/uploads/2019/10/end-to-end-encryption-1024x550.png"/>
@@ -5202,27 +5229,34 @@ Defines **key properties**, communication requirements for the **key exchange**;
 ### **Symmetric Cryptosystems** 
 
 Algorithm | Block or Streaming | Block Size | Rounds | Key Size | Notes
---|--|--|--|--|--
-**DES** | Block | 64-bit | 16 | 56 bits | Uses five modes of operation: ECB, CBC, CFB, OFB and CTR.
+--|--|--|--|--|--|--
+**DES** | Block | 64-bit | 16 | 56 bits | Uses five modes of operation: ECB, CBC, CFB, OFB and CTR. 
 **Blowfish** | Block | 64-bit | 16 | 32-448 bits | Public domain algorithm. 
 **Twofish** | Block | 128-bit | 16 | 128, 192 and 256 bits | Public domain algorithm.
 **3DES** | Block | 64-bit | 16 | 168 bits (56 x 3) | Repeats DES process 3 times.
-**AES** | Block | 128-bit | 10, 12, or 14 | 128, 192 or 256 bits | Encryption standard for the US Gov.
+**AES** | Block | 128-bit | 10, 12, or 14 | 128, 192 or 256 bits | Encryption standard for the US Gov.; Used in WPA2
 **RC4** | Streaming | N/A | 1 | 40-2048 bits | Used in WEP, SSL and TLS; largely deprecated in current technologies.
 
 *Rounds: Repeating the XOR/left-shift iteration X times.*
 
 ## Asymmetric Algorithms
-### RSA
-Rivest Shamir and Edelman - Asymmetric algorithm, **generates the private and public key**.
-
-### ECC
-Elliptic Curve Cryptography - Can create a smaller key than RSA, provides the same security with increased performance (more faster).
-
 ### Diffie-Hellman
-* **Does not** use Public or Private keys
 * **Uses key exchange protocol**
+* **DOES NOT** use Public or Private keys
+* **DOES NOT** itself encrypt or authenticate
+	- It's an anonymous key-agreement protocol
+* Used for Perfect Forward Secrecy (PFS)
+	- Ephemeral Diffie-Hellman (EDH or DHE)
+	- Combine with elliptic curve cryptography for ECDHE
+
+* **The image below explain with an analogy the complex mathematical process of the key exchange on DH:**
+
+<p align="center">
+<img width="70%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Diffie-Hellman_Key_Exchange.svg/1200px-Diffie-Hellman_Key_Exchange.svg.png"/>
+</p>
+
 * Diffie Hellman groups help by defining the size or type of key structure to use: 
+
 
 **Diffie Hellman Groups**
 Group | Size
@@ -5234,24 +5268,38 @@ Group 14 | 2048 bit modulus
 Group 19 | 256-bit elliptic curve 
 Group 20 | 384-bit elliptic curve 
 Group 21 | 521-bit elliptic curve 
-### **Block modes**
-* **ECB** - Eletronic Code Block *(deprecated because nowdays is a week method that always produces the same output results with same input)*
 
-> 🛑 *All block modes below uses IV, which ensures the output block is uniquely different*
-* **CBC** - Cipher Block Chaining
-* **CFB** - Cipher Feedback
-* **OFB** - Output Feedback 
-* **CTR** - Counter
+### RSA
+Rivest Shamir and Edelman - Asymmetric algorithm, **generates the private and public key**.
+- The first practical public-key cryptography systems
+	- Encrypt, decrypt, digital signatures
+- Based on the product of two large prime numbers
+- Now released into the public domain
+	- Used extensively for web site encryption and digital rights management
 
-> 🛑 *A **Binary Block** is a plaintext converted into 16-bit, 64-bit or 128-bit binary ciphertext.*
+### DSA (Digital Signature Algorithm)
+- A standard for digital signatures
+	- Is a modification of Diffie-Hellman key exchange for use in digital signatures
+- **Combine** with **elliptic curve cryptography**
+	- **ECDSA - Elliptic Curve Digital Signature Algorithm**
+	- Fast and efficient digital signatures
 
+### ECC - Elliptic Curve Cryptography
+- Used for encryption, digital signatures, pseudo-random generators, and more
+ - Can create a smaller key than RSA, provides the same security with increased performance (more faster).
+- Instead of numbers, use curves
+	- Uses smaller keys than non-ECC encryption
+	- ECDSA - Elliptic Curve Digital Signature Algorithm
 
-## PGP - Pretty Good Privacy
-Uses both asymmetric and symmetric keys for a wide variety of operations uses web-of-trust instead PKI.
+### PGP - Pretty Good Privacy
+- Popular asymmetric encryption
+- OpenPGP
+- Provide privacy and authentication for data communication. 
+	- Used for signing, encrypting, and decrypting texts, e-mails, files, directories, and whole disk partitions and to increase the security of e-mail communications.
 
-### PGP Certificates
-* Symantec Corp.
-  * Enterprise $olution
+#### PGP Certificates
+* **Symantec Corp.**
+  * Enterprise Solution
   * Encrypts Massa storage
   * Signing
   * Disk Encryption
@@ -5259,15 +5307,90 @@ Uses both asymmetric and symmetric keys for a wide variety of operations uses we
   * FileVault
   * Enterprise Cloud Solutions
 
-* OpenPGP
+* **OpenPGP**
   * Free
   * Encrypted email
   * PKI Support
   * S/MIME
 
-* GPG (GNU Privacy Guard)
+* **GPG (GNU Privacy Guard)**
   * Free Toolset
   * File and Disk encryption
+
+## Stream ciphers & Block modes
+### Stream ciphers
+* Encryption is done one bit or byte at a time
+	- Provides high speed, low hardware complexity
+* Used with symmetric encryption
+	- Not used in asymmetric encryption
+* The starting state should never be the same twice
+	- Key is often combined with an initialization vector (IV)
+
+<p align="center">
+<img width="90%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/RC4.svg/800px-RC4.svg.png"/>
+</p>
+
+### **Block modes**
+* Encrypt fixed-length groups
+	- Often 64-bit or 128-bit blocks
+	- Pad added to short blocks
+	- Each block is enrypted or decrypted independently
+* Symmetric encryption
+	- Similar to stream ciphers
+* Block cipher modes of operation
+	- Avoid patterns in the encryption
+	- Many different modes to choose from
+
+<p align="center">
+<img width="70%" src="https://wiki.bi0s.in/crypto/img/block.png"/>
+</p>
+
+#### Block Cipher Modes
+* **ECB - Eletronic Code Block** *(deprecated because nowdays is a week method that always produces the same output results with same input)*
+	- Each block is encrypted with the same key. Identical plaintext blocks create identical ciphertext blocks
+
+<p align="center">
+<img width="90%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/ECB_decryption.svg/601px-ECB_decryption.svg.png"/>
+</p>
+
+* **CBC - Cipher Block Chaining**
+	- Popular mode of operation
+	- Each plaintext block is XORed with the previous ciphertext block
+		- Adds additional randomization
+		- Uses an initialization vector for the first block
+
+<p align="center">
+<img width="90%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/CBC_encryption.svg/600px-CBC_encryption.svg.png"/>
+</p>
+
+* **CTR (Counter)**
+	- Block cipher mode / acts like a stream cipher
+		- Encrypts successive values of a 'counter'
+	- Plaintext can be any size, since it's part of the XOR
+		- e.g., 8 bits at a time (streaming) instead of a 128-bit block
+
+<p align="center">
+<img width="90%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/CTR_encryption_2.svg/601px-CTR_encryption_2.svg.png"/>
+</p>
+
+* **GCM (Galois/Counter Mode)**
+	- Encryption with authentication
+		- Authentication is part of the block mode
+		- Combines Counter Mode with Galois authentication
+	- Minimum latency, minimum operation overhead
+		- Very efficient encryption and authentication
+	- Commonly used in packetized data
+		- Network traffic security (wireless, IPsec)
+		- SSH, TLS
+
+<p align="center">
+<img width="90%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/GCM-Galois_Counter_Mode_with_IV.svg/545px-GCM-Galois_Counter_Mode_with_IV.svg.png"/>
+</p>
+
+
+> 🛑 *All block modes below uses IV, which ensures the output block is uniquely different*
+
+> 🛑 *A **Binary Block** is a plaintext converted into 16-bit, 64-bit or 128-bit binary ciphertext.*
 
 ## Hashes
 **One-way encryption providing integrity.**
@@ -5283,12 +5406,9 @@ SHA256 | 256 bit hash
 *Examples*:
 ```console
 String: hello world!
+
 MD5 Hash: FC3FF98E8C6A0D3087D515C0473F8677
-
-String: hello world!
 SHA-1 Hash: 430CE34D020724ED75A196DFC2AD67C77772D169
-
-String: hello world!
 SHA256 Hash: 7509E5BDA0C762D2BAC7F90D758B5B2263FA01CCBC542AB5E3DF163BE08E6CA9
 ```
 
@@ -5299,31 +5419,49 @@ SHA256 Hash: 7509E5BDA0C762D2BAC7F90D758B5B2263FA01CCBC542AB5E3DF163BE08E6CA9
 * String: **hello world.**
 	```MD5 Hash: 3C4292AE95BE58E0C58E4E5511F09647```
 
-### **SHA-2** Family
-SHA-256 | minor version: SHA-224<br>
-SHA-512 | minor version: SHA-384
+## Hashing Algorithms
+### MD5 - Message Digest Algorithm
+- First published in April 1992
+- Replaced MD4
+- 128-bit hash value
+- 1996: Vulnerabilities found
+	- Not collision resistant
 
-### **SHA-3** 
-Uses a hash function called Keccack and has the same length of SHA-2. 
 
-SHA-1 and SHA-2 have been replaced by the latest iteration of SHA known as SHA-3.
+### SHA - Secure Hash Algorithm
+- Developed by NSA
+#### SHA-1
+- Widely used
+- 160-bit digest
+- 2005: Collision attacks published
 
-### **RIPEMD**
-RACE Integrity Primitives Evaluation Message Digest.
-* Not very common 
-* Open Standard
-* 128, 168, 256, 320 bit digests
+#### **SHA-2** Family
+- SHA-256 | minor version: SHA-224
+- SHA-512 | minor version: SHA-384
+
+#### **SHA-3** 
+- Uses a hash function called Keccack and has the same length of SHA-2. 
+- SHA-1 and SHA-2 have been replaced by the latest iteration of SHA known as SHA-3.
 
 ### **HMAC**
 Hash Message Authentication Code - Used in conjunction with symmetric key both to authenticate and verify integrity of the message.
 
-* Provides message integrity
+- Verify data **integrity** and **authenticity**
+	- No fancy asymmetric encryption is required
+- Used in network encryption protocols
+	- IPsec, TLS
+- Requires each side of the conversation to have the same key
 
-* Requires each side of the conversation to have the same key
+### **RIPEMD**
+RACE Integrity Primitives Evaluation Message Digest.
+- Not very common 
+- Open Standard
+- 128, 168, 256, 320 bit digests *(RIPEMD-128, RIPEMD-256, RIPEMD-320)*
+- *Original RIPEMD was found to have collision issues (2004)*
+	- Effectively replaced with RIPEMD-160 (no known collision issues)
+	- Based upon MD4 design but performs similar to SHA-1
 
-* It is based on standard hashes (SHA-1, MD5, etc)
-
-### Practical use of Hashing
+### Practical use of Hashing 🛠
 - **Verify a downloaded file**
 	- Hashes may be provided on the download site
 	- Compare the donwloaded file hash with the posted hash value
@@ -5336,41 +5474,35 @@ Hash Message Authentication Code - Used in conjunction with symmetric key both t
 	- Instead of storing the password in the clear, store a salted hash
 	- Compare hashes during the authentication process
 
-## Certificates and Trust
-* Certificates include a **public key** and at least one **Digital signature**.
+## **Keystretching**
+Combine a very long salt and a huge number of hashing iterations to make cracking even more harder. (e.g Hashing the hashed password `N` times)
 
-* **Digital Signature**
-	1. To create a digital signature for a document
-	2. **Signing:** You hash the document using your private key. 
-	3. **Verification:** Others can verify your digital signature with your public key.
+**Two most popular Key stretching libraries/ functions:**
+* **PBKDF2** (Password-Based Key Derivation Function 2) algorithm
+	- Part of RSA public key cryptography standards (PKCS #5, RFC 2898)
+* **bcrypt**
+	- Generates hashes from passwords
+	- An extension to the UNIX crypt library
+	- Uses Blowfish cipher to perform multiple rounds of hashing
 
-<p align="center">
-<img src="https://www.revasolutions.com/wp-content/uploads/digital-signatures-methodology.jpg" />
-</p>
+*Example*:
+* **PBKDF2**
+```console
+Password:
+123456
 
-### **Web of Trust**
-* Web of Trust uses a web of mutually trusting peers.
-* Requires a lots of maintenance
+Hash:
+rYoSDg62evyzhE1+lWBa9A==:YaeMu71c8KU3H0RYFPle0Q==
+```
 
-### **PKI** - Public Key Infrastructure
-Is a system consisting of hardware, software, policies and procedures that creates, manage, distributes, uses, store and revoke **DIGITAL CERTIFICATES.**
+* **bcrypt**
+```console
+Password: 
+123456
 
-PKI is the way we do internet. Uses a hierarchical structure with root servers.
-
-* Certificate Authority (CA): Issues the certificates (Verisign, Thawte, etc).
-
-### **CRL - Certificate Revocation List**
-A list of serial numbers of certificates that have been revoked or are no longer valid, therefore should not be relied on.
-
-* Downside it is slow and old.
-
-### **OCSP - Online Certificate Status Protocol**
-Is a more modern version of CRL that are used today, have a better performance.
-
-### Common Types of Digital Certificates:
-* **PKCS-7**: is a way to store certificates as individual files.
-* **PKCS-12**: stores the certificates and the private keys as packages.
-* **X.509** 
+Hash:
+$2b$10$vES9mCPsE10//vOc1u01XeUVmJrZyHGMPaRfo39OIUoJ2g7iPtDnu
+```
 
 ## Cryptographic nonce
 *Cryptographic randomization schemes*
@@ -5409,18 +5541,42 @@ Is a more modern version of CRL that are used today, have a better performance.
 * Add salt: ```123456s4Lt1337=```
 * Hash function: ```B2099F11CC4D34E9E8EED83E83D815732986D50097CA765BB8AFB355EABFFFB9```
 
+## Certificates and Trust
+* Certificates include a **public key** and at least one **Digital signature**.
 
-**HTTP Header - Cookie Example**
-```console
-### [Fixed Value without Salt] ###
-HTTP/1.x 200 OK
-Cookie: Ud9E40FgE1337
+* **Digital Signature**
+	1. To create a digital signature for a document
+	2. **Signing:** You hash the document using your private key. 
+	3. **Verification:** Others can verify your digital signature with your public key.
 
-### [Salted Value - Changes on every request made by user] ###
-HTTP/1.x 200 OK
-Cookie: ef4fh61F39E4033Gf496fgg040vxDDer40213d==
-```
-* *The salted cookie prevents cookie theft and other types of attack.*
+<p align="center">
+<img src="https://www.revasolutions.com/wp-content/uploads/digital-signatures-methodology.jpg" />
+</p>
+
+### **Web of Trust**
+* Web of Trust uses a web of mutually trusting peers.
+* Requires a lots of maintenance
+
+### **PKI** - Public Key Infrastructure
+Is a system consisting of hardware, software, policies and procedures that creates, manage, distributes, uses, store and revoke **DIGITAL CERTIFICATES.**
+
+PKI is the way we do internet. Uses a hierarchical structure with root servers.
+
+* Certificate Authority (CA): Issues the certificates (Verisign, Thawte, etc).
+
+### **CRL - Certificate Revocation List**
+A list of serial numbers of certificates that have been revoked or are no longer valid, therefore should not be relied on.
+
+* Downside it is slow and old.
+
+### **OCSP - Online Certificate Status Protocol**
+Is a more modern version of CRL that are used today, have a better performance.
+
+### Common Types of Digital Certificates:
+* **PKCS-7**: is a way to store certificates as individual files.
+* **PKCS-12**: stores the certificates and the private keys as packages.
+* **X.509** 
+
 
 
 ## Cryptographic Attacks 🗡🔑
@@ -5437,46 +5593,23 @@ Cookie: ef4fh61F39E4033Gf496fgg040vxDDer40213d==
 * **Replay Attack** - A hash with no salt, no session ID tracking, no encryption, can easily grabbed and replayed by an attacker.
 * **Downgrade attack** - is a cryptographic attack that makes it change the encrypted connection to the older one *(e.g. cleartext; HTTPS to HTTP).*
 
+## Hiding information
+### **Obfuscation**
+1. Hidden sensitive data - providing confidentiality
+2. Make the source code difficult to read
+	- But it doesn't change the functionality of the code
 
-### **Keystretching**
-Combine a very long salt and a huge number of hashing iterations to make cracking even more harder.
-
-Two most popular Key derivation functions
-* PBKDF2 (Password-Based Key Derivation Function 2) algorithm
-* BCrypt algorithm
-
-*Example*:
-```
-PBKDF2 
-
-Password:
-123456
-
-Hash:
-rYoSDg62evyzhE1+lWBa9A==:YaeMu71c8KU3H0RYFPle0Q==
-
---------------------------
-
-BCrypt
-
-Password: 
-123456
-
-Hash:
-$2b$10$vES9mCPsE10//vOc1u01XeUVmJrZyHGMPaRfo39OIUoJ2g7iPtDnu
-```
-
-## Steganography
+### Steganography
 * The art of hide information inside the data (hide data within data), and can be encrypted.
 
 <p align="center">
 <img width="60%" src="https://miro.medium.com/max/519/1*cwioZQ85xqDVlkn9gXe-vg.png" />
 </p>
 
-* Common steganography techniques:
-	- **Network Based** - Embed messages in TCP packets
-	- **Use an image** - Embed the message in the image itself
-	- **Invisible watermarks** - Yellow dots on printers can reaveal serial number and timestamps
+### Common steganography techniques:
+* **Network Based** - Embed messages in TCP packets
+* **Use an image** - Embed the message in the image itself
+* **Invisible watermarks** - Yellow dots on printers can reaveal serial number and timestamps
 
 ***
 
