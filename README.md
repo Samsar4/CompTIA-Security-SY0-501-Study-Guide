@@ -1523,37 +1523,7 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 
 > 🛑 **If Posture Assessment fails**, the quarantine network notify administrators, just enough network access to fix the issue.
 
-### **EAP** - Extensible Authentication Protocol
-Developed initially as an extension to the authentication part of PPP. EAP is only an extension for the protocol that having a connection, and was created as a better authentication method to PPP.
 
-
-<p align="center">
-<img width="89%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/f9232015768452b7755659cb454c02711e15fad4/EAP.png" />
-</p>
-
-* **EAP - MD5**
-	* basically MSCHAP
-	* Takes those passwords and hashes them into MD5 hash
-
-* **EAP - PSK**
-	* Uses pre-determined symmetric keys
-	* Similar to WPA and WPA-2
-
-* **EAP - TLS**
-	* Cand handle an entire TLS
-	* Needs server and client certificates
-
-* **EAP - TTLS**
-	* Uses the TLS exchange method
-	* Only requires server certificates
-
-### Protocols that Encapsulates the EAP 
-
-* **802.1X** - Full blown authentication standard that allows us to make connections between some type of client system. It provides an authentication mechanism to devices wishing to attach to a LAN or WLAN. 
-
-* *Early EAP adaptations*:
-	* **LEAP** (Cisco) - LEAP is weak nowdays
-	* **PEAP** (Microsoft) - PEAP is weak nowdays 
 
 ## Network Firewalls - Concepts
 
@@ -2074,48 +2044,6 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 * **Good for big environments.** *(e.g A building with multiple floors and hundreds of users might rely on one good switch (with a redundant backup) to control dozens of thin access points)*
 * **Act as a repeater** taking the wireless signal and pushing it ot a managed access control (AC) switch that handles encryption and other security. Also called **Standalone AP**
 
-### **WEP** - Wireless Equivalency Privacy
-
-* 64/128 bit RC4 ICV 
-
-**RC4** - Rivest Cipher 4 Stream Cipher Algorithm<br>
-**ICV** - Integrity Check Value
-
->🛑 Very old and insecure.
-
-### **WPA** - Wi-Fi Protected Access
-
-* Enterprise
-	* TKIP + RADIUS
-	* 64/128 bit RC4 MIC
-
-* Personal	
-	* TKIP + PSK
-	* 64/128 bit RC4 MIC
-
-**TKIP** - Temporal Key Integrity Protocol<br>
-**PSK** - Pre-Shared key<br>
-**MIC** - Message Integrity Check<br>
-
-### **WPA2** - Wi-Fi Protected Access v2
-
-* **802.11i** IEEE standard
-
-* Enterprise
-	* CCMP + RADIUS
-	* 128 bit AES MIC 
-
-* Personal
-	* CCMP + PSK
-	* 128 bit AES MIC
-
-**CCMP** - Cipher Block Chaining Message Code Protocol<br>
-**AES** - Advanced Encryption System
-
-<p align="center">
-<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a6960e23a5da2cc3c689416f284376f35d599c58/encryption2.png" />
-</p>
-
 ## Vulnerabilities with Wireless Access Points
 
 ### **Rogue Access Point**
@@ -2134,7 +2062,7 @@ Deauth Attack Is a type of denial-of-service attack that targets communication b
 
 An attacker can send a deauthentication frame at any time to a wireless access point, with a spoofed address for the victim. The protocol does not require any encryption for this frame, even when the session was established with Wired Equivalent Privacy (WEP) for data privacy, and the attacker only needs to know the victim's MAC address, which is available in the clear through wireless network sniffing.
 
-## Cracking WEP, WPA, WPA2 and WPS
+## Cracking WEP, WPA, WPA2 and WPS ⚔️
 
 ### **WEP**
 * **IV Attack** - Initialization Vector is vulnerable to cracking.
@@ -2152,7 +2080,11 @@ An attacker can send a deauthentication frame at any time to a wireless access p
 
 * 8 digit key is actually only 7 digits, 2^7
 * Key exchange is the first processed in 4-bit and 3-bit
-* Can be cracked using Reaver
+* Can be cracked using Reaver or Brute forcing
+	- The WPS validates each half of the PIN
+	- First half, 4 digits. Second half, 3 digits.
+	- First half, 10,000 possibilities. Second half, 1,000 possibilities
+	- It takes about for hours to go through all of them
 * *The new generation of WPS enabled device can detect an attack and shut off.*
 * **WPS Attack Prevention**:
 	* Get rid of older routers
@@ -2944,8 +2876,63 @@ Simple Network Management Protocol (SNMP) is an Internet Standard protocol for c
 
 * **SNMP uses Port 161**
 
-## Network Models
+## Wireless Authentication Protocols
+### **EAP** - Extensible Authentication Protocol
+Developed initially as an extension to the authentication part of PPP. EAP is only an extension for the protocol that having a connection, and was created as a better authentication method to PPP.
 
+
+<p align="center">
+<img width="89%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/f9232015768452b7755659cb454c02711e15fad4/EAP.png" />
+</p>
+
+* **EAP-MD5**
+	* basically MSCHAP
+	* Takes those passwords and hashes them into MD5 hash
+
+* **EAP-PSK**
+	* Uses pre-determined symmetric keys
+	* Similar to WPA and WPA-2
+
+* **EAP-TLS (EAP Transport Layer Security)**
+	* Cand handle an entire TLS
+	* Needs server and client certificates
+
+* **EAP-TTLS (EAP Tunneled Transport Layer Security)**
+	* Support other authentication protocols in a TLS tunnel
+	* Use any authentication you can support, maintain security with TLS
+	* Uses the TLS exchange method
+	* Only requires server certificates
+
+### Protocols that Encapsulates the EAP 
+
+* **802.1X** - Full blown authentication standard that allows us to make connections between some type of client system. It provides an authentication mechanism to devices wishing to attach to a LAN or WLAN. 
+
+* *Early EAP adaptations*:
+	* **LEAP** (Cisco) - LEAP is weak nowdays
+	* **PEAP** (Microsoft) - PEAP is weak nowdays 
+		* Protected Extensible Authentication Protocol
+			- Protected EAP
+		* Created by Cisco, Microsoft and RSA Security
+		* Encapsulates EAP in a TLS tunnel, one certificate on the server
+			- Combined a secured channel and EAP
+		* Commonly implemented as PEAPv0/EAP-MSCHAPv2
+			- Authenticates to Microsoft MS-CHAPv2 databases
+
+### IEEE 802.1X
+* **IEEE 802.1X - Port-based Network Access Control (NAC)**
+	- You don't get access until you authenticate
+	- Used in conjunction with an access database
+		- RADIUS
+		- LDAP
+		- TACACS+
+
+<p align="center">
+<img width="83%" src="https://upload.wikimedia.org/wikipedia/commons/1/1f/802.1X_wired_protocols.png" />
+</p>
+
+	
+## Network Models
+**The OSI model** can be seen as a universal language for computer networking. It's based on the concept of splitting up a communication system into seven abstract layers, each one stacked upon the last. Each layer of the OSI model handles a specific job and communicates with the layers above and below itself.
 <p align="center">
 <img width="73%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/9c85f770fd5223658b960848f0fe56378fddbfe8/Osi-model.png" />
 </p>
@@ -5221,7 +5208,7 @@ Cryptography is the practice of disguising information in a way that looks rando
 
 > 🛑 **Symmetric key from Asymmetric keys** -
 
-### Cryptosystem 🔑🗝
+## Cryptosystem 🔑🗝
 Defines **key properties**, communication requirements for the **key exchange**; actions through encryption and decryption process.
 
 *(Ex: Using asymetric encryption to exchange Session keys after that communicate using Symmetric encryption.)*
@@ -5317,6 +5304,19 @@ Rivest Shamir and Edelman - Asymmetric algorithm, **generates the private and pu
   * Free Toolset
   * File and Disk encryption
 
+
+## Certificates and Trust
+* Certificates include a **public key** and at least one **Digital signature**.
+
+* **Digital Signature**
+	1. To create a digital signature for a document
+	2. **Signing:** You hash the document using your private key. 
+	3. **Verification:** Others can verify your digital signature with your public key.
+
+<p align="center">
+<img src="https://www.revasolutions.com/wp-content/uploads/digital-signatures-methodology.jpg" />
+</p>
+
 ## Stream ciphers & Block modes
 ### Stream ciphers
 * Encryption is done one bit or byte at a time
@@ -5387,12 +5387,11 @@ Rivest Shamir and Edelman - Asymmetric algorithm, **generates the private and pu
 <img width="90%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/GCM-Galois_Counter_Mode_with_IV.svg/545px-GCM-Galois_Counter_Mode_with_IV.svg.png"/>
 </p>
 
-
 > 🛑 *All block modes below uses IV, which ensures the output block is uniquely different*
 
 > 🛑 *A **Binary Block** is a plaintext converted into 16-bit, 64-bit or 128-bit binary ciphertext.*
 
-## Hashes
+# Hashes
 **One-way encryption providing integrity.**
 - Impossible to recover the original message from the digest
 - Used to **store passwords** providing **confidentiality**.
@@ -5540,47 +5539,65 @@ $2b$10$vES9mCPsE10//vOc1u01XeUVmJrZyHGMPaRfo39OIUoJ2g7iPtDnu
 * Salt: ```s4Lt1337=```
 * Add salt: ```123456s4Lt1337=```
 * Hash function: ```B2099F11CC4D34E9E8EED83E83D815732986D50097CA765BB8AFB355EABFFFB9```
+## Wireless Security
+### **WEP** - Wireless Equivalency Privacy
 
-## Certificates and Trust
-* Certificates include a **public key** and at least one **Digital signature**.
+* 64/128 bit RC4 ICV 
+* **RC4** - Rivest Cipher 4 Stream Cipher Algorithm<br>
+* **ICV** - Integrity Check Value
 
-* **Digital Signature**
-	1. To create a digital signature for a document
-	2. **Signing:** You hash the document using your private key. 
-	3. **Verification:** Others can verify your digital signature with your public key.
+>🛑 Very old and insecure; Don't use WEP!
+
+### **WPA** - Wi-Fi Protected Access
+
+* Uses RC4 with TKIP (Temporal Key Integrity Protocol)
+	- Initialization Vector (IV) is larger and an encrypted hash
+	- Every packet gets a unique 128-bit encryption key
+* **Personal | WPA-PSK**
+	- TKIP + PSK
+	- 64/128 bit RC4 MIC
+	- Everyone uses the same 256-bit key
+* **Enterprise | WPA-802.1X**
+	- TKIP + RADIUS
+	- 64/128 bit RC4 MIC
+	- Authenticates users individually with an authentication server (e.g., RADIUS)
+
+#### Temporal Key Integrity Protocol
+- Mixed the keys
+	- Combines the secret root key with the IV
+- Adds sequence counter
+	- Prevents replay attacks
+- Implements a 64-bit Message Integrity Check
+	- Protecting against tampering
+- TKIP has it's own set of vulnerabilities
+	- Deprecated in the 802.11-2012 standard
+
+### **WPA2** - Wi-Fi Protected Access v2
+
+* **802.11i** IEEE standard
+* Enterprise
+	* CCMP + RADIUS
+	* 128 bit AES MIC 
+
+* Personal
+	* CCMP + PSK
+	* 128 bit AES MIC
+
+- AES (Advanced Encryption Standard) replaced RC4
+- CCMP (Counter Mode with Cipher Block Chaining Message Authentication Code Protocol) replaced TKIP
+
+* **CCMP**
+	- Uses AES for data confidentiality
+	- 128-bit key and a 128-bit block size
+	- Requires additional computing resources
+	- **CCMP provides Data confidentiality (AES), authentication, and access control**
 
 <p align="center">
-<img src="https://www.revasolutions.com/wp-content/uploads/digital-signatures-methodology.jpg" />
+<img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a6960e23a5da2cc3c689416f284376f35d599c58/encryption2.png" />
 </p>
 
-### **Web of Trust**
-* Web of Trust uses a web of mutually trusting peers.
-* Requires a lots of maintenance
-
-### **PKI** - Public Key Infrastructure
-Is a system consisting of hardware, software, policies and procedures that creates, manage, distributes, uses, store and revoke **DIGITAL CERTIFICATES.**
-
-PKI is the way we do internet. Uses a hierarchical structure with root servers.
-
-* Certificate Authority (CA): Issues the certificates (Verisign, Thawte, etc).
-
-### **CRL - Certificate Revocation List**
-A list of serial numbers of certificates that have been revoked or are no longer valid, therefore should not be relied on.
-
-* Downside it is slow and old.
-
-### **OCSP - Online Certificate Status Protocol**
-Is a more modern version of CRL that are used today, have a better performance.
-
-### Common Types of Digital Certificates:
-* **PKCS-7**: is a way to store certificates as individual files.
-* **PKCS-12**: stores the certificates and the private keys as packages.
-* **X.509** 
-
-
-
-## Cryptographic Attacks 🗡🔑
-* **Known PlainText Attack (KPA)**
+# Cryptographic Attacks 🗡🔑
+* **Known Plaintext Attack (KPA)**
 	* The attacker knows at least one sample of both the plaintext and the ciphertext.
 * **Brute Force**
 	* Online - keep trying the login process (very slow), most accounts will lockout after a number of failed attempts.
@@ -5588,18 +5605,28 @@ Is a more modern version of CRL that are used today, have a better performance.
 * **Dictionary Attack**
 	* Is a form of brute force attack technique for defeating a cipher or authentication mechanism by trying to determine its decryption key or passphrase by trying thousands or millions of likely possibilities, such as words in a dictionary or previously used passwords, often from lists obtained from past security breaches. 
 * **Rainbow Table (dictionary of hashes)**
-* **Collision Attack**
+	* Pre-built set of hashes; The calculations have already been done
+	* Need different tables for different hashing methods (Windows is different than MySQL)
+	* Rainbow tables won't work with salted hashes
+* **Collision Attack | Birthday Attack**
 	* Is the same hash value for two different plaintexts. The attacker will generate multiple versions of plaintext to match the hashes. *(e.g In a classroom of 30 students, what is the chance of two students sharing a birthday? - about 70%)*
-* **Replay Attack** - A hash with no salt, no session ID tracking, no encryption, can easily grabbed and replayed by an attacker.
-* **Downgrade attack** - is a cryptographic attack that makes it change the encrypted connection to the older one *(e.g. cleartext; HTTPS to HTTP).*
+* **Replay Attack**
+	* A hash with no salt, no session ID tracking, no encryption, can easily grabbed and replayed by an attacker.
+* **Downgrade attack**
+	* Makes it change the encrypted connection to the older one *(e.g. to cleartext; HTTPS to HTTP).*
+* **Weak implementations** 
+	* One weak link breaks the entire chain.
+	* Examples:
+		* 802.11 WEP - The RC4 can be recovered by gathering enough packets; The algorithm didn't sufficiently protect the key
+		* DES - Relatively small 56-bit keys; modern systems can brute force this pretty quickly
 
-## Hiding information
-### **Obfuscation**
+# Hiding information
+## **Obfuscation**
 1. Hidden sensitive data - providing confidentiality
 2. Make the source code difficult to read
 	- But it doesn't change the functionality of the code
 
-### Steganography
+## Steganography
 * The art of hide information inside the data (hide data within data), and can be encrypted.
 
 <p align="center">
@@ -5611,9 +5638,177 @@ Is a more modern version of CRL that are used today, have a better performance.
 * **Use an image** - Embed the message in the image itself
 * **Invisible watermarks** - Yellow dots on printers can reaveal serial number and timestamps
 
+
+# **PKI** - Public Key Infrastructure
+Is a system consisting of **hardware, software, policies and procedures** that **creates, manage, distributes, uses, store and revoke DIGITAL CERTIFICATES.**
+
+* Also refers to the binding of public keys to people or devices
+	- The certificate authority (CA)
+	- It's all about trust
+
+PKI is the way we do internet. Uses a hierarchical structure with root servers.
+
+* Certificate Authority (CA): Issues the certificates (Verisign, Thawte, etc).
+
+<p align="center">
+<img src="https://www.appviewx.com/wp-content/uploads/2020/05/Education-Center-Public-Key-Infrastructure.jpg" />
+</p>
+
+### Key Management lifecycle ♻️
+- **Key generation**
+	- Create a key with the requested strength using the proper cipher
+- **Certificate generation**
+	- Allocate a key to a user
+- **Distribution**
+	- Make the key available to the user
+- **Storage**
+	- Securely store and protect against unauthorized use
+- **Revocation**
+	- Manage keys that have been compromised
+- **Expiration**
+	- A certificate may only have a certain 'shelf life'
+
+### Digital Certificates
+* A public key certificate
+	- Binds a public key with a digital signature
+	- And other details about the key holder
+* A digital signature adds trust
+	- PKI uses Certificate Authority for additional trust
+	- Web of Trust adds other ursers for additional trust
+* Certificate creation can be built into the OS
+	- Part of Windows Domain Services
+	- 3rd-party Linux options
+
+<p align="center">
+<img src="https://sites.google.com/site/amitsciscozone/_/rsrc/1468881655481/home/security/digital-certificates-explained/Digital%20Certificate%20Format.PNG" />
+</p>
+
+#### Commercial certificate authorities
+- Built-in your browser
+- Purchase your web site certificate
+	- It will be trusted by everyone's browser
+- Create a key pair, send the public key to the CA to be signed
+	- A certificate signing request (CSR)
+- May provide different levels of trust and additional features
+
+#### Private certificate authorities
+- You are your own CA
+	- Build it in-house
+	- Your devices must trust the internal CA
+- Needed for medium-to-large organizations
+	- Many web servers and privacy requirements
+- Implement as part fo your overall computing stragey
+	- Windows Certificate Services, OpenCA
+
+### PKI trust relationships
+- **Single CA**
+	- Everyone receives their certificates from one authority
+- **Hierarchical**
+	- Single CA issues certs to intermediate CAs
+	- Distributes the certificates management load
+	- Easier to deal with the revocation of an intermediate CA than the root CA
+
+<p align="center">
+<img width="80%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/ef5cdaf3b95f8423b3d92039b9947cedd55c150d/pki-trust.png" />
+</p>
+
+- **Mesh**
+	- Cross-certifying CAs
+	- Doesn't scale well
+
+<p align="center">
+<img width="80%" src="https://www.researchgate.net/profile/Jingwei_Huang2/publication/221190736/figure/fig9/AS:305473598312457@1449841989855/An-example-of-mesh-PKI-cited-from-Burr-1998.png" />
+</p>
+
+- **Web-of-trust**
+	- Everyone is an authority
+	- Alternative to traditional PKI
+
+<p align="center">
+<img width="80%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Web_of_Trust-en.svg/1200px-Web_of_Trust-en.svg.png" />
+</p>
+
+- **Mutual Authentication**
+	- Server authenticates to the client and the client authenticates to the server
+
+> 🛑 **Certificate chaining** - Chain of trust; List all the certs between the server and the root CA; **The chain starts with the SSL certificate and ends with the Root CA**.
+
+### **CRL - Certificate Revocation List** ❌
+A list of serial numbers of certificates that have been revoked or are no longer valid, therefore should not be relied on.
+
+### **OCSP - Online Certificate Status Protocol**
+Is a more **modern version of CRL** that are used today, have a **better performance**.
+
+> 🛑 **OCSP stapling** - The certification holder verify their own status instead of CA server; OCSP status is 'stapled' into the SSL/TLS handshake, digitally signed by the CA
+
+> 🛑 Early Internet Explorer versions did not support OCSP
+
+## Types of Certificates
+### Root certificate
+The public key certificate that identifies the root CA (Certificate Authority)
+- Everything starts with this certificate
+- The root certificate issues other certificates
+	- Intermediate CA certificates
+	- Any other certs
+
+### Web server SSL certificates
+- Domain validation certificate (DV)
+	- Owner of the certificate has some control over a DNS domain
+- Exntended validation certificate (EV)
+	- Additional checks have verified the certificate owner's identity *(the green name on the address bar)*
+- Subject Alternative Name (SAN)
+	- Extension to an X.509 cert
+	- Lists additional identification information
+	- Allows a certificate to support many different domains
+- Wildcard domain
+	- Certificates are based on the name of ther server 
+	- A wildcard domain will apply to all server names in a domain (e.g., *.google.com)
+
+### Self-signed certificates
+- Internal certificates don't need to be signed by a public CA
+	- Your company is the only one going to use it
+	- No need to purchase trust for devices that already trust you
+- Build your own CA
+	- Issue your own certificates signed by your own CA
+- Install the CA certificate/trusted chain on all devices
+
+### Machine and computer certificates
+- You have to manage many devices
+	- Often devices that you'll never physically see
+- How can you truly authenticate a device?
+	- Put a certificate on the device that you signed
+- Other business processes rely on the certificate
+	- Access to the remote access VPN from authorized devices
+	- Management software can validate the end device
+
+### User certificates
+- Associate a certificate with a user
+	- A powerful electronic 'id card'
+- Use as an additional authentication factor
+	- Limit access without the certificate
+- Integrate onto smart cards
+	- Use as both a physical and digital access card
+
+### Email certificates
+- Use cryptography in an email platform
+	- You'll need public key 
+- Encrypting emails
+	- Use a recipient's public key to encrypt
+- Receive encrypted emails
+	- Use your private key to decrypt
+- Digital signatures
+	- Use your private key to digitally sign an email
+	- Non-repudiation, integrity
+
+### Code signing certificate
+- Developers can provide a level of trust
+- The user's OS will examine the signature
+	- Checks the developer signature
+	- Validates that the software has not been modified
+
 ***
 
-## List of All Ports for Security+ Exam
+# List of All Ports for Security+ Exam
 
 Port | Description
 :-:|:-
