@@ -38,20 +38,13 @@ Cryptography and PKI | 12%
 * **Index**
 
 	1. Securing Systems
-
 	2. Security Tools 
-
 	3. Networks and Infrastructure  
-
 	4. Identity and Access Management 
-
 	5. Risk Management
-
 	6. Incident Response & Forensics
-
 	7. Testing the Infrastructure
-
-	8. Cryptography and Public Key Infrastructure (PKI)
+	8. Cryptography
 
 ***
 
@@ -145,10 +138,9 @@ Anyone can validate the authenticity of a message as well as the source of the m
 
 ## Man-in-the-Middle Attack
 
-<li align="center">Third-party intercepting between a two-party conversation</li>
-<li align="center">Uses the information to the third party's advantage</li>
+* Third-party intercepting between a two-party conversation
+* Uses the information to the third party's advantage
 
-<br>
 <p align="center">
 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/MITM_Diagramm.png" />
 </p>
@@ -170,7 +162,9 @@ Anyone can validate the authenticity of a message as well as the source of the m
 
 * **Session Hijacking** - Inject information on middle of connection 
 
-### System Resiliency
+## System Resiliency
+**Resilient systems don’t eliminate risk.** Resilient systems fight off attacks more readily than systems with less resilience. They handle risks better, in other words. The principles here apply to individual systems and to larger systems.
+
 * Generally they handle risks better, adding technologies and processes to enable the system recovery easily.
 
 ### Scalability
@@ -286,7 +280,7 @@ DEP is refer to Windows, in generic term is *Executable space protection*; DEP i
 	- Prevents malware and viruses from executing
 
 <p align="center">
-<img width="80%" src="https://kbimg.dell.com/library/legacy/kcswisdom/images/kcswisdom_sol_20140222120504/1391152932516.DEP.PNG" />
+<img width="60%" src="https://kbimg.dell.com/library/legacy/kcswisdom/images/kcswisdom_sol_20140222120504/1391152932516.DEP.PNG" />
 </p>
 
 > 🛑 DEP should be always be on, quietly protecting systems from buffer overflows. **The need to turn off DEP is rare**.
@@ -411,22 +405,20 @@ Refers to efficiently distributing incoming network traffic across a group of ba
 
 * **Self-encrypting Drive (SED)**
 
-
 ### Trusted Platform Module (TPM)
-<p align="center">
-<img width="60%" src="https://cdn.shopify.com/s/files/1/2158/1497/products/tpm_2_x850.jpg?v=1571338167" />
-</p>
+
+<img width="50%" src="https://cdn.shopify.com/s/files/1/2158/1497/products/tpm_2_x850.jpg?v=1571338167" />
 
 Microchip built into a computer hardware that is used to store cryptographic information(public/private key). *(e.g **BitLocker** 1.2+)*; The OS relies on this **hardware of root trust** to check for low-level changes at boot up.
 
-*examples of disk encryption TPM and non-TPM:*
+**Examples of disk encryption TPM and non-TPM:**
 
-* BitLocker (for Windows - TPM)
-* PGP Disk (non-TPM)
-* TrueCrypt (non-TPM)
-* FileVault (for macOS - non-TPM)
+* **BitLocker (for Windows - TPM)**
+* **PGP Disk (non-TPM)**
+* **TrueCrypt (non-TPM)**
+* **FileVault (for macOS - non-TPM)**
 
-> 🛑 **BitLocker is a built-in Windows Utility Drive Encryption Tool; must have a recovery key to access the data.**
+> 🛑 BitLocker is a built-in Windows Utility Drive Encryption Tool; must have a recovery key to access the data.
 
 ### Secure Boot - TPM
 <p align="center">
@@ -506,17 +498,19 @@ Is any type of hardware that's designed to do security work. For ATMs, Web Serve
 	* Operates as external storage when plugged into a workstation; Easy to move data around
 	* Camera firmware can be compromised
 
-- **Common security practices**:
-	* Patch!
-	* Disable unecessary ports
-	* Avoid backdoors
+***Common security practices***:
+* Patch!
+* Disable unecessary ports
+* Avoid backdoors
 
 ### RFID (Radio Frequency Identification) 
 
-* Access badges
-* Inventory/assembly line tracking
-* Pet/animal identification
-* Anything that needs to be tracked.
+<img width="50%" src="https://globalconsultoria.com.br/wp-content/uploads/custo-beneficio-rfid-1080x630.jpg" />
+
+* **Access badges**
+* **Inventory/assembly line tracking**
+* **Pet/animal identification**
+* **Anything that needs to be tracked.**
 
 <p align="center">
 <img width="90%" src="https://www.scielo.br/img/revistas/jatm/v10//2175-9146-jatm-10-e2418-gf01.jpg" />
@@ -546,7 +540,7 @@ Is any type of hardware that's designed to do security work. For ATMs, Web Serve
 * Relay/Replay Attack (MITM)
 * Loss of RFC device control *(e.g stolen phone)*
 
-### Bluetooth Security 🔷🔒
+## Bluetooth Security 🔷🔒
 
 **Bluejacking** - When bad actors connects with any Device that have Bluetooth enable by default.
 
@@ -561,7 +555,7 @@ Is any type of hardware that's designed to do security work. For ATMs, Web Serve
 > 🛑 **Most Mobile phones and Bluetooth headsets are Class2 (10 meters).**
 
 ### 802.11
-Many peripherals can connect to an 802.11 network as a host. Printers and multifunction devices (MFDs) are very commonly connected with 802.11.
+* Many peripherals can connect to an 802.11 network as a host. Printers and multifunction devices (MFDs) are very commonly connected with 802.11.
 
 ## Malwares
 
@@ -681,9 +675,7 @@ Verify the integrity of file is in good order and ready to run.
 
 ### Application Blacklisting | Whitelisting
 
-<p align="center">
 <img src="https://www.chorus.co/media/1346/whitelisting-blacklisting.png" />
-</p>
 
 * Any application can be dangerous
 * Security policy can control app execution with Whitelisting & Blacklisting
@@ -711,13 +703,13 @@ Verify the integrity of file is in good order and ready to run.
 
 * Lives inside the Network
 * Watches within the network traffic
-* Sends alerts on suspicious activity
+* **Sends alerts** on suspicious activity
 
 ### Intrusion Prevention System (IPS)
 
 * Active IDS
 * IPS is usually close to the edge the network
-* Action to prevent will occur at the IPS device
+* **Takes action** to prevent will occur at the IPS device
 
 > 🛑 **IDS: Notifies**
 > 🛑 **IPS: Acts to stop**
@@ -740,20 +732,25 @@ Verify the integrity of file is in good order and ready to run.
 ## Media Sanitization | Data Destruction 
 <img src="https://mk0reclamere2uhq86qh.kinstacdn.com/wp-content/uploads/2018/02/datadestruction_Reclamere.jpg" />
 
+### Data Sanitization Tools
+- **Sanitize entire hard drives:**
+	- Darik's Boot and Nuke (DBAN)
+- **Sanitize individual files or folders:**
+	- Microsoft SDelete
 
-### Sanitizing media
-#### Purge
+> 🛑 Cache and temporary files can be tricky to track sometimes.
+
+### Purge
 Purging will process the device to remove data from the drive, the device might will no longer be usable. Means to use anything other than an internal command to sanitize the data on the media. *(e.g. Degausser: machine with a strong magnetic field that destroys/purge the data from massa storage devices)*
 
 > 🛑 **Purge also means that the device is basically not useful anymore**
 
-#### Clearing/Clear
+### Clearing/Clear
 Clear means to tell the device through user commands inherent to the massa storage device to sanitize the data. *(e.g. send commands to a hard drive to erase data)*
 
 > 🛑 **Can be done with commands such as erase, format and delete (these methods are not final)**
 
-#### Crypto Erase
-* In case you lost the keys to encrypted device.
+> 🛑 **Crypto Erase** - In case you lost the keys to encrypted device.
 
 ### Destroy / Data Destruction
 Ruin the media in such a way tha it is no longer functional.
@@ -763,7 +760,7 @@ Ruin the media in such a way tha it is no longer functional.
 * Floppy disks
 * Paper
 
-#### Protect your rubbish
+#### Protect your rubbish 
 - Secure your garbage (fence and lock)
 - Shred your documents (e.g. Governments burn the good stuff)
 - Burn documents
@@ -787,6 +784,13 @@ Ruin the media in such a way tha it is no longer functional.
 - Paper trail of broken data
 	- You know exactly what happened
 
+### Data Sanitization Tools
+- Sanitize entire hard drives
+	- Darik's Boot and Nuke (DBAN)
+- Sanitize individual files or folders
+	- Microsoft SDelete
+
+> 🛑 Cache and temporary files can be tricky to track sometimes.
 ***
 
 # 2. Security Tools 
@@ -809,7 +813,7 @@ Ruin the media in such a way tha it is no longer functional.
 ## Protocol Analyzers
 **Protocol Analyzers collect and inventory the network traffic.**
 
-**Sniffer** - Some type of software that grab all the data that is going in and out of particular interface. 
+* **Sniffer** - Some type of software that grab all the data that is going in and out of particular interface. 
 
 ### Why Protocol Analyze?
 * Count all the packets coming through over a certain time period to get a strong ideas to your network utilization.
@@ -867,12 +871,13 @@ Wireshark is the world’s foremost and widely-used network protocol analyzer. I
 
 **Many tools available:** 
 
-* John the Ripper
+* John the Ripper:
+
 <p align="center">
 <img width="90%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT-WSgD_yV72VdwAoDoORawZsfsqn8chA4m_Q&usqp=CAU" />
 </p>
 
-* Ophcrack 
+* Ophcrack:
 
 <p align="center">
 <img width="90%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/f08afb55e1b490562b8ffc7306cbdf272a916825/Ophcrack-3.2.0_screenshot.png" />
@@ -921,20 +926,13 @@ Wireshark is the world’s foremost and widely-used network protocol analyzer. I
 <small>Metasploit Framework - exploits</small>
 </p>
 
-## Data Sanitization Tools
-- Sanitize entire hard drives
-	- Darik's Boot and Nuke (DBAN)
-- Sanitize individual files or folders
-	- Microsoft SDelete
-
-> 🛑 Cache and temporary files can be tricky to track sometimes.
 
 ## OS Utilities - Command Line (Linux & Windows)
 
 - Security+ covers simple **Linux** and **Windows commands**.
 - *To understand the functionality behind the commands I recommend to test them at your own.*
 
-### `ping`
+## `ping`
 * Can be handful for DNS checks (up / or down) | is a DNS tool to resolves web addresses to an IP address.
 * Test reachability - determine round-trip time, and uses ICMP protocol.
 
@@ -960,7 +958,7 @@ Switch | Description
 **-6** | Force using IPv4
 
 
-### `netstat`
+## `netstat`
 * Network statistics
 * Get info on host system TCP / UDP connections and status of all open and listening ports and routing table.
 
@@ -974,7 +972,7 @@ netstat -b # (Show binaries Windows)
 
 ```
 
-### `tracert` | `traceroute`
+## `tracert` | `traceroute`
 * Traceroute - how packets get from host to another endpoint. Traceroute is helpful to see what routers are being hit, both internal and external.
 
 * tracert - Windows
@@ -1009,7 +1007,7 @@ traceroute to google.com (172.217.17.14), 64 hops max, 52 byte packets
     74.125.252.199 (74.125.252.199)  22.885 ms
 ```
 
-### `arp` 
+## `arp` 
 * Address resolution protocol - caches of ip-to-ethernet
 * Determine a MAC address based on IP addresses
 * Option `-a`: view local ARP table
@@ -1022,7 +1020,7 @@ traceroute to google.com (172.217.17.14), 64 hops max, 52 byte packets
 _gateway (192.168.1.1) at 00:31:33:8b:2a:da [ether] on enp0s10
 ```
 
-### `ipconfig` 
+## `ipconfig` 
 * Show all IP configuration on **Windows-only** systems.
 
 <p align="center">
@@ -1039,9 +1037,7 @@ Switch | Description
 **/flushdns** | Clears the host's DNS cache
 **/displaydns** | Displays the host's DNS cache
 
-
-
-### `ifconfig`
+## `ifconfig`
 * Equivalent to ipconfig for UNIX/Linux OS.
 
 ```console
@@ -1063,7 +1059,7 @@ enp0s10: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-### `iwconfig`
+## `iwconfig`
 similar to ifconfig, but is dedicated to the wireless network interface.
 
 ```console
@@ -1081,7 +1077,7 @@ wlp3s0b1  IEEE 802.11  ESSID:off/any
 docker0   no wireless extensions.
 ```
 
-### `ip addr`
+## `ip addr`
 show / manipulate routing, network devices, interfaces and tunnels.
 
 Show all the ip configuration, mac address, ipv6 etc.
@@ -1101,7 +1097,7 @@ Show all the ip configuration, mac address, ipv6 etc.
     inet6 fe80::acf6:2ae2:ab5c:6316 scope link noprefixroute 
        valid_lft forever preferred_lft forever
 ```
-### `nslookup`
+## `nslookup`
 * Query Internet name servers interactively; check if the DNS server is working
 
 ```console
@@ -1125,7 +1121,7 @@ Address: 162.241.216.11
 
 ```
 
-### `dig` 
+## `dig` 
 * DNS lookup tool - Functions like nslookup, but allows for further functionality.
 
 ```console
@@ -1154,7 +1150,7 @@ certifiedhacker.com.    14400   IN      A       162.241.216.11
 
 ```
 
-### `netcat`
+## `netcat`
 TCP/IP swiss army knife; you can make any type of connection and see the results from a command line. With nc you can connect to anything on any port number or you can make your system listen on a port number. Can be an agressive tool for recon.
 
 <p align="center">
@@ -1169,7 +1165,7 @@ TCP/IP swiss army knife; you can make any type of connection and see the results
 * Become a backdoor
 	- Run a shell from a remote device
 
-### `stat` 
+## `stat` 
 stat can return the status of an entire file system, the status of the first hard disk and so on.
 
 <p align="center">
@@ -1178,7 +1174,7 @@ stat can return the status of an entire file system, the status of the first har
 
 - Archive attribute - **Windows** - if something is created or changed
 
-### `tcpdump`
+## `tcpdump`
 * Tcpdump is a data-network packet analyzer computer program that runs under a command line interface. It allows the user to display TCP/IP and other packets being transmitted or received over a network to which the computer is attached. Distributed under the BSD license, tcpdump is free software
 
 <p align="center">
@@ -1188,7 +1184,7 @@ stat can return the status of an entire file system, the status of the first har
 ## Network Scanners
 **Useful for collect and inventory the hosts on a network, and is useful for reconnaissance of your system.**
 
-### `Nmap`
+## `nmap`
 The Best way to query a system to check if they have open ports, services, system versions, service versions etc.
 
 
@@ -1226,16 +1222,16 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
     |      |             |                    |                                  |     |
   HOST    IDENT     DATE & TIME            REQUEST                             STATUS BYTES
 ```
-**IDENT** - If the IdentityCheck directive is enabled and the client machine runs ident, then this is the identity information reported by the client.<br>
-**GET** - Request HTTP method command<br>
-**STATUS** - status, 200 = Everything is ok<br>
-**BYTES** - the number of bytes in the object returned to the client, excluding all HTTP headers.
+> **IDENT** - If the IdentityCheck directive is enabled and the client machine runs ident, then this is the identity information reported by the client.<br>
+> **GET** - Request HTTP method command<br>
+> **STATUS** - status, 200 = Everything is ok<br>
+> **BYTES** - the number of bytes in the object returned to the client, excluding all HTTP headers.
 
 <p align="center">
 <img src="https://www.researchgate.net/profile/Sasa_Bosnjak/publication/265243206/figure/tbl1/AS:669034987151362@1536521779088/Examples-of-Common-Log-Format.png" />
 </p>
 
-### There are two types of events: **Network** and **Non-network** events.
+### There are two types of events: Network and Non-network events.
 
 ### Non-Network Logs
 * Operation System Events
@@ -1275,10 +1271,12 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 * Application-Level
 
-### Centralized vs Descentralized Log Management
-**Descentralized log management** - In environments such as very small networks and don't have large infrastructure or in isolated network segments, descentralized log management is usually the norm.
+### Log Management
+### Descentralized Log management
+In environments such as very small networks and don't have large infrastructure or in isolated network segments, descentralized log management is usually the norm.
 
-**Centralized log management** - Means that the log files from different machines are automatically sent to a centralized logging facility or server, such as a syslog server, administrators review logs from a centralized loogging facility on the network. Enterprise correlate them into one unifed management interface, so the administrator can look for trends or events. This can be achieved by using **SIEM tools.**
+### Centralized Log management
+Means that the log files from different machines are automatically sent to a centralized logging facility or server, such as a syslog server, administrators review logs from a centralized loogging facility on the network. Enterprise correlate them into one unifed management interface, so the administrator can look for trends or events. This can be achieved by using **SIEM tools.**
 
 **Centralized** features:
 * Uses a Central repository
@@ -1288,15 +1286,15 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 > 🛑 Monitoring-as-a-Services (MaaS)
 
-### SIEM - Security Information and Event Management
+## SIEM - Security Information and Event Management
 Collects data points from network, including **log files, traffic captures, SNMP messages, and so on**, from every host on the network. **SIEM can collect all this data into one centralized location and correlate it for analysis to look for security and performance issues, as well negative trends all in real time.**
 
 > ⚠️ SIEM will be explained with more details later below.
 
-### Continuos Monitoring
+## Continuos Monitoring
 Is a proactive way of ensuring that the network administrator receives all the different logs and other data points throughout the network from all network devices and all systems, on a constant basis. This data is continually fed into.
 
-### Auditing
+## Auditing
 Important part of ensuring accountability on the network. Examines the logs and other data points of certain events and construct a time frame and event sequence surrounding an incident.
 
 Auditing also consists of other activities, such as:
@@ -1308,12 +1306,12 @@ Auditing also consists of other activities, such as:
 
 > 🛑 **Auditing can reveal weak security configurations**
 
-### Trend Analysis
+## Trend Analysis
 Enables network administrator to correlate different data sources and data points from various places in the network, such as log files, IDS logs, wireless and wired sniffing as well as other event sources, and seek to identify on-going trends in both performance and security. The goal is find patterns that can indicate a emerging issue.
 
 ***
 
-# 3. Networks and Infrastructure - Basics 
+# 3. Networks and Infrastructure
 <p align="center">
 <img  src="https://www.netnit.com/wp-content/uploads/2019/05/bigstock-Network-switch-and-ethernet-ca-285322981-845x321.jpg" />
 </p>
@@ -1334,7 +1332,7 @@ A network switch is networking hardware that connects devices on a computer netw
 
 > 🛑 **Bridge Loop/Switching Loop** - A switching loop or bridge loop occurs in computer networks when there is more than one Layer 2 path between two endpoints. The loop creates broadcast storms as broadcasts and multicasts are forwarded by switches out every port, the switch or switches will repeatedly rebroadcast the broadcast messages flooding the network.
 
-### VLANs
+## VLANs
 A virtual LAN is any broadcast domain that is partitioned and isolated in a computer network at the data link layer. LAN is the abbreviation for local area network and in this context virtual refers to a physical object recreated and altered by additional logic.
 
 <p align="center">
@@ -1377,7 +1375,7 @@ The actual organization of a network in terms of how is the data moving around a
 * A LAN is a network that has a logical and physical borders that a computer can broadcast
 
 <p align="center">
-<img width="74%" src="https://www.geocities.ws/alcantara97/starhttt.gif" />
+<img width="70%" src="https://www.geocities.ws/alcantara97/starhttt.gif" />
 </p>
 
 ### WAN - Wide Area Network
@@ -1385,14 +1383,14 @@ The actual organization of a network in terms of how is the data moving around a
 * WAN is a multiple LANs or additional WANs with routing functionality for interconnectivity.
 
 <p align="center">
-<img width="74%" src="https://gist.github.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a3f9b5f3f243467208da83e0d0e543b32233c5d6/wan-topo.jpg" />
+<img width="70%" src="https://gist.github.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/a3f9b5f3f243467208da83e0d0e543b32233c5d6/wan-topo.jpg" />
 </p>
 
 
 ### MAN - Metropolitan Area Network 
 
 <p align="center">
-<img width="89%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/f37cec4e00f726cb4be3661f20ccad77751e003a/man-topo.jpg" />
+<img width="70%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/f37cec4e00f726cb4be3661f20ccad77751e003a/man-topo.jpg" />
 </p>
 
 ### Internet
@@ -1401,7 +1399,7 @@ Connecting WANs through WANs until complete the entire world = Internet.
 * The protocol which runs the internet is TCP/IP
 * As long you're using legitimate IPv4 address or IPv6
 <p align="center">
-<img width="89%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8c176b8a798fb5749c4391c45015ee5d14d56f13/internet.png" />
+<img width="70%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8c176b8a798fb5749c4391c45015ee5d14d56f13/internet.png" />
 </p>
 
 ### Intranet
@@ -1410,7 +1408,7 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 * Intranet is a private network which still runs TCP/IP
 
 <p align="center">
-<img width="79%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8c176b8a798fb5749c4391c45015ee5d14d56f13/intranet.png" />
+<img width="70%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8c176b8a798fb5749c4391c45015ee5d14d56f13/intranet.png" />
 </p>
 
 > 🛑 **Extranet**: example of some vendor who need to access the Intranet network. Works like a DMZ but for private access.
@@ -1420,7 +1418,7 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 * **DMZ** - **Demilitarized Zone**: Perimeter network; isolating untrusted network from LAN area. DMZ is a firewall configuration used to secure hosts on a network segment, in most DMZs the hosts on the DMZ are connected behind a Firewall that is connected to a public network(internet).
 
 <p align="center">
-<img width="90%" src="https://www.cisco.com/c/dam/en/us/support/docs/smb/routers/cisco-rv-series-small-business-routers/images/pole-20position-20-20dmz-20-202.png" />
+<img width="80%" src="https://www.cisco.com/c/dam/en/us/support/docs/smb/routers/cisco-rv-series-small-business-routers/images/pole-20position-20-20dmz-20-202.png" />
 </p>
 
 * **LAN** - the core of your network.
@@ -1433,9 +1431,9 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 
 * **Ad hoc** - Wireless without an access point; Point to point communication; *(e.g AirDrop, contact sharing apps, etc)*
 
-* **Virtualization** 
-
 * **Airgap** - Simply means a disconnect to provide real isolation and the use of a completely separate internet from the world; Private internet. *(e.g Military/governmental computer network/systems)*
+
+* **Virtualization** 
 
 > 🛑 **NAT** doesn't provide any security mechanisms. It's simply a way to convert from one IP address to another while the traffic is going through the network.
 
@@ -1460,7 +1458,8 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 	- **Direct connect**, or another switch or router
 - **Web servers in one rack, Database servers on another**
 
-### Logical Segmentation - VLANs
+### Logical Segmentation using VLANs
+
 <p align="center">
 <img width="80%" src="https://www.pcwdld.com/wp-content/uploads/image21-1.png" />
 </p>
@@ -1489,14 +1488,14 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 
 > 🛑 Removable media can jump the gap
 
-## Network Access Control
+## Network Access Control (NAC)
 **Wireless Network, Remote Access, VPN Access**
 
 - Control from wherever you are (inside or outside)
 - Access can be based on many rules (by user, group, location, application etc)
 - Access can be easily revoked or changed
 
-#### Posture assessment
+### Posture assessment
 *BYOD, Malware infections, missing anti-malware, unauthorized applications.*
 
 - Before connecting to the network, perform a **health check**:
@@ -1523,8 +1522,6 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 
 > 🛑 **If Posture Assessment fails**, the quarantine network notify administrators, just enough network access to fix the issue.
 
-
-
 ## Network Firewalls - Concepts
 
 * Control  the flow of network traffic
@@ -1534,25 +1531,23 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 <img width="70%" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Firewall.png"/>
 </p>
 
-* Corporate control of outbount and inbound area (sensitive data)
+* Corporate **control of outbound and inbound** area (sensitive data)
 * Control of inappropriate content
 * Protection adware, spyware etc
-* Firewall Rules
-	- ACL - Access Control Lists
+* **Firewall Rules**
+	- **ACL - Access Control Lists**
 		- Allow or disallow traffic based on tuples
 		- Grouping of categories (Source IP, Destination IP, port number, time of day, application, etc)
 	- Can be very general or very specific
-	- Implicit deny - prevents access unless specifically permitted.
-
-
-- Filters traffic by port number
-	- OSI layer 4 (TCP/UDP) - *some firewalls can filter through OSI layer 7*
-- Can encrypt traffic into/out of the network
-- Can proxy traffic
-- Most firewalls can be **layer 3 devices (routers)**
+	- **Implicit deny** - prevents access unless specifically permitted.
+* Filters traffic by port number
+	- OSI layer 4 (TCP/UDP) - **some firewalls can filter through OSI layer 7**
+* Can encrypt traffic into/out of the network
+* Can proxy traffic
+* Most firewalls can be **layer 3 devices (routers)**
 
 ## **Stateless** Firewall
-* Typically faster and perform better under havier traffic loads.
+* **Typically faster and perform better under havier traffic loads.**
 
 They watch network traffic and restrict / block packets based on source and destination address or static values **(ACL Rules)** as shown below.
 <p align="center">
@@ -1564,9 +1559,10 @@ They watch network traffic and restrict / block packets based on source and dest
 </p>
 
 ## **Stateful** Firewall
-* Are better at identifying unauthorized and forged communications.
+* **Are better at identifying unauthorized and forged communications.**
 
-Can watch traffic streams from end to end. They are aware of communications paths; Can implement varios IPSec functions (tunnels and encryption); Can tell what stage a TCP connection is in (open, open sent, synchronized SYN ACK or established).
+**Can watch traffic streams from end to end.** They are aware of communications paths; Can implement varios **IPSec** functions (tunnels and encryption); **Can tell what stage a TCP connection is in (open, open sent, synchronized SYN ACK or established).**
+
 <p align="center">
 <img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/019ab48fe7336c42e1a1c0122485e3f715d84374/stateful-firewall.png"/>
 </p>
@@ -1594,7 +1590,7 @@ A box/piece of software running on a computer acts an intermediary between two d
 * Useful for caching information, access control, URL filtering, content scanning.
 
 <p align="center">
-<img width="87%" src="https://networkencyclopedia.com/wp-content/uploads/2019/08/proxy-server-1024x649.png"/>
+<img width="80%" src="https://networkencyclopedia.com/wp-content/uploads/2019/08/proxy-server-1024x649.png"/>
 </p>
 
 Most proxies in use are application proxies; Many proxies are multipurpose proxies (HTTP, HTTPS, FTP, etc)
@@ -1610,11 +1606,10 @@ Most proxies in use are application proxies; Many proxies are multipurpose proxi
 The proxy simply forward the requests of respective client and retrieve the response back to the client.
 
 <p align="center">
-<img width="80%" src="https://iq.opengenus.org/content/images/2018/06/forward_proxy.jpg"/>
+<img width="70%" src="https://iq.opengenus.org/content/images/2018/06/forward_proxy.jpg"/>
 </p>
  
-* **Hides the client**
-
+* Hides the **client**
 * Provides:
 	* Caching
 	* Content filtering
@@ -1624,11 +1619,10 @@ The proxy simply forward the requests of respective client and retrieve the resp
 Like a forward proxy but complete reverse.
 
 <p align="center">
-<img width="80%" src="https://iq.opengenus.org/content/images/2018/06/reverse_proxy.jpg"/>
+<img width="70%" src="https://iq.opengenus.org/content/images/2018/06/reverse_proxy.jpg"/>
 </p>
 
-* **Hides the servers**
-	
+* Hides the **servers**
 * Provides
 	* High security
 	* Protect the servers
@@ -1645,31 +1639,27 @@ Like a forward proxy but complete reverse.
 * **A significant security concern** about open proxies, is that the owner of the proxy can add whatever they'd like into the network communication. They can send URL request and response with malicious code or redirection to another malicious website.
 
 <p align="center">
-<img width="80%" src="https://qph.fs.quoracdn.net/main-qimg-b3d705e7af54e2eefdbdd7bc6314d720.webp"/>
+<img width="70%" src="https://qph.fs.quoracdn.net/main-qimg-b3d705e7af54e2eefdbdd7bc6314d720.webp"/>
 </p>
 
 ## Honeypots
-
 Emulate a web server, vulnerable machine purposely to attack; Inviting target to keep away from targets. 
 
 * Benefit to see how threat actors, what techniques they're using, what vulnerabilities are they look for, what ports, and so on.
-
 * Log all information (port information and the origin IP address)
-
 * **Usually located in the DMZ to get close to the source but still isolated to capture the traffic.**
-
 * **Tools**: 
 	- [Project Honeypot](https://www.projecthoneypot.org/) 
 	- [Honeyd](http://www.honeyd.org/)
 <p align="center">
-<img src="https://s.profissionaisti.com.br/wp-content/uploads/2013/12/Honeypot1.jpg"/>
+<img width="80%" src="https://s.profissionaisti.com.br/wp-content/uploads/2013/12/Honeypot1.jpg"/>
 </p>
 
-## Honeynet
+### Honeynet
 A honeynet is a vulnerable and **simulated computer network** using a decoy server. **By design, honeynets are not authorized for any authentic uses. If a honeynet is accessed, a fair assumption is that the person accessing it is a bad actor.**
 
 <p align="center">
-<img src="https://4.bp.blogspot.com/-xWl3-KlRj2k/We9JzYQPnlI/AAAAAAAADoA/dj1UOT-O7l4dNLy1BSgjfW94JmqgxqYfgCLcBGAs/s1600/honeypots-honeynet-roo-honeywall-1.png"/>
+<img width="80%" src="https://4.bp.blogspot.com/-xWl3-KlRj2k/We9JzYQPnlI/AAAAAAAADoA/dj1UOT-O7l4dNLy1BSgjfW94JmqgxqYfgCLcBGAs/s1600/honeypots-honeynet-roo-honeywall-1.png"/>
 </p>
 
 ## UTM - Unified Threat Management
@@ -1678,7 +1668,7 @@ A honeynet is a vulnerable and **simulated computer network** using a decoy serv
 <img width="80%" src="https://blog.comodo.com/wp-content/uploads/korugan.png"/>
 </p>
 
-* All-in-one security appliance
+* **All-in-one security appliance**
 * Combine a lot of security technologies in one device:
 	- URL Filter / content inspection
 	- Malware inspection
@@ -1825,16 +1815,16 @@ Both technologies watch network traffic to detect exploits against OS, applicati
 
 ### Prevention vs. Detection
 
-#### Detection
-**NIDS** is a **passive** device and focuses on detection alone, making it a **detection control**. It detects network traffic issues and **alerts and administrator** to these issues, also logging the events in the process.
+### Detection
+* **NIDS** is a **passive** device and focuses on detection alone, making it a **detection control**. It detects network traffic issues and **alerts and administrator** to these issues, also logging the events in the process.
 
-#### Prevention
-**NIPS** is /**inline**(Active) device and focuses not only on detecting network attacks, but **preventing them. (e.g block things from router)**
+### Prevention
+* **NIPS** is /**inline**(Active) device and focuses not only on detecting network attacks, but **preventing them. (e.g block things from router)**
 
 ### Identification technologies
-NIDS/NIPS solutions act very much like firewalls in that they inspect packets. 
+*NIDS/NIPS solutions act very much like firewalls in that they inspect packets.*
 
-#### There's 4 types of detection methods:
+**There's 4 types of detection methods:**
 
 1. **Behavioral/Anomaly** - Comparing traffic with a baseline of patterns considered normal for the network
 2. **Signature** - Preconfigured Signature-based
@@ -1852,21 +1842,21 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 
 ### Sensors
 
-#### NIPS uses In-band sensor
+### NIPS uses In-band sensor
 * NIPS sensor must be installed **in-band** to your network traffic. All packets must go through in-band sensor devices/
 
 <p align="center">
 <img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/0cd26c1a7bbc2b0d6594c6980b27ae3097b947de/NIPS.png" />
 </p>
 
-#### NIDS uses Out-of-band sensor
+### NIDS uses Out-of-band sensor
 * NIDS sensor, being **passive**, is normally installed **out-of-band** of the communication. Just plugging it into a switch only allows the sensor to see traffic to and from the switch plus broadcast traffic. The common out-of-band devices is a **network tap** or a **port mirror.**
 
 <p align="center">
 <img src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/0cd26c1a7bbc2b0d6594c6980b27ae3097b947de/NIDS.png" />
 </p>
 	
-#### Network Tap
+### Network Tap
 * Is a device that you can insert anywhere along a run to grab packets / intercepting network traffic
 * Physical taps
 	- Disconnect the link, the tap goes in the middle
@@ -1876,7 +1866,7 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 <img width="60%" src="https://www.garlandtechnology.com/hs-fs/hubfs/A-NewSite2017/Products/Product%20images/Bypass/P1GMCx_Quarter-Products625x400.png?width=400&name=P1GMCx_Quarter-Products625x400.png" />
 </p>
 
-#### Port Mirror
+### Port Mirror
 **Port Mirror is a software-based tap, also called a Switch Port Analyzer, or SPAN in Cisco devices**, is a special port on a managed switch configured to listen for all data going in and out of the switch. Unlike a network tap, port mirroing is convenient and easily changed to reflect any changes in your NIDS/NIPS monitoring stragegy.
 
 ## Other types of Sensors and Collectors
@@ -1955,7 +1945,8 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 	
 > 🛑 **SYSLOG stands for System Logging Protocol** and is a standard protocol used to send system log or event messages to a specific server, called a syslog server. It is primarily used to collect various device logs from several different machines in a central location for monitoring and review.
 
-#### SIEM Logs Example
+### SIEM Logs Example
+
 <p align="center">
 <img src="https://www.solarwinds.com/-/media/solarwinds/swdcv2/licensed-products/security-event-manager/images/product-screenshots/sem-overview.ashx?la=pt&rev=87e8cfd54bc24fcfa44ef31866dbf126&hash=55F99F855053253F8079D600DF97E6CA6F72F6A5" />
 </p>
@@ -2017,17 +2008,15 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 * Report on access point use
 * Usually a proprietary system
 	- The wireless controlled is paired with the access points
-
 * **LWAPP** 
 	- **Lightweight Access Point Protocol** - is a protocol that can control multiple Wi-Fi wireless access points at once.
 	- Cisco proprietary - CAPWAP, based on LWAPP
 	- Manage multiple access points simultaneously
 
-### Fat / Thick Access Point
+### Fat/Thick Access Point
 * Thick/Fat access points
 	- The access point handles most wireless tasks
 	- The switch is not wireless-aware
-
 * **Good for small environments**
 * Management console to configure security controls
 * ACLs
@@ -2047,20 +2036,18 @@ NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 ## Vulnerabilities with Wireless Access Points
 
 ### **Rogue Access Point**
-**Unauthorized** access point plugged into a wired one. *(Can be accidental)*
+* **Unauthorized** access point plugged into a wired one. *(Can be accidental)*
 
 ### **Evil Twin Attack**
-Is a Rogue AP tha is broadcasting **the same (or very similar) SSID**. 
+* Is a Rogue AP tha is broadcasting **the same (or very similar) SSID**. 
 
 ### **802.11 Jammer**
-**Jamming is a form of intentional interference on wireless networks, designed as a DoS attack**. This type of attack by overpowering the signals of a legitimate wireless AP, typically using a rogue AP with its transmit power set to very high levels.
+* **Jamming is a form of intentional interference on wireless networks, designed as a DoS attack**. This type of attack by overpowering the signals of a legitimate wireless AP, typically using a rogue AP with its transmit power set to very high levels.
 
 ### **Deauthentication / Disassociation Attack**
-Deauth Attack Is a type of denial-of-service attack that targets communication between a **user** and a **Wi-Fi wireless access point**. 
+* Deauth Attack Is a type of denial-of-service attack that targets communication between a **user** and a **Wi-Fi wireless access point**. 
 
 **Technical details:** The IEEE 802.11 (Wi-Fi) protocol contains the provision for a deauthentication frame. Sending the frame from the access point to a station is called a "sanctioned technique to inform a rogue station that they have been disconnected from the network".
-
-An attacker can send a deauthentication frame at any time to a wireless access point, with a spoofed address for the victim. The protocol does not require any encryption for this frame, even when the session was established with Wired Equivalent Privacy (WEP) for data privacy, and the attacker only needs to know the victim's MAC address, which is available in the clear through wireless network sniffing.
 
 ## Cracking WEP, WPA, WPA2 and WPS ⚔️
 
@@ -2093,9 +2080,8 @@ An attacker can send a deauthentication frame at any time to a wireless access p
 
 ## Hardening 802.11 Networks
 
-<p align="center">
-<img width="50%" src="https://www.networkcomputing.com/sites/default/files/styles/flexslider_full/public/1-Worst-WiFi-security-mistakes-intro_0.png?itok=HHMt1WvU" />
-</p>
+
+<img width="60%" src="https://www.networkcomputing.com/sites/default/files/styles/flexslider_full/public/1-Worst-WiFi-security-mistakes-intro_0.png?itok=HHMt1WvU" />
 
 * Survey installation issues
 * Maintaining existing wireless networks
@@ -2266,7 +2252,7 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 * SaaS is a subscription based license; Access applications via subscription; 
 	* **e.g: Microsoft Office 365, Dropbox storage, Google Docs**.
 
-<h4 align="center">IaaS | PaaS | SaaS</h4>
+<h2 align="center">IaaS | PaaS | SaaS</h2>
 
 <p align="center">
 <img width="90%" src="https://img.alicdn.com/tfs/TB1WyglO7voK1RjSZFwXXciCFXa-2305-1450.png" />
@@ -2302,7 +2288,7 @@ The higher the frequency of a wireless signal, the shorter its range. **2.4 GHz 
 #### Security as a Service (SECaaS)
 
 <p align="center">
-<img width="70%" src="https://lantech-it.com/wp-content/uploads/2019/06/security-as-a-service-SEC.png" />
+<img width="60%" src="https://lantech-it.com/wp-content/uploads/2019/06/security-as-a-service-SEC.png" />
 </p>
 
 - Instead of managing your own security solution, move it to the cloud
@@ -2678,6 +2664,11 @@ Temporary fixes when these controls are weakened.<br> *e.g - If the outside fenc
 > 🛑 **Remote Monitoring** - VPN access, 802.1X
 
 ## Fire Suppression
+
+<p align="center">
+<img width="80%" src="https://northlandfire.com/wp-content/uploads/2019/03/Extinguisher-Classes.jpg" />
+</p>
+
 * Eletronics require unique responses to fire
 	- Water is generally a bad thing
 * Detection
@@ -2695,7 +2686,6 @@ B | Liquids(Gases, oil) | CO2, Foam, Powder
 C | Electrical (Electronic equipment) | CO2
 D | Combustible metals (sodium, magnesium) | Powder
 
-<img width="84%" src="https://northlandfire.com/wp-content/uploads/2019/03/Extinguisher-Classes.jpg" />
 
 > 🛑 FM200 is a special extinguisher liquid that is great because it can stops fires, but can still save the electrical equipment; "Gold Standard" for fire suppression on server rooms.
 
@@ -3086,14 +3076,14 @@ Developed initially as an extension to the authentication part of PPP. EAP is on
 <img width="81%" src="https://miro.medium.com/max/2560/1*sK_T0uuIuo48khIl0mLtIw.jpeg" />
 </p>
 
-#### Static Code Analysis
+### Static Code Analysis
 * Look for standard types of errors
 * They don't run the code 
 * **SAST** - Static Application Security Testing
 	- Help identify security flaws
 	- Can present false positive
 
-#### Dynamic Code Analysis (Fuzzing)
+### Dynamic Code Analysis (Fuzzing)
 * Send random input to an application
 	- Fault-injecting, robustness testing, syntax testing, negative testing
 * Looking for something out of the ordinary
@@ -3104,11 +3094,11 @@ Developed initially as an extension to the authentication part of PPP. EAP is on
 * Database querying
 * Many different fuzzing options (frameworks and fuzzing engines)
 
-#### Staging
+### Staging
 * **Stress Test** - aggressive test of issues such as multiple user simultaneous inputs, multiple server data syncing ...
 * **Sandboxing** - Isolated testing environment; Test the systems, almost always virtual machines (VMs), that enable developers to run the application aggressively.
 
-#### Model Verification 
+### Model Verification 
 * **Model** defines how developers expect some feature of the final code to perform. **Model Verification** match the application to the aspect of the model. *(e.g -This button drive the user to the home or not?)*
 
 * **Verification**
@@ -3119,10 +3109,10 @@ Developed initially as an extension to the authentication part of PPP. EAP is on
 	- Did you meet the high level requirements?
 	- Are we building the right product?
 
-#### Production
+### Production
 * When the testing are done and it's time to pull the application online and running. (expose to the public / internet). The process of moving an application from the development environment to the production environment is called **provisioning**. The process of remove an application from the production is called **desprovisioning**.
 
-#### Compiled vs. Runtime code
+### Compiled vs. Runtime code
 * **Compiled code**
 	- You don't see the source code
 	- The application is an executable compiled from the source
@@ -3323,7 +3313,7 @@ RADIUS or TACACS+ server resides on a remote system and responds to queries from
 3. **[Accounting]** -> **Log** the connection 
 
 ### RADIUS - Remote Authentication Dial-In User Service
-used for network access
+*Used for network access*
 
 1. **Radius Server**: Get the stack of usernames and passwords (can be MySQL, AD/DS, etc.)
 2. **Radius Client**: The Gateway between users and servers
@@ -3619,16 +3609,13 @@ Monitoring all users account activity
 - Always turn on the policy of Account Lockout to avoid brute-force try out
 - Disable accounts is better than Delete account; Often users save data, encryption keys, etc; Makes easier to retrieve this information. 
 
-
-
-### Group Policy Objects (AD DS)
+## Group Policy Objects (AD DS)
 
 <p align="center">
 <img width="90%" src="https://docs.microsoft.com/pt-pt/azure/active-directory-domain-services/media/active-directory-domain-services-admin-guide/gp-editor.png" />
 </p>
 
 * Set of rules that allow an administrator granular control over the configuration of objects in Active Directory, including user accounts, operation systems, applications and other AD objects. Can apply over multiple domains, groups and OU's.
-
 
 ## Permissions - Windows
 NTFS permissions are granted to users and groups on folders and files.
@@ -3668,10 +3655,9 @@ Linux has three permissions and they can be set for the owner, group or other.
 <img width="90%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/01260d855800248f380bd6c2b58fe0425067cebf/linux-perms.png" />
 </p>
 
-* **r = read** - open a file, view a file.
-* **w = write** - edit a file, add or delete files for directories.
-* **x = execute** - run a file, execute a program or script, CD to a different directory.
-
+> **r = read** - open a file, view a file.
+> **w = write** - edit a file, add or delete files for directories.
+> **x = execute** - run a file, execute a program or script, CD to a different directory.
 
 Owner | Group | Other
 :--:|:--:|:--:
@@ -3681,19 +3667,34 @@ rwx | rwx | rwx
 
 ```console
 ls -l
+```
+
+```console
 -rwxrwxr-x 1 user user 31337 Feb 11 13:13 File
 ```
 
-### Using `chmod` - to change file modes or Access Control Lists 
+### Using `chmod` 
+`chmod` *is the command and system call which is used to change the access permissions of file system objects on Unix and Unix-like OS.*
+
 * Clear out the permissions of the **File** to have no read, write and execute permissions on **Other**:<br> *(The flag equals to nothing[o=] deny the permissions)*
 
 ```console
 ls -l
+```
+
+```console
 -rwxrwxr-x 1 user user 31337 Feb 11 13:13 File
+```
 
+```console
 chmod o= File
+```
 
+```console
 ls -l
+```
+
+```console
 -rwxrwx--- 1 user user 31337 Feb 11 13:13 File
 ```
 
@@ -3701,11 +3702,21 @@ ls -l
 
 ```console
 ls -l
+```
+
+```console
 -rwx---r-- 1 user user 31337 Feb 11 13:13 File
+```
 
+```console
 chmod g=rw File
+```
 
+```console
 ls -l
+```
+
+```console
 -rwxrw-r-- 1 user user 31337 Feb 11 13:13 File
 ``` 
 
@@ -3713,13 +3724,24 @@ ls -l
 
 ```console
 ls -l
+```
+
+```console
 -rwx---r-- 1 user user 31337 Feb 11 13:13 File
+```
 
+```console
 chmod a=rwx File
+```
 
+```console
 ls -l
+```
+
+```console
 -rwxrwxrwx 1 user user 31337 Feb 11 13:13 File
 ``` 
+
 
 ### Using `chmod` on oldschool way:
 The chmod command will take the octal value and combine them to associate the permissions on three different positions for the Owner, Group and Other/Everyone. This boils down to a simple binary rule: 0 = off | 1 = on.
@@ -3748,38 +3770,69 @@ r-- | -w- | --x
 
 ```console
 ls -l
+```
+
+```console
 -rwx---r-- 1 user user 31337 Feb 11 13:13 File
+```
 
+```console
 chmod 777 File
+```
 
+```console
 ls -l
+```
+
+```console
 -rwxrwxrwx 1 user user 31337 Feb 11 13:13 File
 ``` 
+
 
 * Giving all permissions to the **owner**, read and write to **group** and no permissions to **other/everyone**:
 
 ```console
 ls -l
--r-x---r-- 1 user user 31337 Feb 11 13:13 File
-
-chmod 760 File
-
-ls -l
--rwxrw---- 1 user user 31337 Feb 11 13:13 File
 ```
 
-### Linux - File Ownership using `chown` -- change file owner and group
+```console
+-r-x---r-- 1 user user 31337 Feb 11 13:13 File
+```
+
+```console
+chmod 760 File
+```
 
 ```console
 ls -l
--rwxrwxrwx 1 user001 user001 31337 Feb 11 13:13 File
-
-sudo chown root File
-
-ls -l
--rwxrwxrwx 1 root user001 31337 Feb 11 13:13 File
-
 ```
+
+```console
+-rwxrw---- 1 user user 31337 Feb 11 13:13 File
+```
+
+### Linux - File Ownership using `chown` (change file owner and group)
+
+```console
+ls -l
+```
+
+```console
+-rwxrwxrwx 1 user001 user001 31337 Feb 11 13:13 File
+```
+
+```console
+sudo chown root File
+```
+
+```console
+ls -l
+```
+
+```console
+-rwxrwxrwx 1 root user001 31337 Feb 11 13:13 File
+```
+
 *The chown command requires sudo*
 
 
@@ -4299,7 +4352,7 @@ Designed to mitigate the effects of an incident, **not to prevent an incident**.
 		- Gramm-Leach-Bliley Act (financial information)
 		- HIPAA (health care), etc
 
-### **Privacy Impact Assessment (PIA) and Privacy Threshold Assessment (PTA)**
+## **Privacy Impact Assessment (PIA) and Privacy Threshold Assessment (PTA)**
 
 ### PTA
 The **first step** in the compliance process
@@ -4506,7 +4559,7 @@ Incident response is an organized approach to addressing and managing the afterm
 ## Incident Response Process
 
 <p align="center">
-<img src="https://www.abiliosimeao.com/wp-content/uploads/2020/02/nist.png"/>
+<img src="https://www.exabeam.com/wp-content/uploads/2018/09/IR-plan-steps.png"/>
 </p>
 <p align="center">
 <small><i>NIST SP800-61 - Computer Security Incident Handling Guide</i></small>
@@ -5114,7 +5167,7 @@ Is the practice of testing a computer system, network or web application to find
 
 # 8. Cryptography
 <p align="center">
-<img src="https://cdn.ttgtmedia.com/rms/onlineImages/security_cissp_cryptography_mobile.jpg" />
+<img width="90%" src="https://cdn.ttgtmedia.com/rms/onlineImages/security_cissp_cryptography_mobile.jpg" />
 </p>
 
 Cryptography is the practice of disguising information in a way that looks random.
@@ -5216,7 +5269,7 @@ Defines **key properties**, communication requirements for the **key exchange**;
 ### **Symmetric Cryptosystems** 
 
 Algorithm | Block or Streaming | Block Size | Rounds | Key Size | Notes
---|--|--|--|--|--|--
+--|--|--|--|--|--
 **DES** | Block | 64-bit | 16 | 56 bits | Uses five modes of operation: ECB, CBC, CFB, OFB and CTR. 
 **Blowfish** | Block | 64-bit | 16 | 32-448 bits | Public domain algorithm. 
 **Twofish** | Block | 128-bit | 16 | 128, 192 and 256 bits | Public domain algorithm.
@@ -5411,12 +5464,12 @@ SHA-1 Hash: 430CE34D020724ED75A196DFC2AD67C77772D169
 SHA256 Hash: 7509E5BDA0C762D2BAC7F90D758B5B2263FA01CCBC542AB5E3DF163BE08E6CA9
 ```
 
-> 🛑 If you change a single character, the entire Hash value changes. See the example below, changing the last character '!' to '.'
+> 🛑 If you change a single character, the entire Hash value changes. **See the example below, changing the last character '!' to '.'**
 
 * String: **hello world!**
-	```MD5 Hash: FC3FF98E8C6A0D3087D515C0473F8677```
+	- ```MD5 Hash: FC3FF98E8C6A0D3087D515C0473F8677```
 * String: **hello world.**
-	```MD5 Hash: 3C4292AE95BE58E0C58E4E5511F09647```
+	- ```MD5 Hash: 3C4292AE95BE58E0C58E4E5511F09647```
 
 ## Hashing Algorithms
 ### MD5 - Message Digest Algorithm
@@ -5486,19 +5539,21 @@ Combine a very long salt and a huge number of hashing iterations to make crackin
 
 *Example*:
 * **PBKDF2**
-```console
-Password:
-123456
+```
+Password: 123456
+```
 
+```
 Hash:
 rYoSDg62evyzhE1+lWBa9A==:YaeMu71c8KU3H0RYFPle0Q==
 ```
 
 * **bcrypt**
-```console
-Password: 
-123456
+```
+Password: 123456
+```
 
+```
 Hash:
 $2b$10$vES9mCPsE10//vOc1u01XeUVmJrZyHGMPaRfo39OIUoJ2g7iPtDnu
 ```
@@ -5534,11 +5589,11 @@ $2b$10$vES9mCPsE10//vOc1u01XeUVmJrZyHGMPaRfo39OIUoJ2g7iPtDnu
 
 > 🛑 If the password database is breached, you can't correlate any passwords because **even users with the same password have different hashes stored**.
 
-*Salt Example*:
-* Password: ```123456``` 
-* Salt: ```s4Lt1337=```
-* Add salt: ```123456s4Lt1337=```
-* Hash function: ```B2099F11CC4D34E9E8EED83E83D815732986D50097CA765BB8AFB355EABFFFB9```
+***Salt Example***:
+1. Password: ```123456``` 
+2. Salt: ```s4Lt1337=```
+3. Add salt: ```123456s4Lt1337=```
+4. Hash function: ```B2099F11CC4D34E9E8EED83E83D815732986D50097CA765BB8AFB355EABFFFB9```
 ## Wireless Security
 ### **WEP** - Wireless Equivalency Privacy
 
