@@ -4,7 +4,7 @@
 
 
 
-[![StudyGuide-PDF-version](https://img.shields.io/badge/PDF-VERSION-BLUE.svg)](https://github.com/Samsar4/CompTIA-Security-SY0-501-Study-Guide/blob/master/PDF/Security%2BStudyGuide-SY0-501.pdf) [![StudyGuide-HTML-version](https://img.shields.io/badge/HTML-VERSION-ORANGE.svg)](https://github.com/Samsar4/CompTIA-Security-SY0-501-Study-Guide/blob/master/HTML/Security%2BStudyGuide-SY0-501.html)
+[![StudyGuide-PDF-version](https://img.shields.io/badge/PDF_version-download-BLUE.svg)](https://github.com/Samsar4/CompTIA-Security-SY0-501-Study-Guide/blob/master/PDF/Security%2BStudyGuide-SY0-501.pdf) [![StudyGuide-HTML-version](https://img.shields.io/badge/HTML_version-download-ORANGE.svg)](https://github.com/Samsar4/CompTIA-Security-SY0-501-Study-Guide/blob/master/HTML/Security%2BStudyGuide-SY0-501.html)
 
 <hr> 
 
