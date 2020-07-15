@@ -2,6 +2,10 @@
 <img width="100%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8e33e5510bd7caeb474910b9e5fffb6ae16eb993/banner-splus2.jpg" />
 </p>
 
+
+
+[![StudyGuide-PDF-version](https://img.shields.io/badge/PDF-VERSION-BLUE.svg)](https://github.com/Samsar4/CompTIA-Security-SY0-501-Study-Guide/blob/master/PDF/Security%2BStudyGuide-SY0-501.pdf) [![StudyGuide-HTML-version](https://img.shields.io/badge/HTML-VERSION-ORANGE.svg)](https://github.com/Samsar4/CompTIA-Security-SY0-501-Study-Guide/blob/master/HTML/Security%2BStudyGuide-SY0-501.html)
+
 <hr> 
 
 ### 📢 About
@@ -9,7 +13,6 @@
 **The main objectives of this repo**
 * This is a *'Open Source Study Guide'* for Security+ SY0-501, gathering as many information as possible from many sources on internet to ensure to cover all topics presented on exam.
 * The second objective is to help you pass the exam without paying any expensive training courses and also contribute to infosec community <3 .
-* Check the [PDF version](https://github.com/Samsar4/CompTIA-Security-SY0-501-Study-Guide/tree/master/PDF) 
 
 #### ℹ️ About the exam
 *CompTIA Security+ is the first security certification IT professionals should earn. It establishes the core knowledge required of any cybersecurity role and provides a springboard to intermediate-level cybersecurity jobs. Security+ incorporates best practices in hands-on trouble-shooting to ensure security professionals have practical security problem-solving skills. Cybersecurity professionals with Security+ know how to address security incidents – not just identify them.*
