@@ -11,16 +11,19 @@
 ### 📢 About
 
 **The main objectives of this repo**
+
 * This is a *'Open Source Study Guide'* for Security+ SY0-501, gathering as many information as possible from many sources on internet to ensure to cover all topics presented on exam.
+
 * The second objective is to help you pass the exam without paying any expensive training courses and also contribute to infosec community <3 .
 
-#### ℹ️ About the exam
+### ℹ️ About the exam
+⚠️ **Important Note: The SY0-501 exam is scheduled to be retired in July of 2021**⚠️
+
 *CompTIA Security+ is the first security certification IT professionals should earn. It establishes the core knowledge required of any cybersecurity role and provides a springboard to intermediate-level cybersecurity jobs. Security+ incorporates best practices in hands-on trouble-shooting to ensure security professionals have practical security problem-solving skills. Cybersecurity professionals with Security+ know how to address security incidents – not just identify them.*
 
 *Security+ is compliant with ISO 17024 standards and approved by the US DoD to meet directive 8140/8570.01-M requirements. Regulators and government rely on ANSI accreditation, because it provides confidence and trust in the outputs of an accredited program. Over 2.3 million CompTIA ISO/ANSI-accredited exams have been delivered since January 1, 2011.* [[+]](https://www.comptia.org/certifications/security)
 
-⚠️ **Important Note: The SY0-501 exam is scheduled to be retired in July of 2021**
-#### ☑️ Exam Domains
+### ☑️ Exam Domains
 
 Domain | % of the Exam Content 
 :-|:-:
@@ -31,12 +34,11 @@ Identity and Access Management | 16%
 Risk Management | 14%
 Cryptography and PKI | 12%
 
-#### ✳️ Free Resources
+### ✳️ Free Resources
 1. [Practice Questions](https://www.examcompass.com/comptia/security-plus-certification/free-security-plus-practice-tests) - I recommend to test your knowledge after study all topics presented on the exam.
-
-2. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos (13 hours of content) from Professor Messer - Security+.
-
-3. [Another resources](https://dfirdiva.com/free-training) - Big list of free resources from different areas of cyber security.
+2. [Practice Questions #2](https://www.professormesser.com/sy0-501-take-ten/)
+3. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos (13 hours of content) from Professor Messer - Security+.
+4. [Another resources](https://dfirdiva.com/free-training) - Big list of free resources from different areas of cyber security.
 
 *** 
 
