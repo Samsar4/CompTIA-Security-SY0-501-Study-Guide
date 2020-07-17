@@ -2,8 +2,6 @@
 <img width="100%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8e33e5510bd7caeb474910b9e5fffb6ae16eb993/banner-splus2.jpg" />
 </p>
 
-
-
 [![StudyGuide-PDF-version](https://img.shields.io/badge/PDF_version-download-BLUE.svg)](https://github.com/Samsar4/CompTIA-Security-SY0-501-Study-Guide/blob/master/PDF/Security%2BStudyGuide-SY0-501.pdf) [![StudyGuide-HTML-version](https://img.shields.io/badge/HTML_version-download-ORANGE.svg)](https://github.com/Samsar4/CompTIA-Security-SY0-501-Study-Guide/blob/master/HTML/Security%2BStudyGuide-SY0-501.html)
 
 <hr> 
@@ -35,10 +33,11 @@ Risk Management | 14%
 Cryptography and PKI | 12%
 
 ### ✳️ Free Resources
-1. [Practice Questions](https://www.examcompass.com/comptia/security-plus-certification/free-security-plus-practice-tests) - I recommend to test your knowledge after study all topics presented on the exam.
-2. [Practice Questions #2](https://www.professormesser.com/sy0-501-take-ten/)
-3. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos (13 hours of content) from Professor Messer - Security+.
-4. [Another resources](https://dfirdiva.com/free-training) - Big list of free resources from different areas of cyber security.
+1. [Practice Questions - Examcompass](https://www.examcompass.com/comptia/security-plus-certification/free-security-plus-practice-tests) - I recommend to test your knowledge after study all topics presented on the exam.
+2. [Practice Questions - Professor Messer](https://www.professormesser.com/sy0-501-take-ten/)
+3. [Practice Questions - Github](https://github.com/PacktPublishing/CompTIA-Security-SY0-501-Complete-Course-and-Practice-Exam/blob/master/Security%2B%20Practice%20Exam.pdf)
+4. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos (13 hours of content).
+5. [Lynda Prep Course - 30 day free trial](https://www.lynda.com/learning-paths/IT/become-a-comptia-security-plus-certified-security-professional) - 21 hours of content
 
 *** 
 
