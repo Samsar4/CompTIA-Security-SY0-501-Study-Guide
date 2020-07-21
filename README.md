@@ -3428,6 +3428,8 @@ In computer networking, Point-to-Point Protocol (PPP) is a data link layer (laye
 * **Don't allow users to run with administrative privileges**
 	- Limits the scope of malicious behavior
 
+> 🛑 **Privilege creep** - when someone get a bunch of new privileges unecessarily; gradual accumulation of access rights beyond what an individual needs to do his or her job.
+
 ### Continuous Access Monitoring
 Monitoring all users account activity
 
@@ -3486,6 +3488,10 @@ Monitoring all users account activity
 		- Adjust sensitivity to equalize both values
 		- Used to quantitatively compare biometric systems
 
+
+> 🛑 **Type II and Type I errors** - In statistical hypothesis testing, a type I error is the rejection of a true null hypothesis (also known as a "false positive" finding or conclusion), while a type II error is the non-rejection of a false null hypothesis (also known as a "false negative" finding or conclusion). 
+> 🛑 **FAR and FRR** can apply to many softwares that uses authentication and authorization methods.
+
 ### Token generators
 
 <img width="50%" src="https://www.researchgate.net/profile/Maryblessing_Umeh/publication/340234262/figure/fig1/AS:873738811756545@1585326974784/RSA-SecurID-token-an-example-of-a-disconnected-token-generator.png" />
@@ -3518,10 +3524,10 @@ Monitoring all users account activity
 <img width="90%" src="https://xlsbt27nbyq24kl4l1tdpqh5-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/2.png" />
 
 * Smart card
-* PIV (Personal Identity Verification) card
+* **PIV** (Personal Identity Verification) card
 	- US Federal Government smart card
 	- Picture and identification information
-* CAC (Common Access Card)
+* **CAC** (Common Access Card)
 	- US DoD smart card
 	- Picture and ID
 * IEEE 802.1X
@@ -4579,7 +4585,7 @@ The popular guideline for Incident Response process is the **NIST SP800-61 - Com
 	- **Containment, Eradication, and Recovery**
 	- **Post-incident Activity**
 
-### Preparation
+### 1) Preparation
 - Who's doing what
 - Incident handling hardware and software
 	- Laptops, removable media, forensic software, digital cameras, etc
@@ -4589,7 +4595,7 @@ The popular guideline for Incident Response process is the **NIST SP800-61 - Com
 - Incident mitigation software
 - Policies needed for incident handling
 
-### Detection
+### 2) Detection & Analysis
 - Many different detection sources
 	- Different levels of detail, different levels of perception
 - Large amout of 'volume'
@@ -4613,7 +4619,7 @@ The popular guideline for Incident Response process is the **NIST SP800-61 - Com
 - Network traffic flows deviate from the norm
 	- Requires constant monitoring
 
-### Containment and Isolation
+### 3) Containment and Isolation
 - Mitigate the damage
 - Stop the attack
 - Sandboxes
@@ -4643,7 +4649,7 @@ The popular guideline for Incident Response process is the **NIST SP800-61 - Com
 	- Later phases involve much 'heavier lifting'
 		- Infrastructure changes, large-scale security rollouts
 
-### Lessons learned
+### 4) Lessons learned or Post-incident Activity
 - Learn and improve
 	- No system is perfect
 - Post-incident meeting
@@ -4801,6 +4807,12 @@ The context is most often for usage of data in a court of law, though digital fo
 *Attempts to mitigate adverse incidents to preserve business continuity*.
 - How do we recover from a specific type of a disaster?
 - What to do for keep the **Business Continuity** going?
+
+### Evidences on Computer forensics 
+1. **Documentary evidence** - directly supports or proves a definitive assertion.
+2. **Exculpatory** - evidence proves innocence.
+3. **Inculpatory** - evidence proves guilt.
+4. **Demonstrative evidence** - which can be in the form of charts, graphs, drawings, and so forth, is used to help nontechnical people, such as the members of a jury, understand an event.
 
 ## Disaster Recovery - Evacuation Plan
 
@@ -5272,6 +5284,8 @@ Defines **key properties**, communication requirements for the **key exchange**;
 
 *(Ex: Using asymetric encryption to exchange Session keys after that communicate using Symmetric encryption.)*
 
+* **Key escrow** (also known as a “fair” cryptosystem) is an arrangement in which the **keys** needed to decrypt encrypted data are held in **escrow** so that, under certain circumstances, an authorized third party may gain access to those keys.
+
 ### **Symmetric Cryptosystems** 
 
 Algorithm | Block or Streaming | Block Size | Rounds | Key Size | Notes
@@ -5563,6 +5577,8 @@ Password: 123456
 Hash:
 $2b$10$vES9mCPsE10//vOc1u01XeUVmJrZyHGMPaRfo39OIUoJ2g7iPtDnu
 ```
+
+> 🛑 **Key streaming** - involves sending individual characters of the key through an algorithm and using a mathematical XOR function to change the output.
 
 ## Cryptographic nonce
 *Cryptographic randomization schemes*
@@ -5877,7 +5893,7 @@ Port | Description
 21 | File Transfer Protocol - FTP Control
 22 | SSH - Secure Shell Remote Login Protocol / SCP / SFTP 
 23 | Telnet
-25 | SMNTP - Simple Mail Transfer Protocol
+25 | SMTP - Simple Mail Transfer Protocol
 49 | TACACS+ - Login Host Protocol
 53 | DNS - Domain Name System
 67 | DHCP - Bootp-server (Outgoing DHCP)
