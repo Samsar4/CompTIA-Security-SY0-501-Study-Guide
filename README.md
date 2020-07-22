@@ -83,7 +83,7 @@ Systems, access channels, and authentication mechanisms must all be working prop
 Basically keep tracking of everthing, like, who's been logging in when are they loggin in whose access this data.
 
 ### **Non-Repudiation**
-Anyone can validate the authenticity of a message as well as the source of the message.
+Non-repudiation is the assurance that someone cannot deny the validity of something. Non-repudiation is a legal concept that is widely used in information security and refers to a service, which provides proof of the origin of data and the integrity of the data. 
 
 ***
 
@@ -546,11 +546,13 @@ Is any type of hardware that's designed to do security work. For ATMs, Web Serve
 * Relay/Replay Attack (MITM)
 * Loss of RFC device control *(e.g stolen phone)*
 
-## Bluetooth Security 🔷🔒
+## Bluetooth Security - Attacks 🔷⚔️
 
-**Bluejacking** - When bad actors connects with any Device that have Bluetooth enable by default.
+- **Bluejacking** - When **bad actors connects** with any Device that have Bluetooth enable by default.
 
-**Bluesnarfing** - When the attacker steals data from the target device by connecting to an unsuspecting user's device.
+- **Bluesnarfing** - When the **attacker steals data** from the target device by connecting to an unsuspecting user's device.
+
+- **Bluebugging** - the most serious of the various Bluetooth attacks, involves an attacker attempting to take control of or use a Bluetooth-enabled **cell phone to place calls**.
 
 *Types of bluetooth*:
 
@@ -1495,6 +1497,8 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 > 🛑 Removable media can jump the gap
 
 ## Network Access Control (NAC)
+*Can be used to prevent hosts from connecting to the network unless they meet certain security requirements*
+
 **Wireless Network, Remote Access, VPN Access**
 
 - Control from wherever you are (inside or outside)
@@ -1551,6 +1555,8 @@ If you're using the TCP/IP stack and making your own LAN or WAN = Intranet.
 * Can encrypt traffic into/out of the network
 * Can proxy traffic
 * Most firewalls can be **layer 3 devices (routers)**
+
+> 🛑 A "deny any-any" rule denies all traffic from all sources, so it should be the last rule in the ruleset.
 
 ## **Stateless** Firewall
 * **Typically faster and perform better under havier traffic loads.**
@@ -3340,6 +3346,10 @@ Provide the same as RADIUS but the service decouple the authorization from the a
 
 > 🛑 **Uses TCP Port 49**  
 
+> 🛑 **TACACS encrypts all information** between the client and server.
+
+> 🛑  **RADIUS only encrypts the passwords**
+
 ## Authentication Methods
 
 * **PAP** - *Password Authentication Protocol*
@@ -3479,9 +3489,9 @@ Monitoring all users account activity
 * Can lock and unlock devices
 * Use to configure applications
 * **Biometric acceptance rates**:
-	- **False acceptance rate (FAR)**
+	- **False acceptance rate (FAR) - Type II**
 		- Likelihood that an unauthorized user will be **accepted** (This would be bad)
-	- **False injection rate (FRR)**
+	- **False injection rate (FRR) - Type I**
 		- Likelihood that an authorized user will be **rejected**
 	- **Crossover error rate (CER)**
 		- The rate at which FAR and FRR are equal
@@ -3965,7 +3975,8 @@ Is an attempt to reduce the risk, or at least minimize its effects on an asset.
 ### 2) Risk Transference
 Or Risk Sharing, deals with risk by sharing with third-party. Example buying insurance to protect against natural disasters.
 ### 3) Risk Acceptance
-Means the organization has implemented controls and some risk remains. (residual risk). Remember that risk can never be completely eliminated.
+Means the organization has implemented controls and some risk remains **(residual risk)**. Remember that risk can never be completely eliminated.
+> 🛑 **Residual risk** is what risk remains after all mitigation and reduction strategies have been implemented.
 ### 4) Risk Avoidance
 Means thtat the organization could choose not to participate in activities that cause unnecessary or excessive risk.
 
@@ -4128,6 +4139,8 @@ All about rules and requirements applied to an organization that dictate how it 
 
 ### **The Acceptable Use Policy (AUP)**:
 * Defines what a person can or can not do when using company assets and equipament. *(The paper you sign before entry a job position).*
+
+>🛑 An acceptable use policy (AUP) defines what users may and may not do with regard to **information systems, including e-mail**.
 
 ### **Data Sensitivity and Classification Policies**:
 * Define the importance or nature of the data. *(e.g. Applying labels on the Government, they use Top Secret, Classified, etc).*
@@ -4406,6 +4419,9 @@ Determine the impact on the privacy of the individuals who data is beign stored;
 * Bring the system back online; how far back does data go?
 
 > 🛑 *Recovery priorities help define what needs to be addressed to maintain business continuity.*
+
+### Maximum Tolerable Downtime (MTD):
+* The maximum tolerable downtime (MTD) indicates how long an asset may be down or offline without seriously impacting the organization.
 
 ## Calculating uptime and availability
 * Expressed as a percentage over time 
@@ -4875,6 +4891,10 @@ The context is most often for usage of data in a court of law, though digital fo
 	- A clear and detailed documentation of everything that happened so that if it ever happens again you'll be ready to handle any form of business contingency planning.
 
 > 🛑 Through planning and practice is what makes recovery plans successful when disasters occur
+
+> 🛑 A **fail-safe device** responds by not doing anything to cause harm when the failure occurs. 
+
+> 🛑 A **fail-secure device** responds by making sure the device is using a secure state when a failure occurs.
 
 ## Backups 📑
 **Media for Backups**
@@ -5491,6 +5511,9 @@ SHA256 Hash: 7509E5BDA0C762D2BAC7F90D758B5B2263FA01CCBC542AB5E3DF163BE08E6CA9
 * String: **hello world.**
 	- ```MD5 Hash: 3C4292AE95BE58E0C58E4E5511F09647```
 
+### Message digest
+A message digest or hash, can be used to verify the integrity of a message by comparing the original hash to one generated after receipt of the message. If the two match, then integrity is assured. If they do not match, then the message was altered between transmission and receipt.
+
 ## Hashing Algorithms
 ### MD5 - Message Digest Algorithm
 - First published in April 1992
@@ -5806,7 +5829,11 @@ PKI is the way we do internet. Uses a hierarchical structure with root servers.
 </p>
 
 - **Mutual Authentication**
-	- Server authenticates to the client and the client authenticates to the server
+	- Mutual authentication requires both sides of a communications session to authenticate to each other.
+
+<p align="center">
+<img width="80%" src="https://docs.oracle.com/cd/E19798-01/821-1841/images/security-sslBMAWithCertificates.gif" />
+</p>
 
 > 🛑 **Certificate chaining** - Chain of trust; List all the certs between the server and the root CA; **The chain starts with the SSL certificate and ends with the Root CA**.
 
