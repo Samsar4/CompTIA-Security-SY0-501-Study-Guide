@@ -33,11 +33,15 @@ Risk Management | 14%
 Cryptography and PKI | 12%
 
 ### ✳️ Free Resources
-1. [Practice Questions - Examcompass](https://www.examcompass.com/comptia/security-plus-certification/free-security-plus-practice-tests) - I recommend to test your knowledge after study all topics presented on the exam.
-2. [Practice Questions - Professor Messer](https://www.professormesser.com/sy0-501-take-ten/)
-3. [Practice Questions - Github](https://github.com/PacktPublishing/CompTIA-Security-SY0-501-Complete-Course-and-Practice-Exam/blob/master/Security%2B%20Practice%20Exam.pdf)
-4. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos (13 hours of content).
-5. [Lynda Prep Course - 30 day free trial](https://www.lynda.com/learning-paths/IT/become-a-comptia-security-plus-certified-security-professional) - 21 hours of content
+* **Practice questions** - I recommend to test your knowledge after study all topics presented on the exam.
+	1. [Practice Questions - Passcomptia](https://passcomptia.com/comptia-security/) 
+	2. [Practice Questions - Examcompass](https://www.examcompass.com/comptia/security-plus-certification/free-security-plus-practice-tests)
+	3. [Practice Questions - Professor Messer](https://www.professormesser.com/sy0-501-take-ten/)
+	4. [Practice Questions - Github](https://github.com/PacktPublishing/CompTIA-Security-SY0-501-Complete-Course-and-Practice-Exam/blob/master/Security%2B%20Practice%20Exam.pdf)
+
+* **Training videos**
+	1. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos (13 hours of content).
+	2. [Lynda Prep Course - 30 day free trial](https://www.lynda.com/learning-paths/IT/become-a-comptia-security-plus-certified-security-professional) - 21 hours of content.
 
 *** 
 
