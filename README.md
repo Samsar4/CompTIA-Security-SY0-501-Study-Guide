@@ -40,8 +40,9 @@ Cryptography and PKI | 12%
 	4. [Practice Questions - Github](https://github.com/PacktPublishing/CompTIA-Security-SY0-501-Complete-Course-and-Practice-Exam/blob/master/Security%2B%20Practice%20Exam.pdf)
 
 * **Training videos**
-	1. [Training Course - Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 141 YouTube videos (13 hours of content).
-	2. [Lynda Prep Course - 30 day free trial](https://www.lynda.com/learning-paths/IT/become-a-comptia-security-plus-certified-security-professional) - 21 hours of content.
+	1. [Professor Messer](https://www.youtube.com/playlist?list=PLG49S3nxzAnnVhoAaL4B6aMFDQ8_gdxAy) - 13 hours of content.
+	2. [PaceIT online](https://www.youtube.com/watch?v=O4pJeXgOJDs&t=4030s) - 5 hours of content.
+	3. [Lynda Prep Course - 30 day free trial](https://www.lynda.com/learning-paths/IT/become-a-comptia-security-plus-certified-security-professional) - 21 hours of content.
 
 *** 
 
