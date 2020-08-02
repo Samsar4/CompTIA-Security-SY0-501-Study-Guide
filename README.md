@@ -2,7 +2,7 @@
 <img width="100%" src="https://gist.githubusercontent.com/Samsar4/62886aac358c3d484a0ec17e8eb11266/raw/8e33e5510bd7caeb474910b9e5fffb6ae16eb993/banner-splus2.jpg" />
 </p>
 
-[![StudyGuide-PDF-version](https://img.shields.io/badge/PDF_version-download-BLUE.svg)](https://github.com/Samsar4/CompTIA-Security-SY0-501-Study-Guide/blob/master/PDF/Security%2BStudyGuide-SY0-501.pdf) [![StudyGuide-HTML-version](https://img.shields.io/badge/HTML_version-download-ORANGE.svg)](https://github.com/Samsar4/CompTIA-Security-SY0-501-Study-Guide/blob/master/HTML/Security%2BStudyGuide-SY0-501.html)
+[![StudyGuide-PDF-version](https://img.shields.io/badge/PDF_version-download-BLUE.svg)](https://github.com/Samsar4/CompTIA-Security-SY0-501-Study-Guide/blob/master/PDF/Security%2BStudyGuide-SY0-501.pdf) [![StudyGuide-HTML-version](https://img.shields.io/badge/HTML_version-download-ORANGE.svg)](https://github.com/Samsar4/CompTIA-Security-SY0-501-Study-Guide/blob/master/HTML/Security%2BStudyGuide-SY0-501-dark-mode.html)
 
 <hr> 
 
